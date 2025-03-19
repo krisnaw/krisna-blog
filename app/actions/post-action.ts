@@ -35,7 +35,7 @@ const slugify = (value: string) => {
 export async function storePost(formData: FormData): Promise<ActionResponse> {
     const supabase = await createClient();
 
-    const slug = slugify(formData.get('title') as string)
+    const slug = slugify(formData.get('slug') as string)
 
     const {data, error} = await supabase
         .from('posts')
@@ -70,11 +70,14 @@ export async function storePost(formData: FormData): Promise<ActionResponse> {
 export async function updatePost(formData: FormData): Promise<ActionResponse> {
     const supabase = await createClient();
 
+    const slug = slugify(formData.get('slug') as string)
+
     const {data, error} = await supabase
         .from('posts')
         .update(
             {
                 title: formData.get('title'),
+                slug: slug,
                 content: formData.get('content'),
             }
         )
@@ -92,6 +95,7 @@ export async function updatePost(formData: FormData): Promise<ActionResponse> {
     }
 
     revalidatePath('/', 'layout')
+
     return {
         success: true,
         message: data
@@ -115,6 +119,7 @@ export async function deletePost(id: string): Promise<ActionResponse> {
     }
 
     revalidatePath('/', 'layout');
+
     return {
         success: true,
         message: 'Post deleted successfully.',
@@ -124,9 +129,6 @@ export async function deletePost(id: string): Promise<ActionResponse> {
 
 export async function publishPost(id: string): Promise<ActionResponse> {
     const supabase = await createClient();
-
-    console.log(id)
-
     const {data, error} = await supabase
         .from('posts')
         .update({
