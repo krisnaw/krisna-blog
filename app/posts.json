@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "id": "hello-world",
+      "date": "Mar 19, 2025",
+      "title": "Hello World!"
+    },
+    {
+      "id": "how-to-structure-go-apps",
+      "date": "Mar 19, 2025",
+      "title": "Hello World!"
+    }
+  ]
+}
