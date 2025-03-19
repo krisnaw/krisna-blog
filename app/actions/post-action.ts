@@ -16,12 +16,27 @@ export async function getPosts(published = false) {
 
     const { data: posts, error } = await query
 
-    
     if (error) {
-        return []
+        throw error
     }
 
     return posts
+}
+
+export async function getPostBySlug(slug: string) {
+    const supabase = await createClient();
+
+    const { data: post, error } = await supabase
+        .from('posts')
+        .select('*')
+        .eq('slug', slug)
+        .single()
+
+    if (error) {
+        throw error
+    }
+    
+    return post
 }
 
 const slugify = (value: string) => {
@@ -70,6 +85,8 @@ export async function storePost(formData: FormData): Promise<ActionResponse> {
 export async function updatePost(formData: FormData): Promise<ActionResponse> {
     const supabase = await createClient();
 
+    console.log(formData)
+
     const slug = slugify(formData.get('slug') as string)
 
     const {data, error} = await supabase
@@ -81,7 +98,7 @@ export async function updatePost(formData: FormData): Promise<ActionResponse> {
                 content: formData.get('content'),
             }
         )
-        .eq('slug', formData.get('slug') as string)
+        .eq('id', formData.get('id') as string)
         .select()
         .single()
 

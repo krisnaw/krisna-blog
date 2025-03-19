@@ -18,7 +18,7 @@ export function TipTapEditor({content, setContent}: TipTapEditorProps) {
         )],
         editorProps: {
             attributes: {
-                class: 'prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none',
+                class: 'prose prose-sm focus:outline-none max-w-none dark:prose-invert px-3 py-1',
             },
         },
         content: content,

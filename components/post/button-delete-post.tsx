@@ -21,7 +21,7 @@ export default function ButtonDeletePost({ id } : { id: string }) {
                 }
 
                 toast('Issue deleted')
-                router.push('/posts')
+                router.push('/post')
                 router.refresh()
             } catch (error) {
                 console.error('Error deleting issue:', error)

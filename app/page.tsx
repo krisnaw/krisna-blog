@@ -1,4 +1,4 @@
-import Posts from "@/components/posts";
+import PostsListView from "@/components/post/posts-list-view";
 import {getPosts} from "@/app/actions/post-action";
 
 export default async function Home() {
@@ -7,7 +7,7 @@ export default async function Home() {
 
     return (
         <div>
-            { posts && <Posts posts={posts} />}
+            { posts && <PostsListView posts={posts} />}
         </div>
     )
 }

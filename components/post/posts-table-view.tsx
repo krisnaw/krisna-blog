@@ -8,7 +8,7 @@ import ButtonSetDraft from "@/components/post/button-set-draft";
 import ButtonDeletePost from "@/components/post/button-delete-post";
 import {PencilIcon} from "lucide-react";
 
-export function PostTable({ posts } : { posts: Post[] }) {
+export function PostsTableView({ posts } : { posts: Post[] }) {
     return (
         <Table>
             <TableHeader>
@@ -21,7 +21,7 @@ export function PostTable({ posts } : { posts: Post[] }) {
             <TableBody>
                 {posts.map((post) => (
                     <TableRow key={post.slug}>
-                        <TableCell className="font-medium">
+                        <TableCell className="font-medium" colSpan={4}>
                             {post.title}
                         </TableCell>
                         <TableCell>

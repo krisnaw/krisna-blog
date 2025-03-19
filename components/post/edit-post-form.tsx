@@ -31,7 +31,7 @@ export default function EditPostForm({ post }: { post: Post}) {
                 const res = await updatePost(formData);
 
                 if (res.success) {
-                    router.push('/posts')
+                    router.push('/post')
                 }
 
                 return res;
@@ -55,6 +55,7 @@ export default function EditPostForm({ post }: { post: Post}) {
                 <CardDescription>{state?.message}</CardDescription>
             </CardHeader>
             <form action={formAction}>
+                <input type="hidden" name="id" value={post.id}/>
                 <CardContent className="space-y-4">
                     <div className="space-y-2">
                         <Label htmlFor="title">Title</Label>

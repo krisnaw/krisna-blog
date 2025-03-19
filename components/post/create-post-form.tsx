@@ -31,7 +31,7 @@ export default function CreatePostForm() {
                 const res = await storePost(formData);
 
                 if (res.success) {
-                    router.push('/posts')
+                    router.push('/post')
                 }
 
                 return res;
@@ -84,7 +84,7 @@ export default function CreatePostForm() {
                     <div className="space-y-2">
                         <Label htmlFor="content">Content</Label>
                         <input type="hidden" value={content} name="content"/>
-                        <div className="border border-input rounded-md">
+                        <div className="border border-input rounded-md p-4">
                             <TipTapEditor content={content} setContent={setContent}/>
                         </div>
                     </div>

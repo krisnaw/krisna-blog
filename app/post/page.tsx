@@ -1,4 +1,4 @@
-import {PostTable} from "@/components/post-table";
+import {PostsTableView} from "@/components/post/posts-table-view";
 import {Suspense} from "react";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
@@ -19,7 +19,7 @@ export default async function Page() {
             </div>
             <div className="mt-5">
                 <Suspense fallback={<div>Loading...</div>}>
-                    <PostTable posts={posts}/>
+                    <PostsTableView posts={posts}/>
                 </Suspense>
             </div>
         </div>
