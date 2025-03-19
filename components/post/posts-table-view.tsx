@@ -21,7 +21,7 @@ export function PostsTableView({ posts } : { posts: Post[] }) {
             <TableBody>
                 {posts.map((post) => (
                     <TableRow key={post.slug}>
-                        <TableCell className="font-medium" colSpan={4}>
+                        <TableCell className="font-medium">
                             {post.title}
                         </TableCell>
                         <TableCell>

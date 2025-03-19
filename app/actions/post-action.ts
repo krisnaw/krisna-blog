@@ -85,8 +85,6 @@ export async function storePost(formData: FormData): Promise<ActionResponse> {
 export async function updatePost(formData: FormData): Promise<ActionResponse> {
     const supabase = await createClient();
 
-    console.log(formData)
-
     const slug = slugify(formData.get('slug') as string)
 
     const {data, error} = await supabase

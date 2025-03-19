@@ -4,9 +4,22 @@ import Link from "next/link";
 import {Button} from "@/components/ui/button";
 import {getPosts} from "@/app/actions/post-action";
 import {PlusIcon} from "lucide-react";
+import {Post} from "@/lib/type";
 
 export default async function Page() {
-    const posts = await getPosts(true);
+    const posts: Post[] = await getPosts(true);
+
+    if (posts.length === 0) {
+        return (
+            <div className="flex items-center justify-center border p-12">
+                <Button asChild>
+                    <Link href="/post/create">
+                        <PlusIcon /> New Post
+                    </Link>
+                </Button>
+            </div>
+        )
+    }
 
     return (
         <div className="space-y-6">
