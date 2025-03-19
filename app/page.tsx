@@ -1,11 +1,16 @@
-import {getPosts} from "@/app/get-posts";
 import Posts from "@/components/posts";
+import {createClient} from "@/utils/supabase/server";
 
 export default async function Home() {
-    const posts = await getPosts();
+    const supabase = await createClient();
+
+    const { data: posts } = await supabase
+        .from('posts')
+        .select('*')
+
     return (
         <div>
-            <Posts posts={posts} />
+            { posts && <Posts posts={posts} />}
         </div>
     )
 }
