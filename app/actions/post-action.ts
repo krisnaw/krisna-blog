@@ -17,7 +17,7 @@ export async function getPosts(published = false) {
     const { data: posts, error } = await query
 
     if (error) {
-        throw error
+        throw new Error(error.message)
     }
 
     return posts
@@ -33,7 +33,7 @@ export async function getPostBySlug(slug: string) {
         .single()
 
     if (error) {
-        throw error
+        throw new Error(error.message)
     }
     
     return post
