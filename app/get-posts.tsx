@@ -4,6 +4,7 @@ export type Post = {
     id: string;
     date: string;
     title: string;
+    summary: string;
 };
 
 export const getPosts = async () : Promise<Post[]> => {

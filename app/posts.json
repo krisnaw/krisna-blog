@@ -3,12 +3,20 @@
     {
       "id": "hello-world",
       "date": "Mar 19, 2025",
-      "title": "Hello World!"
+      "title": "Hello World!",
+      "summary": "This is my first post"
     },
     {
       "id": "how-to-structure-go-apps",
       "date": "Mar 19, 2025",
-      "title": "Hello World!"
+      "title": "How to structure Go Apps",
+      "summary": "Learn how to organize and structure your Go applications effectively."
+    },
+    {
+      "id": "about",
+      "date": "Mar 19, 2024",
+      "title": "About page",
+      "summary": "Learn how to organize and structure your Go applications effectively."
     }
   ]
 }

@@ -17,7 +17,7 @@ export function Header({posts}: { posts: Post[] }) {
     if (post == null) return <></>;
 
     return (
-        <>
+        <div className="mb-4 pb-4 border-b border-gray-200 dark:border-gray-800">
             <h1 className="text-2xl font-bold mb-1 dark:text-gray-100">
                 {post.title}
             </h1>
@@ -40,6 +40,6 @@ export function Header({posts}: { posts: Post[] }) {
                     <span suppressHydrationWarning={true}>{post.date}</span>
                 </span>
             </p>
-        </>
+        </div>
     );
 }
