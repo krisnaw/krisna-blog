@@ -7,6 +7,8 @@ export default async function Home() {
     const { data: posts } = await supabase
         .from('posts')
         .select('*')
+        .order('created_at', { ascending: false })
+        .not('published_at', 'is', 'null')
 
     return (
         <div>

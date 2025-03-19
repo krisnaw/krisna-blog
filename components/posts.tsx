@@ -15,7 +15,7 @@ export default function Posts({ posts }: { posts: Post[] }) {
                         <Link href={`/post/${post.slug}`} passHref={true}>
 
                             <p className="w-full inline-block self-start shrink-0 text-gray-500 dark:text-gray-500">
-                                {format(new Date(post.published_at), 'yyyy-MM-dd')}
+                                {format(new Date(post.created_at), 'yyyy-MM-dd')}
                             </p>
 
                             <h2 className="text-md/6 text-center sm:text-left grow dark:text-gray-100">

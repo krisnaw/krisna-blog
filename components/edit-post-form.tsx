@@ -1,7 +1,7 @@
 'use client'
 
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
-import {TipTapEditor} from "@/components/tip-tap-editor";
+import {TipTapEditor} from "@/components/tiptap/tip-tap-editor";
 import {Button} from "@/components/ui/button";
 import {Label} from "@/components/ui/label";
 import {Input} from "@/components/ui/input";

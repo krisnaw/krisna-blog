@@ -8,7 +8,14 @@ type TipTapEditorProps = {
 
 export function TipTapEditor({content, setContent}: TipTapEditorProps) {
     const editor = useEditor({
-        extensions: [StarterKit],
+        extensions: [StarterKit.configure(
+            {
+                // Configure an included extension
+                heading: {
+                    levels: [1, 2],
+                },
+            }
+        )],
         editorProps: {
             attributes: {
                 class: 'prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none',

@@ -11,4 +11,5 @@ export type Post = {
     title: string;
     slug: string;
     content: string;
+    created_at: string;
 };

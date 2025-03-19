@@ -2,6 +2,8 @@ import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow,} from "@/
 import {Post} from "@/lib/type";
 import {format} from "date-fns";
 import Link from "next/link";
+import ButtonPublishPost from "@/components/post/button-publish-post";
+import {Button} from "@/components/ui/button";
 
 export function PostTable({ posts } : { posts: Post[] }) {
     return (
@@ -22,10 +24,13 @@ export function PostTable({ posts } : { posts: Post[] }) {
                         <TableCell>
                             {post.published_at ? format(post.published_at, 'PPP') : 'Draft'}
                         </TableCell>
-                        <TableCell className="text-right">
-                            <Link href={`/post/${post.slug}/edit`}>
-                                Edit
-                            </Link>
+                        <TableCell className="text-right space-x-2">
+                            <ButtonPublishPost />
+                            <Button asChild size="sm">
+                                <Link href={`/post/${post.slug}/edit`}>
+                                    Edit
+                                </Link>
+                            </Button>
                         </TableCell>
                     </TableRow>
                 ))}
