@@ -1,5 +1,5 @@
 import {createClient} from "@/utils/supabase/server";
-import EditPostForm from "@/components/edit-post-form";
+import EditPostForm from "@/components/post/edit-post-form";
 
 export default async function EditPage({
                                            params,

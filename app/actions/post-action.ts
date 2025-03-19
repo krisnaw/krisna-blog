@@ -4,12 +4,22 @@ import {createClient} from "@/utils/supabase/server";
 import {ActionResponse} from "@/lib/type";
 import {revalidatePath} from "next/cache";
 
-export async function getPosts() {
+export async function getPosts(published = false) {
     const supabase = await createClient();
-
-    let { data: posts, error } = await supabase
+    
+    let query = supabase
         .from('posts')
         .select('*')
+        .order('created_at', { ascending: false })
+    
+    if (!published)  { query = query.not('published_at', 'is', 'null')}
+
+    const { data: posts, error } = await query
+
+    
+    if (error) {
+        return []
+    }
 
     return posts
 }
@@ -91,7 +101,6 @@ export async function updatePost(formData: FormData): Promise<ActionResponse> {
 export async function deletePost(id: string): Promise<ActionResponse> {
     const supabase = await createClient();
 
-
     const { error } = await supabase
         .from('posts')
         .delete()
@@ -105,7 +114,7 @@ export async function deletePost(id: string): Promise<ActionResponse> {
         };
     }
 
-    revalidatePath('/');
+    revalidatePath('/', 'layout');
     return {
         success: true,
         message: 'Post deleted successfully.',
@@ -115,6 +124,8 @@ export async function deletePost(id: string): Promise<ActionResponse> {
 
 export async function publishPost(id: string): Promise<ActionResponse> {
     const supabase = await createClient();
+
+    console.log(id)
 
     const {data, error} = await supabase
         .from('posts')
@@ -134,7 +145,36 @@ export async function publishPost(id: string): Promise<ActionResponse> {
         };
     }
 
-    revalidatePath('/');
+    revalidatePath('/', 'layout');
+    return {
+        success: true,
+        message: data,
+    };
+}
+
+
+export async function setPostToDraft(id: string): Promise<ActionResponse> {
+    const supabase = await createClient();
+
+    const {data, error} = await supabase
+        .from('posts')
+        .update({
+            published_at: null,
+        })
+        .eq('id', id)
+        .select()
+        .single();
+
+    if (error) {
+        console.log(error);
+        return {
+            success: false,
+            message: 'Failed to set the post to draft.',
+            error: error.message,
+        };
+    }
+
+    revalidatePath('/', 'layout');
     return {
         success: true,
         message: data,

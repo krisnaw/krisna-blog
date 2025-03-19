@@ -1,14 +1,9 @@
 import Posts from "@/components/posts";
-import {createClient} from "@/utils/supabase/server";
+import {getPosts} from "@/app/actions/post-action";
 
 export default async function Home() {
-    const supabase = await createClient();
 
-    const { data: posts } = await supabase
-        .from('posts')
-        .select('*')
-        .order('created_at', { ascending: false })
-        .not('published_at', 'is', 'null')
+    const posts = await getPosts();
 
     return (
         <div>

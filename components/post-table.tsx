@@ -4,6 +4,9 @@ import {format} from "date-fns";
 import Link from "next/link";
 import ButtonPublishPost from "@/components/post/button-publish-post";
 import {Button} from "@/components/ui/button";
+import ButtonSetDraft from "@/components/post/button-set-draft";
+import ButtonDeletePost from "@/components/post/button-delete-post";
+import {PencilIcon} from "lucide-react";
 
 export function PostTable({ posts } : { posts: Post[] }) {
     return (
@@ -12,7 +15,7 @@ export function PostTable({ posts } : { posts: Post[] }) {
                 <TableRow>
                     <TableHead>Title</TableHead>
                     <TableHead>Status</TableHead>
-                    <TableHead className="text-right">Amount</TableHead>
+                    <TableHead className="text-right">Actions</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
@@ -25,12 +28,13 @@ export function PostTable({ posts } : { posts: Post[] }) {
                             {post.published_at ? format(post.published_at, 'PPP') : 'Draft'}
                         </TableCell>
                         <TableCell className="text-right space-x-2">
-                            <ButtonPublishPost />
-                            <Button asChild size="sm">
+                            {post.published_at ? <ButtonSetDraft id={post.id} /> : <ButtonPublishPost id={post.id} />}
+                            <Button asChild size="icon">
                                 <Link href={`/post/${post.slug}/edit`}>
-                                    Edit
+                                    <PencilIcon />
                                 </Link>
                             </Button>
+                            <ButtonDeletePost id={post.id} />
                         </TableCell>
                     </TableRow>
                 ))}

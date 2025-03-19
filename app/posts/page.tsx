@@ -1,25 +1,20 @@
-import {createClient} from "@/utils/supabase/server";
 import {PostTable} from "@/components/post-table";
 import {Suspense} from "react";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
+import {getPosts} from "@/app/actions/post-action";
+import {PlusIcon} from "lucide-react";
 
 export default async function Page() {
-    const supabase = await createClient();
-
-    const { data: posts, error } = await supabase
-        .from('posts')
-        .select('*')
-
-    if (error) {
-        return <div>Error: {error.message}</div>
-    }
+    const posts = await getPosts(true);
 
     return (
         <div className="space-y-6">
             <div className="flex justify-end">
                 <Button asChild>
-                    <Link href="/post/create">Create</Link>
+                    <Link href="/post/create">
+                        <PlusIcon /> New Post
+                    </Link>
                 </Button>
             </div>
             <div className="mt-5">
