@@ -10,7 +10,7 @@ import {ActionResponse} from "@/lib/type";
 import {storePost} from "@/app/actions/post-action";
 import {useRouter} from "next/navigation";
 import {SaveIcon} from "lucide-react";
-import Link from "next/link";
+import {ButtonCancelPost} from "@/components/post/button-cancel-post";
 
 const initialState: ActionResponse = {
     success: false,
@@ -90,11 +90,7 @@ export default function CreatePostForm() {
                     </div>
                 </CardContent>
                 <CardFooter className="flex justify-between mt-5 pt-5">
-                    <Button asChild variant="secondary">
-                        <Link href="/posts">
-                            Cancel
-                        </Link>
-                    </Button>
+                    <ButtonCancelPost />
                     <Button type="submit" disabled={isPending}>
                         <SaveIcon />
                         {isPending ? "Saving..." : "Save"}
