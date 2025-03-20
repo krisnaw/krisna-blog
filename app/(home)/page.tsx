@@ -1,6 +1,7 @@
 import PostsListView from "@/components/post/posts-list-view";
 import {getPosts} from "@/app/actions/post-action";
 import {BlurFade} from "@/components/ui/blur-fade";
+import Link from "next/link";
 
 export default async function Home() {
 
@@ -19,6 +20,15 @@ export default async function Home() {
                         Nice to meet you
                     </span>
                 </BlurFade>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <Link href="/uploads">
+                            Presumable file uploads
+                        </Link>
+                    </li>
+                </ul>
             </div>
             <div>
                 { posts && <PostsListView posts={posts} />}
