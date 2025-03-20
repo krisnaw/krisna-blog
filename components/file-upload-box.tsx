@@ -6,7 +6,7 @@ import {useState} from "react";
 
 export function FileUploadBox() {
 
-    const [isDragging, setIsDragging] = useState(false)
+    const [isDragging] = useState(false)
 
 
     return (
