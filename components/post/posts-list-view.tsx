@@ -22,9 +22,8 @@ export default function PostsListView({ posts }: { posts: Post[] }) {
                             </h2>
 
                             <p className="text-xs/6 text-center sm:text-left mt-1.5 dark:text-gray-100">
-                                {post.slug}
+                                {post.excerpt}
                             </p>
-                            
                         </Link>
                     </li>
                 )

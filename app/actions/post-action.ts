@@ -30,7 +30,7 @@ export async function getPostBySlug(slug: string) {
         .from('posts')
         .select('*')
         .eq('slug', slug)
-        .single()
+        .maybeSingle()
 
     if (error) {
         throw new Error(error.message)
@@ -58,6 +58,7 @@ export async function storePost(formData: FormData): Promise<ActionResponse> {
             {
                 title: formData.get('title'),
                 slug: slug,
+                excerpt: formData.get('excerpt'),
                 content: formData.get('content'),
             },
         ])
@@ -93,6 +94,7 @@ export async function updatePost(formData: FormData): Promise<ActionResponse> {
             {
                 title: formData.get('title'),
                 slug: slug,
+                excerpt: formData.get('excerpt'),
                 content: formData.get('content'),
             }
         )

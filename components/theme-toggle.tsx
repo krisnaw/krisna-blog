@@ -4,14 +4,10 @@ import {Moon, Sun} from "lucide-react"
 import {cn} from "@/lib/utils"
 import {useTheme} from "next-themes";
 
-interface ThemeToggleProps {
-    className?: string
-}
 
-export function ThemeToggle({ className }: ThemeToggleProps) {
+export function ThemeToggle() {
     const { resolvedTheme, setTheme } = useTheme()
     const isDark = resolvedTheme === "dark"
-
 
     return (
         <div
@@ -20,7 +16,6 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
                 isDark
                     ? "bg-zinc-950 border border-zinc-800"
                     : "bg-white border border-zinc-200",
-                className
             )}
             onClick={() => setTheme(isDark ? "light" : "dark")}
             role="button"

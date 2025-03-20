@@ -10,6 +10,7 @@ export type Post = {
     published_at: string;
     title: string;
     slug: string;
+    excerpt: string;
     content: string;
     created_at: string;
 };

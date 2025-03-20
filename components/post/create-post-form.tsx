@@ -22,6 +22,7 @@ export default function CreatePostForm() {
     const router = useRouter();
     const [title, setTitle] = useState("");
     const [slug, setSlug] = useState("");
+    const [excerpt, setExcerpt] = useState("");
     const [content, setContent] = useState("");
 
     const [state, formAction, isPending] = useActionState<ActionResponse, FormData>(
@@ -77,6 +78,18 @@ export default function CreatePostForm() {
                             name={"slug"}
                             onChange={(e) => setSlug(e.target.value)}
                             placeholder="Enter slug"
+                            required
+                        />
+                    </div>
+
+                    <div className="space-y-2">
+                        <Label htmlFor="excerpt">excerpt</Label>
+                        <Input
+                            id="excerpt"
+                            value={excerpt}
+                            name={"excerpt"}
+                            onChange={(e) => setExcerpt(e.target.value)}
+                            placeholder="Enter excerpt"
                             required
                         />
                     </div>
