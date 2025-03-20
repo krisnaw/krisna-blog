@@ -5,7 +5,7 @@ import {join} from "path";
 export const revalidate = 60;
 
 // Image
-const rauchgPhoto = toArrayBuffer(
+const photoProfile = toArrayBuffer(
     readFileSync(join(process.cwd(), "public/images/profiles.jpg"))
 );
 
@@ -20,12 +20,12 @@ export async function GET() {
                 <main tw="flex grow pt-4 w-full justify-center items-center">
                     <div tw="flex flex-row">
                         <div tw="flex">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            { }
                             <img
                                 tw="rounded-full h-74"
                                 alt="Guillermo Rauch"
-                                // @ts-ignore
-                                src={rauchgPhoto}
+                                // @ts-expect-error: Source is a typed array, not a typical string URL or object
+                                src={photoProfile}
                             />
                         </div>
 
