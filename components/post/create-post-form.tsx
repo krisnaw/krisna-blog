@@ -18,6 +18,7 @@ const initialState: ActionResponse = {
     errors: undefined,
 }
 
+
 export default function CreatePostForm() {
     const router = useRouter();
     const [title, setTitle] = useState("");
@@ -28,17 +29,20 @@ export default function CreatePostForm() {
     const [state, formAction, isPending] = useActionState<ActionResponse, FormData>(
         async (prevState: ActionResponse, formData: FormData) => {
 
-            try {
-                const res = await storePost(formData);
+            const data = {
+                title : formData.get('title') as string,
+                slug : formData.get('slug') as string,
+                excerpt : formData.get('excerpt') as string,
+                content : formData.get('content') as string,
+            }
 
+            try {
+                const res = await storePost(data);
                 if (res.success) {
                     router.push('/post')
                 }
-
                 return res;
-
             } catch (err) {
-                console.log(err)
                 return {
                     success: false,
                     message: 'Error',
@@ -49,6 +53,7 @@ export default function CreatePostForm() {
             
     }, initialState);
 
+    console.log(state)
 
     return (
         <Card>
@@ -61,6 +66,7 @@ export default function CreatePostForm() {
                     <div className="space-y-2">
                         <Label htmlFor="title">Title</Label>
                         <Input
+                            aria-invalid={!!state?.errors?.title}
                             id="title"
                             value={title}
                             name={"title"}
@@ -68,11 +74,15 @@ export default function CreatePostForm() {
                             placeholder="Enter post title"
                             required
                         />
+                        {state?.errors?.title && (
+                            <p className="text-red-500 text-sm">{state.errors.title}</p>
+                        )}
                     </div>
 
                     <div className="space-y-2">
                         <Label htmlFor="slug">Slug</Label>
                         <Input
+                            aria-invalid={!!state?.errors?.slug}
                             id="slug"
                             value={slug}
                             name={"slug"}
@@ -80,11 +90,15 @@ export default function CreatePostForm() {
                             placeholder="Enter slug"
                             required
                         />
+                        {state?.errors?.slug && (
+                            <p className="text-red-500 text-sm">{state.errors.slug}</p>
+                        )}
                     </div>
 
                     <div className="space-y-2">
                         <Label htmlFor="excerpt">excerpt</Label>
                         <Input
+                            aria-invalid={!!state?.errors?.excerpt}
                             id="excerpt"
                             value={excerpt}
                             name={"excerpt"}
@@ -92,14 +106,22 @@ export default function CreatePostForm() {
                             placeholder="Enter excerpt"
                             required
                         />
+                        
+                        {state?.errors?.excerpt && (
+                            <p className="text-red-500 text-sm">{state.errors.excerpt}</p>
+                        )}
                     </div>
 
                     <div className="space-y-2">
                         <Label htmlFor="content">Content</Label>
                         <input type="hidden" value={content} name="content"/>
-                        <div className="border border-input rounded-md p-4">
+                        <div
+                            className={`border rounded-md  py-2 ${state?.errors?.content ? 'border-destructive ring-destructive/20 dark:ring-destructive/40' : 'border-input'}`}>
                             <TipTapEditor content={content} setContent={setContent}/>
                         </div>
+                        {state?.errors?.content && (
+                            <p className="text-red-500 text-sm">{state.errors.content}</p>
+                        )}
                     </div>
                 </CardContent>
                 <CardFooter className="flex justify-between mt-5 pt-5">

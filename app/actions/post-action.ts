@@ -3,80 +3,59 @@
 import {createClient} from "@/utils/supabase/server";
 import {ActionResponse} from "@/lib/type";
 import {revalidatePath} from "next/cache";
+import {z} from "zod";
+import {slugify} from "@/app/actions/action-utils";
 
-export async function getPosts(published = false) {
-    const supabase = await createClient();
-    
-    let query = supabase
-        .from('posts')
-        .select('*')
-        .order('created_at', { ascending: false })
-    
-    if (!published)  { query = query.not('published_at', 'is', 'null')}
+// Define validation schema
+const postFormSchema = z.object({
+    title: z.string().min(10, "Title must be at least 10 characters long"),
+    slug: z.string()
+        .min(3, "Slug must be at least 3 characters long")
+        .regex(/^[a-z0-9-]+$/, "Slug can only contain lowercase letters, numbers and hyphens"),
+    excerpt: z.string().min(10, "Excerpt must be at least 10 characters long").max(140, "Excerpt must not exceed 140 characters"),
+    content: z.string().min(20, "Content must be at least 20 characters long")
+});
 
-    const { data: posts, error } = await query
+export type postFormData = z.infer<typeof postFormSchema>
 
-    if (error) {
-        throw new Error(error.message)
+export async function storePost(dataForm: postFormData): Promise<ActionResponse> {
+
+    const validationResult = postFormSchema.safeParse(dataForm)
+
+    if (!validationResult.success) {
+        console.log(validationResult.error)
+        return {
+            success: false,
+            message: 'Validation failed',
+            errors: validationResult.error.flatten().fieldErrors,
+        }
     }
 
-    return posts
-}
-
-export async function getPostBySlug(slug: string) {
     const supabase = await createClient();
 
-    const { data: post, error } = await supabase
-        .from('posts')
-        .select('*')
-        .eq('slug', slug)
-        .maybeSingle()
+    const validatedData = validationResult.data
 
-    if (error) {
-        throw new Error(error.message)
-    }
-    
-    return post
-}
-
-const slugify = (value: string) => {
-    return value
-        .toLowerCase()
-        .trim()
-        .replace(/[\s\W-]+/g, '-')
-        .replace(/^[-]+|[-]+$/g, '');
-};
-
-export async function storePost(formData: FormData): Promise<ActionResponse> {
-    const supabase = await createClient();
-
-    const slug = slugify(formData.get('slug') as string)
-
+    const slug = slugify(validatedData.slug)
     const {data, error} = await supabase
         .from('posts')
         .insert([
             {
-                title: formData.get('title'),
+                title: validatedData.title,
                 slug: slug,
-                excerpt: formData.get('excerpt'),
-                content: formData.get('content'),
+                excerpt: validatedData.excerpt,
+                content: validatedData.content,
             },
         ])
         .select()
         .single()
 
-
     if (error) {
-        console.log(error)
         return {
             success: false,
             message: 'Something went wrong',
             error: error.message,
         }
     }
-
-    console.log(data)
-
     return {
         success: true,
         message: data
@@ -198,4 +177,39 @@ export async function setPostToDraft(id: string): Promise<ActionResponse> {
         success: true,
         message: data,
     };
+}
+
+export async function getPosts(published = false) {
+    const supabase = await createClient();
+
+    let query = supabase
+        .from('posts')
+        .select('*')
+        .order('created_at', { ascending: false })
+
+    if (!published)  { query = query.not('published_at', 'is', 'null')}
+
+    const { data: posts, error } = await query
+
+    if (error) {
+        throw new Error(error.message)
+    }
+
+    return posts
+}
+
+export async function getPostBySlug(slug: string) {
+    const supabase = await createClient();
+
+    const { data: post, error } = await supabase
+        .from('posts')
+        .select('*')
+        .eq('slug', slug)
+        .maybeSingle()
+
+    if (error) {
+        throw new Error(error.message)
+    }
+
+    return post
 }
