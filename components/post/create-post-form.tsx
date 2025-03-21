@@ -43,6 +43,7 @@ export default function CreatePostForm() {
                 }
                 return res;
             } catch (err) {
+                console.log(err)
                 return {
                     success: false,
                     message: 'Error',
