@@ -47,13 +47,13 @@ export default function About() {
                         A design that connects AI technology and user experience
                     </h5>
                     <p className="mt-5 text-lg text-gray-600">
-                        Hello! En. It is. We are focusing on MVP development that hypothesisifies the user experience of the new era based on AI at high speed.
+                        My interests span a broad spectrum of subjects, encompassing web development, creative coding, and technology.
                     </p>
                 </div>
 
                 <div className="mt-10 flex flex-col-reverse md:flex-row gap-3">
                     <Button className="w-1/2" size="lg" variant="secondary">Inquire</Button>
-                    <Button className="w-1/2" size="lg">Make an appoinment</Button>
+                    <Button className="w-1/2" size="lg">Make an appointment</Button>
                 </div>
 
             </section>
@@ -64,6 +64,10 @@ export default function About() {
                 </div>
 
                 <div className="space-y-6">
+                    <div>
+                        <div className="text-black/50 text-sm mb-1">2024 - Present</div>
+                        <h3 className="text-base font-medium mb-3">AI-UX Designer &amp; Engineer at</h3>
+                    </div>
                     <div>
                         <div className="text-black/50 text-sm mb-1">2024 - Present</div>
                         <h3 className="text-base font-medium mb-3">AI-UX Designer &amp; Engineer at</h3>
