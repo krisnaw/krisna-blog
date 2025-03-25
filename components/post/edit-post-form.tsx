@@ -1,7 +1,6 @@
 'use client'
 
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
-import {TipTapEditor} from "@/components/tiptap/tip-tap-editor";
 import {Button} from "@/components/ui/button";
 import {Label} from "@/components/ui/label";
 import {Input} from "@/components/ui/input";
@@ -11,6 +10,7 @@ import {updatePost} from "@/app/actions/post-action";
 import {useRouter} from "next/navigation";
 import {SaveIcon} from "lucide-react";
 import {ButtonCancelPost} from "@/components/post/button-cancel-post";
+import {Textarea} from "@/components/ui/textarea";
 
 const initialState: ActionResponse = {
     success: false,
@@ -28,8 +28,16 @@ export default function EditPostForm({ post }: { post: Post}) {
     const [state, formAction, isPending] = useActionState<ActionResponse, FormData>(
         async (prevState: ActionResponse, formData: FormData) => {
 
+            const data = {
+                id : formData.get('id') as string,
+                title : formData.get('title') as string,
+                slug : formData.get('slug') as string,
+                excerpt : formData.get('excerpt') as string,
+                content : formData.get('content') as string,
+            }
+
             try {
-                const res = await updatePost(formData);
+                const res = await updatePost(data);
 
                 if (res.success) {
                     router.push('/post')
@@ -68,6 +76,9 @@ export default function EditPostForm({ post }: { post: Post}) {
                             placeholder="Enter post title"
                             required
                         />
+                        {state?.errors?.title && (
+                            <p className="text-red-500 text-sm">{state.errors.title}</p>
+                        )}
                     </div>
 
                     <div className="space-y-2">
@@ -80,6 +91,9 @@ export default function EditPostForm({ post }: { post: Post}) {
                             placeholder="Enter slug"
                             required
                         />
+                        {state?.errors?.slug && (
+                            <p className="text-red-500 text-sm">{state.errors.slug}</p>
+                        )}
                     </div>
 
                     <div className="space-y-2">
@@ -92,14 +106,17 @@ export default function EditPostForm({ post }: { post: Post}) {
                             placeholder="Enter excerpt"
                             required
                         />
+                        {state?.errors?.excerpt && (
+                            <p className="text-red-500 text-sm">{state.errors.excerpt}</p>
+                        )}
                     </div>
 
                     <div className="space-y-2">
                         <Label htmlFor="content">Content</Label>
-                        <input type="hidden" value={content} name="content"/>
-                        <div className="border border-input rounded-md">
-                            <TipTapEditor content={content} setContent={setContent}/>
-                        </div>
+                        <Textarea value={content} name="content" onChange={(e) => setContent(e.target.value)} />
+                        {state?.errors?.content && (
+                            <p className="text-red-500 text-sm">{state.errors.content}</p>
+                        )}
                     </div>
                 </CardContent>
                 <CardFooter className="flex justify-between mt-5 pt-5">

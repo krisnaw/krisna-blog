@@ -47,7 +47,7 @@ export default function About() {
                         A design that connects AI technology and user experience
                     </h5>
                     <p className="mt-5 text-lg text-gray-600">
-                        My interests span a broad spectrum of subjects, encompassing web development, creative coding, and technology.
+                        My interests span a broad spectrum of subjects, encompassing web development, AI, and technology in general.
                     </p>
                 </div>
 

@@ -1,7 +1,6 @@
 'use client'
 
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
-import {TipTapEditor} from "@/components/tiptap/tip-tap-editor";
 import {Button} from "@/components/ui/button";
 import {Label} from "@/components/ui/label";
 import {Input} from "@/components/ui/input";
@@ -11,13 +10,13 @@ import {storePost} from "@/app/actions/post-action";
 import {useRouter} from "next/navigation";
 import {SaveIcon} from "lucide-react";
 import {ButtonCancelPost} from "@/components/post/button-cancel-post";
+import {Textarea} from "@/components/ui/textarea";
 
 const initialState: ActionResponse = {
     success: false,
     message: '',
     errors: undefined,
 }
-
 
 export default function CreatePostForm() {
     const router = useRouter();
@@ -115,11 +114,7 @@ export default function CreatePostForm() {
 
                     <div className="space-y-2">
                         <Label htmlFor="content">Content</Label>
-                        <input type="hidden" value={content} name="content"/>
-                        <div
-                            className={`border rounded-md  py-2 ${state?.errors?.content ? 'border-destructive ring-destructive/20 dark:ring-destructive/40' : 'border-input'}`}>
-                            <TipTapEditor content={content} setContent={setContent}/>
-                        </div>
+                        <Textarea value={content} name="content" onChange={(e) => setContent(e.target.value)} />
                         {state?.errors?.content && (
                             <p className="text-red-500 text-sm">{state.errors.content}</p>
                         )}

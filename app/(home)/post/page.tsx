@@ -12,7 +12,9 @@ export default async function Page() {
 
     if (posts.length === 0) {
         return (
-            <NoPostState />
+            <div className="flex items-center justify-center">
+                <NoPostState />
+            </div>
         )
     }
 

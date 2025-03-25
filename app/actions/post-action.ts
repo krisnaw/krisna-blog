@@ -8,10 +8,16 @@ import {slugify} from "@/app/actions/action-utils";
 
 // Define validation schema
 const postFormSchema = z.object({
+    id: z.string().optional(),
     title: z.string().min(10, "Title must be at least 10 characters long"),
     slug: z.string()
-        .min(3, "Slug must be at least 3 characters long")
-        .regex(/^[a-z0-9-]+$/, "Slug can only contain lowercase letters, numbers and hyphens"),
+        .transform((val) => slugify(val))
+        .pipe(
+            z.string()
+                .min(3, "Slug must be at least 3 characters long")
+                .regex(/^[a-z0-9-]+$/, "Slug can only contain lowercase letters, numbers and hyphens")
+        )
+    ,
     excerpt: z.string().min(10, "Excerpt must be at least 10 characters long").max(140, "Excerpt must not exceed 140 characters"),
     content: z.string().min(20, "Content must be at least 20 characters long")
 });
@@ -35,13 +41,12 @@ export async function storePost(dataForm: postFormData): Promise<ActionResponse>
 
     const validatedData = validationResult.data
 
-    const slug = slugify(validatedData.slug)
     const {data, error} = await supabase
         .from('posts')
         .insert([
             {
                 title: validatedData.title,
-                slug: slug,
+                slug: validatedData.slug,
                 excerpt: validatedData.excerpt,
                 content: validatedData.content,
             },
@@ -62,22 +67,31 @@ export async function storePost(dataForm: postFormData): Promise<ActionResponse>
     }
 }
 
-export async function updatePost(formData: FormData): Promise<ActionResponse> {
+export async function updatePost(dataForm: postFormData): Promise<ActionResponse> {
     const supabase = await createClient();
 
-    const slug = slugify(formData.get('slug') as string)
+    const validationResult = postFormSchema.safeParse(dataForm)
+
+    if (!validationResult.success) {
+        return {
+            success: false,
+            message: 'Validation failed',
+            errors: validationResult.error.flatten().fieldErrors,
+        }
+    }
+    const validatedData = validationResult.data
 
     const {data, error} = await supabase
         .from('posts')
         .update(
             {
-                title: formData.get('title'),
-                slug: slug,
-                excerpt: formData.get('excerpt'),
-                content: formData.get('content'),
+                title: validatedData.title,
+                slug: validatedData.slug,
+                excerpt: validatedData.excerpt,
+                content: validatedData.content,
             }
         )
-        .eq('id', formData.get('id') as string)
+        .eq('id', dataForm.id)
         .select()
         .single()
 

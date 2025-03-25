@@ -1,4 +1,5 @@
 import {createClient} from "@/utils/supabase/server";
+import markdownHtml from 'zenn-markdown-html';
 
 export default async function Page({
                                        params,
@@ -18,10 +19,16 @@ export default async function Page({
         return <div>Error: {error.message}</div>
     }
 
+    const html = markdownHtml(post.content, {});
+
     return (
-        <div>
-            <div className="prose prose-sm focus:outline-none max-w-none dark:prose-invert"
-                 dangerouslySetInnerHTML={{__html: post.content}}/>
-        </div>
+        <div
+
+            className="prose prose-sm focus:outline-none max-w-none dark:prose-invert"
+
+            dangerouslySetInnerHTML={{
+                __html: html,
+            }}
+        />
     )
 }
