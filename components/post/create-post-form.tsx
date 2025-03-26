@@ -53,8 +53,6 @@ export default function CreatePostForm() {
             
     }, initialState);
 
-    console.log(state)
-
     return (
         <Card>
             <CardHeader>

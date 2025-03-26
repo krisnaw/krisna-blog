@@ -1,5 +1,4 @@
 import {getPostBySlug} from "@/app/actions/post-action";
-import {PostHeader} from "@/components/post/post-header";
 
 export default async function DashboardLayout(
     {children, params} : { children: React.ReactNode, params: Promise<{ slug: string }> }
@@ -19,8 +18,6 @@ export default async function DashboardLayout(
 
     return (
         <div>
-            <PostHeader post={post} />
-
             {children}
         </div>
     )

@@ -1,6 +1,8 @@
 import {BlurFade} from "@/components/ui/blur-fade";
 import {Button} from "@/components/ui/button";
 import Image from "next/image";
+import {specializedAreas} from "./data";
+
 
 export default function About() {
     return (
@@ -43,10 +45,10 @@ export default function About() {
 
 
                 <div className="mt-10">
-                    <h5 className="text-4xl font-extrabold text-gray-900">
+                    <h5 className="text-4xl font-extrabold ">
                         A design that connects AI technology and user experience
                     </h5>
-                    <p className="mt-5 text-lg text-gray-600">
+                    <p className="mt-5 text-lg ">
                         My interests span a broad spectrum of subjects, encompassing web development, AI, and technology in general.
                     </p>
                 </div>
@@ -65,11 +67,11 @@ export default function About() {
 
                 <div className="space-y-6">
                     <div>
-                        <div className="text-black/50 text-sm mb-1">2024 - Present</div>
+                        <div className="text-black/50 text-sm mb-1 dark:text-white/70">2024 - Present</div>
                         <h3 className="text-base font-medium mb-3">AI-UX Designer &amp; Engineer at</h3>
                     </div>
                     <div>
-                        <div className="text-black/50 text-sm mb-1">2024 - Present</div>
+                        <div className="text-black/50 text-sm mb-1 dark:text-white/70">2024 - Present</div>
                         <h3 className="text-base font-medium mb-3">AI-UX Designer &amp; Engineer at</h3>
                     </div>
                 </div>
@@ -83,23 +85,20 @@ export default function About() {
                     </p>
                 </div>
                 <div className="space-y-4">
-                    <div className="rounded-3xl border text-card-foreground shadow-sm overflow-hidden bg-[#F6F5F4]">
-                        <div className="p-8 px-5 py-4"><h3 className="font-bold">AI</h3><p
-                            className="text-sm text-gray-600">Designing workflows using LLM, customization of Diffusion
-                            models</p></div>
-                    </div>
-
-                    <div className="rounded-3xl border text-card-foreground shadow-sm overflow-hidden bg-[#F6F5F4]">
-                        <div className="p-8 px-5 py-4"><h3 className="font-bold">AI</h3><p
-                            className="text-sm text-gray-600">Designing workflows using LLM, customization of Diffusion
-                            models</p></div>
-                    </div>
-
-                    <div className="rounded-3xl border text-card-foreground shadow-sm overflow-hidden bg-[#F6F5F4]">
-                        <div className="p-8 px-5 py-4"><h3 className="font-bold">AI</h3><p
-                            className="text-sm text-gray-600">Designing workflows using LLM, customization of Diffusion
-                            models</p></div>
-                    </div>
+                    
+                    {specializedAreas.map((area) => (
+                        <div key={area.title} className="rounded-3xl border text-card-foreground shadow-sm overflow-hidden bg-[#F6F5F4] dark:bg-[#2C2C2C]">
+                            <div className="p-8 px-5 py-4">
+                                <h3 className="font-bold">
+                                    {area.title}
+                                </h3>
+                                <p className="text-sm text-gray-600 dark:text-white">
+                                    {area.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                    
                 </div>
             </section>
 

@@ -22,7 +22,7 @@ export default async function Page() {
         <div className="space-y-6">
             <div className="flex justify-end">
                 <Button asChild>
-                    <Link href="/post/create">
+                    <Link href="/posts/create">
                         <PlusIcon /> New Post
                     </Link>
                 </Button>

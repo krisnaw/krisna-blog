@@ -1,5 +1,7 @@
 import {createClient} from "@/utils/supabase/server";
 import markdownHtml from 'zenn-markdown-html';
+import {PostHeader} from "@/components/post/post-header";
+
 
 export default async function Page({
                                        params,
@@ -22,13 +24,16 @@ export default async function Page({
     const html = markdownHtml(post.content, {});
 
     return (
-        <div
+        <div>
+            <PostHeader post={post} />
+            <div
 
-            className="prose prose-sm focus:outline-none max-w-none dark:prose-invert"
+                className="prose prose-sm focus:outline-none max-w-none dark:prose-invert"
 
-            dangerouslySetInnerHTML={{
-                __html: html,
-            }}
-        />
+                dangerouslySetInnerHTML={{
+                    __html: html,
+                }}
+            />
+        </div>
     )
 }

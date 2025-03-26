@@ -40,7 +40,7 @@ export default function RegisterForm() {
 
       toast("Registration successful")
 
-      router.push('/dashboard')
+      router.push('/')
 
       return {
         success: true,
