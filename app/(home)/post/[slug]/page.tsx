@@ -24,16 +24,17 @@ export default async function Page({
     const html = markdownHtml(post.content, {});
 
     return (
-        <div>
+        <div className="relative">
             <PostHeader post={post} />
-            <div
 
+            <div
                 className="prose prose-sm focus:outline-none max-w-none dark:prose-invert"
 
                 dangerouslySetInnerHTML={{
                     __html: html,
                 }}
             />
+
         </div>
     )
 }

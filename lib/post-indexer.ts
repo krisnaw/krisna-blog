@@ -52,3 +52,35 @@ function getMDXData(dir: fs.PathLike) {
 export function getBlogPosts() {
     return getMDXData(path.join(process.cwd(), 'markdown'))
 }
+
+export function generateTOC(markdown: string): string {
+    // Split the Markdown text into lines
+    const lines = markdown.split('\n');
+
+    // Array to store TOC entries
+    const toc: string[] = ['### Table of Contents'];
+
+    // Regular expression to match Markdown headings (e.g., #, ##, ###)
+    const headingRegex = /^(#+)\s+(.+)$/;
+
+    // Iterate through each line to find headings
+    for (const line of lines) {
+        const match = line.match(headingRegex);
+        if (match) {
+            const level = match[1].length; // Number of # symbols (e.g., 1 for #, 2 for ##)
+            const title = match[2].trim(); // The heading text
+
+            // Create a slug for the anchor link (e.g., "My Heading" -> "my-heading")
+            const slug = title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+
+            // Indent based on heading level (2 spaces per level beyond 1)
+            const indent = '  '.repeat(level - 1);
+
+            // Add TOC entry with Markdown link
+            toc.push(`${indent}- [${title}](#${slug})`);
+        }
+    }
+
+    // Return the TOC as a string, or a message if no headings are found
+    return toc.length > 1 ? toc.join('\n') : 'No headings found in the Markdown text.';
+}
