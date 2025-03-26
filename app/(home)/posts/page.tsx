@@ -5,18 +5,26 @@ import {Button} from "@/components/ui/button";
 import {getPosts} from "@/app/actions/post-action";
 import {PlusIcon} from "lucide-react";
 import {Post} from "@/lib/type";
-import {NoPostState} from "@/components/post/no-post-state";
+import {InputSearchPost} from "@/components/post/input-search-post";
+import {parseSearchParams} from "@/lib/url-state";
 
-export default async function Page() {
-    const posts: Post[] = await getPosts(true);
+export default async function Page(  props: {
+    searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
 
-    if (posts.length === 0) {
-        return (
-            <div className="flex items-center justify-center">
-                <NoPostState />
-            </div>
-        )
-    }
+    // search query
+    const searchParams = await props.searchParams;
+    const parsedSearchParams = parseSearchParams(searchParams);
+
+    const posts: Post[] = await getPosts(true, parsedSearchParams.search);
+
+    // if (posts.length === 0) {
+    //     return (
+    //         <div className="flex items-center justify-center">
+    //             <NoPostState />
+    //         </div>
+    //     )
+    // }
 
     return (
         <div className="space-y-6">
@@ -28,6 +36,10 @@ export default async function Page() {
                 </Button>
             </div>
             <div className="mt-5">
+
+                <div>
+                    <InputSearchPost />
+                </div>
                 <Suspense fallback={<div>Loading...</div>}>
                     <PostsTableView posts={posts}/>
                 </Suspense>

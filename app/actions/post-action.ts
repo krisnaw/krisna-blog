@@ -193,7 +193,7 @@ export async function setPostToDraft(id: string): Promise<ActionResponse> {
     };
 }
 
-export async function getPosts(published = false) {
+export async function getPosts(published = false, search?: string) {
     const supabase = await createClient();
 
     let query = supabase
@@ -202,6 +202,7 @@ export async function getPosts(published = false) {
         .order('created_at', { ascending: false })
 
     if (!published)  { query = query.not('published_at', 'is', 'null')}
+    if (search) { query = query.textSearch('title_content', `%${search}%`)}
 
     const { data: posts, error } = await query
 
