@@ -40,6 +40,7 @@ export default async function Page(  props: {
                 <div>
                     <InputSearchPost />
                 </div>
+
                 <Suspense fallback={<div>Loading...</div>}>
                     <PostsTableView posts={posts}/>
                 </Suspense>

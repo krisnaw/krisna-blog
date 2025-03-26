@@ -22,7 +22,9 @@ export function PostsTableView({ posts } : { posts: Post[] }) {
                 {posts.map((post) => (
                     <TableRow key={post.slug}>
                         <TableCell className="font-medium">
-                            {post.title}
+                            <Link href={`/post/${post.slug}`} className="hover:underline">
+                                {post.title}
+                            </Link>
                         </TableCell>
                         <TableCell>
                             {post.published_at ? format(post.published_at, 'PPP') : 'Draft'}

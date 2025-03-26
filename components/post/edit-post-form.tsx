@@ -40,7 +40,7 @@ export default function EditPostForm({ post }: { post: Post}) {
                 const res = await updatePost(data);
 
                 if (res.success) {
-                    router.push('/post')
+                    router.push('/posts')
                 }
 
                 return res;
