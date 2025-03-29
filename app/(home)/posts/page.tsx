@@ -8,6 +8,10 @@ import {Post} from "@/lib/type";
 import {InputSearchPost} from "@/components/post/input-search-post";
 import {parseSearchParams} from "@/lib/url-state";
 
+// Next.js will invalidate the cache when a
+// request comes in, at most once every 60 seconds.
+export const revalidate = 60
+
 export default async function Page(  props: {
     searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
