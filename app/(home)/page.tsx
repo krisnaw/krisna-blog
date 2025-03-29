@@ -1,7 +1,6 @@
 import PostsListView from "@/components/post/posts-list-view";
 import {getPosts} from "@/app/actions/post-action";
 import type {Metadata} from 'next'
-import {Suspense} from "react";
 
 export const metadata: Metadata = {
     title: 'Krisna Wijaya',
@@ -14,9 +13,7 @@ export default async function Home() {
 
     return (
         <div>
-            <Suspense fallback={<div>Loading...</div>}>
-                {posts && <PostsListView posts={posts}/>}
-            </Suspense>
+            {posts && <PostsListView posts={posts}/>}
         </div>
     )
 }
