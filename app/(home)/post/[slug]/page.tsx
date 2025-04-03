@@ -1,6 +1,7 @@
 import {createClient} from "@/utils/supabase/client";
 import markdownHtml from 'zenn-markdown-html';
 import {PostHeader} from "@/components/post/post-header";
+import {notFound} from "next/navigation";
 
 export default async function Page({
                                        params,
@@ -17,7 +18,7 @@ export default async function Page({
         .single()
 
     if (error) {
-        return <div>Error: {error.message}</div>
+        notFound()
     }
 
     const html = markdownHtml(post.content, {});

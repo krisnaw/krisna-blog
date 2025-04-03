@@ -2,7 +2,6 @@ import {UploadProfile} from "@/components/upload-widget/upload-profile";
 import {UploadFiles} from "@/components/upload-widget/upload-files";
 import {UpdateProfile} from "@/components/upload-widget/update-profile";
 
-
 export default function Page() {
     return (
         <div>
