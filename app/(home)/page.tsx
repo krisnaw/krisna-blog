@@ -1,14 +1,7 @@
 import type {Metadata} from 'next'
-import {Funnel_Display} from 'next/font/google'
 import {unstable_ViewTransition as ViewTransition} from 'react'
 import {HeroSection} from "@/components/section/hero-section";
 import {AboutEngSection} from "@/components/section/about-eng-section";
-
-const funnel = Funnel_Display({
-    weight: ['400'],
-    style: ['normal'],
-    subsets: ['latin'],
-})
 
 export const metadata: Metadata = {
     title: 'Krisna Wijaya',
