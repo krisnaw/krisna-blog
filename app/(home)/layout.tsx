@@ -8,7 +8,7 @@ export default async function HomeLayout(
     return (
         <div className="flex flex-col h-screen justify-between">
             <Header />
-            <main className="p-6 pt-3">
+            <main>
                 {children}
             </main>
             <Footer />
