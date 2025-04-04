@@ -42,13 +42,13 @@ export default async function Home() {
 
             </div>
 
-            <section className="bg-gray-100 rounded-lg py-32">
+            <section className="rounded-lg py-32">
                 <div className="max-w-5xl mx-auto">
                     <div className="flex justify-between items-center gap-10">
-                        <div className={`text-6xl font-bold ${funnel.className}`}>
+                        <div className={`text-6xl px-6 font-bold ${funnel.className}`}>
                             What&#39;s a Product Engineering?
                         </div>
-                        <div className="max-w-lg space-y-6">
+                        <div className="max-w-4xl space-y-6">
                             <p className={`leading-relaxed text-2xl/6 ${funnel.className}`}>
                                 As a Product Engineer, I blend the problem-solving mindset of a product builder with the technical expertise of a full-stack developer.
                             </p>
@@ -63,28 +63,6 @@ export default async function Home() {
                     </div>
                 </div>
             </section>
-
-            <div className="mt-20 pt-24 pb-16 sm:pt-32 sm:pb-24 xl:pb-32">
-                <div className="pb-20 sm:pb-24 xl:pb-0">
-                    <div className="max-w-5xl mx-auto">
-                        <div className="max-w-xl">
-                            <h4 className="text-4xl font-bold">
-                                Haup Car - Charter Services
-                            </h4>
-                            <p className="mt-5 text-lg font-light">
-                                Implemented Figma designs into a functional web application using React and Ant Design, ensuring seamless UI and API integration for Haup Car.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="mt-10">
-                        <a href="/haup">
-                            <img className="object-cover h-96 w-full rounded-lg shadow-lg"
-                                 src="/images/template1.png" alt="Haup Car"/>
-                        </a>
-                    </div>
-                </div>
-            </div>
 
             <div className="mt-20 pt-24 pb-16 sm:pt-32 sm:pb-24 xl:pb-32">
                 <div className="pb-20 sm:pb-24 xl:pb-0">

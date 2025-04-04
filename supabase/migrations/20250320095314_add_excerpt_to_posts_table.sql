@@ -1,2 +1,0 @@
-ALTER TABLE posts
-    ADD COLUMN excerpt TEXT NULL;
