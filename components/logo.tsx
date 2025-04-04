@@ -1,18 +1,27 @@
 "use client";
-import { usePathname } from "next/navigation";
+import {useTheme} from "next-themes";
+import {useMemo} from "react";
 import Link from "next/link";
 
 export function Logo() {
-    const pathname = usePathname();
+    const {theme} = useTheme();
+
+    // Use useMemo to derive logo path from theme
+    const logoPath = useMemo(() => {
+        return theme === "light"
+            ? "/images/logo-dark.svg"
+            : "/images/logo-white.svg";
+    }, [theme]);
+
     return (
-        <span className="text-md md:text-lg whitespace-nowrap font-bold">{pathname === "/" ?
-            (<span className="cursor-default pr-2">Krisna Wijaya</span>) :
-            (
-                <Link href="/" className="hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] p-2 rounded-sm -ml-2 transition-[background-color]">
-                    Krisna Wijaya
-                </Link>
-            )
-        }
-        </span>
+        <Link href="/" className="inline-flex">
+            <img
+                src={logoPath}
+                alt="Logo"
+                width={32}
+                height={32}
+                aria-label="Homepage"
+            />
+        </Link>
     );
 }

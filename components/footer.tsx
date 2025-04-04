@@ -1,16 +1,16 @@
 import Image from "next/image";
-import {Roboto_Mono} from 'next/font/google'
-
-const roboto_mono = Roboto_Mono({
-    subsets: ['latin'],
-    variable: '--font-roboto-mono',
-    display: 'swap',
-})
+// import {Roboto_Mono} from 'next/font/google'
+//
+// const roboto_mono = Roboto_Mono({
+//     subsets: ['latin'],
+//     variable: '--font-roboto-mono',
+//     display: 'swap',
+// })
 
 export default function Footer() {
     return (
-        <footer className={`border-t border-gray-200 dark:border-gray-700 py-6 ${roboto_mono.className}`}>
-            <div className="px-6">
+        <footer className="sticky bottom-0 pt-4 pb-6 border-t border-gray-300 bg-white dark:bg-[#242424] opacity-30">
+            <div className="max-w-5xl m-auto py-3">
                 <div className="flex justify-between">
                     <div className={` text-lg`}>
                         Design and build by Krisna Wijaya

@@ -2,6 +2,7 @@ import type {Metadata} from 'next'
 import Image from 'next/image'
 import {Funnel_Display} from 'next/font/google'
 import {BlurFade} from "@/components/ui/blur-fade";
+import {unstable_ViewTransition as ViewTransition} from 'react'
 
 const funnel = Funnel_Display({
     weight: ['400'],
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
     return (
-        <div>
+        <ViewTransition>
 
             <div className="max-w-5xl m-auto py-32 min-h-screen">
 
@@ -87,6 +88,6 @@ export default async function Home() {
             </div>
 
 
-        </div>
+        </ViewTransition>
     )
 }
