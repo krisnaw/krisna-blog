@@ -3,10 +3,9 @@ import {Button} from "@/components/ui/button";
 import Image from "next/image";
 import {specializedAreas} from "./data";
 
-
 export default function About() {
     return (
-        <div className="space-y-10">
+        <div className="space-y-10 mx-auto max-w-3xl py-10">
 
             <section>
 

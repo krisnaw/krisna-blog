@@ -8,7 +8,7 @@ const funnel = Funnel_Display({
     subsets: ['latin'],
 })
 
-export function HeroSection() {
+export default function HeroSection() {
     return (
         <div className="max-w-5xl m-auto py-32 min-h-screen">
 
@@ -36,7 +36,6 @@ export function HeroSection() {
                 </div>
 
             </div>
-
         </div>
     )
 }

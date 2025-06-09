@@ -1,29 +1,22 @@
-import {Logo} from "@/components/logo";
-import {ModeToggle} from "@/components/mode-toggle";
 import Link from "next/link";
 
-export default function Header() {
+export default async function Header() {
+    const companyName = process.env.NEXT_PUBLIC_COMPANY_NAME || "Your Company, Inc.";
+
     return (
-        <header>
-            <div className="max-w-5xl m-auto py-3">
-                <nav className="mx-auto flex items-center justify-between">
-
-                    <div className="flex items-center w-full">
-                        <Logo/>
-                    </div>
-
-                    <div className="flex items-center gap-x-4">
-                        <div>
-                            <Link href="/about"
-                                  className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 transition-[background-color]">
-                                About
-                            </Link>
-                        </div>
-                        <div>
-                            <ModeToggle />
-                        </div>
-                    </div>
-
+        <header className="h-16 bg-white/50 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+            <div className="max-w-5xl m-auto py-3 flex">
+                <Link href="/" className="flex items-center justify-center">
+                    <div>Home</div>
+                    <span className="sr-only">{companyName}</span>
+                </Link>
+                <nav className="ml-auto flex gap-4 sm:gap-6">
+                    <Link href="/faq" className="text-sm font-medium hover:text-orange-600 transition-colors">
+                        FAQ
+                    </Link>
+                    <Link href="/press" className="text-sm font-medium hover:text-orange-600 transition-colors">
+                        Press
+                    </Link>
                 </nav>
             </div>
         </header>

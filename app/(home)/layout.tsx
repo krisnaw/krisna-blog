@@ -1,5 +1,5 @@
-import Header from "@/components/header";
 import Footer from "@/components/footer";
+import NavBar from "@/components/nav-bar";
 
 export default async function HomeLayout(
     {children} : { children: React.ReactNode}
@@ -7,10 +7,8 @@ export default async function HomeLayout(
 
     return (
         <div className="flex flex-col h-screen justify-between">
-            <Header />
-            <main>
-                {children}
-            </main>
+            <NavBar />
+            {children}
             <Footer />
         </div>
 
