@@ -31,7 +31,7 @@ const works = [
 
 export default function WorkSections() {
     return (
-        <div className="mt-20 pt-24 pb-16 sm:pt-32 sm:pb-24 xl:pb-32">
+        <div className="pb-16 sm:pt-32 sm:pb-24 xl:pb-32 space-y-24">
             {works.map((work) => (
                 <div  key={work.name}>
                     <div className="pb-20 sm:pb-24 xl:pb-0">

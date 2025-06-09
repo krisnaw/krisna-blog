@@ -6,9 +6,11 @@ export default async function HomeLayout(
 ) {
 
     return (
-        <div className="flex flex-col h-screen justify-between">
+        <div>
             <NavBar />
-            {children}
+            <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+                {children}
+            </div>
             <Footer />
         </div>
 

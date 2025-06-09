@@ -66,8 +66,8 @@ const navigation = [
 
 export default function Example() {
     return (
-        <footer className="border-t border-gray-200 dark:border-gray-700">
-            <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
+        <footer className="border-t bg-white border-gray-200 dark:border-gray-700 sticky bottom-0 w-full">
+            <div className="mx-auto max-w-5xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
                 <div className="flex justify-center gap-x-6 md:order-2">
                     {navigation.map((item) => (
                         <a key={item.name} href={item.href} className="text-gray-600 hover:text-gray-800">
