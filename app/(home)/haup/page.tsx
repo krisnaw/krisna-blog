@@ -4,6 +4,10 @@ export default function Page() {
     return (
         <div className="bg-white px-6 py-20 lg:px-8">
 
+            <div className="fixed right-0 top-1/2 -translate-y-1/2 z-10 text-gray-700 text-xs/7 font-semibold tracking-wide uppercase flex items-center">
+                Table of content
+            </div>
+
             {/*Page Title*/}
             <div className="mx-auto max-w-3xl text-base/7 text-gray-700">
                 <p className="text-xs/7 font-semibold text-gray-600">Case Study</p>
