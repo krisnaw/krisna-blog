@@ -1,20 +1,25 @@
+import Image from "next/image";
+
 const navigation = [
     {
         id: 1,
         title: 'Crafting booking interface for long term rental at HaupCar',
-        descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
+        descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+        href: '/haup'
     },
 
     {
         id: 2,
         title: 'Redesigning B2B Signup',
-        descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
+        descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+        href: ''
     },
 
     {
         id: 3,
         title: 'Redesigning B2B Signup',
-        descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
+        descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+        href: ''
     },
 ]
 
@@ -26,9 +31,11 @@ export default function FrontEndWorkSection() {
                 <div className="mx-auto max-w-2xl lg:max-w-none">
                     <div className="mx-auto mt-10 space-y-14">
                         {navigation.map((item) => (
-                            <div key={item.id}>
-                                <div className="shadow-md hover:shadow-lg rounded-lg p-4">
-                                    <img src="https://www.juliacodes.com/static/media/thumb.ef7100373a5d879446db.png" alt=""/>
+                            <a key={item.id} href={item.href} className="group block relative">
+                                <div className="absolute inset-0"></div>
+                                <div className="shadow-md group-hover:shadow-lg rounded-lg p-4">
+                                    <Image src={'/sample_works.png'}
+                                           alt="Work sample" width={1000} height={300} />
                                 </div>
 
                                 <div className="mt-4">
@@ -37,7 +44,7 @@ export default function FrontEndWorkSection() {
                                         {item.descriptions}
                                     </p>
                                 </div>
-                            </div>
+                            </a>
                         ))}
                     </div>
                 </div>
