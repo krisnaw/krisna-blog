@@ -5,7 +5,7 @@ import TechStackSection from "@/components/section/tech-stack-section";
 
 export default async function Page() {
     return (
-        <div>
+        <div className="mx-auto max-w-3xl">
             <HeroSection />
 
             <FrontEndWorkSection />
