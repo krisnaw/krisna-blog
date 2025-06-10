@@ -1,7 +1,7 @@
 const navigation = [
     {
         id: 1,
-        title: 'Redesigning B2B Signup',
+        title: 'Crafting booking interface for long term rental at HaupCar',
         descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
     },
 
@@ -25,10 +25,9 @@ export default function FrontEndWorkSection() {
                 <h2 className="text-lg/8 font-semibold text-gray-900">Front-end Works</h2>
                 <div className="mx-auto max-w-2xl lg:max-w-none">
                     <div className="mx-auto mt-10 space-y-14">
-
                         {navigation.map((item) => (
                             <div key={item.id}>
-                                <div>
+                                <div className="shadow-md hover:shadow-lg rounded-lg p-4">
                                     <img src="https://www.juliacodes.com/static/media/thumb.ef7100373a5d879446db.png" alt=""/>
                                 </div>
 
@@ -40,9 +39,6 @@ export default function FrontEndWorkSection() {
                                 </div>
                             </div>
                         ))}
-
-
-
                     </div>
                 </div>
             </div>
