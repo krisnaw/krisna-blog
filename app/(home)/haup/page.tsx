@@ -1,11 +1,53 @@
+'use client'
 import {CheckCircleIcon, InformationCircleIcon} from '@heroicons/react/20/solid'
+import {useEffect, useState} from "react";
+
+interface TableOfContents {
+    id: string,
+    text: string,
+    level: string
+}
 
 export default function Page() {
+    const [tableOfContents, setTableOfContents] = useState<TableOfContents[]>([]);
+
+    useEffect(() => {
+        const headings = document.querySelectorAll('.mx-auto.max-w-3xl h2, .mx-auto.max-w-3xl h3');
+        const toc: TableOfContents[] = Array.from(headings).map((heading) => {
+            const text = heading.textContent || '';
+            const id = heading.id || text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
+            heading.id = id; // Ensure headings have an ID for linking
+            return {
+                id,
+                text,
+                level: heading.tagName.toLowerCase(),
+            };
+        });
+        setTableOfContents(toc);
+    }, []);
+
+
     return (
         <div className="bg-white px-6 py-20 lg:px-8">
 
             <div className="fixed right-0 top-1/2 -translate-y-1/2 z-10 text-gray-700 text-xs/7 font-semibold tracking-wide uppercase flex items-center">
-                Table of content
+
+                <div className="hover:hidden">
+                    list
+                </div>
+
+                <nav className="ml-4 border border-gray-200 p-4 rounded-md backdrop-blur-sm bg-white/70 max-w-xs">
+                    <ul className="space-y-2">
+                        {tableOfContents.map((item: TableOfContents) => (
+                            <li key={item.id} className={item.level === 'h3' ? 'ml-4' : ''}>
+                                <a href={`#${item.id}`} className="text-gray-600 hover:text-gray-900">
+                                    {item.text}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+
             </div>
 
             {/*Page Title*/}
@@ -156,7 +198,7 @@ export default function Page() {
             <div className="mx-auto max-w-3xl text-base/7 text-gray-700">
                 <div className="mt-16 max-w-2xl">
                     <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900">
-                        Everything you need to get up and running
+                        Detail you need to get up and running
                     </h2>
                     <p className="mt-6">
                         Purus morbi dignissim senectus mattis adipiscing. Amet, massa quam varius orci dapibus volutpat cras. In

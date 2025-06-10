@@ -66,7 +66,7 @@ const navigation = [
 
 export default function Footer() {
     return (
-        <footer className="border-t bg-white border-gray-200 dark:border-gray-700 w-full sticky bottom-0">
+        <footer className="border-t bg-white border-gray-200 dark:border-gray-700 w-full">
             <div className="mx-auto max-w-3xl py-12 md:flex md:items-center md:justify-between">
                 <div className="flex justify-center gap-x-6 md:order-2">
                     {navigation.map((item) => (
