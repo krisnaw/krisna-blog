@@ -24,9 +24,16 @@ export default async function Page() {
             <div className="py-24 sm:py-32">
                 <h2 className="text-lg/8 font-semibold text-gray-900">Case Studies</h2>
                 <div className="mx-auto max-w-2xl lg:max-w-none">
-                    <div className="mx-auto mt-10">
+                    <div className="mx-auto mt-10 space-y-14">
                         <div>
-                            <img src="https://www.juliacodes.com/static/media/thumb.ef7100373a5d879446db.png" alt=""/>
+                            <div>
+                                <img src="https://www.juliacodes.com/static/media/thumb.ef7100373a5d879446db.png" alt=""/>
+                            </div>
+
+                            <div className="mt-4">
+                                <h3 className="text-base/7 font-semibold ">Redesigning B2B Signup</h3>
+                                <p className="text-sm/6 font-semibold text-gray-600">Reimagining the signup flow for Atmosphere TV</p>
+                            </div>
                         </div>
 
                         <div>
@@ -54,9 +61,6 @@ export default async function Page() {
                                     </div>
                                 </div>
                             ))}
-
-
-
                         </div>
                     </div>
                 </div>
