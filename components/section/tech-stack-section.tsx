@@ -30,6 +30,31 @@ const tools = [
         name: 'Supabase',
         image_url: '/Supabase/supabase-logo-wordmark--light.svg'
     },
+
+    {
+        id: 6,
+        name: 'ReactRouter',
+        image_url: '/reactrouter/rr_lockup_light.svg'
+
+    },
+    //
+    // {
+    //     id: 7,
+    //     name: 'NodeJS',
+    //     image_url: '/nodejs/nodejsDark.svg'
+    // },
+    //
+    // {
+    //     id: 8,
+    //     name: 'Laravel',
+    //     image_url: '/Laravel/laravel-logo.svg'
+    // },
+    //
+    // {
+    //     id: 9,
+    //     name: 'NodeJS',
+    //     image_url: '/nodejs/nodejsDark.svg'
+    // },
 ]
 
 export default function TechStackSection() {
@@ -39,7 +64,7 @@ export default function TechStackSection() {
                 <div className="mx-auto max-w-2xl lg:max-w-none">
                     <h2 className="text-lg/8 font-semibold text-gray-900">Tech Stack</h2>
 
-                    <div className="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-5">
+                    <div className="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:grid-cols-3">
 
                         {tools.map((tool) => (
                             <Image key={tool.id} src={tool.image_url} alt={tool.name}     width={158}
