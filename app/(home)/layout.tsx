@@ -1,5 +1,5 @@
 import Footer from "@/components/footer";
-import NavBar from "@/components/nav-bar";
+import NavBar from "@/components/nav/nav-bar";
 
 export default async function HomeLayout(
     {children} : { children: React.ReactNode}

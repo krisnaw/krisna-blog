@@ -15,28 +15,28 @@ export default function TechStackSection() {
                         />
                         <img
                             alt="Reform"
-                            src="https://tailwindcss.com/plus-assets/img/logos/reform-logo-gray-900.svg"
+                            src={"/Drizzle/logo-github-sq-light.svg"}
                             width={158}
                             height={48}
                             className="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
                         />
                         <img
-                            alt="Tuple"
-                            src="https://tailwindcss.com/plus-assets/img/logos/tuple-logo-gray-900.svg"
+                            alt="NEXTJS"
+                            src={"/NEXTJS/logotype/light-background/nextjs-logotype-light-background.svg"}
                             width={158}
                             height={48}
                             className="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
                         />
                         <img
-                            alt="SavvyCal"
-                            src="https://tailwindcss.com/plus-assets/img/logos/savvycal-logo-gray-900.svg"
+                            alt="Vercel"
+                            src={"/Vercel/logotype/light/vercel-logotype-light.svg"}
                             width={158}
                             height={48}
                             className="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
                         />
                         <img
-                            alt="Statamic"
-                            src="https://tailwindcss.com/plus-assets/img/logos/statamic-logo-gray-900.svg"
+                            alt="Supabase"
+                            src={"/Supabase/Supabase-logo-icon.svg"}
                             width={158}
                             height={48}
                             className="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"

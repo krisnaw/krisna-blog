@@ -1,54 +1,50 @@
-'use client'
 import {CheckCircleIcon, InformationCircleIcon} from '@heroicons/react/20/solid'
-import {useEffect, useState} from "react";
-
-interface TableOfContents {
-    id: string,
-    text: string,
-    level: string
-}
 
 export default function Page() {
-    const [tableOfContents, setTableOfContents] = useState<TableOfContents[]>([]);
-
-    useEffect(() => {
-        const headings = document.querySelectorAll('.mx-auto.max-w-3xl h2, .mx-auto.max-w-3xl h3');
-        const toc: TableOfContents[] = Array.from(headings).map((heading) => {
-            const text = heading.textContent || '';
-            const id = heading.id || text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
-            heading.id = id; // Ensure headings have an ID for linking
-            return {
-                id,
-                text,
-                level: heading.tagName.toLowerCase(),
-            };
-        });
-        setTableOfContents(toc);
-    }, []);
+    // const [tableOfContents, setTableOfContents] = useState<TableOfContents[]>([]);
+    //
+    // useEffect(() => {
+    //     const headings = document.querySelectorAll('.mx-auto.max-w-3xl h2, .mx-auto.max-w-3xl h3');
+    //     const toc: TableOfContents[] = Array.from(headings).map((heading) => {
+    //         const text = heading.textContent || '';
+    //         const id = heading.id || text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
+    //         heading.id = id; // Ensure headings have an ID for linking
+    //         return {
+    //             id,
+    //             text,
+    //             level: heading.tagName.toLowerCase(),
+    //         };
+    //     });
+    //     setTableOfContents(toc);
+    // }, []);
 
 
     return (
         <div className="bg-white px-6 py-20 lg:px-8">
 
-            <div className="fixed right-0 top-1/2 -translate-y-1/2 z-10 text-gray-700 text-xs/7 font-semibold tracking-wide uppercase flex items-center">
+            {/*WIP Table of Content*/}
+            {/*<div className="fixed right-0 top-1/2 -translate-y-1/2 z-10 text-gray-700 text-xs/7 font-semibold tracking-wide uppercase flex items-center">*/}
 
-                <div className="hover:hidden">
-                    list
-                </div>
+            {/*    <div className="group">*/}
+            {/*        <div>*/}
+            {/*            list*/}
+            {/*        </div>*/}
 
-                <nav className="ml-4 border border-gray-200 p-4 rounded-md backdrop-blur-sm bg-white/70 max-w-xs">
-                    <ul className="space-y-2">
-                        {tableOfContents.map((item: TableOfContents) => (
-                            <li key={item.id} className={item.level === 'h3' ? 'ml-4' : ''}>
-                                <a href={`#${item.id}`} className="text-gray-600 hover:text-gray-900">
-                                    {item.text}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
+            {/*        <nav*/}
+            {/*            className="ml-4 border border-gray-200 p-4 rounded-md backdrop-blur-sm bg-white/70 max-w-xs absolute top-1/2">*/}
+            {/*            <ul className="space-y-2">*/}
+            {/*                {tableOfContents.map((item: TableOfContents) => (*/}
+            {/*                    <li key={item.id} className={item.level === 'h3' ? 'ml-4' : ''}>*/}
+            {/*                        <a href={`#${item.id}`} className="text-gray-600 hover:text-gray-900">*/}
+            {/*                            {item.text}*/}
+            {/*                        </a>*/}
+            {/*                    </li>*/}
+            {/*                ))}*/}
+            {/*            </ul>*/}
+            {/*        </nav>*/}
+            {/*    </div>*/}
 
-            </div>
+            {/*</div>*/}
 
             {/*Page Title*/}
             <div className="mx-auto max-w-3xl text-base/7 text-gray-700">
@@ -95,7 +91,7 @@ export default function Page() {
                     </p>
                     <ul role="list" className="mt-8 max-w-xl space-y-8 text-gray-600">
                         <li className="flex gap-x-3">
-                            <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-indigo-600" />
+                            <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-gray-600" />
                             <span>
                 <strong className="font-semibold text-gray-900">Data types.</strong> Lorem ipsum, dolor sit amet
                 consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate
@@ -103,14 +99,14 @@ export default function Page() {
               </span>
                         </li>
                         <li className="flex gap-x-3">
-                            <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-indigo-600" />
+                            <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-gray-600" />
                             <span>
                 <strong className="font-semibold text-gray-900">Loops.</strong> Anim aute id magna aliqua ad ad non
                 deserunt sunt. Qui irure qui lorem cupidatat commodo.
               </span>
                         </li>
                         <li className="flex gap-x-3">
-                            <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-indigo-600" />
+                            <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-gray-600" />
                             <span>
                 <strong className="font-semibold text-gray-900">Events.</strong> Ac tincidunt sapien vehicula erat
                 auctor pellentesque rhoncus. Et magna sit morbi lobortis.
@@ -131,7 +127,7 @@ export default function Page() {
                         mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam turpis
                         ipsum eu a sed convallis diam.
                     </p>
-                    <figure className="mt-10 border-l border-indigo-600 pl-9">
+                    <figure className="mt-10 border-l border-gray-600 pl-9">
                         <blockquote className="font-semibold text-gray-900">
                             <p>
                                 “Vel ultricies morbi odio facilisi ultrices accumsan donec lacus purus. Lectus nibh ullamcorper ac
