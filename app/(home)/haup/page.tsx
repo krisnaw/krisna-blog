@@ -1,4 +1,5 @@
 import {CheckCircleIcon, InformationCircleIcon} from '@heroicons/react/20/solid'
+import Image from "next/image";
 
 export default function Page() {
     // const [tableOfContents, setTableOfContents] = useState<TableOfContents[]>([]);
@@ -48,34 +49,98 @@ export default function Page() {
 
             {/*Page Title*/}
             <div className="mx-auto max-w-3xl text-base/7 text-gray-700">
-                <p className="text-xs/7 font-semibold text-gray-600">Case Study</p>
+                <p className="text-xs/7 font-semibold text-gray-600">Recent works</p>
                 <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
                     Developing Booking Interface for Long Term Car Rentals
                 </h1>
             </div>
 
             <div className="mx-auto max-w-3xl mt-10 bg-gray-50 rounded-md p-10">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-10">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-10">
                     <div>
-                        <h4>Timeline</h4>
-                        <ul className="mt-4 space-y-2">
-                            <li>January 2024, Research</li>
-                            <li>January 2024, Research</li>
-                            <li>January 2024, Research</li>
+                        <p className="text-sm text-gray-500 font-medium leading-relaxed">Timeline</p>
+                        <ul className="mt-2 space-y-2">
+                            <li>
+                                <div className="text-gray-800 font-medium text-lg">
+                                    January - March 2025
+                                </div>
+                            </li>
                         </ul>
                     </div>
                     <div>
-                        <h4>My Roles</h4>
-                        <ul className="mt-4">
-                            <li>January 2024, Research</li>
-                            <li>January 2024, Research</li>
-                            <li>January 2024, Research</li>
+                        <p className="text-sm text-gray-500 font-medium leading-relaxed">My Roles</p>
+                        <ul className="mt-2">
+                            <li>
+                                <div className="text-gray-800 font-medium text-lg">
+                                    FrontEnd Developer
+                                </div>
+                            </li>
                         </ul>
                     </div>
+
+                    <div>
+                        <p className="text-sm text-gray-500 font-medium leading-relaxed">Tech Stack</p>
+                        <ul className="mt-2">
+
+                            <li>
+                                <div className="text-gray-800 font-medium text-lg">
+                                    AntDesign
+                                </div>
+                            </li>
+
+                            <li>
+                                <div className="text-gray-800 font-medium text-lg">
+                                    NextJS
+                                </div>
+                            </li>
+
+                            <li>
+                                <div className="text-gray-800 font-medium text-lg">
+                                    TailwindCSS
+                                </div>
+                            </li>
+
+                            <li>
+                                <div className="text-gray-800 font-medium text-lg">
+                                    Zustand
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
 
             <div className="mx-auto max-w-3xl text-base/7 text-gray-700">
+
+                <p className="mt-6 text-xl/8">
+                    Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget
+                    aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget. Eleifend
+                    egestas fringilla sapien.
+                </p>
+
+            </div>
+
+            <div className="mx-auto max-w-3xl text-base/7 text-gray-700">
+
+                <figure className="mt-16">
+                    <Image src={"/haup/haup_home_page.webp"}
+                           className="bg-gray-50 object-cover border border-gray-200 rounded-lg"
+                           alt="Work sample" width={1000} height={300} />
+                    <figcaption className="mt-4 flex gap-x-2 text-sm/6 text-gray-500">
+                        <InformationCircleIcon aria-hidden="true" className="mt-0.5 size-5 flex-none text-gray-300" />
+                        Home page
+                    </figcaption>
+                </figure>
+
+
+                <div>
+                    <ul>
+                        <li>Summary</li>
+                        <li>The Challenge</li>
+                        <li>Designing the solution</li>
+                    </ul>
+                </div>
 
                 <p className="mt-6 text-xl/8">
                     Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget

@@ -19,7 +19,7 @@ export default function NavBar() {
             <nav aria-label="Global" className="flex items-center justify-between py-2.5 px-4 max-w-3xl w-full backdrop-blur-sm bg-white/70 border border-gray-200/50 rounded-full mt-6 shadow-sm">
 
                 <div className="flex lg:flex-1">
-                    <Link href="/public" className="-m-1.5 p-1.5">
+                    <Link href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Home</span>
                         <HomeIcon className="size-6 text-gray-700" />
                     </Link>

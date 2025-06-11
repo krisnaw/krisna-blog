@@ -3,9 +3,10 @@ import HeroSection from "@/components/section/hero-section";
 import ExperienceSection from "@/components/section/experience-section";
 import TechStackSection from "@/components/section/tech-stack-section";
 
-export default async function Page() {
+export default function Page() {
+
     return (
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-3xl ">
             <HeroSection />
 
             <FrontEndWorkSection />

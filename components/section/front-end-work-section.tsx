@@ -5,22 +5,23 @@ const navigation = [
         id: 1,
         title: 'Crafting booking interface for long term rental at HaupCar',
         descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-        href: '/haup'
+        href: '/haup',
+        image_url: '/haup/haup_home_page.webp'
     },
 
-    {
-        id: 2,
-        title: 'Redesigning B2B Signup',
-        descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-        href: ''
-    },
-
-    {
-        id: 3,
-        title: 'Redesigning B2B Signup',
-        descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-        href: ''
-    },
+    // {
+    //     id: 2,
+    //     title: 'Redesigning B2B Signup',
+    //     descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+    //     href: ''
+    // },
+    //
+    // {
+    //     id: 3,
+    //     title: 'Redesigning B2B Signup',
+    //     descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+    //     href: ''
+    // },
 ]
 
 export default function FrontEndWorkSection() {
@@ -33,8 +34,9 @@ export default function FrontEndWorkSection() {
                         {navigation.map((item) => (
                             <a key={item.id} href={item.href} className="group block relative">
                                 <div className="absolute inset-0"></div>
-                                <div className="shadow-md group-hover:shadow-lg rounded-lg p-4">
-                                    <Image src={'/sample_works.png'}
+
+                                <div className="shadow-md group-hover:shadow-lg rounded-lg">
+                                    <Image src={item.image_url} className="border border-gray-200 rounded-lg"
                                            alt="Work sample" width={1000} height={300} />
                                 </div>
 
