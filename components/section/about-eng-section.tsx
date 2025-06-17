@@ -5,6 +5,7 @@ const funnel = Funnel_Display({
     style: ['normal'],
     subsets: ['latin'],
 })
+
 export default function AboutEngSection() {
     return (
         <div className="overflow-hidden bg-gray-50  py-24 sm:py-32">
