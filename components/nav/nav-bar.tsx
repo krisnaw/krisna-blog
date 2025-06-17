@@ -13,8 +13,6 @@ const navigation = [
 ]
 export default function NavBar() {
     const pathname = usePathname()
-    const isActiveLink = /^\/.+$/.test(pathname);
-    console.log(pathname)
     return (
         <header className="fixed inset-x-0 top-0 z-50 w-full flex justify-center">
             <nav aria-label="Global" className="flex items-center justify-between py-2.5 px-4 max-w-3xl w-full backdrop-blur-sm 
