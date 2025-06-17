@@ -8,9 +8,9 @@ export default async function HomeLayout(
     return (
         <div>
             <NavBar />
-            <div className="px-4 sm:px-6 lg:px-8 mt-24">
-            {children}
-            </div>
+                <div className="px-4 sm:px-6 lg:px-8 mt-24">
+                    {children}
+                </div>
             <Footer />
         </div>
 

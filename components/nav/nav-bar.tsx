@@ -1,10 +1,11 @@
 'use client'
 
-import {HomeIcon, MoonIcon} from "lucide-react";
-import {Button} from "@/components/ui/button";
+import {HomeIcon} from "lucide-react";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import {cn} from "@/lib/utils";
+import {ModeToggle} from "@/components/mode-toggle";
+import {Button} from "@/components/ui/button";
 
 const navigation = [
     { name: 'Home', href: '/' },
@@ -19,10 +20,12 @@ export default function NavBar() {
             <nav aria-label="Global" className="flex items-center justify-between py-2.5 px-4 max-w-3xl w-full backdrop-blur-sm bg-white/70 border border-gray-200/50 rounded-full mt-6 shadow-sm">
 
                 <div className="flex lg:flex-1">
-                    <Link href="/" className="-m-1.5 p-1.5">
-                        <span className="sr-only">Home</span>
-                        <HomeIcon className="size-6 text-gray-700" />
-                    </Link>
+                    <Button variant="ghost" size="icon" asChild>
+                        <Link href="/" className="-m-1.5 p-1.5">
+                            <span className="sr-only">Home</span>
+                            <HomeIcon className="size-6 text-gray-700" />
+                        </Link>
+                    </Button>
                 </div>
 
                 <div className="lg:flex lg:gap-x-6">
@@ -38,9 +41,7 @@ export default function NavBar() {
                 </div>
 
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <Button size="icon" variant="ghost">
-                        <MoonIcon aria-hidden="true" className="size-6 text-gray-700" />
-                    </Button>
+                    <ModeToggle />
                 </div>
 
             </nav>

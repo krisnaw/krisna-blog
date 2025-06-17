@@ -28,7 +28,7 @@ export default function FrontEndWorkSection() {
     return (
         <section id="front-end">
             <div className="py-24 sm:py-32">
-                <h2 className="text-lg/8 font-semibold text-gray-900">Front-end Works</h2>
+                <h2 className="text-lg/8 font-semibold ">Front-end Works</h2>
                 <div className="mx-auto max-w-2xl lg:max-w-none">
                     <div className="mx-auto mt-10 space-y-14">
                         {navigation.map((item) => (
@@ -42,7 +42,7 @@ export default function FrontEndWorkSection() {
 
                                 <div className="mt-4">
                                     <h3 className="text-lg/7 font-semibold ">{item.title}</h3>
-                                    <p className="text-sm/6 font-semibold text-gray-600">
+                                    <p className="text-sm/6 font-semibold text-muted-foreground">
                                         {item.descriptions}
                                     </p>
                                 </div>

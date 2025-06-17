@@ -21,36 +21,12 @@ export default function Page() {
 
 
     return (
-        <div className="bg-white px-6 py-20 lg:px-8">
-
-            {/*WIP Table of Content*/}
-            {/*<div className="fixed right-0 top-1/2 -translate-y-1/2 z-10 text-gray-700 text-xs/7 font-semibold tracking-wide uppercase flex items-center">*/}
-
-            {/*    <div className="group">*/}
-            {/*        <div>*/}
-            {/*            list*/}
-            {/*        </div>*/}
-
-            {/*        <nav*/}
-            {/*            className="ml-4 border border-gray-200 p-4 rounded-md backdrop-blur-sm bg-white/70 max-w-xs absolute top-1/2">*/}
-            {/*            <ul className="space-y-2">*/}
-            {/*                {tableOfContents.map((item: TableOfContents) => (*/}
-            {/*                    <li key={item.id} className={item.level === 'h3' ? 'ml-4' : ''}>*/}
-            {/*                        <a href={`#${item.id}`} className="text-gray-600 hover:text-gray-900">*/}
-            {/*                            {item.text}*/}
-            {/*                        </a>*/}
-            {/*                    </li>*/}
-            {/*                ))}*/}
-            {/*            </ul>*/}
-            {/*        </nav>*/}
-            {/*    </div>*/}
-
-            {/*</div>*/}
+        <div className="px-6 py-20 lg:px-8">
 
             {/*Page Title*/}
-            <div className="mx-auto max-w-3xl text-base/7 text-gray-700">
-                <p className="text-xs/7 font-semibold text-gray-600">Recent works</p>
-                <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+            <div className="mx-auto max-w-3xl text-base/7 ">
+                <p className="text-xs/7 font-semibold text-muted-foreground">Recent works</p>
+                <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty  sm:text-5xl">
                     Developing Booking Interface for Long Term Car Rentals
                 </h1>
             </div>
@@ -61,7 +37,7 @@ export default function Page() {
                         <p className="text-sm text-gray-500 font-medium leading-relaxed">Timeline</p>
                         <ul className="mt-2 space-y-2">
                             <li>
-                                <div className="text-gray-800 font-medium text-lg">
+                                <div className=" font-medium text-lg">
                                     January - March 2025
                                 </div>
                             </li>
@@ -71,7 +47,7 @@ export default function Page() {
                         <p className="text-sm text-gray-500 font-medium leading-relaxed">My Roles</p>
                         <ul className="mt-2">
                             <li>
-                                <div className="text-gray-800 font-medium text-lg">
+                                <div className=" font-medium text-lg">
                                     FrontEnd Developer
                                 </div>
                             </li>
@@ -83,25 +59,25 @@ export default function Page() {
                         <ul className="mt-2">
 
                             <li>
-                                <div className="text-gray-800 font-medium text-lg">
+                                <div className=" font-medium text-lg">
                                     AntDesign
                                 </div>
                             </li>
 
                             <li>
-                                <div className="text-gray-800 font-medium text-lg">
+                                <div className=" font-medium text-lg">
                                     NextJS
                                 </div>
                             </li>
 
                             <li>
-                                <div className="text-gray-800 font-medium text-lg">
+                                <div className=" font-medium text-lg">
                                     TailwindCSS
                                 </div>
                             </li>
 
                             <li>
-                                <div className="text-gray-800 font-medium text-lg">
+                                <div className=" font-medium text-lg">
                                     Zustand
                                 </div>
                             </li>
