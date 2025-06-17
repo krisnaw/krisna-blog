@@ -2,17 +2,15 @@
 
 import {HomeIcon} from "lucide-react";
 import Link from "next/link";
-import {usePathname} from "next/navigation";
 import {ModeToggle} from "@/components/mode-toggle";
 import {Button} from "@/components/ui/button";
 
 const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Work', href: '#front-end' },
-    { name: 'About', href: '#experience-section' },
+    { name: 'Work', href: '/#front-end' },
+    { name: 'About', href: '/#experience-section' },
 ]
 export default function NavBar() {
-    const pathname = usePathname()
     return (
         <header className="fixed inset-x-0 top-0 z-50 w-full flex justify-center">
             <nav aria-label="Global" className="flex items-center justify-between py-2.5 px-4 max-w-3xl w-full backdrop-blur-sm 
@@ -31,12 +29,7 @@ export default function NavBar() {
                     {navigation.map((item) => (
                         <Button
                             key={item.name}
-                            variant={
-                                (item.name === 'Work' && pathname.startsWith('/')) ||
-                                ((item.name === 'Home' || item.name === 'About') && !pathname.startsWith('/'))
-                                    ? "secondary"
-                                    : "ghost"
-                            }
+                            variant="ghost"
                             asChild
                             className="rounded-full"
                         >
