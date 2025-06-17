@@ -2,24 +2,6 @@ import {CheckCircleIcon, InformationCircleIcon} from '@heroicons/react/20/solid'
 import Image from "next/image";
 
 export default function Page() {
-    // const [tableOfContents, setTableOfContents] = useState<TableOfContents[]>([]);
-    //
-    // useEffect(() => {
-    //     const headings = document.querySelectorAll('.mx-auto.max-w-3xl h2, .mx-auto.max-w-3xl h3');
-    //     const toc: TableOfContents[] = Array.from(headings).map((heading) => {
-    //         const text = heading.textContent || '';
-    //         const id = heading.id || text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
-    //         heading.id = id; // Ensure headings have an ID for linking
-    //         return {
-    //             id,
-    //             text,
-    //             level: heading.tagName.toLowerCase(),
-    //         };
-    //     });
-    //     setTableOfContents(toc);
-    // }, []);
-
-
     return (
         <div className="px-6 py-20 lg:px-8">
 
@@ -90,46 +72,63 @@ export default function Page() {
             <div className="mx-auto max-w-3xl text-base/7 text-gray-700">
 
                 <p className="mt-6 text-xl/8">
-                    HaupCar is Thailand based Car Rental company and they planed to revamp the UI of their Long Term car rental feature.
-
-
-                    {/*Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget*/}
-                    {/*aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget. Eleifend*/}
-                    {/*egestas fringilla sapien.*/}
+                    HaupCar is a Thailand-based car rental company, and they plan to revamp the UI of their long-term car rental feature,
+                    also migrating their API to a newer version.
                 </p>
 
                 <div className="mt-10 max-w-2xl">
                     <p>
-
-                        They already have figma design and my responsibility is translating the UI.
-                        The project already setup using NextJS and AntDesign Components but still have a lot to do.
-
-                        {/*Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae*/}
-                        {/*sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.*/}
-                        {/*Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae*/}
-                        {/*sed turpis id.*/}
+                        They already have a Figma design, and my responsibility is to translate the UI and connect it to their new UI.
+                        The project is already set up using Next.js and AntDesign components but still has a lot to do,
+                        especially building the search component.
                     </p>
                 </div>
 
-                <ul role="list" className="mt-8 max-w-xl space-y-8 text-gray-600">
+                <figure className="mt-10">
+                    <Image src={"/haup/haup_home_page.webp"}
+                           className="bg-gray-50 object-cover border border-gray-200 rounded-lg"
+                           alt="Work sample" width={1000} height={300} />
+                    <figcaption className="mt-4 flex gap-x-2 text-sm/6 text-gray-500">
+                        <InformationCircleIcon aria-hidden="true" className="mt-0.5 size-5 flex-none text-gray-300" />
+                        Search Components
+                    </figcaption>
+                </figure>
+
+
+                <ul role="list" className="mt-8 max-w-2xl space-y-8 text-gray-600">
                     <li className="flex gap-x-3">
                         <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-gray-600" />
                         <span>
-                            <strong className="font-semibold text-gray-900">AntDesign. </strong>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+                            <strong className="font-semibold text-gray-900">Pickup location. </strong>
+                            The Pickup location field may seem like a straightforward input, but its functionality is more involved.
+                            This field requires the management of several states. Initially, when a user searches for a location,
+                            n API call must be executed to the backend API, based on the provided input.
+                            The returned locations are then presented as selectable options for the user.
+                            Furthermore, the chosen state needs to be stored within the query parameters.
+                            Luckily AntDesign Component has API to manage this state, especially managing the API Call process,
+                            it has api to handle the error/empty state.
                         </span>
                     </li>
                     <li className="flex gap-x-3">
                         <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-gray-600" />
                         <span>
-                            <strong className="font-semibold text-gray-900">TailwindCSS.</strong>
-                            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
+                            <strong className="font-semibold text-gray-900">Pickup Destinations.</strong>
+                            This field is similar to Pickup Locations, but with an added condition, it initially displays favorite destinations.
+                            The API call made when a user searches also depends on the value selected in the Pickup Location field.
                         </span>
                     </li>
                     <li className="flex gap-x-3">
                         <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-gray-600" />
                         <span>
-                            <strong className="font-semibold text-gray-900">Zustand.</strong>
+                            <strong className="font-semibold text-gray-900">Renting date.</strong>
+                            Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
+                        </span>
+                    </li>
+
+                    <li className="flex gap-x-3">
+                        <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-gray-600" />
+                        <span>
+                            <strong className="font-semibold text-gray-900">Pickup time.</strong>
                             Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
                         </span>
                     </li>

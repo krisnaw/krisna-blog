@@ -31,8 +31,18 @@ export default function NavBar() {
 
                 <div className="lg:flex lg:gap-x-6">
                     {navigation.map((item) => (
-                        <Button key={item.name} variant={isActiveLink ? "secondary" : "ghost"}  asChild className="rounded-full">
-                            <Link  href={item.href}>
+                        <Button
+                            key={item.name}
+                            variant={
+                                (item.name === 'Work' && pathname.startsWith('/')) ||
+                                ((item.name === 'Home' || item.name === 'About') && !pathname.startsWith('/'))
+                                    ? "secondary"
+                                    : "ghost"
+                            }
+                            asChild
+                            className="rounded-full"
+                        >
+                            <Link href={item.href}>
                                 {item.name}
                             </Link>
                         </Button>
