@@ -4,25 +4,27 @@ const navigation = [
         year: 'January 2025 - March 2025',
         title: 'FrontEnd Developer',
         company: 'HaupCar',
-        descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+        descriptions: 'Contributing to the front-end development of Haup Car’s long-term booking system, a feature enabling customers to\n' +
+            'rent vehicles for extended durations.',
         type: 'Contract'
     },
 
     {
         id: 2,
-        year: '2025 - 2025',
-        title: 'FrontEnd Developer',
-        company: 'HaupCar',
-        descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+        year: 'May 2016 - March 2024',
+        title: 'Full-stack Developer',
+        company: 'C2 Media',
+        descriptions: 'Developed ContentGrow, a web application that connects freelance talent with global content teams and streamlines\n' +
+            'editorial workflows.',
         type: 'Full time'
     },
 
     {
         id: 3,
-        year: 'January 2025 - March 2025',
-        title: 'FrontEnd Developer',
-        company: 'HaupCar',
-        descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+        year: 'July 2014 - May 2016',
+        title: 'Tech Writer',
+        company: 'Tech in Asia',
+        descriptions: 'Researched and interviewed tech startup founders in Indonesia to write feature stories for Tech in Asia',
         type: 'Full time'
     },
 ]
@@ -48,9 +50,9 @@ export default function ExperienceSection() {
                                     </div>
                                     
                                     <div className="w-full">
-                                        <h3 className="font-medium">FrontEnd Developer at HaupCar</h3>
+                                        <h3 className="font-medium">{item.title} at {item.company}</h3>
                                         <p className="text-gray-500 mt-2">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                                            {item.descriptions}
                                         </p>
                                     </div>
                                 </div>
