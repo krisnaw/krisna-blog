@@ -78,9 +78,8 @@ export default function Page() {
 
                 <div className="mt-10 max-w-2xl">
                     <p>
-                        They already have a Figma design, and my responsibility is to translate the UI and connect it to their new UI.
-                        The project is already set up using Next.js and AntDesign components but still has a lot to do,
-                        especially building the search component.
+                        As a Frontend Developer, my primary responsibility involves translating Figma designs into functional code and integrating them with our new API.
+                        The project, already established with Next.js and Ant Design components, has significant work remaining, particularly in developing the search component and the booking process.
                     </p>
                 </div>
 
