@@ -1,5 +1,0 @@
-# Combining and Optimizing State
-
----
-
-
