@@ -1,14 +1,14 @@
 import {BoardHeader} from "@/components/trelix/board-header";
 import {BoardContent} from "@/components/trelix/board-content";
-import {AddBoard} from "@/components/trelix/add-board";
+import {Button, Textarea} from "@headlessui/react";
+import {Plus} from "lucide-react";
+import {parseAsInteger, useQueryState} from "nuqs";
 
-export type Note = {
-  id: number
-  title: string
-  content: string
-}
+export function Board({boardId}: { boardId: number }) {
 
-export function Board() {
+  const [isEditing, setIsEditing] = useQueryState('edit', parseAsInteger.withDefault(0))
+
+  console.log(isEditing ? `editing ${boardId}` : `viewing ${boardId}`);
 
   const notes = [
     {
@@ -28,13 +28,42 @@ export function Board() {
     }
   ]
 
+  const onClickEdit = () => {
+    setIsEditing(boardId)
+  }
+
+  const onClickCancelEdit = () => {
+
+    setIsEditing(null)
+  }
+
   return (
     <div className="shadow-md  bg-slate-100 rounded-lg  w-80">
-      <BoardHeader />
+      <BoardHeader/>
 
-      <BoardContent notes={notes} />
+      <BoardContent notes={notes}/>
 
-      <AddBoard />
+      <div className="p-2">
+
+        {isEditing == boardId ? (
+          <div className="w-full">
+            <Textarea className="bg-white w-full rounded-lg"/>
+            <div className="flex justify-between rounded-md">
+              <Button onClick={() => onClickCancelEdit()}>Save</Button>
+              <Button onClick={() => onClickCancelEdit()}>Cancel</Button>
+            </div>
+          </div>
+        ) : (
+          <Button type="button" onClick={() => onClickEdit()}
+                  className="inline-flex font-semibold text-slate-500 hover:bg-slate-200 focus:bg-slate-200 hover:cursor-pointer rounded-lg w-full p-2 gap-2">
+            <Plus/>Add Board
+          </Button>
+        )
+
+        }
+
+
+      </div>
     </div>
   )
 }

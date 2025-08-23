@@ -1,9 +1,12 @@
 import {Plus} from "lucide-react";
 import {Button, Textarea} from "@headlessui/react";
 import {useState} from "react";
+import {flushSync} from "react-dom";
 
 export function AddBoard() {
   const [isEditing, setIsEditing] = useState(false)
+
+  console.log("editing")
 
   return (
     <div className="p-2">
@@ -19,7 +22,7 @@ export function AddBoard() {
       )}
 
       {!isEditing && (
-        <Button type="button" onClick={() => setIsEditing(!isEditing)}
+        <Button type="button" onClick={() => flushSync(() => setIsEditing(true))}
                 className="inline-flex font-semibold text-slate-500 hover:bg-slate-200 focus:bg-slate-200 hover:cursor-pointer rounded-lg w-full p-2 gap-2">
           <Plus />Add Board
         </Button>
