@@ -4,7 +4,7 @@ const navigation = [
     {
         id: 1,
         title: 'Crafting booking interface for long term rental at HaupCar',
-        descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+        descriptions: 'HaupCar is a Thailand-based car rental company, and they plan to revamp the UI of their long-term car rental feature, also migrating their API to a newer version.',
         href: '/haup',
         image_url: '/haup/haup_home_page.webp'
     },
@@ -41,8 +41,8 @@ export default function FrontEndWorkSection() {
                                 </div>
 
                                 <div className="mt-4">
-                                    <h3 className="text-lg/7 font-semibold ">{item.title}</h3>
-                                    <p className="text-sm/6 font-semibold text-muted-foreground">
+                                    <h3 className="text-xl/7 font-semibold ">{item.title}</h3>
+                                    <p className="text-md/6 font-light text-muted-foreground">
                                         {item.descriptions}
                                     </p>
                                 </div>
