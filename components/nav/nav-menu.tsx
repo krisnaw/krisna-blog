@@ -1,13 +1,14 @@
 "use client"
 import styles from './nav-menu.module.css'
-
 import {useEffect, useRef, useState} from "react";
+import {useRouter} from 'next/navigation';
 
 export function NavMenu() {
-
   const [activeTab, setActiveTab] = useState(TABS[0].name);
   const containerRef = useRef<HTMLDivElement>(null);
   const activeTabElementRef = useRef<HTMLButtonElement>(null);
+  const router = useRouter()
+
 
   useEffect(() => {
     const container = containerRef.current;
@@ -26,6 +27,10 @@ export function NavMenu() {
     }
   }, [activeTab, activeTabElementRef, containerRef]);
 
+  const onClickHandler = (event: string, url: string) => {
+    router.push(url);
+    setActiveTab(event);
+  }
 
   return (
     <div className="px-2">
@@ -36,7 +41,7 @@ export function NavMenu() {
             <li key={tab.name}>
               <button
                 ref={activeTab === tab.name ? activeTabElementRef : null}
-                onClick={() => setActiveTab(tab.name)}
+                onClick={() => onClickHandler(tab.name, tab.href)}
                 className={styles.button}>
                 {tab.icon}
                 {tab.name}
@@ -69,7 +74,6 @@ export function NavMenu() {
     </div>
   )
 }
-
 
 const TABS = [
   {
