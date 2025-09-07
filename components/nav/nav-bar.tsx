@@ -24,13 +24,15 @@ export default function NavBar() {
               </Button>
             </div>
           </li>
-          
+
 
           <li>
             <div>
-              <ul className="flex items-center space-x-2.5">
+              <ul className="flex items-center space-x-6">
                 <li>
-                  About
+                  <a href="/about">
+                    About
+                  </a>
                 </li>
 
                 <li>
