@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Krisna Wijaya",
+  title: "Krisna Wijaya | Software Developer",
   description: "Personal website of Krisna Wijaya",
 };
 
