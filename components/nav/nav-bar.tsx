@@ -2,7 +2,6 @@
 
 import {HomeIcon} from "lucide-react";
 import Link from "next/link";
-import {ModeToggle} from "@/components/mode-toggle";
 import {Button} from "@/components/ui/button";
 
 const navigation = [
@@ -13,8 +12,7 @@ const navigation = [
 export default function NavBar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 w-full flex justify-center">
-      <nav aria-label="Global" className=" py-2.5 px-4 max-w-7xl w-full backdrop-blur-sm
-            bg-white/70 dark:bg-gray-900/70 border border-gray-200/50 dark:border-gray-800/50 rounded-2xl mt-6 shadow-sm">
+      <nav aria-label="Global" className=" py-4.5 px-4 max-w-7xl w-full backdrop-blur-sm rounded-2xl mt-6 shadow-sm">
         <ul className="flex items-center justify-between">
           <li>
             <div className="flex lg:flex-1">
@@ -26,26 +24,34 @@ export default function NavBar() {
               </Button>
             </div>
           </li>
+          
 
           <li>
-            <div className="lg:flex lg:gap-x-6">
-              {navigation.map((item) => (
-                <Button
-                  key={item.name}
-                  variant="ghost"
-                  asChild
-                >
-                  <Link href={item.href}>
-                    {item.name}
-                  </Link>
-                </Button>
-              ))}
-            </div>
-          </li>
+            <div>
+              <ul className="flex items-center space-x-2.5">
+                <li>
+                  About
+                </li>
 
-          <li>
-            <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-              <ModeToggle/>
+                <li>
+                  Work
+                </li>
+
+                <li>
+                  Services
+                </li>
+
+                <li>
+                  <Button className="rounded-full text-white bg-blue-500 cursor-pointer"  size="lg">
+                    Get in Touch
+                  </Button>
+                </li>
+                <li>
+                  <Button size="lg" variant="ghost" className="cursor-pointer px-0">
+                    <img src="https://cdn.prod.website-files.com/5e8545568347402d733f53f2/67a9f8a9a0a97f8ca755cbe3_LinkedIn%20-%20Negative.svg" alt=""/>
+                  </Button>
+                </li>
+              </ul>
             </div>
           </li>
         </ul>
