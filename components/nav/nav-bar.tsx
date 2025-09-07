@@ -3,6 +3,7 @@
 import {HomeIcon} from "lucide-react";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
+import {NavMenu} from "@/components/nav/nav-menu";
 
 const navigation = [
   {name: 'About', href: '/about'},
@@ -29,16 +30,9 @@ export default function NavBar() {
           <li>
             <div>
               <ul className="flex items-center space-x-6">
-                {navigation.map((item) => (
-                  <li key={item.name}>
-                    <a href={item.href}>
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-
+                <NavMenu />
                 <li>
-                  <Button className="rounded-full text-white bg-blue-500 cursor-pointer"  size="lg">
+                  <Button className="rounded-full text-white bg-[#2090FF] cursor-pointer"  size="lg">
                     Get in Touch
                   </Button>
                 </li>
