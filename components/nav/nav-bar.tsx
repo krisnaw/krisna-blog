@@ -5,12 +5,6 @@ import Link from "next/link";
 import {Button} from "@/components/ui/button";
 import {NavMenu} from "@/components/nav/nav-menu";
 
-const navigation = [
-  {name: 'About', href: '/about'},
-  {name: 'Article', href: '/articles'},
-  {name: 'Work', href: '/#front-end'},
-  {name: 'Services', href: '/'},
-]
 export default function NavBar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 w-full flex justify-center border-b border-gray-200 bg-[#f9f6f1]">
