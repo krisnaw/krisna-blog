@@ -1,19 +1,18 @@
-import FrontEndWorkSection from "@/components/section/front-end-work-section";
-import HeroSection from "@/components/section/hero-section";
-import ExperienceSection from "@/components/section/experience-section";
-import TechStackSection from "@/components/section/tech-stack-section";
+import RecentProject from "@/app/(home)/recent-project";
 
 export default function Page() {
 
     return (
-        <div className="mx-auto max-w-3xl ">
-            <HeroSection />
+      <div className="mx-auto max-w-7xl ">
+            {/*<HeroSection />*/}
 
-            <FrontEndWorkSection />
+            {/*<FrontEndWorkSection />*/}
 
-            <ExperienceSection />
+            {/*<ExperienceSection />*/}
 
-            <TechStackSection />
+          <RecentProject />
+
+            {/*<TechStackSection />*/}
         </div>
     )
 }
