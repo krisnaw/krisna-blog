@@ -1,4 +1,5 @@
 import NavBar from "@/components/nav/nav-bar";
+import Footer from "@/components/section/footer";
 
 export default async function HomeLayout(
   {children}: { children: React.ReactNode }
@@ -7,9 +8,10 @@ export default async function HomeLayout(
   return (
     <div className="flex flex-col min-h-screen bg-[#f9f6f1]">
       <NavBar/>
-      <div className="flex-grow px-4 sm:px-6 lg:px-8 mt-24">
+      <div>
         {children}
       </div>
+      <Footer/>
     </div>
 
   )
