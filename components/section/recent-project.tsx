@@ -14,33 +14,34 @@ export default function RecentProject() {
 
         </div>
 
-        <div className="underline uppercase mt-6">
+        <div className="underline uppercase mt-6 font-semibold tracking-wide">
           <a href="">View all</a>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 mt-16">
+      <div className="grid grid-cols-2 gap-24 mt-16">
 
-
-        <div>
-          <img src="https://cdn.prod.website-files.com/655cac10f5959da4937eb534/68aee08b7ab19b0956dafedd_Done_Thumb.png" alt=""/>
-          <div>
-            <h4>
+        <div >
+          <img
+            src="https://cdn.prod.website-files.com/655cac10f5959da4937eb534/68aee08b7ab19b0956dafedd_Done_Thumb.png" alt=""/>
+          <div className="mt-6">
+            <h4 className="uppercase font-semibold text-2xl">
               DONE DRINKS
             </h4>
-            <p>
+            <p className="mt-2.5 tracking-wide font-light">
               We helped Done Drinks launch a site that looks as good as it tastes. Clean layout, crisp storytelling, and motion that adds just enough spice. Built in Webflow.
             </p>
           </div>
         </div>
 
-        <div>
-          <img src="https://cdn.prod.website-files.com/655cac10f5959da4937eb534/68aee08b7ab19b0956dafedd_Done_Thumb.png" alt=""/>
-          <div>
-            <h4>
+        <div >
+          <img
+            src="https://cdn.prod.website-files.com/655cac10f5959da4937eb534/68aee08b7ab19b0956dafedd_Done_Thumb.png" alt=""/>
+          <div className="mt-6">
+            <h4 className="uppercase font-semibold text-2xl">
               DONE DRINKS
             </h4>
-            <p>
+            <p className="mt-2.5 tracking-wide font-light">
               We helped Done Drinks launch a site that looks as good as it tastes. Clean layout, crisp storytelling, and motion that adds just enough spice. Built in Webflow.
             </p>
           </div>
