@@ -8,7 +8,7 @@ export default async function HomeLayout(
   return (
     <div className="flex flex-col min-h-screen bg-[#f9f6f1]">
       <NavBar/>
-      <div>
+      <div className="flex-grow">
         {children}
       </div>
       <Footer/>
