@@ -1,4 +1,4 @@
-export default function RecentProject() {
+export default function RecentProjectSection() {
   return (
     <section className="pt-24">
 
@@ -10,10 +10,6 @@ export default function RecentProject() {
               We&#39;ve been engaged in a variety of projects lately, crafting stories, designing websites, and developing digital experiences.
               Our recent work reflects our commitment to helping clients achieve their goals.
             </p>
-          </div>
-
-          <div className="underline uppercase mt-6 font-semibold tracking-wide">
-            <a href="">View all</a>
           </div>
         </div>
       </div>
