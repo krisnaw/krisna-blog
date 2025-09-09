@@ -18,50 +18,17 @@ export default function RecentProject() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2  mt-6 divide-x divide-blue-500">
-        <div>
-          <img
-            src="https://cdn.prod.website-files.com/5e8545568347402d733f53f2/6751a28778799b349337b12d_Frame%204912-p-800.webp" alt=""/>
-          <div className="mt-6 border-t border-amber-200 px-4 sm:px-6 lg:px-8 py-6">
-            <h4 className="uppercase font-semibold text-2xl">
-              DONE DRINKS
-            </h4>
-            <p className="mt-2.5 tracking-wide font-light">
-              We helped Done Drinks launch a site that looks as good as it tastes. Clean layout, crisp storytelling, and motion that adds just enough spice. Built in Webflow.
-            </p>
-          </div>
-        </div>
+
+      <div className="grid grid-cols-2  mt-6 divide-x divide-gray-300">
 
         <div>
-          <img
-            src="https://cdn.prod.website-files.com/5e8545568347402d733f53f2/6751a28778799b349337b12d_Frame%204912-p-800.webp" alt=""/>
-          <div className="mt-6 border-t border-amber-200 px-4 sm:px-6 lg:px-8 py-6">
-            <h4 className="uppercase font-semibold text-2xl">
-              DONE DRINKS
-            </h4>
-            <p className="mt-2.5 tracking-wide font-light">
-              We helped Done Drinks launch a site that looks as good as it tastes. Clean layout, crisp storytelling, and motion that adds just enough spice. Built in Webflow.
-            </p>
-          </div>
-        </div>
 
-        <div>
-          <img
-            src="https://cdn.prod.website-files.com/5e8545568347402d733f53f2/6751a28778799b349337b12d_Frame%204912-p-800.webp" alt=""/>
-          <div className="mt-6 border-t border-amber-200 px-4 sm:px-6 lg:px-8 py-6">
-            <h4 className="uppercase font-semibold text-2xl">
-              DONE DRINKS
-            </h4>
-            <p className="mt-2.5 tracking-wide font-light">
-              We helped Done Drinks launch a site that looks as good as it tastes. Clean layout, crisp storytelling, and motion that adds just enough spice. Built in Webflow.
-            </p>
+          <div className="p-4">
+            <img
+              src="https://cdn.prod.website-files.com/5e8545568347402d733f53f2/6751a28778799b349337b12d_Frame%204912-p-800.webp" alt=""/>
           </div>
-        </div>
 
-        <div>
-          <img
-            src="https://cdn.prod.website-files.com/5e8545568347402d733f53f2/6751a28778799b349337b12d_Frame%204912-p-800.webp" alt=""/>
-          <div className="mt-6 border-t border-amber-200 px-4 sm:px-6 lg:px-8 py-6">
+          <div className="mt-6 border-t border-gray-300 px-4 sm:px-6 lg:px-8 py-6">
             <h4 className="uppercase font-semibold text-2xl">
               DONE DRINKS
             </h4>
@@ -72,7 +39,6 @@ export default function RecentProject() {
         </div>
 
       </div>
-
 
     </section>
   )

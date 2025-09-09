@@ -1,3 +1,5 @@
+import {ButtonSendLink} from "@/app/(home)/work/button-send-link";
+
 export default function Page() {
   return (
     <div className="mx-auto max-w-7xl border-r border-l border-gray-200 py-28">
@@ -16,9 +18,7 @@ export default function Page() {
           </div>
 
           <div>
-            <button >
-              Hold me
-            </button>
+            <ButtonSendLink />
           </div>
 
         </div>
