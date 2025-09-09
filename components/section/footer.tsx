@@ -2,13 +2,14 @@ export default function Footer() {
     return (
         <footer className="border-t border-gray-300">
           <div className="max-w-7xl mx-auto border-l border-r border-gray-300">
-            <div className="grid grid-cols-2 divide-x divide-gray-300">
 
-              <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-x divide-gray-300">
+
+              <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2.5">
                 <div className="text-2xl uppercase">
                   Contact
                 </div>
-                <div>
+                <div className="text-left">
                   <div className="font-semibold text-gray-600 uppercase">
                     By Email
                   </div>
@@ -19,12 +20,11 @@ export default function Footer() {
               </div>
 
               <div className="grid grid-cols-4 divide-x divide-gray-300">
-
                 {navigation.map((item) => (
-                  <div className="p-6 flex items-center justify-center" key={item.name}>
+                  <div className="p-6 flex items-center justify-center hover:bg-blue-500 hover:text-white" key={item.name}>
                     <a href={item.href} target="_blank">
                       <span className="sr-only">{item.name}</span>
-                      <item.icon aria-hidden="true" className="size-8" />
+                      <item.icon aria-hidden="true" className="size-8 " />
                     </a>
                   </div>
                 ))}
