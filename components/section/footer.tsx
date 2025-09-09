@@ -5,7 +5,7 @@ export default function Footer() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2">
 
-              <div className="flex items-center px-4 sm:px-6 lg:px-8 border-r border-gray-300">
+              <div className="flex items-center px-4 sm:px-6 lg:px-10 border-r border-gray-300">
                 <div className="text-2xl uppercase">
                   Contact
                 </div>

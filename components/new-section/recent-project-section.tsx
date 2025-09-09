@@ -2,22 +2,20 @@ export default function RecentProjectSection() {
   return (
     <section>
 
-      <div>
-        <div className="max-w-2xl px-4 sm:px-6 lg:px-8">
-          <div>
-            <h1 className="uppercase text-7xl tracking-tighter text-balance">Recent Project.</h1>
-            <p className="font-light opacity-70 mt-2.5">
-              We&#39;ve been engaged in a variety of projects lately, crafting stories, designing websites, and developing digital experiences.
-              Our recent work reflects our commitment to helping clients achieve their goals.
-            </p>
-          </div>
+      <div className="max-w-xl">
+        <div>
+          <h1 className="uppercase text-7xl tracking-tighter text-balance">Recent Project.</h1>
+          <p className="font-light opacity-70 mt-2.5">
+            We&#39;ve been engaged in a variety of projects lately, crafting stories, designing websites, and developing digital experiences.
+            Our recent work reflects our commitment to helping clients achieve their goals.
+          </p>
         </div>
       </div>
 
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-10">
 
-        <div>
+        <div className="border border-gray-300">
           <div className="px-4 sm:px-6 lg:px-8 py-6">
             <img src="https://cdn.prod.website-files.com/5e8545568347402d733f53f2/6751a28778799b349337b12d_Frame%204912-p-800.webp" alt=""/>
           </div>
@@ -32,7 +30,7 @@ export default function RecentProjectSection() {
           </div>
         </div>
 
-        <div>
+        <div className="border border-gray-300">
           <div className="px-4 sm:px-6 lg:px-8 py-6">
             <img src="https://cdn.prod.website-files.com/5e8545568347402d733f53f2/6751a28778799b349337b12d_Frame%204912-p-800.webp" alt=""/>
           </div>
