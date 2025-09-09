@@ -1,21 +1,13 @@
 export default function Footer() {
     return (
-        <footer className="border-t border-gray-300">
-          <div className="max-w-7xl mx-auto border-l border-r border-gray-300">
+        <footer className="border-t border-b border-gray-300">
+          <div className="max-w-5xl mx-auto border-l border-r  border-gray-300 ">
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-x divide-gray-300">
+            <div className="grid grid-cols-1 sm:grid-cols-2">
 
-              <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2.5">
+              <div className="flex items-center px-4 sm:px-6 lg:px-8 border-r border-gray-300">
                 <div className="text-2xl uppercase">
                   Contact
-                </div>
-                <div className="text-left">
-                  <div className="font-semibold text-gray-600 uppercase">
-                    By Email
-                  </div>
-                  <div className="font-light">
-                    krisna.w2010@gmail.com
-                  </div>
                 </div>
               </div>
 

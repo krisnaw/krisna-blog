@@ -1,32 +1,43 @@
 export default function About() {
-    return (
-      <section className="pt-24">
-        <div>
-          <div className="max-w-2xl px-4 sm:px-6 lg:px-8">
-            <div>
-              <h1 className="uppercase text-7xl tracking-tighter text-balance">about me.</h1>
-              <p className="font-light opacity-70 mt-2.5">
-                We&#39;ve been engaged in a variety of projects lately, crafting stories, designing websites, and developing digital experiences.
-                Our recent work reflects our commitment to helping clients achieve their goals.
+  return (
+    <div>
+      <section className="">
+        <div className="flex justify-between space-x-10">
+          <div>
+            <div className="mx-auto max-w-2xl px-4">
+              <h1 className="uppercase text-7xl tracking-tighter text-balance">I’m Krisna Wijaya</h1>
+              <p className="text-lg font-light opacity-70 mt-10">
+                I’ve loved making things for as long as I can remember, and wrote my first program when I was 6 years
+                old, just two weeks after my mom brought home the brand new
+                Macintosh LC 550 that I taught myself to type on.
+              </p>
+
+              <p className="text-lg font-light opacity-70 mt-2.5">
+                I’ve loved making things for as long as I can remember, and wrote my first program when I was 6 years
+                old, just two weeks after my mom brought home the brand new
+                Macintosh LC 550 that I taught myself to type on.
               </p>
             </div>
           </div>
-        </div>
-          <div className="flex justify-between items-center px-10">
-            <div className="px-10 group relative overflow-hidden rounded-3xl bg-neutral-100">
-              <img className="object-cover grayscale transition duration-500 motion-safe:group-hover:scale-105"
-                src="https://cdn.prod.website-files.com/5e8545568347402d733f53f2/679dd021cb4e2e27523384f0_36E38FD5-D219-4730-9880-6FB437CFD195_1_105_c%201.avif"
-                alt=""/>
-              <div
-                className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black to-black/0 to-40% p-6">
-                <p className="font-display text-base/6 font-semibold tracking-wide text-white">Leslie Alexander</p><p
-                className="mt-2 text-sm text-white">Co-Founder / CEO</p></div>
-            </div>
-            <div className="px-10">
-              Hey, I’m Nikolai. I&#39;m a New Zealand born, Edinburgh based Webflow Professional Partner.
-              You can see me in The Hobbit if you look close enough, and see my design and dev work across the web for clients based in UK, EU, US, AU, and NZ.
+
+          <div>
+            <div className="pr-10">
+              <div style={{opacity: 1, transform: "none"}}>
+                <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
+                  <img
+                    className="h-96 w-full object-cover grayscale transition duration-500 motion-safe:group-hover:scale-105"
+                    src="/images/new_profiles.jpg" alt="Profile"/>
+                  <div
+                    className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black to-black/0 to-40% p-6">
+                    <p className="font-display text-base/6 font-semibold tracking-wide text-white">Krisna Wijaya</p><p
+                    className="mt-2 text-sm text-white">Software Developer</p></div>
+                </div>
+              </div>
             </div>
           </div>
+
+        </div>
       </section>
-    )
+    </div>
+  )
 }

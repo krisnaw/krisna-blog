@@ -8,7 +8,7 @@ import {NavMenu} from "@/components/nav/nav-menu";
 export default function NavBar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 w-full flex justify-center border-b border-gray-300 bg-[#f9f6f1]">
-      <nav aria-label="Global" className="py-4.5 px-4 max-w-7xl w-full border-r border-l border-gray-300">
+      <nav aria-label="Global" className="py-4.5 px-4 max-w-5xl w-full border-r border-l border-gray-300">
         <ul className="flex items-center justify-between">
           <li>
             <div className="flex lg:flex-1">

@@ -1,6 +1,6 @@
 export default function RecentProjectSection() {
   return (
-    <section className="py-24 border-t border-gray-300">
+    <section>
 
       <div>
         <div className="max-w-2xl px-4 sm:px-6 lg:px-8">
@@ -15,7 +15,7 @@ export default function RecentProjectSection() {
       </div>
 
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-6">
 
         <div>
           <div className="px-4 sm:px-6 lg:px-8 py-6">

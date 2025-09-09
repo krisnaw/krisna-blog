@@ -6,10 +6,12 @@ export default async function HomeLayout(
 ) {
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#f9f6f1]">
+    <div className="flex flex-col min-h-screen">
       <NavBar/>
       <div className="flex-grow">
-        {children}
+        <main className="mt-18 border-l border-r border-gray-300 mx-auto max-w-5xl min-h-[95vh] py-20 px-10">
+          {children}
+        </main>
       </div>
       <Footer/>
     </div>
