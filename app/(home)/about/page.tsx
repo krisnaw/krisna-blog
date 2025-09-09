@@ -1,18 +1,20 @@
 export default function About() {
   return (
-    <div>
+    <div className="py-24">
       <section className="">
-        <div className="flex justify-between space-x-10">
+        <div className="flex flex-col sm:flex-row space-x-10">
           <div>
-            <div className="mx-auto max-w-2xl px-4">
-              <h1 className="uppercase text-7xl tracking-tighter text-balance">I’m Krisna Wijaya</h1>
-              <p className="text-lg font-light opacity-70 mt-10">
+            <div className="sm:mx-auto sm:max-w-2xl sm:px-4">
+
+              <h1 className="uppercase text-3xl sm:text-7xl tracking-tighter text-balance">I’m Krisna Wijaya</h1>
+
+              <p className="sm:text-lg font-light opacity-70 mt-10">
                 I’ve loved making things for as long as I can remember, and wrote my first program when I was 6 years
                 old, just two weeks after my mom brought home the brand new
                 Macintosh LC 550 that I taught myself to type on.
               </p>
 
-              <p className="text-lg font-light opacity-70 mt-2.5">
+              <p className="sm:text-lg font-light opacity-70 mt-2.5">
                 I’ve loved making things for as long as I can remember, and wrote my first program when I was 6 years
                 old, just two weeks after my mom brought home the brand new
                 Macintosh LC 550 that I taught myself to type on.
@@ -20,8 +22,8 @@ export default function About() {
             </div>
           </div>
 
-          <div>
-            <div className="pr-10">
+          <div className="order-first sm:order-none">
+            <div>
               <div style={{opacity: 1, transform: "none"}}>
                 <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
                   <img

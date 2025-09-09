@@ -13,7 +13,7 @@ export default function RecentProjectSection() {
       </div>
 
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 mt-10">
 
         <div className="border border-gray-300">
           <div className="px-4 sm:px-6 lg:px-8 py-6">
