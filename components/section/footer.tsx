@@ -3,9 +3,9 @@ export default function Footer() {
         <footer className="border-t border-b border-gray-300">
           <div className="max-w-5xl mx-auto border-l border-r  border-gray-300 ">
 
-            <div className="grid grid-cols-1 sm:grid-cols-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 ">
 
-              <div className="flex items-center px-4 sm:px-6 lg:px-10 border-r border-gray-300">
+              <div className="flex items-center px-4 sm:px-6 lg:px-10 border-r border-b sm:border-b-none border-gray-300">
                 <div className="text-2xl uppercase">
                   Contact
                 </div>

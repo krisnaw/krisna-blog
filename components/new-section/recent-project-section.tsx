@@ -1,6 +1,6 @@
 export default function RecentProjectSection() {
   return (
-    <section>
+    <section className="py-20 border-t border-gray-300">
 
       <div className="max-w-xl">
         <div>
