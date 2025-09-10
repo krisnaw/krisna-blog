@@ -12,6 +12,23 @@ export default function Page() {
         </div>
 
         <div className="max-w-xl">
+
+          <div>
+            <div className="flex space-x-10">
+              <div>
+                { new Date().toLocaleDateString()}
+              </div>
+              <div className="font-bold text-lg">
+                The product design talent crisis
+              </div>
+            </div>
+            <div className="mt-2.5 text-muted-foreground font-semibold">
+              The demand for product designers at the top of the talent pool is happening at the cost of junior and entry-level roles.
+              We need to reverse this trend to ensure a healthy future of our practice.
+            </div>
+          </div>
+
+
           {Array.from({ length: 20 }, (_, i) => (
             <div key={i} className="py-4 border-b-2 border-dashed border-blue-600 hover:bg-blue-500 hover:text-white">
 

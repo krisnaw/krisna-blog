@@ -8,6 +8,8 @@ export default function AboutSection() {
 
               <h1 className="uppercase text-3xl sm:text-7xl tracking-tighter text-balance">I’m Krisna Wijaya</h1>
 
+              I’m software developer. Interested in FrontEnd Development.
+
               <ul>
                 <li>
                   - I&#39;m software developer

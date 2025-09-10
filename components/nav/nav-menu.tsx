@@ -10,6 +10,7 @@ export function NavMenu() {
   const router = useRouter()
   const pathname = usePathname()
 
+
   useEffect(() => {
     const container = containerRef.current;
 
@@ -35,7 +36,7 @@ export function NavMenu() {
           {TABS.map((tab) => (
             <li key={tab.name}>
               <button
-                ref={pathname === tab.href ? activeTabElementRef : null}
+                ref={pathname === tab.href || pathname.startsWith(`${tab.href}/`) ? activeTabElementRef : null}
                 onClick={() => router.push(tab.href)}
                 className={styles.button}>
                 {tab.icon}

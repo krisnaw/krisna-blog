@@ -22,48 +22,36 @@ export default function ExploreSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
 
-          <div className="divide-y divide-gray-200 overflow-hidden rounded-lg shadow-sm flex flex-col">
-            <div className="px-4 py-2.5 sm:px-6 flex justify-between items-center">
+          <div className="divide-y divide-gray-300 overflow-hidden rounded-lg shadow-sm border border-gray-300 flex flex-col">
 
-              <div className="text-lg font-semibold text-muted-foreground">
-                Animation Height
-              </div>
-
-              <div className="shrink-0">
-                <img className="border border-gray-200 rounded-lg" width="45" height="45" alt="Motion logo" src="https://github.com/user-attachments/assets/00d6d1c3-72c4-4c2f-a664-69da13182ffc" />
-              </div>
-
-            </div>
             <div className="px-4 py-5 sm:p-6 flex-grow flex items-center justify-center">
               <HeighAnimation />
             </div>
-            <div className="px-4 py-4 sm:px-6 bg-blue-100/50">
+
+            <div className="px-4 py-4 sm:px-6 bg-gray-200/50">
+              <div className="text-lg font-semibold text-muted-foreground">
+                Animation Height
+              </div>
               <p className="opacity-70">
                 Click the button to animate the height of the box.
               </p>
             </div>
+
           </div>
 
-          <div className="divide-y divide-gray-200 overflow-hidden rounded-lg shadow-sm flex flex-col">
-            <div className="px-4 py-2.5 sm:px-6 flex justify-between items-center">
-
-              <div className="text-lg font-semibold text-muted-foreground">
-                Animate Presence
-              </div>
-
-              <div className="shrink-0">
-                <img className="border border-gray-200 rounded-lg" width="45" height="45" alt="Motion logo" src="https://github.com/user-attachments/assets/00d6d1c3-72c4-4c2f-a664-69da13182ffc" />
-              </div>
-
-            </div>
+          <div className="divide-y divide-gray-300 overflow-hidden rounded-lg shadow-sm border border-gray-300  flex flex-col">
             <div className="px-4 py-5 sm:p-6 flex-grow">
               <ButtonSendLink />
             </div>
-            <div className="px-4 py-4 sm:px-6 bg-blue-100/50">
+            <div className="px-4 py-4 sm:px-6 bg-gray-200/50">
+              <div className="text-lg font-semibold text-muted-foreground">
+                Animate Presence
+              </div>
               <p className="opacity-70">
                 Click to see animate the presence of the button.
               </p>
             </div>
+
           </div>
 
         </div>
