@@ -34,7 +34,7 @@ export default function ExploreSection() {
               </div>
 
             </div>
-            <div className="px-4 py-5 sm:p-6 flex-grow">
+            <div className="px-4 py-5 sm:p-6 flex-grow flex items-center justify-center">
               <HeighAnimation />
             </div>
             <div className="px-4 py-4 sm:px-6 bg-blue-100/50">
