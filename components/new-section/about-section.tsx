@@ -1,26 +1,18 @@
 export default function AboutSection() {
   return (
     <div className="py-24">
-      <section className="border-b border-gray-300">
+      <section>
         <div className="flex flex-col sm:flex-row space-x-10">
           <div>
             <div>
 
-              <h1 className="uppercase text-3xl sm:text-7xl tracking-tighter text-balance">I’m Krisna Wijaya</h1>
-
-              I’m software developer. Interested in FrontEnd Development.
-
-              <ul>
-                <li>
-                  - I&#39;m software developer
-                </li>
-                <li>
-                  - Right now my focus is on FrontEnd Development.
-                </li>
-              </ul>
+              <h1 className="uppercase text-3xl sm:text-7xl tracking-tighter text-balance">
+                👋 I’m
+                <br/> Krisna Wijaya
+              </h1>
 
               <p className="sm:text-lg font-light opacity-70 mt-10">
-
+                I’m software developer. Emphasizes end-to-end ownership of a product—from backend logic to frontend polish
               </p>
 
               <p className="sm:text-lg font-light opacity-70 mt-2.5">
@@ -28,7 +20,6 @@ export default function AboutSection() {
                 old, just two weeks after my mom brought home the brand new
                 Macintosh LC 550 that I taught myself to type on.
               </p>
-
 
               <p className="sm:text-lg font-light opacity-70 mt-2.5">
                 Outside of work, you’ll usually find me running, getting lost in a book, taking long road cycling trips, or exploring new places around the world.
@@ -54,8 +45,18 @@ export default function AboutSection() {
 
         </div>
       </section>
-      <section className="mt-10">
-        Tech Stack
+
+      <section className="pt-10">
+        <div>
+          Tech stack
+        </div>
+        <div>
+          <ul>
+            <li>
+              Next.js
+            </li>
+          </ul>
+        </div>
       </section>
     </div>
   )

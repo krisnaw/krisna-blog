@@ -29,7 +29,7 @@ export function NavMenu() {
   }, [pathname, activeTabElementRef, containerRef]);
 
   return (
-    <div className="px-2">
+    <div>
       <div className={styles.wrapper}>
 
         <ul className={styles.list}>
