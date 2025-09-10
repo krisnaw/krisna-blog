@@ -36,7 +36,7 @@ export default function HeighAnimation() {
   }
 
   return (
-    <div className="grid place-items-center z-30 shadow-lg rounded-xl pb-4 bg-white">
+    <div className="grid place-items-center z-30 shadow-lg rounded-xl pb-2.5 bg-white">
       <motion.div animate={{ height: bounds.height  }} transition={{ ease: "easeInOut" }} className={styles.element}>
         <div ref={elementRef} className={styles.inner}>
 
