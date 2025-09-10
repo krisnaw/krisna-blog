@@ -3,13 +3,16 @@ import HeighAnimation from "@/components/animations/heigh-animation/height-anima
 export default function ExploreSection() {
   return (
     <section className="py-20 border-t border-gray-300">
-      <div className="max-w-xl">
+      <div>
         <div>
-          <h1 className="uppercase text-7xl tracking-tighter text-balance">Exploration.</h1>
-          <p className="font-light opacity-70 mt-2.5">
-            We&#39;ve been engaged in a variety of projects lately, crafting stories, designing websites, and developing digital experiences.
-            Our recent work reflects our commitment to helping clients achieve their goals.
-          </p>
+          <h1 className="uppercase text-7xl tracking-tighter text-balance">Animation Exploration.</h1>
+          <div className="mt-2.5">
+            <p className="font-light opacity-70 mt-2.5">
+              Animations improve <b>perceived performance and user experience (UX).</b> <br/>
+              It demonstrates how subtle motion can bring interfaces to life, making the experience more engaging and intuitive.<br/>
+              Explore these effects to see how animation elevates modern web design.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -49,11 +52,11 @@ export default function ExploreSection() {
 
             <div className="w-full px-6 py-4 border-t border-gray-300 transition-max-height duration-300 ease-in-out  overflow-auto">
               <div className="flex items-start justify-between">
-                <div>
+                <div className=" max-w-xs">
                   <div className="text-lg font-semibold text-muted-foreground">
                     Animating Height
                   </div>
-                  <p className="font-light opacity-70">
+                  <p className="font-light opacity-70 mt-1.5">
                     Click the button to animate the height of the box. This animation was built using Framer Motion.
                   </p>
                 </div>

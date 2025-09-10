@@ -27,7 +27,7 @@ export default function AboutSection() {
               <div style={{opacity: 1, transform: "none"}}>
                 <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
                   <img
-                    className="h-96 w-full object-cover grayscale transition duration-500 motion-safe:group-hover:scale-105"
+                    className="h-96 w-full object-cover grayscale transition duration-500 motion-safe:group-hover:scale-150"
                     src="/images/new_profiles.jpg" alt="Profile"/>
                   <div
                     className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black to-black/0 to-40% p-6">

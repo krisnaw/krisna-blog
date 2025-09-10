@@ -13,8 +13,8 @@ export default function Page() {
                 </h1>
             </div>
 
-            <div className="mx-auto max-w-3xl mt-10 bg-gray-50 rounded-md p-10">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-10">
+            <div className="mx-auto max-w-3xl mt-10 p-4 border border-gray-300">
+                <div className="grid grid-cols-3 gap-4">
                     <div>
                         <p className="text-sm text-gray-500 font-medium leading-relaxed">Timeline</p>
                         <ul className="mt-2 space-y-2">
