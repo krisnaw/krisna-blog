@@ -11,7 +11,6 @@ export default function Page() {
 
       <RecentProjectSection/>
 
-
       <ExpSection />
 
       <ExploreSection />

@@ -16,12 +16,12 @@ export default function RecentProjectSection() {
       </div>
 
 
-      <div className="grid grid-cols-1 gap-4 mt-14 p-10 border border-blue-200">
+      <div className="grid grid-cols-1 gap-4 mt-14 p-10 border border-blue-200 rounded-lg">
 
         {projects.map((item) => (
           <Link href={item.href} key={item.id}>
             <div>
-              <Image src={item.image_url} className="border border-gray-200"
+              <Image src={item.image_url} className="border border-gray-200 "
                      alt="Work sample" width={1000} height={300} />
             </div>
 
