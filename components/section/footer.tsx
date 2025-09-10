@@ -1,3 +1,6 @@
+import {ArrowRight} from "lucide-react";
+import {SVGProps} from "react";
+
 export default function Footer() {
     return (
         <footer className="border-t border-b border-gray-300">
@@ -5,9 +8,12 @@ export default function Footer() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 ">
 
-              <div className="flex items-center px-4 sm:px-6 lg:px-10 border-r border-b sm:border-b-none border-gray-300">
-                <div className="text-2xl uppercase">
-                  Contact
+              <div className="flex justify-between items-center px-4 sm:px-6 lg:px-10 border-r border-b sm:border-b-none border-gray-300">
+                <div className="font-light text-sm text-blue-600">
+                  Created by Krisna Wijaya — {new Date().getFullYear()}
+                </div>
+                <div className="text-2xl uppercase flex items-center gap-2">
+                  Contact <ArrowRight />
                 </div>
               </div>
 
@@ -27,8 +33,6 @@ export default function Footer() {
         </footer>
     )
 }
-
-import {SVGProps} from "react";
 
 const navigation = [
 

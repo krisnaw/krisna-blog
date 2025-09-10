@@ -1,4 +1,4 @@
-export default function About() {
+export default function AboutSection() {
   return (
     <div className="py-24">
       <section className="">

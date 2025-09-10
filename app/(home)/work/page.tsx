@@ -1,4 +1,4 @@
-import {ButtonSendLink} from "@/app/(home)/work/button-send-link";
+import {ButtonSendLink} from "@/components/animations/button-send-link/button-send-link";
 
 export default function Page() {
   return (

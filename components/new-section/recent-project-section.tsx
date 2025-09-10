@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function RecentProjectSection() {
   return (
     <section className="py-20 border-t border-gray-300">
@@ -13,42 +16,53 @@ export default function RecentProjectSection() {
       </div>
 
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 mt-10">
+      <div className="grid grid-cols-1 gap-4 mt-14 p-10 border border-blue-200">
 
-        <div className="border border-gray-300">
-          <div className="px-4 sm:px-6 lg:px-8 py-6">
-            <img src="https://cdn.prod.website-files.com/5e8545568347402d733f53f2/6751a28778799b349337b12d_Frame%204912-p-800.webp" alt=""/>
-          </div>
+        {projects.map((item) => (
+          <Link href={item.href} key={item.id}>
+            <div>
+              <Image src={item.image_url} className="border border-gray-200"
+                     alt="Work sample" width={1000} height={300} />
+            </div>
 
-          <div className="px-4 sm:px-6 lg:px-8 py-6">
-            <h4 className="uppercase font-semibold text-2xl">
-              DONE DRINKS
-            </h4>
-            <p className="mt-2.5 tracking-wide font-light">
-              We helped Done Drinks launch a site that looks as good as it tastes. Clean layout, crisp storytelling, and motion that adds just enough spice. Built in Webflow.
-            </p>
-          </div>
-        </div>
-
-        <div className="border border-gray-300">
-          <div className="px-4 sm:px-6 lg:px-8 py-6">
-            <img src="https://cdn.prod.website-files.com/5e8545568347402d733f53f2/6751a28778799b349337b12d_Frame%204912-p-800.webp" alt=""/>
-          </div>
-
-          <div className="px-4 sm:px-6 lg:px-8 py-6">
-            <h4 className="uppercase font-semibold text-2xl">
-              DONE DRINKS
-            </h4>
-            <p className="mt-2.5 tracking-wide font-light">
-              We helped Done Drinks launch a site that looks as good as it tastes. Clean layout, crisp storytelling, and motion that adds just enough spice. Built in Webflow.
-            </p>
-          </div>
-        </div>
-
-
+            <div className="mt-4">
+              <h4 className="uppercase font-semibold text-2xl">
+                {item.title}
+              </h4>
+              <p className="mt-2.5 tracking-wide font-light">
+                {item.descriptions}
+              </p>
+            </div>
+          </Link>
+        ))}
 
       </div>
 
     </section>
   )
 }
+
+
+const projects = [
+  {
+    id: 1,
+    title: 'Crafting booking interface for long term rental at HaupCar',
+    descriptions: 'HaupCar is a Thailand-based car rental company, and they plan to revamp the UI of their long-term car rental feature, also migrating their API to a newer version.',
+    href: '/projects/haup',
+    image_url: '/haup/haup_home_page.webp'
+  },
+
+  // {
+  //     id: 2,
+  //     title: 'Redesigning B2B Signup',
+  //     descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+  //     href: ''
+  // },
+  //
+  // {
+  //     id: 3,
+  //     title: 'Redesigning B2B Signup',
+  //     descriptions: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+  //     href: ''
+  // },
+]
