@@ -17,9 +17,6 @@ export default function ExploreSection() {
 
       <div className="mt-10">
 
-
-
-
         <div className="grid grid-cols-2 gap-4">
 
           <div className="border border-gray-300 rounded-lg overflow-hidden">
@@ -27,30 +24,15 @@ export default function ExploreSection() {
               <HeighAnimation />
             </div>
             <div className="w-full px-6 py-4 border-t border-gray-300 transition-max-height duration-300 ease-in-out max-h-96 overflow-auto">
-              <div>
+              <div className="flex items-center justify-between">
                 <div className="text-xl font-semibold text-muted-foreground">
                   Animating height
                 </div>
                 <div>
-                  Icon
+                  <img width="45" height="45" alt="Motion logo" src="https://github.com/user-attachments/assets/00d6d1c3-72c4-4c2f-a664-69da13182ffc" />
                 </div>
               </div>
             </div>
-          </div>
-
-
-
-
-          <div className="border-b border-gray-300 rounded-lg  col-span-2 bg-blue-500/50 ">
-            <div className="flex flex-col ">
-              <div className="w-full flex justify-center items-center bg-white rounded-t-lg py-6">
-                <HeighAnimation />
-              </div>
-              <div className="w-full px-6 py-4">
-                Animating height
-              </div>
-            </div>
-
           </div>
 
           <div className="border border-gray-300 rounded-l">
@@ -59,8 +41,6 @@ export default function ExploreSection() {
             </div>
             <ButtonSendLink />
           </div>
-
-
 
           <div className="border border-gray-300 rounded-l">
             <ButtonSendLink />

@@ -10,7 +10,7 @@
 .element {
     background: white;
     border-radius: 16px;
-    width: 320px;
+    width: 400px;
     display: flex;
     flex-direction: column;
     gap: 8px;

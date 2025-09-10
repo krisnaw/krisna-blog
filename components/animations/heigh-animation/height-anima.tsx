@@ -36,7 +36,7 @@ export default function HeighAnimation() {
   }
 
   return (
-    <div className="grid place-items-center z-30 shadow-lg rounded-xl">
+    <div className="grid place-items-center z-30 shadow-lg rounded-xl pb-4 bg-white">
       <motion.div animate={{ height: bounds.height  }} transition={{ ease: "easeInOut" }} className={styles.element}>
         <div ref={elementRef} className={styles.inner}>
 
@@ -62,7 +62,7 @@ export default function HeighAnimation() {
 
                 <Separator className="my-4" />
 
-                <ul className="text-muted-foreground space-y-2.5">
+                <ul className="text-muted-foreground space-y-3.5">
                   <li className="flex gap-2">
                     <ShieldCheck /> Keep your secret phrase safe.
                   </li>
@@ -104,7 +104,7 @@ export default function HeighAnimation() {
 
                 <Separator className="my-4" />
 
-                <ul className="text-muted-foreground space-y-2.5">
+                <ul className="text-muted-foreground space-y-3.5">
                   <li className="flex gap-2">
                     <ShieldCheck /> Keep your secret phrase safe.
                   </li>
