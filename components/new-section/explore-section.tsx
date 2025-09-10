@@ -37,7 +37,7 @@ export default function ExploreSection() {
             <div className="px-4 py-5 sm:p-6 flex-grow">
               <HeighAnimation />
             </div>
-            <div className="px-4 py-4 sm:px-6 bg-gray-100/50">
+            <div className="px-4 py-4 sm:px-6 bg-blue-100/50">
               <p className="opacity-70">
                 Click the button to animate the height of the box. This animation was built using Framer Motion.
               </p>
@@ -59,7 +59,7 @@ export default function ExploreSection() {
             <div className="px-4 py-5 sm:p-6 flex-grow">
               <ButtonSendLink />
             </div>
-            <div className="px-4 py-4 sm:px-6 bg-gray-100/50">
+            <div className="px-4 py-4 sm:px-6 bg-blue-100/50">
               <p className="opacity-70">
                 Click the button to see animate the presence of the button. This animation was built using Framer Motion.
               </p>

@@ -1,17 +1,24 @@
 export default function AboutSection() {
   return (
     <div className="py-24">
-      <section className="">
+      <section className="border-b border-gray-300">
         <div className="flex flex-col sm:flex-row space-x-10">
           <div>
-            <div className="sm:mx-auto sm:max-w-2xl sm:px-4">
+            <div>
 
               <h1 className="uppercase text-3xl sm:text-7xl tracking-tighter text-balance">I’m Krisna Wijaya</h1>
 
+              <ul>
+                <li>
+                  - I&#39;m software developer
+                </li>
+                <li>
+                  - Right now my focus is on FrontEnd Development.
+                </li>
+              </ul>
+
               <p className="sm:text-lg font-light opacity-70 mt-10">
-                I’ve loved making things for as long as I can remember, and wrote my first program when I was 6 years
-                old, just two weeks after my mom brought home the brand new
-                Macintosh LC 550 that I taught myself to type on.
+
               </p>
 
               <p className="sm:text-lg font-light opacity-70 mt-2.5">
@@ -19,10 +26,15 @@ export default function AboutSection() {
                 old, just two weeks after my mom brought home the brand new
                 Macintosh LC 550 that I taught myself to type on.
               </p>
+
+
+              <p className="sm:text-lg font-light opacity-70 mt-2.5">
+                Outside of work, you’ll usually find me running, getting lost in a book, taking long road cycling trips, or exploring new places around the world.
+              </p>
             </div>
           </div>
 
-          <div className="order-first sm:order-none">
+          <div className="order-first sm:order-none shrink-0">
             <div>
               <div style={{opacity: 1, transform: "none"}}>
                 <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
@@ -39,6 +51,9 @@ export default function AboutSection() {
           </div>
 
         </div>
+      </section>
+      <section className="mt-10">
+        Tech Stack
       </section>
     </div>
   )

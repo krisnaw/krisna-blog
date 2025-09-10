@@ -9,11 +9,11 @@ export default function Page() {
 
       <AboutSection />
 
+      <ExploreSection />
+
       <RecentProjectSection/>
 
       <ExpSection />
-
-      <ExploreSection />
 
     </div>
   )
