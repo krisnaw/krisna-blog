@@ -63,17 +63,21 @@ export default function ButtonToPopover() {
               style={{borderRadius: "12px"}}
               ref={ref}
             >
-            <motion.span
-              layoutId="title"
-              aria-hidden={true}
-              className={styles.placeholder}
-              data-feedback={feedback ? "true" : "false"}
-            >Feedback</motion.span>
+              <motion.span
+                layoutId="title"
+                aria-hidden={true}
+                className={styles.placeholder}
+                data-feedback={feedback ? "true" : "false"}
+              >Feedback
+              </motion.span>
 
 
               {formState === "success" ?
                 (
-                  <div>
+                  <motion.div initial={{y: -32, opacity: 0, filter: "blur(4px)"}}
+                              animate={{y: 0, opacity: 100, filter: "blur(0px)"}}
+                              transition={{type: "spring", duration: 0.4, bounce: 0}}
+                              className={styles.successWrapper} key="success">
                     <svg
                       width="32"
                       height="32"
@@ -96,15 +100,19 @@ export default function ButtonToPopover() {
                     </svg>
                     <h3>Feedback received!</h3>
                     <p>Thanks for helping me improve Sooner.</p>
-                  </div>
+                  </motion.div>
                 ) :
                 (
-                  <form className={styles.feedbackForm}
-                        onSubmit={(e: FormEvent<HTMLFormElement>) => {
-                          e.preventDefault()
-                          if (!feedback) return;
-                          submit()
-                        }}>
+                  <motion.form
+                    exit={{ y: 8, opacity: 0, filter: "blur(4px)" }}
+                    transition={{type: "spring", duration: 0.4, bounce: 0}}
+                    className={styles.feedbackForm}
+                    key="form"
+                    onSubmit={(e: FormEvent<HTMLFormElement>) => {
+                      e.preventDefault()
+                      if (!feedback) return;
+                      submit()
+                    }}>
 
                     <textarea name="feedback" id="feedback"
                               onChange={(e) => setFeedback(e.target.value)}
@@ -149,7 +157,6 @@ export default function ButtonToPopover() {
                           </defs>
                         </svg>
                       </div>
-
                       <button type="submit" className={styles.submitButton}>
                         <AnimatePresence mode="popLayout" initial={false}>
                           <motion.span
@@ -173,7 +180,7 @@ export default function ButtonToPopover() {
                       </button>
                     </div>
 
-                  </form>
+                  </motion.form>
                 )
               }
             </motion.div>
