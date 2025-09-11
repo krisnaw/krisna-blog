@@ -1,5 +1,6 @@
 import HeighAnimation from "@/components/animations/heigh-animation/height-anima";
 import {ButtonSendLink} from "@/components/animations/button-send-link/button-send-link";
+import ButtonToPopover from "@/components/animations/button-to-pop/button-to-popover";
 
 export default function ExploreSection() {
   return (
@@ -22,26 +23,44 @@ export default function ExploreSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
 
-          <div className="divide-y divide-gray-300 overflow-hidden rounded-lg shadow-sm border border-gray-300 flex flex-col">
+          <div>
+            <div className="divide-y divide-gray-300 overflow-hidden rounded-lg shadow-sm border border-gray-300 flex flex-col">
 
-            <div className="px-4 py-5 sm:p-6 flex-grow flex items-center justify-center">
-              <HeighAnimation />
-            </div>
-
-            <div className="px-4 py-4 sm:px-6 bg-gray-200/50">
-              <div className="text-lg font-semibold text-muted-foreground">
-                Animation Height
+              <div className="px-4 py-5 sm:p-6 flex-grow flex items-center justify-center">
+                <HeighAnimation />
               </div>
-              <p className="opacity-70">
-                Click the button to animate the height of the box.
-              </p>
+
+              <div className="px-4 py-4 sm:px-6 bg-gray-200/50">
+                <div className="text-lg font-semibold text-muted-foreground">
+                  Animation Height
+                </div>
+                <p className="opacity-70">
+                  Click the button to animate the height of the box.
+                </p>
+              </div>
+
+            </div>
+            <div className="divide-y divide-gray-300 overflow-hidden rounded-lg shadow-sm border border-gray-300  flex flex-col">
+              <div className="px-4 py-5 sm:p-6 flex-grow">
+                <ButtonSendLink />
+              </div>
+              <div className="px-4 py-4 sm:px-6 bg-gray-200/50">
+                <div className="text-lg font-semibold text-muted-foreground">
+                  Animate Presence
+                </div>
+                <p className="opacity-70">
+                  Click to see animate the presence of the button.
+                </p>
+              </div>
+
             </div>
 
           </div>
 
+
           <div className="divide-y divide-gray-300 overflow-hidden rounded-lg shadow-sm border border-gray-300  flex flex-col">
             <div className="px-4 py-5 sm:p-6 flex-grow">
-              <ButtonSendLink />
+              <ButtonToPopover />
             </div>
             <div className="px-4 py-4 sm:px-6 bg-gray-200/50">
               <div className="text-lg font-semibold text-muted-foreground">
@@ -53,6 +72,7 @@ export default function ExploreSection() {
             </div>
 
           </div>
+
 
         </div>
       </div>

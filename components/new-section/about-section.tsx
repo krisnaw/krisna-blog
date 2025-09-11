@@ -1,4 +1,4 @@
-import TechStackMarquee from "@/components/animations/tech-stack/tech-stack-marquee";
+import ButtonToPopover from "@/components/animations/button-to-pop/button-to-popover";
 
 export default function AboutSection() {
   return (
@@ -53,7 +53,7 @@ export default function AboutSection() {
           Tech stack
         </div>
         <div>
-          <TechStackMarquee />
+          <ButtonToPopover />
         </div>
       </section>
     </div>
