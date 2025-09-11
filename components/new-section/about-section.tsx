@@ -1,3 +1,5 @@
+import TechStackMarquee from "@/components/animations/tech-stack/tech-stack-marquee";
+
 export default function AboutSection() {
   return (
     <div className="py-24">
@@ -12,7 +14,7 @@ export default function AboutSection() {
               </h1>
 
               <p className="sm:text-lg font-light opacity-70 mt-10">
-                I’m software developer. Emphasizes end-to-end ownership of a product—from backend logic to frontend polish
+                I’m a software developer who emphasizes end-to-end ownership of a product, from backend logic to frontend polish.
               </p>
 
               <p className="sm:text-lg font-light opacity-70 mt-2.5">
@@ -51,11 +53,7 @@ export default function AboutSection() {
           Tech stack
         </div>
         <div>
-          <ul>
-            <li>
-              Next.js
-            </li>
-          </ul>
+          <TechStackMarquee />
         </div>
       </section>
     </div>
