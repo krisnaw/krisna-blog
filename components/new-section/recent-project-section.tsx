@@ -16,8 +16,7 @@ export default function RecentProjectSection() {
       </div>
 
 
-      <div className="grid grid-cols-1 gap-4 mt-14 p-10 border border-blue-200 rounded-lg">
-
+      <div className="grid grid-cols-1 gap-4 mt-14 p-4 border border-blue-300 p-10">
         {projects.map((item) => (
           <Link href={item.href} key={item.id}>
             <div>
@@ -26,16 +25,15 @@ export default function RecentProjectSection() {
             </div>
 
             <div className="mt-4">
-              <h4 className="uppercase font-semibold text-2xl">
+              <h4 className="uppercase font-semibold text-2xl opacity-70">
                 {item.title}
               </h4>
-              <p className="mt-2.5 tracking-wide font-light">
+              <p className="mt-2.5 tracking-wide font-light opacity-70">
                 {item.descriptions}
               </p>
             </div>
           </Link>
         ))}
-
       </div>
 
     </section>

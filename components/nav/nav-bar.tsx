@@ -21,7 +21,7 @@ export default function NavBar() {
               <ul className="flex items-center space-x-6">
 
                 <li>
-                  <Button className="rounded-full text-white bg-[#2090FF] cursor-pointer"  size="lg">
+                  <Button className="rounded-full text-white bg-[#2090FF] cursor-pointer active:scale-[0.90] active:transition"  size="lg">
                     Get in Touch
                   </Button>
                 </li>

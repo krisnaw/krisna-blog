@@ -38,7 +38,7 @@ export function NavMenu() {
               <button
                 ref={pathname === tab.href || pathname.startsWith(`${tab.href}/`) ? activeTabElementRef : null}
                 onClick={() => router.push(tab.href)}
-                className={styles.button}>
+                className={styles.navLinkButton}>
                 {tab.icon}
                 {tab.name}
               </button>
@@ -53,7 +53,7 @@ export function NavMenu() {
                 <button
                   data-tab={tab.name}
                   onClick={() => router.push(tab.href)}
-                  className={`${styles.buttonOverlay} ${styles.button}`}
+                  className={`${styles.buttonOverlay} ${styles.navLinkButton}`}
                   tabIndex={-1}
                 >
                   {tab.icon}

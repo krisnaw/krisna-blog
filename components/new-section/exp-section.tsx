@@ -1,3 +1,5 @@
+import nextsvg from '../../public/next.svg'
+import Image from "next/image";
 
 export default function ExpSection() {
   return (
@@ -11,7 +13,6 @@ export default function ExpSection() {
           </p>
         </div>
       </div>
-
 
       <div className="mt-16">
         <div className="max-w-5xl">
@@ -28,11 +29,23 @@ export default function ExpSection() {
                   </div>
                 </div>
 
+
+
                 <div className="w-full">
                   <h3 className="font-medium">{item.title} at {item.company}</h3>
                   <p className="text-gray-500 mt-2">
                     {item.descriptions}
                   </p>
+
+                  <div>
+                    <ul className="flex ">
+                      <li className="border border-gray-200 p-2.5">
+                        <Image src={nextsvg} alt="Next logo" />
+                      </li>
+
+                    </ul>
+                  </div>
+
 
                   <div>
                     <ul className="list-disc list-inside">
