@@ -1,10 +1,12 @@
 "use client"
 import {motion} from "framer-motion";
+import profile from "../../public/images/new_profiles.jpg"
+import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section className="flex py-24">
-      <div className="mr-4">
+    <section className="flex justify-between py-24">
+      <div className="mr-4 max-w-lg">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <h1
             className="uppercase text-3xl sm:text-7xl tracking-tighter text-balance">
@@ -33,9 +35,9 @@ export default function AboutSection() {
         <div>
           <div>
             <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
-              <img
+              <Image
                 className="h-96 object-cover grayscale transition duration-500 motion-safe:group-hover:scale-150"
-                src="/images/new_profiles.jpg" alt="Profile"/>
+                src={profile} width={350} height={500} alt="Profile"/>
               <div
                 className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black to-black/0 to-40% p-6">
                 <p className="font-display text-base/6 font-semibold tracking-wide text-white">Krisna Wijaya</p><p
