@@ -1,6 +1,3 @@
-import nextsvg from '../../public/next.svg'
-import Image from "next/image";
-
 export default function ExpSection() {
   return (
     <section className="py-20 border-t border-gray-300">
@@ -32,30 +29,25 @@ export default function ExpSection() {
 
 
                 <div className="w-full">
-                  <h3 className="font-medium">{item.title} at {item.company}</h3>
+                  <h3 className="font-semibold text-muted-foreground text-lg">{item.title} at {item.company}</h3>
                   <p className="text-gray-500 mt-2">
                     {item.descriptions}
                   </p>
 
-                  <div>
-                    <ul className="flex ">
-                      <li className="border border-gray-200 p-2.5">
-                        <Image src={nextsvg} alt="Next logo" />
-                      </li>
+                  {item && item.todos && item.todos.length > 0 && (
+                    <div>
+                      <ul className="flex flex-wrap gap-2 mt-4">
+                        {item.todos.map((todo, index) => (
+                          <li key={index}>
+                            <div className="bg-gray-200/50 text-muted-foreground px-2 py-1 inset-ring inset-ring-gray-300">
+                              {todo}
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
-                    </ul>
-                  </div>
-
-
-                  <div>
-                    <ul className="list-disc list-inside">
-                      {item.todos.map((todo, index) => (
-                        <li key={index}>
-                          {todo}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
               </div>
             ))}
@@ -76,8 +68,7 @@ const navigation = [
     descriptions: 'Contributing to the front-end development of Haup Car’s long-term booking system, a feature enabling customers to\n' +
       'rent vehicles for extended durations.',
     todos: [
-      "sdf",
-      "sdf"
+      "Next.js", "React.js", "AntDesign", "Zustand", "TailwindCSS", "Figma", "Jira",  "TypeScript", "GIT", "Gitlab", "CSS"
     ],
     type: 'Contract'
   },
@@ -90,8 +81,11 @@ const navigation = [
     descriptions: 'Developed ContentGrow, a web application that connects freelance talent with global content teams and streamlines\n' +
       'editorial workflows.',
     todos: [
-      "sdf",
-      "sdf"
+      "Laravel",
+      "TailwindCSS",
+      "Figma",
+      "AWS EC2", "AWS RDS", "DynamoDB", "AWS Lambda",
+      "Vue", "Jenkins", "Sendgrid", "Pusher", "CSS", "HTML"
     ],
     type: 'Full time'
   },
@@ -102,10 +96,6 @@ const navigation = [
     title: 'Tech Writer',
     company: 'Tech in Asia',
     descriptions: 'Researched and interviewed tech startup founders in Indonesia to write feature stories for Tech in Asia',
-    todos: [
-      "sdf",
-      "sdf"
-    ],
     type: 'Full time'
   },
 ]

@@ -48,15 +48,6 @@ export default function AboutSection() {
 
         </div>
       </section>
-
-      <section className="pt-10">
-        <div>
-          Tech stack
-        </div>
-        <div>
-
-        </div>
-      </section>
     </div>
   )
 }
