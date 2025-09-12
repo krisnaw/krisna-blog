@@ -5,8 +5,7 @@ export default function ExpSection() {
         <div>
           <h1 className="uppercase text-7xl tracking-tighter text-balance">Work Experiences.</h1>
           <p className="font-light opacity-70 mt-2.5">
-            We&#39;ve been engaged in a variety of projects lately, crafting stories, designing websites, and developing digital experiences.
-            Our recent work reflects our commitment to helping clients achieve their goals.
+            An overview of my past roles and experiences that shaped my career as a frontend engineer.
           </p>
         </div>
       </div>

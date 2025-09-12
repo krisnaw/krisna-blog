@@ -1,6 +1,5 @@
 'use client'
 
-import {Button} from "@/components/ui/button";
 import {NavMenu} from "@/components/nav/nav-menu";
 
 export default function NavBar() {
@@ -16,25 +15,25 @@ export default function NavBar() {
             </div>
           </li>
 
-          <li>
-            <div>
-              <ul className="flex items-center space-x-6">
+          {/*<li>*/}
+          {/*  <div>*/}
+          {/*    <ul className="flex items-center space-x-6">*/}
 
-                <li>
-                  <Button className="rounded-full text-white bg-[#2090FF] cursor-pointer active:scale-[0.90] active:transition"  size="lg">
-                    Get in Touch
-                  </Button>
-                </li>
+          {/*      <li>*/}
+          {/*        <Button className="rounded-full text-white bg-[#2090FF] cursor-pointer active:scale-[0.90] active:transition"  size="lg">*/}
+          {/*          Get in Touch*/}
+          {/*        </Button>*/}
+          {/*      </li>*/}
 
-                <li>
-                  <Button size="lg" variant="ghost" className="cursor-pointer px-0">
-                    <img src="https://cdn.prod.website-files.com/5e8545568347402d733f53f2/67a9f8a9a0a97f8ca755cbe3_LinkedIn%20-%20Negative.svg" alt=""/>
-                  </Button>
-                </li>
+          {/*      <li>*/}
+          {/*        <Button size="lg" variant="ghost" className="cursor-pointer px-0">*/}
+          {/*          <img src="https://cdn.prod.website-files.com/5e8545568347402d733f53f2/67a9f8a9a0a97f8ca755cbe3_LinkedIn%20-%20Negative.svg" alt=""/>*/}
+          {/*        </Button>*/}
+          {/*      </li>*/}
 
-              </ul>
-            </div>
-          </li>
+          {/*    </ul>*/}
+          {/*  </div>*/}
+          {/*</li>*/}
         </ul>
       </nav>
     </header>
