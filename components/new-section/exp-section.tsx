@@ -14,7 +14,7 @@ export default function ExpSection() {
         <div className="max-w-5xl">
           <div className="grid grid-cols-1 divide-indigo-100 dark:divide-gray-800 divide-y gap-10">
             {navigation.map((item) => (
-              <div className="flex gap-10 pb-6" key={item.id}>
+              <div className="sm:flex sm:gap-10 pb-4 sm:pb-6" key={item.id}>
 
                 <div className="flex-shrink-0 w-64">
                   <div className="text-gray-500 font-bold">
@@ -25,9 +25,7 @@ export default function ExpSection() {
                   </div>
                 </div>
 
-
-
-                <div className="w-full">
+                <div className="mt-2.5 w-full">
                   <h3 className="font-semibold text-muted-foreground text-lg">{item.title} at {item.company}</h3>
                   <p className="text-gray-500 mt-2">
                     {item.descriptions}
@@ -48,6 +46,7 @@ export default function ExpSection() {
                   )}
 
                 </div>
+
               </div>
             ))}
           </div>

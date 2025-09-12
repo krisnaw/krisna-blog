@@ -5,16 +5,15 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section className="flex justify-between py-24">
-      <div className="mr-4 max-w-lg">
+    <section className="flex flex-col sm:flex-row sm:justify-between py-18 sm:py-24">
+      <div className="mr-4 max-w-xl mt-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <h1
             className="uppercase text-3xl sm:text-7xl tracking-tighter text-balance">
-            👋 I’m
-            <br/> Krisna Wijaya
+            👋 I’m Krisna Wijaya
           </h1>
 
-          <p className=" font-light opacity-70 mt-10">
+          <p className=" font-light opacity-70 mt-4">
             I’m a software developer who emphasizes end-to-end ownership of a product, from backend logic to frontend polish.
           </p>
 
