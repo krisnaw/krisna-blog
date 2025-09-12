@@ -9,8 +9,11 @@ export default function AboutSection() {
       <div className="mr-4 max-w-xl mt-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <h1
-            className="uppercase text-3xl sm:text-7xl tracking-tighter text-balance">
-            👋 I’m Krisna Wijaya
+            className="uppercase text-3xl sm:text-5xl tracking-tighter text-balance">
+            <motion.span className="mr-2" animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}>
+              👋
+            </motion.span>
+            I’m Krisna Wijaya
           </h1>
 
           <p className=" font-light opacity-70 mt-4">

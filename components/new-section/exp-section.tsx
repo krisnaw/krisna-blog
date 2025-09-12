@@ -1,14 +1,15 @@
+import SectionHeader from "@/components/new-section/section-header";
+
 export default function ExpSection() {
   return (
     <section className="py-20 border-t border-gray-300">
-      <div>
-        <div>
-          <h1 className="uppercase text-7xl tracking-tighter text-balance">Work Experiences.</h1>
-          <p className="font-light opacity-70 mt-2.5">
-            An overview of my past roles and experiences that shaped my career as a frontend engineer.
-          </p>
-        </div>
-      </div>
+
+      <SectionHeader title="Work Experiences." >
+        <p className="font-light opacity-70 mt-2.5">
+          An overview of my past roles and experiences that shaped my career as a frontend engineer.
+        </p>
+      </SectionHeader>
+
 
       <div className="mt-16">
         <div className="max-w-5xl">

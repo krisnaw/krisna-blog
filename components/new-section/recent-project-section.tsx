@@ -1,18 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import SectionHeader from "@/components/new-section/section-header";
 
 export default function RecentProjectSection() {
   return (
     <section className="py-20 border-t border-gray-300">
 
-      <div className="max-w-xl">
-        <div>
-          <h1 className="uppercase text-7xl tracking-tighter text-balance">Previous Work.</h1>
-          <p className="font-light opacity-70 mt-2.5">
-            An overview of the companies and projects where I contributed to building frontends, crafting smooth user experiences, and shipping reliable web applications.
-          </p>
-        </div>
-      </div>
+      <SectionHeader title="Previous Work." >
+        <p className="font-light opacity-70 mt-2.5">
+          An overview of the companies and projects where I contributed to building frontends, crafting smooth user experiences, and shipping reliable web applications.
+        </p>
+      </SectionHeader>
 
 
       <div className="grid grid-cols-1 gap-4 mt-14 p-4 border border-blue-300 p-10">
@@ -24,10 +22,10 @@ export default function RecentProjectSection() {
             </div>
 
             <div className="mt-4">
-              <h4 className="uppercase font-semibold text-2xl opacity-70">
+              <h4 className="uppercase font-semibold text-lg sm:text-xl opacity-70">
                 {item.title}
               </h4>
-              <p className="mt-2.5 tracking-wide font-light opacity-70">
+              <p className="mt-2.5 tracking-wide font-light text-sm sm:text-base opacity-70">
                 {item.descriptions}
               </p>
             </div>
