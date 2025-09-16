@@ -16,20 +16,22 @@ export default function AboutSection() {
             I’m Krisna Wijaya
           </h1>
 
-          <p className=" font-light opacity-70 mt-4">
-            I’m a software developer who emphasizes end-to-end ownership of a product, from backend logic to frontend polish.
-          </p>
+          <div className="px-4 mt-10 prose prose-sm sm:prose-base">
+            <p>
+              I’m a software developer who emphasizes end-to-end ownership of a product, from backend logic to frontend polish.
+            </p>
 
-          <p className=" font-light opacity-70 mt-3.5">
-            Most of my experience as a web developer has been in full-stack development—from setting up infrastructure in AWS, to building applications with Laravel, and deploying them to production.
-          </p>
-          <p className=" font-light opacity-70 mt-3.5">
-            With the rise of Platform-as-a-Service, over the past couple of years I’ve been transitioning more into frontend engineering. I really enjoy developing web applications with the Next.js framework and building interactive UIs with React. Beyond that, I’ve also explored motion design using Framer Motion.
-          </p>
+            <p>
+              Most of my experience as a web developer has been in full-stack development—from setting up infrastructure in AWS, to building applications with Laravel, and deploying them to production.
+            </p>
+            <p>
+              With the rise of Platform-as-a-Service, over the past couple of years I’ve been transitioning more into frontend engineering. I really enjoy developing web applications with the Next.js framework and building interactive UIs with React. Beyond that, I’ve also explored motion design using Framer Motion.
+            </p>
 
-          <p className=" font-light opacity-70 mt-3.5">
-            Outside of work, you’ll usually find me running, getting lost in a book, taking long road cycling trips, or exploring new places around the world.
-          </p>
+            <p>
+              Outside of work, you’ll usually find me running, getting lost in a book, taking long road cycling trips, or exploring new places around the world.
+            </p>
+          </div>
         </motion.div>
       </div>
 
