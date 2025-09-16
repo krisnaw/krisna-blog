@@ -36,7 +36,7 @@ export function NavMenu() {
           {TABS.map((tab) => (
             <li key={tab.name}>
               <button
-                ref={pathname === tab.href || pathname.startsWith(`${tab.href}/`) ? activeTabElementRef : null}
+                ref={activeTabElementRef}
                 onClick={() => router.push(tab.href)}
                 className={styles.navLinkButton}>
                 {tab.icon}
