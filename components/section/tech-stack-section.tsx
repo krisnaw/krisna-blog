@@ -75,7 +75,7 @@ export default function TechStackSection() {
                     <h2 className="text-xl/8 font-semibold ">Tech Stack</h2>
 
                     <div className="mt-10">
-                        <h4 className="text-sm font-medium text-muted-foreground">Framework</h4>
+                        <h4 className="text-sm font-medium text-neutral-500">Framework</h4>
                         <div className="bg-gray-50 dark:bg-gray-900/50 rounded-lg p-6 mt-4">
                             <div
                                 className="mx-auto grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:grid-cols-3">
@@ -91,7 +91,7 @@ export default function TechStackSection() {
 
 
                     <div className="mt-10">
-                        <h4 className="text-sm font-medium text-muted-foreground">Database and ORM</h4>
+                        <h4 className="text-sm font-medium text-neutral-500">Database and ORM</h4>
                         <div className="bg-gray-50 dark:bg-gray-900/50 rounded-lg p-6 mt-4">
                             <div
                                 className="mx-auto grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:grid-cols-3">
@@ -106,7 +106,7 @@ export default function TechStackSection() {
                     </div>
 
                     <div className="mt-10">
-                        <h4 className="text-sm font-medium text-muted-foreground">Infra and tools</h4>
+                        <h4 className="text-sm font-medium text-neutral-500">Infra and tools</h4>
                         <div className="bg-gray-50 dark:bg-gray-900/50 rounded-lg p-6 mt-4">
                             <div
                                 className="mx-auto grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:grid-cols-3">

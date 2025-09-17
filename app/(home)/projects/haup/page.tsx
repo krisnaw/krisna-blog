@@ -7,7 +7,7 @@ export default function Page() {
 
             {/*Page Title*/}
             <div className="mx-auto max-w-3xl text-base/7 ">
-                <p className="text-xs/7 font-semibold text-muted-foreground">Recent works</p>
+                <p className="text-xs/7 font-semibold text-neutral-500">Recent works</p>
                 <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty  sm:text-5xl">
                     Developing Booking Interface for Long Term Car Rentals
                 </h1>

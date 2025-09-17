@@ -22,7 +22,7 @@ export default function Page() {
                 The product design talent crisis
               </div>
             </div>
-            <div className="mt-2.5 text-muted-foreground font-semibold">
+            <div className="mt-2.5 text-neutral-500 font-semibold">
               The demand for product designers at the top of the talent pool is happening at the cost of junior and entry-level roles.
               We need to reverse this trend to ensure a healthy future of our practice.
             </div>

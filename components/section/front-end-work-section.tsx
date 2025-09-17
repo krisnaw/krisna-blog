@@ -42,7 +42,7 @@ export default function FrontEndWorkSection() {
 
                                 <div className="mt-4">
                                     <h3 className="text-xl/7 font-semibold ">{item.title}</h3>
-                                    <p className="text-md/6 font-light text-muted-foreground">
+                                    <p className="text-md/6 font-light text-neutral-500">
                                         {item.descriptions}
                                     </p>
                                 </div>

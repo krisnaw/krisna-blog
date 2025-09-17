@@ -27,7 +27,7 @@ export default function ExploreSection() {
             </div>
 
             <div className="px-4 py-4 sm:px-6 bg-gray-200/50">
-              <div className="text-lg font-semibold text-muted-foreground">
+              <div className="text-lg font-semibold text-neutral-500">
                 Animation Height
               </div>
               <p className="opacity-70">
@@ -42,7 +42,7 @@ export default function ExploreSection() {
               <ButtonSendLink />
             </div>
             <div className="px-4 py-4 sm:px-6 bg-gray-200/50">
-              <div className="text-lg font-semibold text-muted-foreground">
+              <div className="text-lg font-semibold text-neutral-500">
                 Animate Presence
               </div>
               <p className="opacity-70">
@@ -57,7 +57,7 @@ export default function ExploreSection() {
               <ButtonToPopover />
             </div>
             <div className="px-4 py-4 sm:px-6 bg-gray-200/50">
-              <div className="text-lg font-semibold text-muted-foreground">
+              <div className="text-lg font-semibold text-neutral-500">
                 Button to Popover
               </div>
               <p className="opacity-70">

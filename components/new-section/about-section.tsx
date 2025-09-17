@@ -50,7 +50,7 @@ export default function AboutSection() {
           </div>
 
           <div className="w-full text-center items-center justify-center flex mt-4">
-            <div className="font-semibold text-muted-foreground">
+            <div className="font-semibold text-neutral-500">
               <a href="https://drive.google.com/file/d/19cqXg3IADer8tYr72VLAHcsk6NdjTKAc/view?usp=sharing" target="_blank"> View Resume to Learn More</a>
             </div>
           </div>

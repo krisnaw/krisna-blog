@@ -27,7 +27,7 @@ export default function ExpSection() {
                 </div>
 
                 <div className="mt-2.5 w-full">
-                  <h3 className="font-semibold text-muted-foreground text-lg">{item.title} at {item.company}</h3>
+                  <h3 className="font-semibold text-neutral-500 text-lg">{item.title} at {item.company}</h3>
                   <p className="text-gray-500 mt-2">
                     {item.descriptions}
                   </p>
@@ -37,7 +37,7 @@ export default function ExpSection() {
                       <ul className="flex flex-wrap gap-2 mt-4">
                         {item.todos.map((todo, index) => (
                           <li key={index}>
-                            <div className="bg-gray-200/50 text-muted-foreground px-2 py-1 inset-ring inset-ring-gray-300">
+                            <div className="bg-gray-200/50 text-neutral-500 px-2 py-1 inset-ring inset-ring-gray-300">
                               {todo}
                             </div>
                           </li>
