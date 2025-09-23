@@ -5,7 +5,7 @@ import SectionHeader from "@/components/new-section/section-header";
 
 export default function ExploreSection() {
   return (
-    <section className="py-20 border-t border-gray-300">
+    <section className="py-20">
 
       <SectionHeader title="Explore Animations" >
         <p className="font-light opacity-70 mt-2.5">
@@ -18,7 +18,7 @@ export default function ExploreSection() {
 
       <div className="mt-16">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
           <div className="divide-y divide-gray-300 overflow-hidden rounded-lg shadow-sm border border-gray-300 flex flex-col">
 

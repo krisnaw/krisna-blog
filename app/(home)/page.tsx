@@ -1,20 +1,123 @@
-import RecentProjectSection from "@/components/new-section/recent-project-section";
-import ExpSection from "@/components/new-section/exp-section";
-import ExploreSection from "@/components/new-section/explore-section";
-import AboutSection from "@/components/new-section/about-section";
-
 export default function Page() {
-  return (
-    <div>
+   return (
+       <div>
 
-      <AboutSection />
+          {/*HEADER*/}
+          <header className="border-b border-gray-500">
+             <div className="mx-auto max-w-5xl p-4 border-r border-l border-gray-300">
+                <nav className="">
+                   <ul>
+                      <li>Home</li>
+                   </ul>
+                </nav>
+             </div>
+          </header>
 
-      <ExploreSection />
 
-      <RecentProjectSection/>
+          <main className="mx-auto max-w-5xl border-r border-l border-gray-300">
 
-      <ExpSection />
+             <div className="divide-y divide-gray-400">
 
-    </div>
-  )
+                {/*HERO*/}
+                <div className="px-4 sm:px-6 lg:px-8">
+                   <div className="py-24">
+                      <div
+                          className="relative h-96 overflow-hidden rounded-xl border border-dashed border-gray-400 opacity-75">
+
+                         <svg fill="none" className="absolute inset-0 size-full stroke-gray-900/10">
+                            <defs>
+                               <pattern id="pattern-87beeb02-b726-4cd1-be69-ae5bc27986e9" width="10" height="10" x="0"
+                                        y="0" patternUnits="userSpaceOnUse">
+                                  <path d="M-3 13 15-5M-5 5l18-18M-1 21 17 3"></path>
+                               </pattern>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#pattern-87beeb02-b726-4cd1-be69-ae5bc27986e9)"
+                                  stroke="none"></rect>
+                         </svg>
+
+                      </div>
+                   </div>
+                </div>
+
+                <div className="px-4 sm:px-6 lg:px-8">
+                   <div className="py-24">
+                      <div
+                          className="relative h-96 overflow-hidden rounded-xl border border-dashed border-gray-400 opacity-75">
+
+                         <svg fill="none" className="absolute inset-0 size-full stroke-gray-900/10">
+                            <defs>
+                               <pattern id="pattern-87beeb02-b726-4cd1-be69-ae5bc27986e9" width="10" height="10" x="0"
+                                        y="0" patternUnits="userSpaceOnUse">
+                                  <path d="M-3 13 15-5M-5 5l18-18M-1 21 17 3"></path>
+                               </pattern>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#pattern-87beeb02-b726-4cd1-be69-ae5bc27986e9)"
+                                  stroke="none"></rect>
+                         </svg>
+
+                      </div>
+                   </div>
+                </div>
+
+                <div className="px-4 sm:px-6 lg:px-8">
+                   <div className="py-24">
+                      <div
+                          className="relative h-96 overflow-hidden rounded-xl border border-dashed border-gray-400 opacity-75">
+
+                         <svg fill="none" className="absolute inset-0 size-full stroke-gray-900/10">
+                            <defs>
+                               <pattern id="pattern-87beeb02-b726-4cd1-be69-ae5bc27986e9" width="10" height="10" x="0"
+                                        y="0" patternUnits="userSpaceOnUse">
+                                  <path d="M-3 13 15-5M-5 5l18-18M-1 21 17 3"></path>
+                               </pattern>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#pattern-87beeb02-b726-4cd1-be69-ae5bc27986e9)"
+                                  stroke="none"></rect>
+                         </svg>
+
+                      </div>
+                   </div>
+                </div>
+
+             </div>
+
+          </main>
+
+          <div className=" border-t border-gray-300  text-white">
+             <div className="mx-auto max-w-5xl border-r border-l border-gray-300">
+                <div className="px-4 sm:px-6 lg:px-8">
+                   <div className="py-24">
+                      <div
+                          className="relative h-96 overflow-hidden rounded-xl border border-dashed border-gray-400 opacity-75">
+
+                         <svg fill="none" className="absolute inset-0 size-full stroke-gray-900/10">
+                            <defs>
+                               <pattern id="pattern-87beeb02-b726-4cd1-be69-ae5bc27986e9" width="10" height="10" x="0"
+                                        y="0" patternUnits="userSpaceOnUse">
+                                  <path d="M-3 13 15-5M-5 5l18-18M-1 21 17 3"></path>
+                               </pattern>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#pattern-87beeb02-b726-4cd1-be69-ae5bc27986e9)"
+                                  stroke="none"></rect>
+                         </svg>
+
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+
+          <footer className="border-t border-gray-300 bg-white">
+             <div className="max-w-5xl px-4 sm:px-6 lg:px-8">
+                <nav className="border-r border-l border-gray-300">
+                   <ul>
+                      <li>Footer</li>
+                   </ul>
+                </nav>
+             </div>
+          </footer>
+
+
+       </div>
+   )
 }
