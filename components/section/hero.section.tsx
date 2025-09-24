@@ -1,4 +1,6 @@
+"use client"
 import BlankSectionInside from "@/components/section/blank-section-inside";
+import {motion} from "framer-motion";
 
 export default function HeroSection() {
    return (
@@ -9,10 +11,21 @@ export default function HeroSection() {
              {/*HERO*/}
              <div>
                 <div className="py-24 w-full h-full">
-                   <div className="text-center">
-                      <h2 className="text-5xl">
-                         Next Generation Tooling
-                      </h2>
+                   <div className="text-left px-4 sm:px-6 lg:px-8">
+                      <motion.h2 className="text-5xl"
+                                 animate={ { opacity: 1, y: 0 } }
+                                 initial={ { opacity: 0, y: 20 } }
+                                 transition={ { duration: 1, ease: "easeInOut" } }
+                      >
+                         Krisna Wijaya
+                      </motion.h2>
+                      <motion.h5
+                          animate={ { opacity: 1, y: 0 } }
+                          initial={ { opacity: 0, y: 20 } }
+                          transition={ { duration: 1, ease: "easeInOut" } }
+                          className="text-2xl font-medium">
+                         Front End Engineer
+                      </motion.h5>
                    </div>
                 </div>
 
