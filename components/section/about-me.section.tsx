@@ -1,4 +1,4 @@
-export default function BlankSection() {
+export default function AboutMe() {
    return (
        <div className=" border-t border-gray-300">
           <div className="mx-auto max-w-5xl border-r border-l border-gray-300">
