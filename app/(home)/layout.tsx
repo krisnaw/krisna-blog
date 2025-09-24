@@ -3,7 +3,7 @@ export default async function HomeLayout(
 ) {
 
   return (
-    <div className="bg-slate-100">
+    <div className="bg-gray-100/50">
       {children}
     </div>
 
