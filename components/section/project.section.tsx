@@ -1,4 +1,4 @@
-export default function WorkExperienceSection() {
+export default function ProjectSection() {
    return (
        <div className=" border-t border-gray-300">
           <div className="mx-auto max-w-5xl border-r border-l border-gray-300">
@@ -6,7 +6,7 @@ export default function WorkExperienceSection() {
 
                 <div className="pt-10">
                    <div className="flex flex-col items-start gap-4 max-w-2xl">
-                      <h2 className="text-4xl font-medium">Work Experience</h2>
+                      <h2 className="text-4xl font-medium">Project</h2>
                       <p className="leading-relaxed text-gray-600">
                          We are building a unified high-performance toolchain for JavaScript: including parser, transformer, resolver, linter, formatter, minifier, bundler, test runner, and meta framework support. Our mission is to make the next generation of JavaScript developers more productive than ever before.
                       </p>
