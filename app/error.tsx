@@ -1,6 +1,5 @@
 'use client' // Error boundaries must be Client Components
 
-import {useEffect} from 'react'
 import {Button} from "@headlessui/react"
 
 export default function Error({
@@ -10,10 +9,6 @@ export default function Error({
     error: Error & { digest?: string }
     reset: () => void
 }) {
-    useEffect(() => {
-        // Log the error to an error reporting service
-        console.error(error)
-    }, [error])
 
     return (
         <div>

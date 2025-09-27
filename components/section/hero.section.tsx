@@ -1,6 +1,9 @@
 "use client"
 import BlankSectionInside from "@/components/section/blank-section-inside";
+
 import {motion} from "framer-motion";
+import {resume} from "@/app/data";
+import AboutContent from "@/app/components/about-content";
 
 export default function HeroSection() {
 
@@ -18,7 +21,7 @@ export default function HeroSection() {
                                  initial={ { opacity: 0, y: 20 } }
                                  transition={ { duration: 1, ease: "easeInOut" } }
                       >
-                         Krisna Wijaya
+                         {resume.firstName} {resume.lastName}
                       </motion.h2>
                       <motion.h5
                           animate={ { opacity: 1, y: 0 } }
@@ -29,6 +32,8 @@ export default function HeroSection() {
                       </motion.h5>
                    </div>
                 </div>
+
+                <AboutContent />
 
                 <div className="relative min-h-96 overflow-hidden opacity-75">
 
