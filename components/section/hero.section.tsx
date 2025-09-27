@@ -3,6 +3,7 @@ import BlankSectionInside from "@/components/section/blank-section-inside";
 import {motion} from "framer-motion";
 
 export default function HeroSection() {
+
    return (
        <main className="mx-auto max-w-5xl border-r border-l border-gray-300">
 
