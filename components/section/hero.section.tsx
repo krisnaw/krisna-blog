@@ -11,7 +11,7 @@ export default function HeroSection() {
           <div className="divide-y divide-gray-300">
 
              {/*HERO*/}
-             <div className="px-4 sm:px-6 lg:px-8">
+             <div className="py-24 px-4 sm:px-6 lg:px-8">
                <div>
                  <h2 className="text-xl font-medium">
                    Hey, I`m {resume.firstName} {resume.lastName}
