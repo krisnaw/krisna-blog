@@ -34,7 +34,7 @@ export default function SiteFooter() {
               {socials.map((social) => (
                 <li key={social.url} className="flex justify-center item-center hover:bg-gray-600 py-4 px-2.5">
                   <a>
-                    <social.icon className="w-10 h-10 text-gray-600"/>
+                    <social.icon className="w-10 h-10 text-gray-600" />
                   </a>
                 </li>
               ))}

@@ -2,32 +2,36 @@ import React from "react";
 
 const AboutContent = () => {
    return (
-       <div className="space-y-6 leading-[1.75] text-text-secondary font-light">
-          <p>
-             I&#39;m originally from Russia and currently based in the Philippines.
-             I&nbsp;started my journey into frontend development by helping my
-             relative automate some tasks for work. It began as a simple script
-             without a UI, but I found it incredibly fun to build something that
-             worked and could help others.
-          </p>
+       <div className="space-y-6 leading-[1.75] text-text-secondary font-light prose prose-sm sm:prose-lg mx-auto max-w-none">
+         <p>
+           I`m a design engineer & designer at OpenSea. I design and build products that feel magical, yet simple and intuitive.
+           I obsess over the smallest details and I like to make people feel something through my work.
+         </p>
+          {/*<p>*/}
+          {/*   I&#39;m originally from Russia and currently based in the Philippines.*/}
+          {/*   I&nbsp;started my journey into frontend development by helping my*/}
+          {/*   relative automate some tasks for work. It began as a simple script*/}
+          {/*   without a UI, but I found it incredibly fun to build something that*/}
+          {/*   worked and could help others.*/}
+          {/*</p>*/}
 
-          <p>
-             For over seven years, I&#39;ve been translating designs into functional UIs,
-             using my main stack — React, TypeScript, Tailwind, and Next.js — to
-             build efficient, accessible interfaces. I also work with Web3
-             technologies to create interactive, decentralized experiences.
-             I&nbsp;enjoy the challenge of turning concepts into interactive
-             applications, and I&#39;m always driven to find solutions, no matter how
-             complex the problem. Collaboration is equally important to me, as it
-             helps me understand issues more deeply and learn from others&#39; unique
-             experiences.
-          </p>
+          {/*<p>*/}
+          {/*   For over seven years, I&#39;ve been translating designs into functional UIs,*/}
+          {/*   using my main stack — React, TypeScript, Tailwind, and Next.js — to*/}
+          {/*   build efficient, accessible interfaces. I also work with Web3*/}
+          {/*   technologies to create interactive, decentralized experiences.*/}
+          {/*   I&nbsp;enjoy the challenge of turning concepts into interactive*/}
+          {/*   applications, and I&#39;m always driven to find solutions, no matter how*/}
+          {/*   complex the problem. Collaboration is equally important to me, as it*/}
+          {/*   helps me understand issues more deeply and learn from others&#39; unique*/}
+          {/*   experiences.*/}
+          {/*</p>*/}
 
-          <p>
-             Outside of work, I focus on self-improvement and enjoy running, boxing,
-             reading, and learning languages. I also attend meetups to connect with
-             others.
-          </p>
+          {/*<p>*/}
+          {/*   Outside of work, I focus on self-improvement and enjoy running, boxing,*/}
+          {/*   reading, and learning languages. I also attend meetups to connect with*/}
+          {/*   others.*/}
+          {/*</p>*/}
           {/* <p>
         From there, I dove into learning about coding and the web. Discovering
         HTML and CSS opened up a whole new world for me — I began creating my
