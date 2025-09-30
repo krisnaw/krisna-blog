@@ -30,7 +30,9 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} 
       antialiased flex flex-col min-h-screen overscroll-none`}>
       <SiteHeader/>
-      {children}
+      <div className="flex-grow min-h-screen">
+         {children}
+      </div>
       <SiteFooter/>
       </body>
     </html>

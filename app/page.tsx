@@ -2,7 +2,7 @@ import HeroSection from "@/components/section/hero.section";
 
 export default function Page() {
    return (
-       <div>
+       <div className="min-h-screen">
           <HeroSection />
        </div>
    )
