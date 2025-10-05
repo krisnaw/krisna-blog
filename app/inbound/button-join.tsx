@@ -12,7 +12,7 @@ export function ButtonJoin() {
   useOnClickOutside(ref, () => setOpen(false));
 
   return (
-    <div className="flex justify-center items-center max-w-sm">
+    <div className="flex justify-center items-center max-w-sm pb-24">
 
       <motion.button
         onClick={() => {
