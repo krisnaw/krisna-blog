@@ -25,6 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true} className="overscroll-none">
+    <link rel="icon" href="/fav.svg" sizes="any" />
       <body className={`${geistSans.variable} ${geistMono.variable} 
       antialiased min-h-screen overscroll-none`}>
       <div className="flex-grow">
