@@ -73,40 +73,56 @@ export default function Blog({params}: BlogPageProps) {
   }
 
   return (
-    <section>
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
-            headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
-            description: post.metadata.summary,
-            image: post.metadata.image
-              ? `${baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/blog/${post.slug}`,
-            author: {
-              '@type': 'Person',
-              name: 'My Portfolio',
-            },
-          }),
-        }}
-      />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
-        </p>
+
+    <div className="w-full">
+      {/*HEADER*/}
+      <header className="mx-auto max-w-3xl">
+        <div className="pt-20 pb-12">
+          <h1 className="title font-semibold text-2xl tracking-tighter">
+            {post.metadata.title}
+          </h1>
+          <p className="font-medium text-lg text-gray-700 mt-4">
+            Published on {formatDate(post.metadata.publishedAt)}
+          </p>
+        </div>
+      </header>
+
+      <div className="px-4 sm:px-6 lg:px-32">
+        <div className="bg-white text-neutral-600  rounded-xl shadow-2xl ">
+          <div className="py-12">
+            <section className="mx-auto max-w-3xl">
+              <script
+                type="application/ld+json"
+                suppressHydrationWarning
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'BlogPosting',
+                    headline: post.metadata.title,
+                    datePublished: post.metadata.publishedAt,
+                    dateModified: post.metadata.publishedAt,
+                    description: post.metadata.summary,
+                    image: post.metadata.image
+                      ? `${baseUrl}${post.metadata.image}`
+                      : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+                    url: `${baseUrl}/blog/${post.slug}`,
+                    author: {
+                      '@type': 'Person',
+                      name: 'My Portfolio',
+                    },
+                  }),
+                }}
+              />
+              <article className="prose prose-sm sm:prose-lg max-w-none pb-20">
+                <CustomMDX source={post.content} />
+              </article>
+            </section>
+          </div>
+        </div>
       </div>
-      <article className="prose">
-        <CustomMDX source={post.content} />
-      </article>
-    </section>
+
+
+    </div>
+
   )
 }

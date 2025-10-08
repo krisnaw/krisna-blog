@@ -1,6 +1,6 @@
 export default function NotesLayout({children}: { children: React.ReactNode }) {
   return (
-    <div className="w-full min-h-screen bg-sky-100/50">
+    <div className="w-full min-h-screen bg-gradient-to-t from-sky-100/20 via-sky-200 to-sky-200/50">
       <header>
         <nav className="px-4 sm:px-6 lg:px-8 py-2.5">
           <ul>
@@ -14,16 +14,9 @@ export default function NotesLayout({children}: { children: React.ReactNode }) {
         </nav>
       </header>
 
+      {children}
 
-      <div className="py-20">
-        <div className="mx-auto max-w-xl py-12">
-          <div className="prose prose-sm sm:prose-lg max-w-none">
-            {children}
-          </div>
-        </div>
-      </div>
-
-      <footer className="mx-auto max-w-sm pt-12">
+      <footer className="mx-auto max-w-sm pt-12 pb-10">
         <ul className="flex justify-center items-center space-x-4.5 [&>li]:text-gray-500 [&>li]:font-semibold">
           <li>
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
