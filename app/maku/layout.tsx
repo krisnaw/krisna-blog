@@ -1,15 +1,15 @@
 export default function MdxLayout({children}: { children: React.ReactNode }) {
   // Create any shared layout or styles here
   return (
-    <div className="w-full bg-linear-to-t from-sky-500 to-indigo-500 py-20 px-32">
+    <div className="w-full bg-gradient-to-t from-sky-100/20 via-sky-200 to-sky-200/50 py-20 px-32">
 
       {/*HEADER*/}
       <header className="mx-auto max-w-3xl">
-        <div className="py-20">
-          <h2 className="text-5xl font-bold text-gray-800">
-            The Quiet Revolution of Micro-Habits
+        <div className="pt-20 pb-12">
+          <h2 className="text-3xl font-bold text-gray-800">
+            Understanding the JavaScript Modulo Operator
           </h2>
-          <p className="font-semibold text-lg text-gray-700 mt-4">
+          <p className="font-medium text-lg text-gray-700 mt-4">
             Published on September 6th, 2023
           </p>
         </div>
