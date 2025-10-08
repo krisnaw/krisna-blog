@@ -4,6 +4,7 @@ import type {Metadata} from 'next'
 import {formatDate, getBlogPosts} from '@/app/notes/utils'
 import {baseUrl} from '@/app/sitemap'
 import {CustomMDX} from '@/app/notes/mdx'
+import {Suspense} from "react";
 
 type BlogParams = {
   slug: string
@@ -17,12 +18,15 @@ export async function generateStaticParams(): Promise<BlogParams[]> {
   }))
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
   params: BlogParams
-}): Metadata | undefined {
-  const post = getBlogPosts().find((entry) => entry.slug === params.slug)
+}): Promise<Metadata | undefined> {
+
+  const {slug} = await params
+
+  const post = getBlogPosts().find((entry) => entry.slug === slug)
   if (!post) {
     return undefined
   }
@@ -62,11 +66,12 @@ export function generateMetadata({
 }
 
 type BlogPageProps = {
-  params: BlogParams
+  params: Promise<BlogParams>
 }
 
-export default function Blog({params}: BlogPageProps) {
-  const post = getBlogPosts().find((entry) => entry.slug === params.slug)
+export default async function Blog({params}: BlogPageProps) {
+  const {slug} = await params
+  const post = getBlogPosts().find((entry) => entry.slug === slug)
 
   if (!post) {
     notFound()
@@ -114,7 +119,9 @@ export default function Blog({params}: BlogPageProps) {
                 }}
               />
               <article className="prose prose-sm sm:prose-lg max-w-none pb-20">
-                <CustomMDX source={post.content} />
+                <Suspense fallback={<>Loading...</>}>
+                  <CustomMDX source={post.content} />
+                </Suspense>
               </article>
             </section>
           </div>
