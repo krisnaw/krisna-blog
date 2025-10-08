@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import {formatDate, getBlogPosts} from "./utils"
 
 export function BlogPosts() {
@@ -15,26 +14,17 @@ export function BlogPosts() {
     });
 
   return (
-    <div>
-
-
+    <div className="not-prose">
       <ul className="divide-y divide-gray-300">
         {notes.map((post) => (
           <li key={post.slug}>
             <a
-              className="flex py-4"
+              className="inline-flex py-4"
               href={`/notes/${post.slug}`}>
-              <div className="mr-4 shrink-0">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 200 200"
-                  preserveAspectRatio="none"
-                  aria-hidden="true"
-                  className="size-16 border border-gray-300 bg-white text-gray-300"
-                >
-                  <path d="M0 0l200 200M0 200L200 0" strokeWidth={1} vectorEffect="non-scaling-stroke"/>
-                </svg>
+              <div className="mr-4 w-16 h-16 shadow shrink-0 bg-white rounded-xl px-4 py-2.5 flex items-center justify-center">
+                <span className="text-4xl">
+                   {post.metadata.emoji}
+                </span>
               </div>
               <div>
                 <h4 className="text-lg font-bold text-gray-900">
@@ -48,33 +38,6 @@ export function BlogPosts() {
           </li>
         ))}
       </ul>
-
-
-      {allBlogs
-        .sort((a, b) => {
-          if (
-            new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
-          ) {
-            return -1
-          }
-          return 1
-        })
-        .map((post) => (
-          <Link
-            key={post.slug}
-            className="flex flex-col space-y-1 mb-4"
-            href={`/notes/${post.slug}`}
-          >
-            <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
-                {formatDate(post.metadata.publishedAt, false)}
-              </p>
-              <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
-                {post.metadata.title}
-              </p>
-            </div>
-          </Link>
-        ))}
     </div>
   )
 }

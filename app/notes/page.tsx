@@ -6,7 +6,7 @@ export default function Page() {
       <div className="text-3xl font-semibold">
         Notes
       </div>
-      <div>
+      <div className="mt-10">
         <BlogPosts />
       </div>
     </div>

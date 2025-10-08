@@ -14,6 +14,7 @@ export default function Layout({children}: { children: React.ReactNode }) {
         </div>
       </header>
 
+
       <div className="bg-white text-neutral-600  rounded-xl shadow-2xl">
         <div className="mx-auto max-w-3xl py-12">
           <div className="prose prose-sm sm:prose-lg max-w-none">
@@ -21,12 +22,6 @@ export default function Layout({children}: { children: React.ReactNode }) {
           </div>
         </div>
       </div>
-
-      <footer className="py-20">
-        <div className="mx-auto max-w-3xl">
-          This is footer
-        </div>
-      </footer>
 
     </div>
   )
