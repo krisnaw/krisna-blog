@@ -1,10 +1,34 @@
 export default function MdxLayout({children}: { children: React.ReactNode }) {
   // Create any shared layout or styles here
   return (
-    <div className=" mx-auto max-w-7xl p-4">
-      Hey this is layout
+    <div className="w-full bg-linear-to-t from-sky-500 to-indigo-500 py-20 px-32">
 
-      {children}
+      {/*HEADER*/}
+      <header className="mx-auto max-w-3xl">
+        <div className="py-20">
+          <h2 className="text-5xl font-bold text-gray-800">
+            The Quiet Revolution of Micro-Habits
+          </h2>
+          <p className="font-semibold text-lg text-gray-700 mt-4">
+            Published on September 6th, 2023
+          </p>
+        </div>
+      </header>
+
+      <div className="bg-white text-neutral-600  rounded-xl shadow-2xl">
+        <div className="mx-auto max-w-3xl py-12">
+          <div className="prose prose-sm sm:prose-lg max-w-none">
+            {children}
+          </div>
+        </div>
+      </div>
+
+      <footer className="py-20">
+        <div className="mx-auto max-w-3xl">
+          This is footer
+        </div>
+      </footer>
+
     </div>
   )
 }

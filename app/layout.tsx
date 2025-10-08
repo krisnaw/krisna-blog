@@ -28,7 +28,7 @@ export default function RootLayout({
     <link rel="icon" href="/fav.svg" sizes="any" />
       <body className={`${geistSans.variable} ${geistMono.variable} 
       antialiased min-h-screen overscroll-none`}>
-      <div className="flex-grow">
+      <div>
         {children}
       </div>
       </body>
