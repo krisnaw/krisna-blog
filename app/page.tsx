@@ -1,7 +1,7 @@
 import About from "@/app/about";
 
 import {Plus_Jakarta_Sans} from 'next/font/google'
-import FloatingMenu from "@/app/floating-menu";
+import {ButtonJoin} from "@/app/inbound/button-join";
 
 // If loading a variable font, you don't need to specify the font weight
 const jakartaSans = Plus_Jakarta_Sans({
@@ -21,7 +21,8 @@ export default function Page() {
         </div>
       </div>
 
-      <FloatingMenu />
+
+      <ButtonJoin/>
     </div>
   )
 }
