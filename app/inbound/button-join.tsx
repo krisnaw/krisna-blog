@@ -12,9 +12,7 @@ export function ButtonJoin() {
   // useOnClickOutside(ref, () => setOpen(false));
 
   return (
-    <div className="flex justify-center items-end w-full h-[500px] bottom-14 fixed">
-
-
+    <div className="bottom-1/2 fixed flex items-center justify-end">
       <motion.button
         onClick={() => {
           setOpen(true);
