@@ -23,7 +23,7 @@ export default function HeroSection() {
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             transition={{
-              duration: 3,
+              duration: 1,
             }}
             className="rounded-3xl outline-1 outline-gray-200 sm:flex p-8">
 

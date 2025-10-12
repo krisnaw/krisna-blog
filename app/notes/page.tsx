@@ -11,7 +11,7 @@ export default function Page() {
             <li key={index} className="pb-4">
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">
-                  <a href="#" className="hover:underline">
+                  <a href={`/notes/sample`} className="hover:underline">
                     How to build a successful team
                   </a>
                 </h3>

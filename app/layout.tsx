@@ -4,7 +4,7 @@ import "./globals.css";
 import React, {Suspense} from "react";
 import FooterSection from "@/components/section/footer.section";
 import HeaderSection from "@/components/section/header.section";
-import FloatingMenu from "@/app/floating-menu";
+import FloatingMenu from "@/components/common/floating-menu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +28,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true} className="overscroll-none">
-    <link rel="icon" href="/fav.svg" sizes="any" />
       <body className={`${geistSans.variable} ${geistMono.variable} 
       antialiased min-h-screen overscroll-none`}>
         <Suspense>

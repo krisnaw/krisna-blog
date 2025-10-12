@@ -56,7 +56,8 @@ export default function FloatingMenu() {
                 <ul className="pt-2 px-1">
                   {OPTIONS.map((option) => (
                     <li key={option.label} className=" text-gray-800 h-10 flex items-center">
-                      <Link href={option.url} className="text-lg/6 font-semibold capitalize px-2.5 w-full">
+                      <Link onClick={() => setIsOpen(false)}
+                        href={option.url} className="text-lg/6 font-semibold capitalize px-2.5 w-full">
                         {option.label}
                       </Link>
                     </li>
