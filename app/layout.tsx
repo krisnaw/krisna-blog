@@ -36,9 +36,11 @@ export default function RootLayout({
         <main className="flex-grow py-20">
           {children}
         </main>
-        <FloatingMenu/>
+
         <FooterSection/>
       </div>
+
+      <FloatingMenu/>
     </body>
     </html>
   );
