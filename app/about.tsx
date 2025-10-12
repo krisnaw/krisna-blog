@@ -4,7 +4,7 @@ import {motion} from "framer-motion";
 
 export default function About() {
   return (
-    <section className="bg-sky-100 flex items-center justify-center h-screen w-full">
+    <section className="bg-sky-100 flex items-center justify-center h-screen w-full snap-start relative z-10">
 
       <div className="mx-auto max-w-xl">
 
