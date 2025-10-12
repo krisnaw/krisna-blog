@@ -15,43 +15,40 @@ const JakartaSans = Plus_Jakarta_Sans({
 export default function HeroSection() {
 
   return (
-    <section className={` flex-grow ${JakartaSans.className}`}>
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <section className={JakartaSans.className}>
+      <div className="py-36">
+        <motion.div
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          transition={{
+            duration: 1,
+          }}
+          className="rounded-3xl outline-1 outline-gray-200 sm:flex p-8">
 
-        <div className="py-36">
-          <motion.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{
-              duration: 1,
-            }}
-            className="rounded-3xl outline-1 outline-gray-200 sm:flex p-8">
-
-            <div className="mb-4 shrink-0 sm:mr-4 sm:mb-0">
-              <Image
-                className="
+          <div className="mb-4 shrink-0 sm:mr-4 sm:mb-0">
+            <Image
+              className="
+              z-0
                inline-block size-24 rounded-full outline -outline-offset-1 outline-black/5
                object-cover grayscale transition duration-500 motion-safe:group-hover:scale-150"
-                src={profile} width={350} height={500} alt="Profile"/>
-            </div>
+              src={profile} width={350} height={500} alt="Profile"/>
+          </div>
 
-            <div className="prose prose-sm sm:prose-lg  text-gray-600 sm:ml-4">
+          <div className="prose prose-sm sm:prose-lg  text-gray-600 sm:ml-4">
 
-              <motion.p
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-              >
-                Hi there <span>👋</span><br/>
+            <motion.p
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+            >
+              Hi there <span>👋</span><br/>
 
               I&#39;m Krisna Wijaya. <br/> Software Developer currently based in Bali, Indonesia <br/>
 
-                Thanks for visiting. This site still in progress.
-              </motion.p>
-            </div>
+              Thanks for visiting. This site still in progress.
+            </motion.p>
+          </div>
 
-          </motion.div>
-        </div>
-
+        </motion.div>
       </div>
     </section>
   )

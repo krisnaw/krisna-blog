@@ -33,7 +33,7 @@ export default function RootLayout({
         <Suspense>
           <HeaderSection/>
         </Suspense>
-        <main className="flex-grow">
+        <main className="flex-grow py-20">
           {children}
         </main>
         <FloatingMenu/>
