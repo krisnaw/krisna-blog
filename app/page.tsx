@@ -2,7 +2,7 @@
 import FloatingMenu from "@/app/floating-menu";
 import {motion} from "framer-motion";
 import Image from "next/image";
-import profile from './profile.png'
+import profile from '../public/profile.jpg'
 
 export default function Page() {
   return (
@@ -27,9 +27,6 @@ export default function Page() {
               </p>
             </div>
             <div className="ml-4 shrink-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://static.sizu.me/images/illust/sl-find-a-way.svg" alt="" className="w-32 xs:w-36"/>
-
 
               <div>
                 <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
