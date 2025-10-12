@@ -1,37 +1,68 @@
 "use client"
-import {resume} from "@/app/data";
 import React from "react";
-import {Contact} from "@/app/components/contact";
+import {motion} from "framer-motion";
+import Image from "next/image";
+import profile from "@/public/profile.jpg";
+
+import {Plus_Jakarta_Sans} from 'next/font/google'
+
+// If loading a variable font, you don't need to specify the font weight
+const JakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+})
 
 export default function HeroSection() {
 
-   return (
-       <main className="mx-auto max-w-4xl border-r border-l border-gray-300 h-full">
+  return (
+    <section className={`px-4 bg-white mx-auto max-w-3xl flex-grow ${JakartaSans.className}`}>
+      <div className="w-full h-full flex items-center justify-center">
 
-          <div className="divide-y divide-gray-300">
+        <motion.div
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          transition={{
+            duration: 3,
+          }}
+          className="rounded-3xl outline-1 outline-gray-200 sm:flex p-8">
 
-             {/*HERO*/}
-             <div className="py-24 px-4 sm:px-6 lg:px-8">
-               <div>
-                 <h2 className="text-xl font-medium">
-                   Hey, I`m {resume.firstName} {resume.lastName}
-                 </h2>
-               </div>
+          <div className="mb-4 shrink-0 sm:mr-4 sm:mb-0">
+            <Image
+              className="
+               inline-block size-24 rounded-full outline -outline-offset-1 outline-black/5
+               object-cover grayscale transition duration-500 motion-safe:group-hover:scale-150"
+              src={profile} width={350} height={500} alt="Profile"/>
 
-               <div className="mt-4 prose prose-sm sm:prose-lg mx-auto max-w-none">
-                 <p>
-                   I`m a design engineer & designer at OpenSea. I design and build products that feel magical, yet simple and intuitive.
-                   I obsess over the smallest details and I like to make people feel something through my work.
-                 </p>
-               </div>
 
-               <Contact />
+            <div className="group relative overflow-hidden rounded-full bg-neutral-100 ">
 
-             </div>
-             
-
+              <div
+                className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black to-black/0 to-40% p-6">
+                {/*<p className="font-display text-sm/6 font-semibold tracking-wide text-white">Krisna Wijaya</p>*/}
+                {/*<p className="text-xs text-white">Software Developer</p>*/}
+              </div>
+            </div>
           </div>
 
-       </main>
-   )
+          <div className="prose prose-sm sm:prose-lg  text-gray-600 sm:ml-4">
+
+            <motion.p
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+            >
+              Hi there <span>👋</span><br/>
+
+              I&#39;m Krisna Wijaya. <br/> Software Developer currently based in Bali, Indonesia <br/>
+
+              Thanks for visiting. This site still in progress.
+            </motion.p>
+          </div>
+
+
+        </motion.div>
+
+
+      </div>
+    </section>
+  )
 }
