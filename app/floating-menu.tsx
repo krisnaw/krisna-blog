@@ -30,7 +30,7 @@ export default function FloatingMenu() {
       animate={{
         opacity: 1
       }}
-      className="fixed bottom-14 w-full bg-white">
+      className="fixed bottom-6 w-full bg-white">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -48,7 +48,7 @@ export default function FloatingMenu() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8 }}
-                  className="space-y-1 pt-2.5"
+                  className="space-y-1"
                 >
                   {OPTIONS.map((option) => (
                     <li key={option.label}
