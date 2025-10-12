@@ -1,6 +1,8 @@
 "use client"
 import FloatingMenu from "@/app/floating-menu";
 import {motion} from "framer-motion";
+import Image from "next/image";
+import profile from './profile.png'
 
 export default function Page() {
   return (
@@ -27,6 +29,19 @@ export default function Page() {
             <div className="ml-4 shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="https://static.sizu.me/images/illust/sl-find-a-way.svg" alt="" className="w-32 xs:w-36"/>
+
+
+              <div>
+                <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
+                  <Image
+                    className="h-96 object-cover grayscale transition duration-500 motion-safe:group-hover:scale-150"
+                    src={profile} width={350} height={500} alt="Profile"/>
+                  <div
+                    className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black to-black/0 to-40% p-6">
+                    <p className="font-display text-base/6 font-semibold tracking-wide text-white">Krisna Wijaya</p><p
+                    className="mt-2 text-sm text-white">Software Developer</p></div>
+                </div>
+              </div>
             </div>
           </motion.div>
 
