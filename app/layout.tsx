@@ -22,23 +22,24 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true} className="overscroll-none">
-      <body className={`${geistSans.variable} ${geistMono.variable} 
-      antialiased min-h-screen overscroll-none`}>
+    <body className={`${geistSans.variable} ${geistMono.variable} antialiased  overscroll-none`}>
+      <div className="min-h-screen flex flex-col">
         <Suspense>
-          <HeaderSection />
+          <HeaderSection/>
         </Suspense>
-        <div>
+        <main className="flex-grow">
           {children}
-        </div>
+        </main>
         <FloatingMenu/>
-        <FooterSection />
-      </body>
+        <FooterSection/>
+      </div>
+    </body>
     </html>
   );
 }
