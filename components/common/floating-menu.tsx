@@ -32,13 +32,7 @@ export default function FloatingMenu() {
 
   return (
 
-    <motion.div
-      initial={{
-        opacity: 0
-      }}
-      animate={{
-        opacity: 1
-      }}
+    <div
       className="fixed bottom-28 w-full bg-white">
       <AnimatePresence>
         {isOpen && (
@@ -91,7 +85,7 @@ export default function FloatingMenu() {
           </motion.div>
         </motion.button>
       </div>
-    </motion.div>
+    </div>
 
   )
 }
