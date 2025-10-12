@@ -8,15 +8,18 @@ import {useClickAway} from "@uidotdev/usehooks";
 const OPTIONS = [
   {
     url: "/",
-    label: "home"
+    label: "home",
+    duration: 0.8
   },
   {
     url: "/notes",
-    label: "notes"
+    label: "notes",
+    duration: 0.10
   },
   {
     url: "/contact",
-    label: "contact"
+    label: "contact",
+    duration: 0.15
   }
 ]
 
@@ -59,7 +62,7 @@ export default function FloatingMenu() {
                 >
                   {OPTIONS.map((option) => (
                     <li key={option.label}
-                        className="py-3 px-2.5">
+                        className="py-3 px-2.5 hover:underline">
                       <Link href={option.url} className="text-lg/6 font-semibold capitalize">
                         {option.label}
                       </Link>
@@ -73,6 +76,7 @@ export default function FloatingMenu() {
                           className="
                           bg-white
                           outline-neutral-300 outline-1
+                          text-neutral-800
                           w-full rounded-3xl py-2.5 flex items-center justify-center">
                     <ChevronDownIcon />
                   </button>
