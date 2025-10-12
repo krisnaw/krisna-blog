@@ -15,8 +15,10 @@ const JakartaSans = Plus_Jakarta_Sans({
 export default function HeroSection() {
 
   return (
-    <section className={`px-4 bg-white mx-auto max-w-3xl flex-grow ${JakartaSans.className}`}>
-      <div className="w-full h-full flex items-center justify-center">
+    <section className={` bg-pink-200 ${JakartaSans.className}`}>
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+
+
 
         <motion.div
           initial={{opacity: 0}}
