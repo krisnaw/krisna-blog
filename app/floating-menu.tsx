@@ -50,35 +50,26 @@ export default function FloatingMenu() {
               duration: 0.4,
             }}
             className="mx-auto max-w-[240px] absolute inset-x-0 bottom-0 z-30">
-            <div className="min-h-[100px] bg-white outline-1 outline-gray-300  rounded-3xl text-gray-800">
+            <div className="min-h-[100px] bg-white outline-1 outline-gray-300 rounded-3xl ">
 
               <div className="p-1.5">
-                <motion.ul
-                  role="list"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8 }}
-                  className="space-y-1"
-                >
+                <ul className="pt-2 px-1">
                   {OPTIONS.map((option) => (
-                    <li key={option.label}
-                        className="py-3 px-2.5 hover:underline">
-                      <Link href={option.url} className="text-lg/6 font-semibold capitalize">
+                    <li key={option.label} className=" text-gray-800 h-10 flex items-center">
+                      <Link href={option.url} className="text-lg/6 font-semibold capitalize px-2.5 w-full">
                         {option.label}
                       </Link>
                     </li>
                   ))}
-
-                </motion.ul>
+                </ul>
 
                 <div className="mt-4">
                   <button onClick={() => setIsOpen(false)}
                           className="
                           bg-white
                           outline-neutral-300 outline-1
-                          text-neutral-800
-                          w-full rounded-3xl py-2.5 flex items-center justify-center">
-                    <ChevronDownIcon />
+                         text-gray-800 w-full rounded-3xl py-2.5 flex items-center justify-center">
+                    <ChevronDownIcon/>
                   </button>
                 </div>
               </div>
@@ -93,7 +84,7 @@ export default function FloatingMenu() {
           layoutId="wrapper"
           key="button"
           onClick={() => setIsOpen(true)}
-          className="w-full bg-white hover:bg-neutral-300 outline-1 outline-gray-300 rounded-3xl px-4 py-2.5  text-center cursor-pointer">
+          className="w-full bg-white  outline-1 outline-gray-300 rounded-3xl px-4 py-2.5  text-center cursor-pointer">
           <motion.div layout="position">
             Menu
           </motion.div>
