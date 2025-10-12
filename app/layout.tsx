@@ -4,6 +4,7 @@ import "./globals.css";
 import React, {Suspense} from "react";
 import FooterSection from "@/components/section/footer.section";
 import HeaderSection from "@/components/section/header.section";
+import FloatingMenu from "@/app/floating-menu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <div>
           {children}
         </div>
+        <FloatingMenu/>
         <FooterSection />
       </body>
     </html>
