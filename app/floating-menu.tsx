@@ -3,6 +3,7 @@ import {useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import Link from "next/link";
 import {ChevronDownIcon} from "lucide-react";
+import {useClickAway} from "@uidotdev/usehooks";
 
 const OPTIONS = [
   {
@@ -21,6 +22,11 @@ const OPTIONS = [
 
 export default function FloatingMenu() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const ref = useClickAway<HTMLDivElement>(() => {
+    setIsOpen(false);
+  });
+
   return (
 
     <motion.div
@@ -34,13 +40,14 @@ export default function FloatingMenu() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            ref={ref}
             layoutId="wrapper"
             transition={{
               type: "spring",
               duration: 0.4,
             }}
             className="mx-auto max-w-[240px] absolute inset-x-0 bottom-0 z-30">
-            <div className="min-h-[100px] bg-gray-950  rounded-lg text-white">
+            <div className="min-h-[100px] bg-white outline-1 outline-gray-300  rounded-3xl text-gray-800">
 
               <div className="p-1.5">
                 <motion.ul
@@ -64,9 +71,9 @@ export default function FloatingMenu() {
                 <div className="mt-4">
                   <button onClick={() => setIsOpen(false)}
                           className="
-                          bg-neutral-700/70
-                          outline-neutral-500 outline-1
-                          w-full rounded-lg py-2.5 flex items-center justify-center">
+                          bg-white
+                          outline-neutral-300 outline-1
+                          w-full rounded-3xl py-2.5 flex items-center justify-center">
                     <ChevronDownIcon />
                   </button>
                 </div>
@@ -82,7 +89,7 @@ export default function FloatingMenu() {
           layoutId="wrapper"
           key="button"
           onClick={() => setIsOpen(true)}
-          className="w-full bg-gray-950/50 hover:bg-gray-950 rounded-lg px-4 py-2.5 text-white text-center cursor-pointer">
+          className="w-full bg-white hover:bg-neutral-300 outline-1 outline-gray-300 rounded-3xl px-4 py-2.5  text-center cursor-pointer">
           <motion.div layout="position">
             Menu
           </motion.div>
