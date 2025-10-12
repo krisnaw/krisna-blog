@@ -1,7 +1,9 @@
 import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
-import React from "react";
+import React, {Suspense} from "react";
+import FooterSection from "@/components/section/footer.section";
+import HeaderSection from "@/components/section/header.section";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,9 +30,13 @@ export default function RootLayout({
     <link rel="icon" href="/fav.svg" sizes="any" />
       <body className={`${geistSans.variable} ${geistMono.variable} 
       antialiased min-h-screen overscroll-none`}>
-      <div>
-        {children}
-      </div>
+        <Suspense>
+          <HeaderSection />
+        </Suspense>
+        <div>
+          {children}
+        </div>
+        <FooterSection />
       </body>
     </html>
   );
