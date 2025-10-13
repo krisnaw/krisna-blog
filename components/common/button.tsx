@@ -1,4 +1,4 @@
-export function Button({children} : {children: React.ReactNode}) {
+export function Button({children}: { children: React.ReactNode }) {
   return (
     <button
       className="

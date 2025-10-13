@@ -23,29 +23,27 @@ export default function HeroSection() {
           transition={{
             duration: 1,
           }}
-          className="rounded-3xl outline-1 outline-gray-200 sm:flex p-8">
+          className="rounded-3xl outline-1 outline-gray-200 sm:flex p-4">
 
           <div className="mb-4 shrink-0 sm:mr-4 sm:mb-0">
             <Image
-              className="
-              z-0
-               inline-block size-24 rounded-full outline -outline-offset-1 outline-black/5
+              className="z-0
+               inline-block size-32 rounded-2xl outline -outline-offset-1 outline-black/5
                object-cover grayscale transition duration-500 motion-safe:group-hover:scale-150"
               src={profile} width={350} height={500} alt="Profile"/>
           </div>
 
-          <div className="prose prose-sm sm:prose-lg  text-gray-600 sm:ml-4">
-
-            <motion.p
-              initial={{opacity: 0}}
-              animate={{opacity: 1}}
-            >
-              Hi there <span>👋</span><br/>
-
-              I&#39;m Krisna Wijaya. <br/> Software Developer currently based in Bali, Indonesia <br/>
-
-              Thanks for visiting. This site still in progress.
-            </motion.p>
+          <div className="text-slate-800/58 text-base leading-6 sm:ml-4 flex flex-col gap-3">
+            <p>
+              Hi there <span>👋</span>...
+            </p>
+            <p>
+              I&#39;m Krisna. Software Developer currently based in Bali, Indonesia.
+            </p>
+            <p>
+              Open to full time and freelance work. If you&#39;re working on something cool,
+              <span className="text-slate-800 ml-0.5"><a href="mailto:krisna.w2010@gmail.com">let&#39;s chat!</a></span>
+            </p>
           </div>
 
         </motion.div>
