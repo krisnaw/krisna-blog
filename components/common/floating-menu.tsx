@@ -40,7 +40,7 @@ export default function FloatingMenu() {
   return (
 
     <div
-      className="fixed bottom-28 w-full bg-white">
+      className="fixed bottom-14 sm:bottom-28 w-full bg-white">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -57,7 +57,7 @@ export default function FloatingMenu() {
                 <ul className="pt-2 px-1">
                   {OPTIONS.map((option) => (
                     <li key={option.label} className=" text-gray-600 h-10 flex items-center">
-                      <Link onClick={() => setIsOpen(false)}
+                      <Link onClick={() => setIsOpen(false)} prefetch={true}
                         href={option.url} className="text-lg/6 font-semibold capitalize px-2.5 w-full flex justify-between">
                         {option.label}
                         <option.icon className="size-4" />

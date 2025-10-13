@@ -14,8 +14,8 @@ export default function Page() {
           </h5>
         </div>
 
-        <div className="mt-6 rounded-3xl outline-1 outline-gray-200 sm:flex p-8">
-          <img src="https://static.sizu.me/images/contents/editor.png" alt="image" className="rounded-3xl"/>
+        <div className="mt-6 rounded-3xl outline-1 outline-gray-200 sm:flex p-2">
+          <img src="https://static.sizu.me/images/contents/editor.png" alt="image" className="rounded-2xl"/>
         </div>
       </section>
 
@@ -27,14 +27,17 @@ export default function Page() {
           </h5>
         </div>
 
-        <div className="mt-6 bg-gradient-to-l from-neutral-50 via-neutral-100 to-neutral-200 outline-1 outline-neutral-200 rounded-3xl p-2">
-          <div className="grid grid-cols-3">
-            <div className="col-span-2">
-              <img className="rounded-2xl hover:shadow-2xl outline-1 outline-neutral-200"
+        <div className="mt-6 bg-gradient-to-l from-slate-50 via-slate-100 to-slate-200 outline-1 outline-neutral-200 rounded-3xl p-2">
+
+          <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-3">
+
+            <div className="sm:col-span-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="rounded-2xl outline-1 outline-neutral-200"
                 src="https://cdn.prod.website-files.com/6624669425dcd1e5513fb862/6677748e2a6f276c22d0e1ef_feature-work-img__asi.webp" alt=""/>
             </div>
 
-            <div className="px-6 py-1 flex flex-col justify-between">
+            <div className="px-2 sm:px-6 py-1 flex flex-col space-y-2.5 justify-between">
               <h2 className="text-3xl font-light">
                 Aggregate Singularity
               </h2>
