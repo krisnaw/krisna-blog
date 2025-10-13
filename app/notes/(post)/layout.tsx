@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative">
+    <div className={`relative`}>
       <div className="fixed left-1/5 mt-2 hidden sm:block">
         <button className="
         transition-transform duration-150 transform active:scale-95
