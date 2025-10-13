@@ -79,6 +79,8 @@ export default function FloatingMenu() {
           layoutId="wrapper"
           key="button"
           onClick={() => setIsOpen(true)}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 300, damping: 40 }}
           className="w-full bg-white  outline-1 outline-gray-300 rounded-3xl px-4 py-2.5  text-center cursor-pointer">
           <motion.div layout="position">
             Menu
