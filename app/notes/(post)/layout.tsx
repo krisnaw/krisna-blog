@@ -1,5 +1,6 @@
 import {ArrowLeft} from "lucide-react";
 import Link from "next/link";
+import {Suspense, unstable_ViewTransition as ViewTransition} from "react";
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -14,9 +15,13 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
         </button>
 
       </div>
-      <div className="prose prose-sm max-w-none">
-        {children}
-      </div>
+      <ViewTransition>
+        <Suspense fallback={<div>Loading</div>}>
+          <div className="prose prose-sm max-w-none">
+            {children}
+          </div>
+        </Suspense>
+      </ViewTransition>
     </div>
   )
 }

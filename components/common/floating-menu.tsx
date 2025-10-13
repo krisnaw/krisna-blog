@@ -2,24 +2,31 @@
 import {useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import Link from "next/link";
-import {ChevronDownIcon} from "lucide-react";
 import {useClickAway} from "@uidotdev/usehooks";
+import {HomeIcon} from "@/components/icons/home.icon";
+import {ChevronDownIcon} from "lucide-react";
+import {NoteIcon} from "@/components/icons/note.icon";
+import {PersonIcon} from "@/components/icons/person.icon";
 
 const OPTIONS = [
   {
     url: "/",
     label: "home",
-    duration: 0.8
+    duration: 0.8,
+    icon: HomeIcon
+
   },
   {
     url: "/notes",
     label: "notes",
-    duration: 0.10
+    duration: 0.10,
+    icon: NoteIcon
   },
   {
     url: "/contact",
     label: "contact",
-    duration: 0.15
+    duration: 0.15,
+    icon: PersonIcon
   }
 ]
 
@@ -49,10 +56,11 @@ export default function FloatingMenu() {
               <div className="p-1.5">
                 <ul className="pt-2 px-1">
                   {OPTIONS.map((option) => (
-                    <li key={option.label} className=" text-gray-800 h-10 flex items-center">
+                    <li key={option.label} className=" text-gray-600 h-10 flex items-center">
                       <Link onClick={() => setIsOpen(false)}
-                        href={option.url} className="text-lg/6 font-semibold capitalize px-2.5 w-full">
+                        href={option.url} className="text-lg/6 font-semibold capitalize px-2.5 w-full flex justify-between">
                         {option.label}
+                        <option.icon className="size-4" />
                       </Link>
                     </li>
                   ))}
@@ -64,7 +72,7 @@ export default function FloatingMenu() {
                           bg-white
                           outline-neutral-300 outline-1
                          text-gray-800 w-full rounded-3xl py-2.5 flex items-center justify-center">
-                    <ChevronDownIcon/>
+                    <ChevronDownIcon />
                   </button>
                 </div>
               </div>
@@ -79,8 +87,8 @@ export default function FloatingMenu() {
           layoutId="wrapper"
           key="button"
           onClick={() => setIsOpen(true)}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 300, damping: 40 }}
+          whileTap={{scale: 0.95}}
+          transition={{type: "spring", stiffness: 300, damping: 40 }}
           className="w-full bg-white  outline-1 outline-gray-300 rounded-3xl px-4 py-2.5  text-center cursor-pointer">
           <motion.div layout="position">
             Menu
