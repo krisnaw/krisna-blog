@@ -1,5 +1,4 @@
 import HeroSection from "@/components/section/hero.section";
-import {Button} from "@/components/common/button";
 
 export default function Page() {
   return (
@@ -46,11 +45,6 @@ export default function Page() {
                 I created a 3d visual language that emphasizes what the ASI&nbsp;software does on behalf of utility accounting and tax teams.
               </p>
 
-              <div>
-                <Button>
-                  Read more
-                </Button>
-              </div>
             </div>
           </div>
 
