@@ -50,7 +50,7 @@ export default function FloatingMenu() {
               type: "spring",
               duration: 0.4,
             }}
-            className="mx-auto max-w-[240px] absolute inset-x-0 bottom-0 z-30">
+            className="mx-auto max-w-[200px] absolute inset-x-0 bottom-0 z-30">
             <div className="min-h-[100px] bg-white outline-1 outline-gray-300 rounded-3xl ">
 
               <div className="p-1.5">
