@@ -1,9 +1,8 @@
 import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
-import React, {Suspense} from "react";
+import React from "react";
 import FooterSection from "@/components/section/footer.section";
-import HeaderSection from "@/components/section/header.section";
 import FloatingMenu from "@/components/common/floating-menu";
 
 const geistSans = Geist({
@@ -28,12 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true} className="overscroll-none">
-    <body className={`${geistSans.variable} ${geistMono.variable} antialiased  overscroll-none`}>
-      <div className="min-h-screen flex flex-col">
-        <Suspense>
-          <HeaderSection/>
-        </Suspense>
-        <main className="flex-grow py-20">
+    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <div className="min-h-screen">
+        {/*<Suspense>*/}
+        {/*  <HeaderSection/>*/}
+        {/*</Suspense>*/}
+        <main>
           {children}
         </main>
 
