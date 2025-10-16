@@ -1,6 +1,8 @@
+"use client"
+import {motion} from "framer-motion";
 import {ArrowLeft} from "lucide-react";
 import Link from "next/link";
-import {Suspense, unstable_ViewTransition as ViewTransition} from "react";
+import {Suspense} from "react";
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -15,13 +17,15 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
         </button>
 
       </div>
-      <ViewTransition>
-        <Suspense fallback={<div>Loading</div>}>
-          <div className="prose prose-sm max-w-none">
-            {children}
-          </div>
-        </Suspense>
-      </ViewTransition>
+      <Suspense fallback={<div>Loading</div>}>
+        <motion.div
+          animate={{opacity: 1, y: 0, }}
+          initial={{opacity: 0, y: 100}}
+          transition={{ type: "spring", stiffness: 100, damping: 20 }}
+          className="prose prose-sm max-w-none">
+          {children}
+        </motion.div>
+      </Suspense>
     </div>
   )
 }
