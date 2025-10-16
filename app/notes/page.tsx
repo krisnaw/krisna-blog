@@ -1,4 +1,19 @@
-const NOTES = [
+type Note = {
+  id: string;
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+}
+
+const NOTES : Note[] = [
+  {
+    id: crypto.randomUUID(),
+    slug: "scroll-driven-animation",
+    title: "CSS Scroll driven animation",
+    date: "16 October 2025",
+    excerpt: "CSS scroll-driven animations module provides functionality that builds on top of the CSS animations module and Web Animations API.",
+  },
   {
     id: crypto.randomUUID(),
     slug: "book",
@@ -12,8 +27,13 @@ const NOTES = [
 export default function Page() {
   return (
     <div>
-      <div className="text-3xl font-semibold text-left w-full">
-        Notes
+      <div>
+        <h1 className="text-3xl font-semibold text-left w-full">
+          Notes
+        </h1>
+        <p className="mt-4 text-gray-500">
+          A tight collection of complete ideas, thoughts, articles, and writings.
+        </p>
       </div>
       <div className="mt-10">
         <ul role="list" className="divide-y divide-gray-100 space-y-2.5">
@@ -34,11 +54,6 @@ export default function Page() {
                 </p>
               </div>
 
-              <div className="mt-2 flex justify-between">
-                <div className="text-sm text-gray-500">
-                  <time dateTime={note.date}>{note.date}</time>
-                </div>
-              </div>
             </li>
           ))}
         </ul>

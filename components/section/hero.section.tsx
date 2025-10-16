@@ -33,12 +33,12 @@ export default function HeroSection() {
               src={profile} width={350} height={500} alt="Profile"/>
           </div>
 
-          <div className="text-slate-800/58 text-base leading-6 sm:ml-4 flex flex-col gap-3">
+          <div className="text-slate-800/60 text-base leading-6 sm:ml-4 flex flex-col gap-3">
             <p>
               Hi there <span>👋</span>...
             </p>
             <p>
-              I&#39;m Krisna. Software Developer currently based in Bali, Indonesia.
+              I&#39;m Krisna, Software Developer currently based in Bali, Indonesia.
             </p>
             <p>
               Open to full time and freelance work. If you&#39;re working on something cool,
