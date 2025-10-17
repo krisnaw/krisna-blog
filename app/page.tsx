@@ -1,6 +1,7 @@
 import HeroSection from "@/components/section/hero.section";
 import React, {Suspense} from "react";
 import HeaderSection from "@/components/section/header.section";
+import FooterSection from "@/components/section/footer.section";
 
 export default function Page() {
   return (
@@ -12,7 +13,7 @@ export default function Page() {
 
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
 
-        <HeroSection />
+        <HeroSection/>
 
         {/*<section id="animation">*/}
         {/*  <div>*/}
@@ -60,8 +61,9 @@ export default function Page() {
         {/*</section>*/}
 
       </div>
-    </div>
 
+      <FooterSection/>
+    </div>
 
   )
 }

@@ -2,7 +2,6 @@ import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import React, {Suspense} from "react";
-import FooterSection from "@/components/section/footer.section";
 import FloatingMenu from "@/components/common/floating-menu";
 
 const geistSans = Geist({
@@ -30,11 +29,10 @@ export default function RootLayout({
     <body className={`${geistSans.variable} ${geistMono.variable} antialiased `}>
       <div className="flex flex-col min-h-screen">
 
-        <main className="flex-auto">
+        <main className="flex-grow">
           {children}
         </main>
 
-        <FooterSection/>
       </div>
       <Suspense>
         <FloatingMenu/>
