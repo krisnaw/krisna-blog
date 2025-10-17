@@ -27,16 +27,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true} className="overscroll-none">
-    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <body className={`${geistSans.variable} ${geistMono.variable} antialiased `}>
       <div className="flex flex-col min-h-screen">
 
-        <main className="flex-grow">
+        <main className="flex-auto">
           {children}
         </main>
 
         <FooterSection/>
       </div>
-
       <Suspense>
         <FloatingMenu/>
       </Suspense>
