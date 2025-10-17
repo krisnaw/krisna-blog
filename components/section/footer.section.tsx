@@ -1,10 +1,10 @@
 export default function FooterSection() {
   return (
-    <footer className="bg-gray-100">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 sm:py-8 ">
-        <div className="flex justify-between items-center">
+    <footer className="bg-gray-100 px-10">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-center sm:justify-between py-4">
 
-          <div className="flex space-x-2.5 items-center">
+          <div className=" space-x-2.5 items-center hidden sm:block">
             <p className="text-sm/6 text-balance text-gray-600">Trying to make the world a better place</p>
           </div>
 
@@ -28,7 +28,6 @@ export default function FooterSection() {
               </a>
             </div>
           </div>
-
 
         </div>
       </div>

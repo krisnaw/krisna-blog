@@ -26,7 +26,7 @@ const NOTES : Note[] = [
 
 export default function Page() {
   return (
-    <div>
+    <div className=" pt-20 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <div>
         <h1 className="text-3xl font-semibold text-left w-full">
           Notes

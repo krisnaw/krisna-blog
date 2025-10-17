@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function NotesLayout({children}: { children: React.ReactNode }) {
   return (
-    <div className={`${merriweather.className} pt-20 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8`}>
+    <div className={`${merriweather.className} pb-36`}>
       {children}
     </div>
   )

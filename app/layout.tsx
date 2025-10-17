@@ -4,7 +4,6 @@ import "./globals.css";
 import React, {Suspense} from "react";
 import FooterSection from "@/components/section/footer.section";
 import FloatingMenu from "@/components/common/floating-menu";
-import HeaderSection from "@/components/section/header.section";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +29,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true} className="overscroll-none">
     <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <div className="flex flex-col min-h-screen">
-        <Suspense>
-          <HeaderSection/>
-        </Suspense>
 
         <main className="flex-grow">
           {children}
@@ -41,7 +37,9 @@ export default function RootLayout({
         <FooterSection/>
       </div>
 
-      <FloatingMenu/>
+      <Suspense>
+        <FloatingMenu/>
+      </Suspense>
     </body>
     </html>
   );

@@ -40,7 +40,7 @@ export default function FloatingMenu() {
   return (
 
     <div
-      className="fixed bottom-14 sm:bottom-28 w-full bg-white">
+      className="fixed bottom-18 sm:bottom-28 w-full bg-white">
       <AnimatePresence>
         {isOpen && (
           <motion.div
