@@ -16,17 +16,18 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
 
       </header>
 
-
-      <div className=" pt-20 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <Suspense fallback={<div>Loading</div>}>
-          <motion.div
-            animate={{opacity: 1, x: 0, }}
-            initial={{opacity: 0, x: 100}}
-            transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            className="prose prose-sm max-w-none">
-            {children}
-          </motion.div>
-        </Suspense>
+      <div className="py-20 mx-auto max-w-3xl">
+        <div className="py-10 px-4 sm:px-6 lg:px-8 bg-white rounded-3xl shadow-md">
+          <Suspense fallback={<div>Loading</div>}>
+            <motion.div
+              animate={{opacity: 1, x: 0, }}
+              initial={{opacity: 0, x: 100}}
+              transition={{ type: "spring", stiffness: 100, damping: 20 }}
+              className="prose prose-sm max-w-none">
+              {children}
+            </motion.div>
+          </Suspense>
+        </div>
       </div>
 
     </div>
