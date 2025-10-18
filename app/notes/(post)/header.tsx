@@ -10,9 +10,9 @@ export function Header({posts} : {posts: PostType[]}) {
   );
 
   return (
-    <div>
+    <div className="text-center">
       <h1 className="text-3xl mb-1 font-bold">{initialPost?.title}</h1>
-      <div>
+      <div className="text-gray-600">
         {initialPost?.date}
       </div>
     </div>
