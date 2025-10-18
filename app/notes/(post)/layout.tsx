@@ -7,7 +7,7 @@ import {Header} from "@/app/notes/(post)/header";
 export default async function MdxLayout({ children }: { children: React.ReactNode }) {
   const posts = getPosts();
   return (
-    <div className={`relative bg-slate-50 px-4 sm:px-6 lg:px-8`}>
+    <div className={`relative  px-4 sm:px-6 lg:px-8`}>
 
       <nav className="z-30 lg:sticky lg:top-0">
 
