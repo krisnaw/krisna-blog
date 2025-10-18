@@ -8,11 +8,11 @@
       "excerpt": "Hi welcome to my blog"
     },
     {
-      "id": "about-css",
+      "id": "playground",
       "date": "Oct 18, 2025",
-      "title": "Hello World",
+      "title": "Playground",
       "featuredImage": "/hello-world.jpg",
-      "excerpt": "Hi welcome to my blog"
+      "excerpt": "Playground for the Typography for this blog."
     }
   ]
 }
