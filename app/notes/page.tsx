@@ -1,7 +1,8 @@
-import {NOTES} from "@/app/notes/NOTES";
-import {NoteItem} from "@/app/notes/note-item";
+import {getPosts} from "@/app/notes/getPosts";
+import {Post} from "@/app/notes/post";
 
-export default function Page() {
+export default async function Page() {
+  const posts = getPosts();
   return (
     <div className="pt-20">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8r">
@@ -15,9 +16,8 @@ export default function Page() {
         </div>
         <div className="mt-10">
           <ul role="list" className=" space-y-3.5">
-
-            {NOTES.map((note,) => (
-              <NoteItem key={note.id} note={note} />
+            {posts.map((post) => (
+              <Post key={post.id} post={post} />
             ))}
           </ul>
         </div>

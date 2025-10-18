@@ -18,7 +18,7 @@ const OPTIONS = [
   },
   {
     url: "/notes",
-    label: "notes",
+    label: "post",
     duration: 0.10,
     icon: NoteIcon
   },

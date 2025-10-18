@@ -5,7 +5,7 @@ import {MainContent} from "@/app/notes/(post)/main-content";
 export default async function MdxLayout({ children }: { children: React.ReactNode }) {
 
   return (
-    <div className={`relative`}>
+    <div className={`relative bg-slate-50`}>
       <header className="z-30 lg:sticky lg:top-0">
 
         <div className="px-4 sm:px-6 lg:px-8 h-14 py-4">

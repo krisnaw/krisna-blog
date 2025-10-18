@@ -1,8 +1,8 @@
 "use client"
 
-import {Note} from "@/app/notes/NOTES";
+import {PostType} from "@/app/notes/getPosts";
 
-export function NoteItem({note}: { note: Note }) {
+export function Post({post}: { post: PostType }) {
   return (
     <li className="rounded-3xl p-2.5 bg-white outline outline-slate-100 hover:inset-shadow-sm hover:inset-shadow-slate-100">
       <div className="sm:flex">
@@ -17,13 +17,13 @@ export function NoteItem({note}: { note: Note }) {
 
         <div className="py-4 relative pr-2">
           <h3 className="text-lg font-medium text-gray-900">
-            <a href={`/notes/${note.slug}`} className="hover:underline">
+            <a href={`/notes/${post.id}`} className="hover:underline">
               <span className="absolute inset-0"></span>
-              {note.title}
+              {post.title}
             </a>
           </h3>
           <p className="mt-1 text-sm text-gray-500">
-            {note.excerpt}
+            {post.excerpt}
           </p>
         </div>
 

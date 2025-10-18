@@ -1,0 +1,10 @@
+{
+  "posts": [
+    {
+      "id": "hello-world",
+      "date": "Oct 18, 2025",
+      "title": "Hello World",
+      "excerpt": "Hi welcome to my blog"
+    }
+  ]
+}
