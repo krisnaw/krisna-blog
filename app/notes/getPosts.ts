@@ -4,6 +4,7 @@ export type PostType = {
   id: string;
   title: string;
   date: string;
+  featuredImage: string;
   excerpt: string;
 }
 

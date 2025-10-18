@@ -7,11 +7,11 @@ import {Header} from "@/app/notes/(post)/header";
 export default async function MdxLayout({ children }: { children: React.ReactNode }) {
   const posts = getPosts();
   return (
-    <div className={`relative bg-slate-50`}>
+    <div className={`relative bg-slate-50 px-4 sm:px-6 lg:px-8`}>
 
       <nav className="z-30 lg:sticky lg:top-0">
 
-        <div className="px-4 sm:px-6 lg:px-8 h-14 py-4">
+        <div className="h-14 py-4">
           <Suspense>
             <BackButton />
           </Suspense>
@@ -19,7 +19,7 @@ export default async function MdxLayout({ children }: { children: React.ReactNod
 
       </nav>
 
-      <div className="pt-6 pb-60 mx-auto max-w-3xl">
+      <div className="pt-6 pb-40 mx-auto max-w-3xl">
         <Header posts={posts} />
         <div className="mt-6">
           <Suspense fallback={<div>Loading</div>}>

@@ -4,6 +4,14 @@
       "id": "hello-world",
       "date": "Oct 18, 2025",
       "title": "Hello World",
+      "featuredImage": "/hello-world.jpg",
+      "excerpt": "Hi welcome to my blog"
+    },
+    {
+      "id": "about-css",
+      "date": "Oct 18, 2025",
+      "title": "Hello World",
+      "featuredImage": "/hello-world.jpg",
       "excerpt": "Hi welcome to my blog"
     }
   ]
