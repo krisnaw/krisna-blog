@@ -8,7 +8,7 @@ export function MainContent({children}: { children: React.ReactNode}) {
       animate={{opacity: 1, x: 0, }}
       initial={{opacity: 0, x: 100}}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
-      className="prose prose-sm max-w-none">
+      className="prose prose-sm sm:prose-lg max-w-none">
       {children}
     </motion.div>
   )

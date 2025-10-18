@@ -23,7 +23,7 @@ export default function HeroSection() {
           transition={{
             duration: 1,
           }}
-          className="outline-1 outline-gray-200 rounded-3xl">
+          className="outline-1 outline-zinc-200 rounded-3xl">
 
           <div className="sm:flex p-2.5">
             <div className="mb-4 shrink-0 sm:mr-4 sm:mb-0">

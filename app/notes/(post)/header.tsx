@@ -15,6 +15,9 @@ export function Header({posts} : {posts: PostType[]}) {
       <div className="text-gray-600">
         {initialPost?.date}
       </div>
+      <div className="mt-4">
+        <img src="https://static.sizu.me/images/contents/editor.png" alt=""/>
+      </div>
     </div>
   )
 }

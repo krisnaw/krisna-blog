@@ -19,11 +19,9 @@ export default async function MdxLayout({ children }: { children: React.ReactNod
 
       </nav>
 
-      <div className="pt-6 pb-40 mx-auto max-w-3xl">
+      <div className="pt-6 pb-40 mx-auto max-w-5xl">
         <Header posts={posts} />
-        <div className="mt-8 bg-neutral-50/10 shadow-lg px-4 sm:px-6 lg:px-8 py-12 rounded-sm
-
-        outline-1 outline-neutral-100">
+        <div className="mt-8 px-4 sm:px-6 lg:px-8 py-12 mx-auto max-w-3xl">
           <Suspense fallback={<div>Loading</div>}>
             <MainContent>{children}</MainContent>
           </Suspense>

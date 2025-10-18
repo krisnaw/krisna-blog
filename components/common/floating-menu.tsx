@@ -49,9 +49,9 @@ export default function FloatingMenu() {
               type: "spring",
               duration: 0.4,
             }}
-            className="mx-auto max-w-[200px] absolute inset-x-0 bottom-0 z-30">
+            className="mx-auto max-w-[200px]  bg-white/20 backdrop-blur-sm absolute inset-x-0 bottom-0 z-30">
             <div className="min-h-[100px]
-            bg-white/30 backdrop-blur-sm
+
              inset-shadow-sm inset-shadow-slate-500/50
             outline-1 outline-gray-300
             rounded-3xl ">
