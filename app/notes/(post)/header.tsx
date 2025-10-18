@@ -9,8 +9,6 @@ export function Header({posts} : {posts: PostType[]}) {
     post => post.id === segments[segments.length - 1]
   );
 
-  console.log(initialPost)
-
   return (
     <div>
       <h1 className="text-3xl mb-1 font-bold">{initialPost?.title}</h1>

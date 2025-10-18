@@ -1,12 +1,6 @@
-import {Merriweather} from 'next/font/google'
 import type {Metadata} from "next";
 
-// If loading a variable font, you don't need to specify the font weight
-const merriweather = Merriweather({
-  subsets: ['latin'],
-  display: 'swap',
-})
-
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Krisna Wijaya | Notes",
