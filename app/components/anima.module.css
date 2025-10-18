@@ -1,29 +1,42 @@
 
-.imageContainer {
-    animation: scaleUpDown 0.5s linear;
-    animation-timeline: scroll();
-}
+/*.imageContainer {*/
+/*    animation: scaleUpDown 0.5s linear;*/
+/*    animation-timeline: scroll();*/
+/*}*/
 
-@keyframes scaleUpDown {
-    0%, 100% {
-        transform: scale(0);
-    }
-    50% {
-        transform: scale(2);
-    }
-}
+/*@keyframes scaleUpDown {*/
+/*    0%, 100% {*/
+/*        transform: scale(0);*/
+/*    }*/
+/*    50% {*/
+/*        transform: scale(2);*/
+/*    }*/
+/*}*/
 
-@keyframes growProgress {
+/*@keyframes growProgress {*/
+/*    from {*/
+/*        transform: scaleX(0) ;*/
+/*    }*/
+/*    to {*/
+/*        transform: scaleX(1) ;*/
+/*    }*/
+/*}*/
+
+/*.progressFill {*/
+/*    transform-origin: left center;*/
+/*    animation: growProgress linear forwards;*/
+/*    animation-timeline: scroll();*/
+/*}*/
+
+@keyframes chevron {
     from {
-        transform: scaleX(0) ;
+        transform: rotate(0deg); /* Starting rotation */
     }
     to {
-        transform: scaleX(1) ;
+        transform: rotate(180deg); /* Ending rotation (e.g., for an open/closed state) */
     }
 }
 
-.progressFill {
-    transform-origin: left center;
-    animation: growProgress linear forwards;
-    animation-timeline: scroll();
+.chevronIcon:hover {
+    animation: chevron 0.5s linear;
 }

@@ -1,4 +1,5 @@
 import {NOTES} from "@/app/notes/NOTES";
+import {NoteItem} from "@/app/notes/note-item";
 
 export default function Page() {
   return (
@@ -13,25 +14,10 @@ export default function Page() {
           </p>
         </div>
         <div className="mt-10">
-          <ul role="list" className="divide-y divide-gray-100 space-y-2.5">
+          <ul role="list" className=" space-y-3.5">
 
             {NOTES.map((note,) => (
-              <li key={note.id} className="pb-4">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    <a href={`/notes/${note.slug}`} className="hover:underline">
-                      { note.title }
-                    </a>
-                  </h3>
-                </div>
-
-                <div>
-                  <p className="text-sm text-gray-500">
-                    {note.excerpt}
-                  </p>
-                </div>
-
-              </li>
+              <NoteItem key={note.id} note={note} />
             ))}
           </ul>
         </div>

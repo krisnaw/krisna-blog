@@ -5,7 +5,9 @@ export default function FooterSection() {
         <div className="flex items-center justify-center sm:justify-between py-4">
 
           <div className=" space-x-2.5 items-center hidden sm:block">
-            <p className="text-sm/6 text-balance text-gray-600">Trying to make the world a better place</p>
+            <p className="text-sm/6 text-balance text-gray-600">
+              © {new Date().getFullYear()} Krisna Wijaya
+            </p>
           </div>
 
           <div>

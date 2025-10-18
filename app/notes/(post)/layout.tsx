@@ -1,9 +1,9 @@
-"use client"
-import {motion} from "framer-motion";
 import {Suspense} from "react";
 import BackButton from "@/app/notes/(post)/back-button";
+import {MainContent} from "@/app/notes/(post)/main-content";
 
-export default function MdxLayout({ children }: { children: React.ReactNode }) {
+export default async function MdxLayout({ children }: { children: React.ReactNode }) {
+
   return (
     <div className={`relative`}>
       <header className="z-30 lg:sticky lg:top-0">
@@ -19,13 +19,7 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
       <div className="py-20 mx-auto max-w-3xl">
         <div className="py-10 px-4 sm:px-6 lg:px-8 bg-white rounded-3xl shadow-md">
           <Suspense fallback={<div>Loading</div>}>
-            <motion.div
-              animate={{opacity: 1, x: 0, }}
-              initial={{opacity: 0, x: 100}}
-              transition={{ type: "spring", stiffness: 100, damping: 20 }}
-              className="prose prose-sm max-w-none">
-              {children}
-            </motion.div>
+            <MainContent>{children}</MainContent>
           </Suspense>
         </div>
       </div>

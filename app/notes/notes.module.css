@@ -1,0 +1,13 @@
+.article:hover {
+    animation: bgColorChange 0.5s linear forwards;
+}
+
+/* Define keyframes to animate the background color */
+@keyframes bgColorChange {
+    from {
+        background-color: white;
+    }
+    to {
+        background-color: #e5e7eb
+    }
+}
