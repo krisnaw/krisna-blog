@@ -23,6 +23,7 @@ export default function Page() {
             </div>
 
             <div className="mt-6 rounded-3xl outline-1 outline-gray-200 sm:flex p-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="https://static.sizu.me/images/contents/editor.png" alt="image" className="rounded-2xl"/>
             </div>
           </section>
