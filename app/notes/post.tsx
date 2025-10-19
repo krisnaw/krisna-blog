@@ -10,14 +10,8 @@ export function Post({post}: { post: PostType }) {
       <div className="flex flex-col items-start justify-between">
 
         <div className="flex items-center justify-center w-full">
-
-          {/*<Image*/}
-          {/*  // placeholder="blur"*/}
-          {/*  className="h-64 w-full object-cover rounded-lg grayscale"*/}
-          {/*  src={post.featuredImage} width={500} height={500} alt="Hello World" />*/}
-
           <Image
-            className="h-64 w-full object-cover rounded-lg grayscale"
+            className="h-64 w-full object-cover rounded-lg grayscale outline-1 outline-gray-300"
             src={post.featuredImage} width={600} height={400} alt="Hello World" />
         </div>
 

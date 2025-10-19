@@ -21,7 +21,7 @@ export function Header({posts} : {posts: PostType[]}) {
         { initialPost?.featuredImage && (
           <Image
             quality={100}
-            className="h-96 w-full object-cover rounded-lg grayscale"
+            className="h-96 w-full object-cover rounded-lg grayscale outline-1 outline-gray-300"
             src={initialPost?.featuredImage} width={800} height={400} alt="Hello World" />
         )}
 
