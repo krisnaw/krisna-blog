@@ -5,21 +5,27 @@ import Image from "next/image";
 
 export function Post({post}: { post: PostType }) {
   return (
-    <li className="rounded-3xl p-2.5 bg-neutral-50 outline outline-slate-100 hover:inset-shadow-sm hover:inset-shadow-slate-100">
+    <li>
 
-      <div className="sm:flex">
-        <div className="mb-4 shrink-0 sm:mr-4 sm:mb-0">
-          <div className="w-full sm:w-64">
-            <Image
-              // placeholder="blur"
-              className="aspect-video  object-cover rounded-2xl"
-              src={post.featuredImage} width={500} height={500} alt="Hello World"/>
-          </div>
+      <div className="flex flex-col items-start justify-between">
+
+        <div className="flex items-center justify-center w-full">
+
+          {/*<Image*/}
+          {/*  // placeholder="blur"*/}
+          {/*  className="h-64 w-full object-cover rounded-lg grayscale"*/}
+          {/*  src={post.featuredImage} width={500} height={500} alt="Hello World" />*/}
+
+          <Image
+            className="h-64 w-full object-cover rounded-lg grayscale"
+            src={post.featuredImage} width={600} height={400} alt="Hello World" />
         </div>
-        <div className="group relative grow p-4">
-          <h4 className="text-lg font-bold text-gray-900">
+
+        <div className="flex flex-col pt-4 relative w-full min-h-32">
+          <div className="text-xs text-gray-500">{post.date}</div>
+          <h4 className="text-xl font-medium text-gray-950">
             <a href={`/notes/${post.id}`} className="hover:underline">
-              <span className="absolute inset-0 "></span>
+              <span className="absolute inset-0"></span>
               {post.title}
             </a>
           </h4>
@@ -28,6 +34,8 @@ export function Post({post}: { post: PostType }) {
           </p>
         </div>
       </div>
+
+
 
     </li>
   )

@@ -2,6 +2,7 @@
 
 import {PostType} from "@/app/notes/getPosts";
 import {useSelectedLayoutSegments} from "next/navigation";
+import Image from "next/image";
 
 export function Header({posts} : {posts: PostType[]}) {
   const segments = useSelectedLayoutSegments()
@@ -15,8 +16,16 @@ export function Header({posts} : {posts: PostType[]}) {
       <div className="text-gray-600">
         {initialPost?.date}
       </div>
-      <div className="mt-4">
-        <img src="https://static.sizu.me/images/contents/editor.png" alt=""/>
+      <div className="pt-4">
+
+        { initialPost?.featuredImage && (
+          <Image
+            quality={100}
+            className="h-96 w-full object-cover rounded-lg grayscale"
+            src={initialPost?.featuredImage} width={800} height={400} alt="Hello World" />
+        )}
+
+
       </div>
     </div>
   )
