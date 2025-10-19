@@ -16,15 +16,14 @@ export function Header({posts} : {posts: PostType[]}) {
       <div className="text-gray-600">
         {initialPost?.date}
       </div>
-      <div className="pt-4">
+      <div className="pt-6">
 
         { initialPost?.featuredImage && (
           <Image
             quality={100}
-            className="h-96 w-full object-cover rounded-lg grayscale outline-1 outline-gray-300"
+            className="h-44 sm:h-96 w-full object-cover  grayscale outline-1 outline-gray-300"
             src={initialPost?.featuredImage} width={800} height={400} alt="Hello World" />
         )}
-
 
       </div>
     </div>

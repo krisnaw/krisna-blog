@@ -11,7 +11,7 @@ export function Post({post}: { post: PostType }) {
 
         <div className="flex items-center justify-center w-full">
           <Image
-            className="h-64 w-full object-cover rounded-lg grayscale outline-1 outline-gray-300"
+            className="h-64 w-full object-cover grayscale outline-1 outline-gray-300"
             src={post.featuredImage} width={600} height={400} alt="Hello World" />
         </div>
 
