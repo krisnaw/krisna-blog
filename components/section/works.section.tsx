@@ -3,7 +3,6 @@ import React from "react";
 import {SectionTitle} from "@/components/section/section.title";
 import {motion} from "framer-motion";
 import {Badge} from "@/components/ui/badge";
-import {ExternalLink} from "lucide-react";
 
 export default function WorksSection() {
   return (
@@ -22,10 +21,10 @@ export default function WorksSection() {
           <div>
             Work Experiences
           </div>
-          <div className="text-sm font-light inline-flex items-baseline gap-1">
-            View Resume to Learn More
-            <ExternalLink size={13}/>
-          </div>
+          {/*<div className="text-sm font-light inline-flex items-baseline gap-1">*/}
+          {/*  View Resume to Learn More*/}
+          {/*  <ExternalLink size={13}/>*/}
+          {/*</div>*/}
         </div>
       </SectionTitle>
 
@@ -52,6 +51,10 @@ export default function WorksSection() {
                     {work.date}
                   </p>
                 </div>
+              </div>
+
+              <div className="mt-1.5">
+                <p className="font-light text-gray-500">{work.description}</p>
               </div>
 
               <div className="mt-4">
@@ -100,18 +103,19 @@ const WORKS = [
     title: "Frontend developer",
     date: "January - March 2025",
     location: "Remote, Thailand",
-    description: "Lead designer for tv for bars & restaurants",
-    tools: "Next, React, TypeScript, AntDesign, Zustand, Tailwind CSS, Docker, Postman, Figma, REST API",
+    description: "HaupCar, thailand car rental company is working on new features called " +
+      "Long Term Car Rental that allow customers to rent vehicles for extended duration. " +
+      "My responsibilities building interfaces for the new features from Figma design and connecting with their new REST API.",
+    tools: "Next, React, TypeScript, AntDesign, Zustand, Tailwind CSS, Docker, Postman, Figma, REST API, JIRA, Bitbucket",
     responsibilities: [
-      "Developed responsive UI for long term booking system, a feature enabled customers to rent vehicles for extended duration.",
-      "Implemented Zustand to manage front-end state more efficiently, improving code maintainability and reducing complexity.",
-      "Created flexible UI systems in React, TypeScript, and AntDesign to enforce consistent design standards and simplify project workflows.",
-      "Maintained and optimized legacy code to align with current best practices.",
-      "Collaborated directly with designers and QA’s engineers to deliver a polished, bug-free product responsibilitieserience."
+      "Developer reusable components using AntDesign as a design system.",
+      "Implemented responsive user interfaces from Figma design specifications",
+      "Implemented Zustand for state management.",
+      "Collaborated directly with designers and QA’s engineers."
     ],
     achievements: [
-      "Refactor ",
-      "Implement internationalization"
+      "Refactor legacy React component to be more reusable.",
+      "Implement internationalization so the site can be used in English and Thai.",
     ]
   },
   {
@@ -122,15 +126,18 @@ const WORKS = [
     title: "Full-stack developer",
     date: "June 2016 - Mar 2024",
     location: "Jakarta, Indonesia",
-    description: "Lead designer for tv for bars & restaurants",
+    description: "C2 Media, a media company that provides digital marketing services to businesses and individuals. I led for the development of ContentGrow, a web application that connects freelance talent with global content teams and streamlines editorial workflows.",
     tools: "Laravel, Vue, Tailwind CSS, " +
-      "AWS, EC2, S3, SES, Load Balancer, VPN," +
+      "AWS, EC2, S3, SES, Load Balancer, VPN, nginx," +
       "Redis, MySQL, Lambda, Dynamo DB, Route 53, Stripe, Pusher, Memcached, beanstalkd, supervisord, Jenkins, Ubuntu, PHP, HTML, JavaScript, CSS",
     responsibilities: [
-      "Developed responsive UI for long term booking system, a feature enabled customers to rent vehicles for extended duration.",
+      "Configured and managed AWS infrastructure to host app deployments using EC2, RDS, Application Load Balancer, S3, SES, Route 53.",
+      "Building payment system using Stripe to allow payment via Bank Transfer and Credit Card and payout directly to user bank account across multiple countries and currencies.",
+      "Utilized pusher to send real-time notifications to users and build realtime chat feature.",
+      "Implemented automated cron jobs to aggregate and store reporting data in DynamoDB on daily, weekly, and monthly schedules."
     ],
     achievements: [
-      "Refactor "
+      "Developed ContentGrow, a web application that connects freelance talent with global content teams and streamlines editorial workflows, contributing to the company’s revenue growth. "
     ]
   },
 ]

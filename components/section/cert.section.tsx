@@ -40,7 +40,7 @@ export function CertSection() {
               </div>
               <div className="shrink-0">
                 <p className="text-gray-500 text-sm sm:text-base">
-                  October 23, 2023
+                  {cert.date}
                 </p>
               </div>
             </div>
