@@ -28,18 +28,15 @@ export default function HeroSection() {
         </div>
       </header>
 
-      <section className="pt-10 prose prose-sm sm:prose-lg sm:leading-tight max-w-none">
-        <p>
-          Hi there <span>👋</span>...
-        </p>
-        <p>
-          I&#39;m Krisna, Software Developer currently based in Bali, Indonesia.
-        </p>
-        <p>
+      <section className="pt-10 text-gray-600">
+        <h1>
+          I&#39;m Krisna, frontend developer based in Bali, Indonesia.
+        </h1>
+        <h2>
           Open to full time and freelance work. If you&#39;re working on something cool,
           <span className="text-slate-800 ml-1.5"><a
             href="mailto:krisna.w2010@gmail.com">let&#39;s chat!</a></span>
-        </p>
+        </h2>
       </section>
 
     </motion.div>

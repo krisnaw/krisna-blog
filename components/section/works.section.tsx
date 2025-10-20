@@ -18,9 +18,9 @@ export default function WorksSection() {
 
       <SectionTitle>
         <div className="flex justify-between items-center">
-          <div>
+          <h3>
             Work Experiences
-          </div>
+          </h3>
           {/*<div className="text-sm font-light inline-flex items-baseline gap-1">*/}
           {/*  View Resume to Learn More*/}
           {/*  <ExternalLink size={13}/>*/}
