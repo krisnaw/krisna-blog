@@ -39,7 +39,7 @@ export default function FloatingMenu() {
 
   return (
 
-    <div className="fixed bottom-18 sm:bottom-28 w-full ">
+    <div className="fixed bottom-18 sm:bottom-28 w-full">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -49,12 +49,8 @@ export default function FloatingMenu() {
               type: "spring",
               duration: 0.4,
             }}
-            className="mx-auto max-w-[200px]  bg-white/20 backdrop-blur-sm absolute inset-x-0 bottom-0 z-30">
-            <div className="min-h-[100px]
-
-             inset-shadow-sm inset-shadow-slate-500/50
-            outline-1 outline-gray-300
-            rounded-3xl ">
+            className="mx-auto max-w-[200px] rounded-3xl  bg-white/20 backdrop-blur-sm absolute inset-x-0 bottom-0 z-30">
+            <div className="min-h-[100px] rounded-3xl inset-shadow-sm inset-shadow-slate-500/50 outline-1 outline-gray-300">
 
               <div className="p-1.5">
                 <ul className="pt-2 px-1">
