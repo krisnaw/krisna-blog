@@ -1,12 +1,29 @@
+"use client"
 import React from "react";
 import {SectionTitle} from "@/components/section/section.title";
+import {motion} from "framer-motion";
 
 export default function WorksSection() {
   return (
-    <div className="mt-16">
+    <motion.div
+      animate={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, x: 20}}
+      transition={{
+        duration: 1,
+        delay: 0.3,
+        ease: "easeInOut",
+      }}
+      className="mt-16">
 
       <SectionTitle>
-        Experiences
+        <div className="flex justify-between items-center">
+          <div>
+            Experiences
+          </div>
+          <div className="text-sm font-light">
+            View Resume to Learn More
+          </div>
+        </div>
       </SectionTitle>
 
       <ul className="grid grid-cols-1 gap-4">
@@ -19,9 +36,11 @@ export default function WorksSection() {
               <div className="flex-1">
                 <div>
                   <h4 className="text-lg font-bold text-gray-900">
-                    {work.company}
+                    <a href="">
+                      {work.company}
+                    </a>
                   </h4>
-                  <div className="flex justify-between items-baseline">
+                  <div className="sm:flex justify-between items-baseline">
                     <p className="mt-1 font-medium text-gray-500">
                       {work.title}
                     </p>
@@ -32,43 +51,50 @@ export default function WorksSection() {
                 </div>
 
                 <div className="mt-4">
-                  <ul className="list-disc text-gray-500 flex flex-col gap-4 pl-3 text-justify">
-                    <li>
-                      Built UI systems in React, TypeScript, and MUI to maintain consistent design across projects
-                    </li>
-                    <li>
-                      Built UI systems in React, TypeScript, and MUI to maintain consistent design across projects
-                    </li>
+                  <ul className="list-disc text-gray-500 flex flex-col gap-2 pl-3">
+                    {work.exp.map((exp, index) => (
+                      <li key={index} className="text-sm">
+                        {exp}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
             </div>
 
-
-
-
           </li>
         ))}
       </ul>
 
-    </div>
+    </motion.div>
   )
 }
 
 const WORKS = [
   {
-    id: crypto.randomUUID(),
+    id: 1,
     company: "HaupCar",
+    url: "https://www.haupcar.com/",
     title: "Frontend developer",
-    date: "2024-Now",
+    date: "January - March 2025",
     description: "Lead designer for tv for bars & restaurants",
-
+    exp: [
+      "Developed responsive UI for long term booking system, a feature enabled customers to rent vehicles for extended duration.",
+      "Implemented Zustand to manage front-end state more efficiently, improving code maintainability and reducing complexity.",
+      "Created flexible UI systems in React, TypeScript, and AntDesign to enforce consistent design standards and simplify project workflows.",
+      "Maintained and optimized legacy code to align with current best practices.",
+      "Collaborated directly with designers and QA’s engineers to deliver a polished, bug-free product experience."
+    ],
   },
   {
-    id: crypto.randomUUID(),
+    id: 2,
     company: "C2 Media",
+    url: "https://www.linkedin.com/company/c2media-asia/about/",
     title: "Full-stack developer",
-    date: "2024-Now",
+    date: "June 2016 - Mar 2024",
     description: "Lead designer for tv for bars & restaurants",
+    exp: [
+      "Developed responsive UI for long term booking system, a feature enabled customers to rent vehicles for extended duration.",
+    ],
   },
 ]

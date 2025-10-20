@@ -21,7 +21,7 @@ export default function HeroSection() {
             placeholder="blur"
             width={500}
             height={500}
-            className="aspect-video sm:aspect-square object-cover rounded-2xl
+            className="aspect-square object-cover rounded-2xl
                   outline -outline-offset-1 outline-black/5
                   grayscale transition duration-500 motion-safe:group-hover:scale-150"
             src={profile} alt="Profile"/>
