@@ -1,5 +1,6 @@
 import {LinearIcon} from "@/app/(sketch)/linear/linear-icon";
 import {Button} from "@/components/ui/button";
+import {LinearMenu} from "@/app/(sketch)/linear/linear-menu";
 
 export default function Page() {
   return (
@@ -49,6 +50,10 @@ export default function Page() {
         </nav>
 
       </header>
+
+      <div className="mx-auto max-w-2xl">
+        <LinearMenu />
+      </div>
 
     </div>
   )

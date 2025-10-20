@@ -4,7 +4,7 @@ export function LinearMenu() {
   return (
     <div>
       <div className="outline p-4 mb-24 outline-zinc-200 bg-gradient-to-b from-zinc-100/10 to-zinc-200/30  rounded-xl text-xs">
-        <div className="bg-zinc-200/20 w-full h-full rounded-sm outline outline-zinc-200 relative">
+        <div className="bg-zinc-200/20 w-full h-full rounded outline outline-zinc-200 relative">
 
           <div className="grid grid-cols-[1fr_2fr] divide-x divide-zinc-200">
 
@@ -115,6 +115,19 @@ export function LinearMenu() {
 
           </div>
 
+        </div>
+
+        <div className="pt-4">
+          <div className="flex justify-between">
+            <div>
+              <a href="" className="font-medium hover:bg-gray-200 rounded px-1.5 py-1.5">
+                New: Mobile app redesign: <span className="font-light text-gray-500">Available for iOS and Android</span>
+              </a>
+            </div>
+            <div className="text-purple-700 font-medium">
+              Changelog
+            </div>
+          </div>
         </div>
       </div>
 
