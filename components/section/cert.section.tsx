@@ -23,17 +23,17 @@ export function CertSection() {
       <ul>
         {CERTS.map((cert) => (
           <li key={cert.id} className="pb-4">
-            <div className="sm:flex justify-between items-end pb-2 border-b border-gray-200">
+            <div className="flex justify-between items-baseline pb-2 border-b border-gray-200">
               <div>
                 <h3 className="font-semibold">
                   The Joy of React Course
                 </h3>
-                <p className="font-medium text-gray-500">
+                <p className="font-medium text-gray-500 text-xs sm:text-base">
                   Site of the Day | Developer Award
                 </p>
               </div>
               <div>
-                <p className="text-gray-500">
+                <p className="text-gray-500 text-sm sm:text-base">
                   October 23, 2023
                 </p>
               </div>
