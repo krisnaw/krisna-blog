@@ -24,15 +24,21 @@ export function CertSection() {
         {CERTS.map((cert) => (
           <li key={cert.id} className="pb-4">
             <div className="flex justify-between items-baseline pb-2 border-b border-gray-200">
-              <div>
-                <h3 className="font-semibold">
-                  The Joy of React Course
-                </h3>
+              <div className="relative w-full">
+
+                <a href={cert.url} target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700">
+                  <span className="absolute inset-0"></span>
+                  <h3 className="font-semibold">
+                    {cert.title}
+                  </h3>
+                </a>
+
                 <p className="font-medium text-gray-500 text-xs sm:text-base">
-                  Site of the Day | Developer Award
+                  {cert.description}
                 </p>
+
               </div>
-              <div>
+              <div className="shrink-0">
                 <p className="text-gray-500 text-sm sm:text-base">
                   October 23, 2023
                 </p>
@@ -51,15 +57,15 @@ const CERTS = [
   {
     id: 1,
     title: "The Joy of React Course",
-    date: "October 23, 2023",
-    description: "Site of the Day | Developer Award",
-    url: "hhttps://courses.joshwcomeau.com/certificate/68e09dbd4c623c8e769a7e87",
+    date: "October, 2025",
+    description: "Certification of Completion",
+    url: "https://courses.joshwcomeau.com/certificate/68e09dbd4c623c8e769a7e87",
   },
   {
     id: 2,
-    title: "The Joy of React Course",
-    date: "October 23, 2023",
-    description: "Site of the Day | Developer Award",
-    url: "hhttps://courses.joshwcomeau.com/certificate/68e09dbd4c623c8e769a7e87",
+    title: "Zod v4",
+    date: "April, 2025",
+    description: "Contributed to the Bahasa Indonesia translation, helping improve internationalization in the upcoming major release",
+    url: "https://github.com/colinhacks/zod/pull/4195",
   }
 ]

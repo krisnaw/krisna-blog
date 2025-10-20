@@ -6,7 +6,7 @@ export default function FooterSection() {
 
           <div className=" space-x-2.5 items-center hidden sm:block">
             <p className="text-sm/6 text-balance text-gray-600">
-              © {new Date().getFullYear()} Krisna Wijaya
+              © {new Date().getFullYear()} Krisna Wijaya. All rights reserved.
             </p>
           </div>
 
