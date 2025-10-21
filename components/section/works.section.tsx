@@ -3,6 +3,7 @@ import React from "react";
 import {SectionTitle} from "@/components/section/section.title";
 import {motion} from "framer-motion";
 import {Badge} from "@/components/ui/badge";
+import {ExternalLink} from "lucide-react";
 
 export default function WorksSection() {
   return (
@@ -21,10 +22,12 @@ export default function WorksSection() {
           <h3>
             Work Experiences
           </h3>
-          {/*<div className="text-sm font-light inline-flex items-baseline gap-1">*/}
-          {/*  View Resume to Learn More*/}
-          {/*  <ExternalLink size={13}/>*/}
-          {/*</div>*/}
+          <div className="text-sm font-light inline-flex items-baseline gap-1">
+            <a href={resume_link} target="_blank" rel="noopener noreferrer">
+              View Resume to Learn More
+              <ExternalLink size={13}/>
+            </a>
+          </div>
         </div>
       </SectionTitle>
 
@@ -95,6 +98,8 @@ export default function WorksSection() {
   )
 }
 
+const resume_link = "https://drive.google.com/file/d/1i72s-ddUdk5nuSWEninafgSW0CSdE9ep/view"
+
 const WORKS = [
   {
     id: 1,
@@ -107,11 +112,13 @@ const WORKS = [
     description: "HaupCar, thailand car rental company is working on new features called " +
       "Long Term Car Rental that allow customers to rent vehicles for extended duration. " +
       "My responsibilities building interfaces for the new features from Figma design and connecting with their new REST API.",
-    tools: "Next, React, TypeScript, AntDesign, Zustand, Tailwind CSS, Docker, Postman, Figma, REST API, JIRA, Bitbucket",
+    tools: "Next, React, TypeScript, AntDesign, Zustand, Tailwind CSS, Docker, Postman, Figma, REST API, JIRA, Bitbucket, TanStack Query",
     responsibilities: [
       "Developer reusable components using AntDesign as a design system.",
       "Implemented responsive user interfaces from Figma design specifications",
       "Implemented Zustand for state management.",
+      "Integrated TanStack Query to manage API requests and optimize data handling in UI components",
+      "Utilized Playwright to automate browser testing, verifying UI behavior and API integrations",
       "Collaborated directly with designers and QA’s engineers."
     ],
     achievements: [
@@ -127,14 +134,14 @@ const WORKS = [
     title: "Full-stack developer",
     date: "June 2016 - Mar 2024",
     location: "Jakarta, Indonesia",
-    description: "C2 Media, a media company that provides digital marketing services to businesses and individuals. I led for the development of ContentGrow, a web application that connects freelance talent with global content teams and streamlines editorial workflows.",
+    description: "C2 Media, a media and marketing companies powering the top brands and publishers. I led for the development of ContentGrow, a web application that connects freelance talent with global content teams and streamlines editorial workflows.",
     tools: "Laravel, Vue, Tailwind CSS, " +
       "AWS, EC2, S3, SES, Load Balancer, VPN, nginx," +
-      "Redis, MySQL, Lambda, Dynamo DB, Route 53, Stripe, Pusher, Memcached, beanstalkd, supervisord, Jenkins, Ubuntu, PHP, HTML, JavaScript, CSS",
+      "Redis, MySQL, Lambda, Dynamo DB, Route 53, Stripe, Pusher, Memcached, beanstalkd, supervisord, Jenkins, Ubuntu, PHP, HTML, JavaScript",
     responsibilities: [
       "Configured and managed AWS infrastructure to host app deployments using EC2, RDS, Application Load Balancer, S3, SES, Route 53.",
-      "Building payment system using Stripe to allow payment via Bank Transfer and Credit Card and payout directly to user bank account across multiple countries and currencies.",
-      "Utilized pusher to send real-time notifications to users and build realtime chat feature.",
+      "Building payment system using Stripe to allow payment via Bank Transfer and Credit Card and payout directly to user bank accounts across multiple countries and currencies.",
+      "Utilized Pusher to send real-time notifications to users and build realtime chat feature.",
       "Implemented automated cron jobs to aggregate and store reporting data in DynamoDB on daily, weekly, and monthly schedules."
     ],
     achievements: [
