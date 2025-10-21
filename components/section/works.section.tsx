@@ -30,9 +30,10 @@ export default function WorksSection() {
 
       <ul className="grid grid-cols-1 gap-4">
         {WORKS.map((work) => (
-          <li key={work.id} className=" pb-4">
+          <li key={work.id} className="pb-4 ">
             <div>
-              <div>
+              <div className=" border-b border-dashed border-gray-300 pb-2">
+
                 <div className="flex justify-between items-baseline">
                   <h4 className="text-xl font-bold text-gray-900">
                     <a href={work.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
@@ -53,7 +54,7 @@ export default function WorksSection() {
                 </div>
               </div>
 
-              <div className="mt-1.5">
+              <div className="mt-2.5">
                 <p className="font-light text-gray-500">{work.description}</p>
               </div>
 

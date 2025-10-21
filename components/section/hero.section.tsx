@@ -31,12 +31,11 @@ export default function HeroSection() {
       <section className="pt-10 text-gray-600">
         <h1>
           I&#39;m Krisna, frontend developer based in Bali, Indonesia.
-        </h1>
-        <h2>
+          <br/>
           Open to full time and freelance work. If you&#39;re working on something cool,
           <span className="text-slate-800 ml-1.5"><a
             href="mailto:krisna.w2010@gmail.com">let&#39;s chat!</a></span>
-        </h2>
+        </h1>
       </section>
 
     </motion.div>
