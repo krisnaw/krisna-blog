@@ -23,7 +23,9 @@ export default function WorksSection() {
             Work Experiences
           </h3>
           <div className="text-sm font-light inline-flex items-baseline gap-1">
-            <a href={resume_link} target="_blank" rel="noopener noreferrer">
+            <a href={resume_link}
+               className="flex items-baseline gap-1"
+               target="_blank" rel="noopener noreferrer">
               View Resume to Learn More
               <ExternalLink size={13}/>
             </a>
