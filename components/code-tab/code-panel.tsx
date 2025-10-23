@@ -1,6 +1,6 @@
 import {BundledLanguage, BundledTheme, codeToHtml} from "shiki";
 import {transformerNotationHighlight} from "@shikijs/transformers";
-import ButtonCopyCode from "@/components/code-tab/button-copy-code"; // Import the types from Shiki
+import ButtonCopyCode from "@/components/code-tab/button-copy-code";
 
 type Props = {
   code: string;
@@ -21,10 +21,10 @@ export default async function CodePanel({code, filename, lang = "jsx", theme = "
   return (
     <div className="not-prose rounded-md outline outline-gray-300 min-w-xl">
 
-      <div className="px-4 py-2 bg-gray-100/70 border-b border-gray-200 rounded-t-md">
+      <div className="p-2 bg-gray-100/70 border-b border-gray-200 rounded-t-md">
         <div className="flex justify-between items-center w-full">
-          <div className="capitalize">
-            {filename && filename}
+          <div>
+            {/*empty for now*/}
           </div>
           <div>
             <ButtonCopyCode code={code} />

@@ -5,7 +5,7 @@ import {AnimatePresence, motion} from "framer-motion";
 import {toast} from "sonner";
 import {useEffect, useState} from "react";
 
-const SIZE = 14;
+const SIZE = 16;
 
 export default function ButtonCopyCode({code} : {code: string}) {
   const [copied, setCopied] = useState(false);
@@ -14,32 +14,28 @@ export default function ButtonCopyCode({code} : {code: string}) {
     if (copied) {
       const timeout = setTimeout(() => {
         setCopied(false);
-      }, 1000);
+      }, 1500);
 
       return () => clearTimeout(timeout);
     }
   }, [copied])
-
-
+  
   const onClickHandler = () => {
-    toast.success("Copied to clipboard")
     setCopied(true);
     navigator.clipboard.writeText(code);
+    toast.success("Copied to clipboard")
   }
   return (
     <motion.button
-
-      initial={{ scale: 1 }}
       whileTap={{ scale: 0.8 }}
       transition={{ type: "spring", duration: 0.5, bounce: 0 }}
-
       className="
       cursor-pointer
-      size-8 flex items-center justify-center
-      outline outline-gray-300 rounded-lg
-      hover:bg-outline-200
-      text-gray-500
-      transition-colors duration-200 ease-out will-change-transform"
+      shrink-0
+      p-1.5
+      inline-flex items-center justify-center rounded-md
+      border bg-background shadow-xs
+      text-gray-500"
       onClick={onClickHandler} >
       <AnimatePresence mode="popLayout" initial={false}>
         <motion.div

@@ -7,8 +7,8 @@ export default async function Page() {
 
       <CodePanel
         code={`fn main() { println!("Hello, world!"); }`}
-        lang="rust"
-        filename="main.rs"
+        lang="tsx"
+        filename="/index.tsx"
       />
 
     </div>
