@@ -19,7 +19,7 @@ export default function ButtonCopyCode({code} : {code: string}) {
       return () => clearTimeout(timeout);
     }
   }, [copied])
-  
+
   const onClickHandler = () => {
     setCopied(true);
     navigator.clipboard.writeText(code);
@@ -35,6 +35,7 @@ export default function ButtonCopyCode({code} : {code: string}) {
       p-1.5
       inline-flex items-center justify-center rounded-md
       border bg-background shadow-xs
+      hover:bg-gray-100
       text-gray-500"
       onClick={onClickHandler} >
       <AnimatePresence mode="popLayout" initial={false}>
