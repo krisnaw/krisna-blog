@@ -3,6 +3,7 @@ import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import React, {Suspense} from "react";
 import FloatingMenu from "@/components/common/floating-menu";
+import {Toaster} from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
       <Suspense>
         <FloatingMenu/>
       </Suspense>
+      <Toaster />
     </body>
     </html>
   );
