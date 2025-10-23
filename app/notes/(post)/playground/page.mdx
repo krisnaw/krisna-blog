@@ -1,4 +1,5 @@
 import CodePanel from "@/components/code-tab/code-panel";
+import {exampleCode} from "./snippet";
 
 export const metadata = {
     title: "Hello world",
@@ -39,8 +40,12 @@ Emphasis helps highlight `inline code`, *italic text*, **bold statements**, and 
 - They work well for quick summaries.
 - Finish with a concise conclusion.
 
-
-<CodePanel />
+## Code Blocks
+<CodePanel
+    code={exampleCode}
+    lang="tsx"
+    filename="/index.tsx"
+/>
 
 ## Quotations
 
