@@ -5,4 +5,37 @@ export const metadata = {
 
 # Timing Function
 
+`animation-timing-function` is CSS property that sets how an animation progresses through the duration of each cycle.
+So when applying animation, instead of flipping from one from to another, we *interpolate* between values over given timeframes.
 
+`transition: transform 550ms;`
+
+For example, this code will tell us whenever the transform property changes, it should take 550 milliseconds to move from the
+original values to the new values.
+
+## linear
+
+__linear__ timing function usually used for circular animation like spinner.
+
+## ease-in
+
+__ease-in__ timing function starts slowly and picks up the speed, stopping suddenly at the end of the duration.
+This timing function is usually used for things that exiting view
+
+## ease-out
+
+__ease-out__ is opposite of what __ease-in__ does so can be used for entering the view.
+
+
+## ease-in-out
+
+__ease-in-out__ is the combination of __ease-in__ and __ease-out__, it features the same amount of acceleration at the start and
+deceleration at the end. This symmetrical is useful when you want to animate something moving back and forth.
+
+## ease
+
+**__ease__** is the **default timing function** when we don't **specify** one when creating **an** animation.
+
+This timing function is **similar to** **__ease-in-out__** but is not **symmetrical**, meaning it **quickly accelerates** in the **beginning** but spends most of the time **slowing** down, and easing to a stop.
+
+**Compared** to other **timing functions**, **__ease__** has a more **broad** use case, so it makes sense as **the** default value.
