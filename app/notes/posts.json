@@ -1,10 +1,17 @@
 {
   "posts": [
     {
+      "id": "timing-function",
+      "date": "Nov 3, 2025",
+      "featuredImage": "/notes/timing-function.jpg",
+      "title": "Understanding Timing Function",
+      "excerpt": "A quick summary about what is Timing Function and when to use it"
+    },
+    {
       "id": "playground",
       "date": "Oct 18, 2025",
-      "title": "Playground",
       "featuredImage": "/notes/playground.jpg",
+      "title": "Playground",
       "excerpt": "Playground for the Typography for this blog."
     }
   ]
