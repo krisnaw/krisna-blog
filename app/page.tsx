@@ -2,7 +2,7 @@ import HeroSection from "@/components/section/hero.section";
 import React from "react";
 import FooterSection from "@/components/section/footer.section";
 import WorksSection from "@/components/section/works.section";
-import { CertSection } from "@/components/section/cert.section";
+import {CertSection} from "@/components/section/cert.section";
 
 export default function Page() {
   return (
@@ -15,10 +15,6 @@ export default function Page() {
         </div>
       </div>
       <FooterSection />
-      <div>
-        Nothing but the beat
-        <h1 className="text-2xlx"></h1>
-      </div>
     </div>
   );
 }
