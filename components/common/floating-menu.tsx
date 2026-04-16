@@ -6,7 +6,6 @@ import {useClickAway} from "@uidotdev/usehooks";
 import {HomeIcon} from "@/components/icons/home.icon";
 import {ChevronDownIcon} from "lucide-react";
 import {NoteIcon} from "@/components/icons/note.icon";
-import {PersonIcon} from "@/components/icons/person.icon";
 
 const OPTIONS = [
   {
@@ -22,12 +21,12 @@ const OPTIONS = [
     duration: 0.10,
     icon: NoteIcon
   },
-  {
-    url: "/contact",
-    label: "contact",
-    duration: 0.15,
-    icon: PersonIcon
-  }
+  // {
+  //   url: "/contact",
+  //   label: "contact",
+  //   duration: 0.15,
+  //   icon: PersonIcon
+  // }
 ]
 
 export default function FloatingMenu() {
