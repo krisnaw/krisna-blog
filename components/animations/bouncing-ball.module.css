@@ -1,0 +1,13 @@
+@keyframes bounce {
+    to {
+        transform: translateY(calc(var(--distance) * -1));
+    }
+}
+
+.ball {
+    --duration: 300ms;
+    --distance: 9px;
+    animation:
+            bounce var(--duration) alternate infinite
+            cubic-bezier(0.15, 0.68, 0.65, 1.00);
+}
