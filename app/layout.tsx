@@ -26,14 +26,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true} className="overscroll-none">
-    <body className={`${geistSans.variable} ${geistMono.variable} antialiased `}>
-      <div className="flex flex-col min-h-screen">
-
-        <main className="flex-grow">
+    <html lang="en" suppressHydrationWarning={true} className={`overscroll-none ${geistSans.className}`}>
+    <body className={`antialiased `}>
+      <div className="flex flex-col min-h-screen bg-gray-100/50">
+        <main className="grow">
           {children}
         </main>
-
       </div>
       <Suspense>
         <FloatingMenu/>
