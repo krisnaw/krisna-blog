@@ -1,6 +1,6 @@
 "use client"
 import {useState} from "react";
-import {AnimatePresence, motion} from "framer-motion";
+import {AnimatePresence, motion, type Variants} from "framer-motion";
 import Link from "next/link";
 import {useClickAway} from "@uidotdev/usehooks";
 import {HomeIcon} from "@/components/icons/home.icon";
@@ -30,6 +30,51 @@ const OPTIONS = [
   }
 ]
 
+const menuVariants: Variants = {
+  closed: {
+    opacity: 0,
+    y: 20,
+    scale: 0.94,
+    filter: "blur(10px)",
+    transition: {
+      duration: 0.2,
+      ease: [0.4, 0, 1, 1],
+    },
+  },
+  open: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.3,
+      ease: [0.22, 1, 0.36, 1],
+      when: "beforeChildren",
+      staggerChildren: 0.05,
+      delayChildren: 0.03,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  closed: {
+    opacity: 0,
+    y: 8,
+    transition: {
+      duration: 0.16,
+      ease: [0.4, 0, 1, 1],
+    },
+  },
+  open: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.24,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
 export default function FloatingMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,33 +85,41 @@ export default function FloatingMenu() {
   return (
 
     <div className="fixed bottom-18 sm:bottom-28 w-full">
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isOpen && (
           <motion.div
             ref={ref}
-            layoutId="wrapper"
-            transition={{
-              type: "spring",
-              duration: 0.4,
-            }}
-            className="mx-auto max-w-[200px] rounded-3xl  bg-white/20 backdrop-blur-sm absolute inset-x-0 bottom-0 z-30">
-            <div className="min-h-[100px] rounded-3xl inset-shadow-sm inset-shadow-slate-500/50 outline-1 outline-gray-300">
+            key="floating-menu-panel"
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={menuVariants}
+            className="mx-auto max-w-50 rounded-3xl  bg-white/20 backdrop-blur-sm absolute inset-x-0 bottom-0 z-30">
+            <div className="min-h-25 rounded-3xl inset-shadow-sm inset-shadow-slate-500/50 outline-1 outline-gray-300">
 
               <div className="p-1.5">
-                <ul className="pt-2 px-1">
+                <motion.ul
+                  initial={false}
+                  variants={menuVariants}
+                  className="pt-2 px-1"
+                >
                   {OPTIONS.map((option) => (
-                    <li key={option.label} className=" text-gray-600 h-10 flex items-center">
+                    <motion.li
+                      key={option.label}
+                      variants={itemVariants}
+                      className=" text-gray-600 h-10 flex items-center"
+                    >
                       <Link onClick={() => setIsOpen(false)} prefetch={true}
                             href={option.url}
                             className="text-lg/6 font-semibold capitalize px-2.5 w-full flex justify-between">
                         {option.label}
                         <option.icon className="size-4"/>
                       </Link>
-                    </li>
+                    </motion.li>
                   ))}
-                </ul>
+                </motion.ul>
 
-                <div className="mt-4">
+                <motion.div className="mt-4" variants={itemVariants}>
                   <button onClick={() => setIsOpen(false)}
                           className="
                           bg-white
@@ -75,7 +128,7 @@ export default function FloatingMenu() {
                          text-gray-800 w-full rounded-3xl py-2.5 flex items-center justify-center">
                     <ChevronDownIcon/>
                   </button>
-                </div>
+                </motion.div>
               </div>
 
             </div>
@@ -83,20 +136,26 @@ export default function FloatingMenu() {
         )}
       </AnimatePresence>
 
-      <div className="mx-auto max-w-[100px] absolute inset-x-0 bottom-0">
+      <div className="mx-auto max-w-25 absolute inset-x-0 bottom-0">
         <motion.button
-          layoutId="wrapper"
-          key="button"
+          key="floating-menu-trigger"
           type="button"
-          onClick={() => setIsOpen(true)}
+          onClick={() => setIsOpen((open) => !open)}
+          aria-expanded={isOpen}
           whileTap={{scale: 0.95}}
-          transition={{type: "spring", stiffness: 300, damping: 40}}
+          animate={{
+            opacity: isOpen ? 0 : 1,
+            y: isOpen ? 10 : 0,
+            scale: isOpen ? 0.96 : 1,
+          }}
+          transition={{duration: 0.22, ease: [0.22, 1, 0.36, 1]}}
+          style={{pointerEvents: isOpen ? "none" : "auto"}}
           className=" w-full
             bg-white/30 backdrop-blur-sm
           inset-shadow-sm inset-shadow-slate-500/50
           outline-1 outline-gray-300
           rounded-3xl px-4 py-2.5  cursor-pointer">
-          <motion.div layout="position">
+          <motion.div animate={{y: isOpen ? -2 : 0}} transition={{duration: 0.2}}>
             Menu
           </motion.div>
         </motion.button>
