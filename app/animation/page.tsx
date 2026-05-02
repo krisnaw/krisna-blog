@@ -30,8 +30,6 @@ export default function Page() {
             </div>
           </div>
         </div>
-
-
         <div className="mt-8 grid grid-cols-1 gap-4 justify-items-start">
 
         </div>
