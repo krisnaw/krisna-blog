@@ -4,6 +4,7 @@ import {SectionTitle} from "@/components/section/section.title";
 import {motion} from "framer-motion";
 import {Badge} from "@/components/ui/badge";
 import {ExternalLink} from "lucide-react";
+import {SectionHeading} from "@/components/section-heading";
 
 export default function WorksSection() {
   return (
@@ -19,9 +20,7 @@ export default function WorksSection() {
 
       <SectionTitle>
         <div className="flex justify-between items-center">
-          <h3>
-            Work Experiences
-          </h3>
+          <SectionHeading>Work Experiences</SectionHeading>
           <div className="text-sm font-light inline-flex items-baseline gap-1">
             <a href={resume_link}
                className="flex items-baseline gap-1"

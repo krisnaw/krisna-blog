@@ -1,6 +1,6 @@
 export default function FooterSection() {
   return (
-    <footer className="border-t-2 border-double border-gray-300 px-10">
+    <footer className="border-t-2 border-double border-gray-300 px-10 sticky bottom-0">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center sm:justify-between py-4">
 
@@ -12,7 +12,7 @@ export default function FooterSection() {
 
           <div>
             <div className="flex gap-x-6">
-              <a href="#" className="text-gray-600 hover:text-gray-800 p-1.5 bg-neutral-700 rounded-full">
+              <a href="https://x.com/iKrisnaw" className="text-gray-600 hover:text-gray-800 p-1.5 bg-neutral-700 rounded-full">
                 <span className="sr-only">X</span>
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="size-6 text-white">
                   <path
@@ -20,7 +20,7 @@ export default function FooterSection() {
                 </svg>
               </a>
 
-              <a href="#" className="text-gray-600 hover:text-gray-800 p-1.5 bg-neutral-700 rounded-full">
+              <a href="https://github.com/krisnaw" className="text-gray-600 hover:text-gray-800 p-1.5 bg-neutral-700 rounded-full">
                 <span className="sr-only">GitHub</span>
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="size-6 text-white">
                   <path

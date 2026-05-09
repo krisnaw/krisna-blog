@@ -3,21 +3,23 @@
 import {SectionTitle} from "@/components/section/section.title";
 import {motion} from "framer-motion";
 import React from "react";
+import {SectionHeading} from "@/components/section-heading";
 
 export function CertSection() {
   return (
     <motion.div
-      animate={{ opacity: 1, x: 0 }}
-      initial={{ opacity: 0, x: 20}}
+      animate={{opacity: 1, x: 0}}
+      initial={{opacity: 0, x: 20}}
       transition={{
         duration: 1,
         delay: 0.3,
         ease: "easeInOut",
       }}
       className="mt-16">
-
       <SectionTitle>
-        Recent certifications and open source contributions
+        <SectionHeading>
+          Recent certifications and open source contributions
+        </SectionHeading>
       </SectionTitle>
 
       <ul>
