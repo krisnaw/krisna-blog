@@ -3,7 +3,7 @@
 import {SectionTitle} from "@/components/section/section.title";
 import {motion} from "framer-motion";
 import React from "react";
-import {SectionHeading} from "@/components/section-heading";
+import {ProjectHeading} from "../project-heading";
 
 export function CertSection() {
   return (
@@ -17,9 +17,9 @@ export function CertSection() {
       }}
       className="mt-16">
       <SectionTitle>
-        <SectionHeading>
+        <ProjectHeading>
           Recent certifications and open source contributions
-        </SectionHeading>
+        </ProjectHeading>
       </SectionTitle>
 
       <ul>

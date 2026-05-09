@@ -1,4 +1,4 @@
-import {SectionHeading} from "@/components/section-heading";
+import {ProjectHeading} from "./project-heading";
 import {FileTextIcon} from "@/components/icons/file-text-icon";
 import Link from "next/link";
 
@@ -6,7 +6,7 @@ export function Writing() {
   return (
     <div>
       <div className="mb-5">
-        <SectionHeading>Writing</SectionHeading>
+        <ProjectHeading>Writing</ProjectHeading>
       </div>
       <div>
         <ul>
