@@ -1,19 +1,22 @@
 import HeroSection from "@/components/section/hero.section";
 import React from "react";
-import FooterSection from "@/components/section/footer.section";
+import {Projects} from "@/components/project";
+import {getPosts} from "@/app/notes/getPosts";
 
 export default function Page() {
+  const posts = getPosts();
   return (
     <div className="flex flex-col">
-      <div className="grow h-screen">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-24 sm:py-36">
-          <HeroSection />
-          {/*<Projects />*/}
-          {/*<WorksSection />*/}
-          {/*<CertSection />*/}
+      <div className="grow min-h-screen">
+        <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8 py-24 sm:py-36">
+          <div className="space-y-18">
+            <HeroSection />
+            <Projects />
+            {/*<WorksSection />*/}
+            {/*<CertSection />*/}
+          </div>
         </div>
       </div>
-      <FooterSection />
     </div>
   );
 }
