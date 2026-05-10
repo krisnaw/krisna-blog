@@ -5,6 +5,11 @@ import profile from "@/public/profile.jpg";
 import {motion} from "framer-motion";
 import Link from "next/link";
 import {Mailbox} from "lucide-react";
+import {Bricolage_Grotesque} from 'next/font/google'
+
+const geist = Bricolage_Grotesque({
+  subsets: ['latin'],
+})
 
 export default function HeroSection() {
 
@@ -26,11 +31,18 @@ export default function HeroSection() {
     },
   };
 
-  return (
-    <div>
+  const about = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+    },
+  }
 
-      <motion.div variants={container} className="flex items-start" initial="hidden" animate="show">
-        <motion.div variants={item} className="mr-4 shrink-0">
+  return (
+    <motion.div variants={container} initial="hidden" animate="show">
+
+      <div className="flex items-start" >
+        <motion.div variants={item} className="mr-4 shrink-0" initial="hidden" animate="show">
 
           <div className="w-24">
             <Image
@@ -45,21 +57,31 @@ export default function HeroSection() {
         </motion.div>
 
         <motion.div variants={item}>
-          <h4 className="text-lg font-bold text-gray-900">Krisna Wijaya</h4>
-          <p className="mt-1 text-gray-500 whitespace-nowrap font-medium leading-snug">
+
+          <h4 className={`text-lg font-semibold text-gray-900 ${geist.className}`}>Krisna Wijaya</h4>
+          <p className={`mt-1 text-gray-500 whitespace-nowrap font-medium leading-snug ${geist.className}`}>
             Product-Minded Software Engineer
           </p>
-        </motion.div>
-      </motion.div>
 
-      <div className="mt-6">
-        <div className="text-base/7">
-          <p className="text-gray-500">
-            I love building product, especially for the web, from building the backend to polishing the UI.
-            <br/>
-            I also found talking to the user and gathering the feedback is fun.
+          <span className="inline-flex items-center gap-x-1.5 rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-700 inset-ring inset-ring-green-600/20">
+            <svg viewBox="0 0 6 6" aria-hidden="true" className="size-1.5 fill-green-500  animate-pulse">
+              <circle r={3} cx={3} cy={3} />
+            </svg>
+            Open to work
+          </span>
+        </motion.div>
+      </div>
+
+      <motion.div variants={about} className="mt-6">
+        <div className="text-base/7 mt-6 space-y-7  text-zinc-600 dark:text-zinc-400">
+          <p>
+            I’ve loved making things for as long as I can remember, and wrote my first program when I was 6 years old, just two weeks after my mom brought home the brand new Macintosh LC 550 that I taught myself to type on.
           </p>
-          <p className="mt-2 text-gray-500">
+          <p>
+            The only thing I loved more than computers as a kid was space. When I was 8, I climbed the 40-foot oak tree at the back of our yard while wearing my older sister’s motorcycle helmet, counted down from three, and jumped — hoping the tree was tall enough that with just a bit of momentum I’d be able to get to orbit.
+          </p>
+          <p className=" ">
+            I'm currently exploring new opportunities.
             You can reach me at
             {' '}
             <Link href="https://x.com/iKrisnaw" target="_blank" className="text-gray-900 font-semibold whitespace-nowrap underline">@iKrisnaw</Link>
@@ -68,6 +90,7 @@ export default function HeroSection() {
             <Link href="mailto:krisna.w2010@gmail.com" className="text-gray-900 font-semibold whitespace-nowrap underline">
               <Mailbox size={18} className="mr-0.5 mb-0.5 inline-block size-5" />  email</Link>
             {' '}
+
             or see my code on
             {' '}
             <Link href="https://github.com/krisnaw" target="_blank" className="text-gray-900 font-semibold whitespace-nowrap underline">
@@ -80,8 +103,8 @@ export default function HeroSection() {
             </Link>
           </p>
         </div>
-      </div>
+      </motion.div>
 
-    </div>
+    </motion.div>
   )
 }
