@@ -1,6 +1,8 @@
-export function ProjectHeading({ children }: { children: React.ReactNode }) {
+import {cn} from "@/lib/utils";
+
+export function ProjectHeading({ className, children }: { className? : string, children: React.ReactNode }) {
   return (
-    <div className="flex items-center font-medium text-gray-600">
+    <div className={cn("flex items-center font-medium text-zinc-600 dark:text-zinc-400", className)}>
       {children}
     </div>
   )
