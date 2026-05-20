@@ -79,7 +79,7 @@ export default function HeroSection() {
               {' '}
               and via {' '}
               <Link href="mailto:krisna.w2010@gmail.com" className="text-gray-900 font-semibold whitespace-nowrap underline">
-                <Mailbox size={18} className="mr-0.5 mb-0.5 inline-block size-5" />  email.</Link>
+                <Mailbox size={18} className="mr-0.5 mb-0.5 inline-block size-5" />  E-Mail.</Link>
               {' '}
 
               {/*or see my code on*/}
@@ -100,8 +100,8 @@ export default function HeroSection() {
       <motion.div variants={about} className="mt-6">
 
         <div>
-          <ProjectHeading className="text-gray-400">Current</ProjectHeading>
-          <div className="text-base/7 space-y-4  text-zinc-600 dark:text-zinc-400">
+          <ProjectHeading className="text-sm text-gray-300">Present</ProjectHeading>
+          <div className="text-base/7 space-y-4  text-zinc-600 dark:text-zinc-400 mt-2.5">
             <p>
               I'm currently exploring new opportunities as FrontEnd or Fullstack Developer.
               <br/>
