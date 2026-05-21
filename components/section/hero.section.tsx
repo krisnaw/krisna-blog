@@ -92,7 +92,7 @@ export default function HeroSection() {
             Feel free to take a look at my [resume] and
             {" "}
             <BlueLink href="https://www.linkedin.com/in/krisnawijaya/">LinkedIn profile</BlueLink>.
-            If you'd like to chat, you can easily reach out to me via <BlueLink href="mailto:krisna.w2010@gmail.com">E-mail</BlueLink> or via X.
+            If you'd like to chat, you can easily reach out to me via <BlueLink href="mailto:krisna.w2010@gmail.com">E-mail</BlueLink> or via <BlueLink href="https://x.com/iKrisnaw">X</BlueLink>
           </p>
         </div>
       </motion.div>
