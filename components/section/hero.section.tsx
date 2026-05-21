@@ -4,7 +4,6 @@ import Image from "next/image";
 import profile from "@/public/profile.jpg";
 import {motion} from "framer-motion";
 import {Bricolage_Grotesque} from 'next/font/google'
-import {ProjectHeading} from "@/components/project-heading";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -70,7 +69,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="mt-8">
+      <motion.div variants={about} className="mt-8">
         <div className="text-base/7 space-y-4  text-zinc-600 dark:text-zinc-400 mt-2.5">
           <p>
             I am a product-minded software developer, meaning I don't just write code, I have a deep interest in the product itself.
@@ -78,59 +77,17 @@ export default function HeroSection() {
           </p>
           <p>
             I'm currently open to new opportunities as a Front-End or Full-Stack Developer.
-            While I am currently based in Bali, I am highly open to remote work or relocating to other countries for the right role
+            While I am currently based in Bali, Indonesia, I am highly open to remote work or relocating to other countries for the right role.
           </p>
           <p>
-            I'm comfortably working in fullstack framework like
-            Laravel, Next.js, TanStack Start, and occasionally  using Ruby on Rails. In addition also like working on backend with Go and Node.js
+            For front-end development, my go-to ecosystem is React, specifically utilizing modern frameworks like Next.js and TanStack Start,
+            styled with Tailwind CSS, and animated using Framer Motion.
+          </p>
+          <p>
+            On the full-stack and backend side,
+            I am equally comfortable building with robust frameworks like Laravel and Ruby on Rails, as well as developing efficient services using Go and Node.js.
           </p>
         </div>
-      </div>
-
-
-
-      <div className="flex items-start" >
-
-
-        <motion.div variants={item}>
-          <div className="flex justify-between">
-            <h4 className={`text-xl font-semibold text-gray-900 ${bricolage.className}`}>Krisna Wijaya</h4>
-          </div>
-
-          <div>
-
-          </div>
-
-        </motion.div>
-      </div>
-
-      <motion.div variants={about} className="mt-6">
-
-        <div>
-          <ProjectHeading className="text-sm text-gray-300">Present</ProjectHeading>
-
-        </div>
-
-        {/*<div className="mt-8">*/}
-        {/*  <ProjectHeading className="text-gray-400">More about me</ProjectHeading>*/}
-        {/*  <div className="text-base/7 mt-2.5 space-y-4  text-zinc-600 dark:text-zinc-400">*/}
-        {/*    <p>*/}
-        {/*      Joined early-stage startups has shaped me into a product-minded software developer.*/}
-        {/*    </p>*/}
-
-        {/*    <blockquote className="mt-6 border-l-2 pl-6 italic ">*/}
-        {/*      &quot;Product-minded engineers are developers with lots of interest in the product itself. They want to understand why decisions are made, how people use the product, and love to be involved in making product decisions.&quot;*/}
-        {/*      <span className="text-blue-500"> ~ <Link href="https://blog.pragmaticengineer.com/the-product-minded-engineer/" target="_blank">Pragmatic Engineer</Link></span>*/}
-        {/*    </blockquote>*/}
-
-        {/*    <p>*/}
-        {/*      I am deeply interested in the product <span className="font-semibold underline">validation cycle</span>, often seeking input before a feature is even production-ready.*/}
-        {/*      I take the initiative to share work-in-progress with my team to gather early feedback and ensure we are building the right solution.*/}
-        {/*      This is also lead me to have <span className="font-semibold underline">strong product instinct</span> through repeated cycles of learning.*/}
-        {/*    </p>*/}
-
-        {/*  </div>*/}
-        {/*</div>*/}
       </motion.div>
 
     </motion.div>
