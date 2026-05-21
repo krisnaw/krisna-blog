@@ -4,6 +4,7 @@ import Image from "next/image";
 import profile from "@/public/profile.jpg";
 import {motion} from "framer-motion";
 import {Bricolage_Grotesque} from 'next/font/google'
+import {BlueLink} from "@/components/blue-link";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -86,6 +87,12 @@ export default function HeroSection() {
           <p>
             On the full-stack and backend side,
             I am equally comfortable building with robust frameworks like Laravel and Ruby on Rails, as well as developing efficient services using Go and Node.js.
+          </p>
+          <p>
+            Feel free to take a look at my [resume] and
+            {" "}
+            <BlueLink href="https://www.linkedin.com/in/krisnawijaya/">LinkedIn profile</BlueLink>.
+            If you'd like to chat, you can easily reach out to me via <BlueLink href="mailto:krisna.w2010@gmail.com">E-mail</BlueLink> or via X.
           </p>
         </div>
       </motion.div>
