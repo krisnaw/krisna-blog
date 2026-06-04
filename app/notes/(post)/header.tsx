@@ -3,6 +3,7 @@
 import {PostType} from "@/app/notes/getPosts"
 import {useSelectedLayoutSegments} from "next/navigation"
 import Image from "next/image"
+import {ViewTransition} from "react"
 
 export function Header({posts}: {posts: PostType[]}) {
   const segments = useSelectedLayoutSegments()
@@ -23,16 +24,18 @@ export function Header({posts}: {posts: PostType[]}) {
       </h1>
 
       {post.featuredImage && (
-        <div className="relative mt-8 w-full overflow-hidden rounded-lg aspect-video">
-          <Image
-            src={post.featuredImage}
-            alt={post.title}
-            fill
-            quality={100}
-            className="object-cover"
-          />
-          <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/8" />
-        </div>
+        <ViewTransition name={`post-image-${post.id}`} share="morph">
+          <div className="relative mt-8 w-full overflow-hidden rounded-lg aspect-video">
+            <Image
+              src={post.featuredImage}
+              alt={post.title}
+              fill
+              quality={100}
+              className="object-cover"
+            />
+            <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/8" />
+          </div>
+        </ViewTransition>
       )}
     </div>
   )

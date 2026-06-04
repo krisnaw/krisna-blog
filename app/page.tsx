@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import type { ReactNode } from "react"
 import { SiteLayout } from "@/components/site-layout"
+import { DirectionalTransition } from "@/components/view-transition"
 import { contactLinks, projects, stack } from "./data"
 
 const EASE_OUT: [number, number, number, number] = [0.23, 1, 0.32, 1]
@@ -27,6 +28,7 @@ const fadeUp = {
 export default function HomePage() {
   return (
     <SiteLayout>
+      <DirectionalTransition>
       <main className="mx-auto max-w-135 px-6 pb-24 pt-12 flex-1">
         <motion.div variants={stagger} initial="hidden" animate="show" className="space-y-16">
 
@@ -113,6 +115,7 @@ export default function HomePage() {
 
         </motion.div>
       </main>
+      </DirectionalTransition>
     </SiteLayout>
   )
 }
@@ -132,6 +135,7 @@ function ProjectRow({ project }: { project: (typeof projects)[number] }) {
     <motion.div variants={fadeUp}>
       <Link
         href={project.available ? project.href : "#"}
+        transitionTypes={project.available ? ["nav-forward"] : undefined}
         aria-disabled={!project.available}
         className="group flex items-start justify-between gap-6 py-4 transition-opacity duration-150 active:scale-[0.99]"
         style={{

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import type { ReactNode } from "react"
 import { SiteLayout } from "@/components/site-layout"
+import { DirectionalTransition } from "@/components/view-transition"
 import { BouncingBall } from "@/components/animations/bouncing-ball"
 import { ButtonSendLink } from "@/components/animations/button-send-link/button-send-link"
 import ButtonToPopover from "@/components/animations/button-to-pop/button-to-popover"
@@ -67,6 +68,7 @@ const animations: { id: string; title: string; description: string; category: Ca
 export default function AnimationPage() {
   return (
     <SiteLayout>
+      <DirectionalTransition>
       <motion.header
         variants={stagger}
         initial="hidden"
@@ -108,6 +110,7 @@ export default function AnimationPage() {
           ))}
         </div>
       </motion.main>
+      </DirectionalTransition>
     </SiteLayout>
   )
 }
