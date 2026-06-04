@@ -1,12 +1,12 @@
 "use client"
 
-import { motion } from "framer-motion"
+import {motion} from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import type { ReactNode } from "react"
-import { SiteLayout } from "@/components/site-layout"
-import { DirectionalTransition } from "@/components/view-transition"
-import { contactLinks, projects, stack } from "./data"
+import type {ReactNode} from "react"
+import {SiteLayout} from "@/components/site-layout"
+import {DirectionalTransition} from "@/components/view-transition"
+import {contactLinks, projects, stack} from "./data"
 
 const EASE_OUT: [number, number, number, number] = [0.23, 1, 0.32, 1]
 
@@ -59,13 +59,13 @@ export default function HomePage() {
 
               <div className="flex shrink-0 items-center gap-1.5 pt-1 font-mono text-[10px] tracking-wide text-emerald-600">
                 <span className="size-1.5 animate-pulse rounded-full bg-emerald-600" />
-                available
+                Open for work
               </div>
             </div>
 
             <div className="mt-6 space-y-3 text-sm leading-[1.8] text-[#555]">
               <p>
-                I create software that's intuitive and effective — I don't just write code,
+                I create software that's intuitive and effective, I don't just write code,
                 I care deeply about the product and how people interact with what we build.
               </p>
               <p>
