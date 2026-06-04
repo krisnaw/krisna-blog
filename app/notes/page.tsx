@@ -1,4 +1,5 @@
 import {getPosts} from "@/app/notes/getPosts"
+import {SiteLayout} from "@/components/site-layout"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -6,36 +7,7 @@ export default function NotesPage() {
   const posts = getPosts()
 
   return (
-    <div className="min-h-screen bg-white text-[#0d0d0c] antialiased flex flex-col">
-
-      {/* Nav */}
-      <nav className="mx-auto w-full max-w-135 px-6 py-5">
-        <div className="flex items-center justify-between">
-          <Link
-            href="/"
-            className="font-mono text-xs tracking-[0.18em] uppercase text-[#767676]"
-          >
-            kw
-          </Link>
-          <ul className="flex items-center gap-5">
-            {[
-              { label: "notes", href: "/notes" },
-              { label: "animation", href: "/animation" },
-            ].map((item) => (
-              <li key={item.label}>
-                <Link
-                  href={item.href}
-                  className="font-mono text-[10px] tracking-[0.18em] uppercase text-[#767676] transition-colors hover:text-[#333]"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
-
-      {/* Header */}
+    <SiteLayout>
       <header className="mx-auto w-full max-w-135 px-6 pt-8 pb-12">
         <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-[#767676]">
           Writing
@@ -51,7 +23,6 @@ export default function NotesPage() {
         </p>
       </header>
 
-      {/* Posts */}
       <main className="mx-auto max-w-135 px-6 pb-24 flex-1 w-full">
         <ul
           className="divide-y"
@@ -64,7 +35,6 @@ export default function NotesPage() {
                 href={`/notes/${post.id}`}
                 className="group flex items-start justify-between gap-6 py-5"
               >
-                {/* Text */}
                 <div className="min-w-0 space-y-1.5">
                   <p className="font-mono text-[10px] tracking-wide text-[#767676]">
                     {post.date}
@@ -80,9 +50,7 @@ export default function NotesPage() {
                   </p>
                 </div>
 
-                {/* Thumbnail */}
-                <div className="relative shrink-0 overflow-hidden rounded-md"
-                  style={{ width: 80, height: 60 }}>
+                <div className="relative shrink-0 overflow-hidden rounded-md" style={{ width: 80, height: 60 }}>
                   <Image
                     src={post.featuredImage}
                     alt={post.title}
@@ -96,15 +64,6 @@ export default function NotesPage() {
           ))}
         </ul>
       </main>
-
-      {/* Footer */}
-      <footer className="border-t" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
-        <div className="mx-auto max-w-135 px-6 py-6">
-          <p className="font-mono text-[10px] text-[#767676] tracking-wide">
-            © 2026 Krisna Wijaya
-          </p>
-        </div>
-      </footer>
-    </div>
+    </SiteLayout>
   )
 }

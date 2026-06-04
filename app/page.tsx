@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import type { ReactNode } from "react"
+import { SiteLayout } from "@/components/site-layout"
 import { contactLinks, projects, stack } from "./data"
 
 const EASE_OUT: [number, number, number, number] = [0.23, 1, 0.32, 1]
@@ -23,34 +24,10 @@ const fadeUp = {
   },
 }
 
-// --- Page -----------------------------------------------------------------
-
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white text-[#0d0d0c] antialiased font-features-['ss01']">
-
-      <nav>
-        <div className="mx-auto flex max-w-135 items-center justify-between px-6 py-5">
-          <span className="font-mono text-xs tracking-[0.18em] uppercase text-[#767676]">kw</span>
-          <ul className="flex items-center gap-5">
-            {[
-              { label: "notes", href: "/notes" },
-              { label: "animation", href: "/animation" },
-            ].map((item) => (
-              <li key={item.label}>
-                <Link
-                  href={item.href}
-                  className="inline-block font-mono text-[10px] tracking-[0.18em] uppercase text-[#767676] transition-colors duration-150 hover:text-[#333] active:scale-[0.97]"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
-
-      <main className="mx-auto max-w-135 px-6 pb-24 pt-12">
+    <SiteLayout>
+      <main className="mx-auto max-w-135 px-6 pb-24 pt-12 flex-1">
         <motion.div variants={stagger} initial="hidden" animate="show" className="space-y-16">
 
           <motion.section variants={fadeUp}>
@@ -136,16 +113,7 @@ export default function HomePage() {
 
         </motion.div>
       </main>
-
-      <footer className="border-t" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
-        <div className="mx-auto max-w-135 px-6 py-6">
-          <p className="font-mono text-[10px] text-[#767676] tracking-wide">
-            © 2026 Krisna Wijaya
-          </p>
-        </div>
-      </footer>
-
-    </div>
+    </SiteLayout>
   )
 }
 

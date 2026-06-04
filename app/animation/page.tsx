@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Link from "next/link"
+import type { ReactNode } from "react"
+import { SiteLayout } from "@/components/site-layout"
 import { BouncingBall } from "@/components/animations/bouncing-ball"
 import { ButtonSendLink } from "@/components/animations/button-send-link/button-send-link"
 import ButtonToPopover from "@/components/animations/button-to-pop/button-to-popover"
@@ -24,7 +25,15 @@ const fadeUp = {
   },
 }
 
-const animations = [
+const categoryStyles = {
+  CSS: "bg-violet-50 text-violet-600 border-violet-200",
+  Button: "bg-blue-50 text-blue-600 border-blue-200",
+  Layout: "bg-amber-50 text-amber-600 border-amber-200",
+} as const
+
+type Category = keyof typeof categoryStyles
+
+const animations: { id: string; title: string; description: string; category: Category; component: ReactNode }[] = [
   {
     id: "bouncing-ball",
     title: "Bouncing Ball",
@@ -55,51 +64,19 @@ const animations = [
   },
 ]
 
-const categoryColor: Record<string, string> = {
-  CSS: "bg-violet-50 text-violet-600 border-violet-200",
-  Button: "bg-blue-50 text-blue-600 border-blue-200",
-  Layout: "bg-amber-50 text-amber-600 border-amber-200",
-}
-
 export default function AnimationPage() {
   return (
-    <div className="min-h-screen bg-white text-[#0d0d0c] antialiased">
-
-      {/* Nav */}
-      <nav className="mx-auto w-full max-w-135 px-6 py-5">
-        <div className="flex items-center justify-between">
-          <Link
-            href="/"
-            className="font-mono text-xs tracking-[0.18em] uppercase text-[#767676]"
-          >
-            kw
-          </Link>
-          <ul className="flex items-center gap-5">
-            {[
-              { label: "notes", href: "/notes" },
-              { label: "animation", href: "/animation" },
-            ].map((item) => (
-              <li key={item.label}>
-                <Link
-                  href={item.href}
-                  className="font-mono text-[10px] tracking-[0.18em] uppercase text-[#767676] transition-colors hover:text-[#333]"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
-
-      {/* Header */}
+    <SiteLayout>
       <motion.header
         variants={stagger}
         initial="hidden"
         animate="show"
-        className="mx-auto max-w-135 px-6 pt-8 pb-12"
+        className="mx-auto w-full max-w-135 px-6 pt-8 pb-12"
       >
         <motion.div variants={fadeUp}>
+          <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-[#767676]">
+            Exploration
+          </p>
           <h1
             className="text-[2.25rem] leading-none tracking-[-0.02em] text-[#0d0d0c]"
             style={{ fontFamily: "var(--font-instrument-serif)" }}
@@ -112,51 +89,72 @@ export default function AnimationPage() {
         </motion.div>
       </motion.header>
 
-      {/* Grid */}
       <motion.main
         variants={stagger}
         initial="hidden"
         animate="show"
-        className="mx-auto max-w-135 px-6 pb-24"
+        className="mx-auto max-w-135 px-6 pb-24 flex-1"
       >
         <div className="flex flex-col gap-4">
           {animations.map((item) => (
-            <motion.div
-              key={item.id}
-              variants={fadeUp}
-              className="group flex flex-col overflow-hidden rounded-xl border bg-white"
-              style={{ borderColor: "rgba(0,0,0,0.08)" }}
-            >
-              {/* Preview */}
-              <div className="flex min-h-56 items-center justify-center bg-[#f7f7f5] p-6">
-                {item.component}
-              </div>
-
-              {/* Info */}
-              <div className="flex flex-col gap-1.5 border-t p-4" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
-                <div className="flex items-center gap-2">
-                  <span
-                    className={`rounded border px-2 py-0.5 font-mono text-[10px] tracking-wide ${categoryColor[item.category]}`}
-                  >
-                    {item.category}
-                  </span>
-                </div>
-                <p className="text-sm font-medium text-[#0d0d0c]">{item.title}</p>
-                <p className="text-xs leading-relaxed text-[#767676]">{item.description}</p>
-              </div>
-            </motion.div>
+            <AnimationCard key={item.id}>
+              <AnimationCard.Preview>{item.component}</AnimationCard.Preview>
+              <AnimationCard.Info
+                category={item.category}
+                title={item.title}
+                description={item.description}
+              />
+            </AnimationCard>
           ))}
         </div>
       </motion.main>
+    </SiteLayout>
+  )
+}
 
-      {/* Footer */}
-      <footer className="border-t" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
-        <div className="mx-auto max-w-135 px-6 py-6">
-          <p className="font-mono text-[10px] text-[#767676] tracking-wide">
-            © 2026 Krisna Wijaya
-          </p>
-        </div>
-      </footer>
+// --- Components -----------------------------------------------------------
+
+function AnimationCard({ children }: { children: ReactNode }) {
+  return (
+    <motion.div
+      variants={fadeUp}
+      className="flex flex-col overflow-hidden rounded-xl border bg-white"
+      style={{ borderColor: "rgba(0,0,0,0.08)" }}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
+AnimationCard.Preview = function Preview({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex min-h-56 items-center justify-center bg-[#f7f7f5] p-6">
+      {children}
+    </div>
+  )
+}
+
+AnimationCard.Info = function Info({
+  category,
+  title,
+  description,
+}: {
+  category: Category
+  title: string
+  description: string
+}) {
+  return (
+    <div
+      className="flex flex-col gap-1.5 border-t p-4"
+      style={{ borderColor: "rgba(0,0,0,0.06)" }}
+    >
+      <span
+        className={`self-start rounded border px-2 py-0.5 font-mono text-[10px] tracking-wide ${categoryStyles[category]}`}
+      >
+        {category}
+      </span>
+      <p className="text-sm font-medium text-[#0d0d0c]">{title}</p>
+      <p className="text-xs leading-relaxed text-[#767676]">{description}</p>
     </div>
   )
 }
