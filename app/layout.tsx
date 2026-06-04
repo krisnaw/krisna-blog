@@ -1,9 +1,7 @@
 import type {Metadata} from "next";
-import {Geist, Geist_Mono} from "next/font/google";
+import {Geist, Geist_Mono, Instrument_Serif} from "next/font/google";
 import "./globals.css";
-import React, {Suspense} from "react";
-import FloatingMenu from "@/components/common/floating-menu";
-import {Toaster} from "sonner";
+import React from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,6 +11,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -26,17 +30,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true} className={`overscroll-none ${geistSans.className}`}>
+    <html lang="en" suppressHydrationWarning={true} className={`overscroll-none ${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable}`}>
     <body className={`antialiased `}>
       <div className="flex flex-col min-h-screen bg-gray-100/50">
         <main className="grow">
           {children}
         </main>
       </div>
-      <Suspense>
-        <FloatingMenu/>
-      </Suspense>
-      <Toaster />
+      {/*<Suspense>*/}
+      {/*  <FloatingMenu/>*/}
+      {/*</Suspense>*/}
+      {/*<Toaster />*/}
     </body>
     </html>
   );

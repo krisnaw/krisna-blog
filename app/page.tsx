@@ -1,24 +1,300 @@
-import HeroSection from "@/components/section/hero.section";
-import React from "react";
-import {getPosts} from "@/app/notes/getPosts";
-import {Projects} from "@/components/project";
+"use client"
 
-export default function Page() {
-  const posts = getPosts();
+import {motion} from "framer-motion"
+import Image from "next/image"
+import Link from "next/link"
+import {useState} from "react"
+import {contactLinks, projects, stack} from "./data"
+
+// Emil Kowalski — strong ease-out: starts fast, feels responsive
+const EASE_OUT: [number, number, number, number] = [0.23, 1, 0.32, 1]
+
+const stagger = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.07,
+      delayChildren: 0.05,
+    },
+  },
+}
+
+// Blur + translateY entry: text arrives like it's rising into focus
+const fadeUp = {
+  hidden: { opacity: 0, y: 10, filter: "blur(4px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.45, ease: EASE_OUT },
+  },
+}
+
+// --- Page -----------------------------------------------------------------
+
+export default function AltPage() {
   return (
-    <div className="flex flex-col">
-      <div className="grow min-h-screen">
-        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 py-24 sm:py-36">
-          <div className="space-y-18">
-            <HeroSection />
-            <Projects />
-            {/*<Building />*/}
-            {/*<Writing />*/}
-            {/*<WorksSection />*/}
-            {/*<CertSection />*/}
-          </div>
+    <div
+      className="min-h-screen bg-white text-[#0d0d0c] antialiased font-features-['ss01']"
+    >
+
+      {/* Top nav */}
+      <nav>
+        <div className="mx-auto flex max-w-135 items-center justify-between px-6 py-5">
+          <span className="font-mono text-xs tracking-[0.18em] uppercase text-[#767676]">kw</span>
+          <ul className="flex items-center gap-5">
+            {[
+              { label: "home", href: "/" },
+              { label: "notes", href: "/notes" },
+              { label: "animation", href: "/animation" },
+            ].map((item) => (
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  className="font-mono text-[10px] tracking-[0.18em] uppercase text-[#767676]"
+                  // active press scale — Emil: buttons must feel responsive
+                  style={{
+                    transition:
+                      "color 150ms, transform 160ms cubic-bezier(0.23,1,0.32,1)",
+                    display: "inline-block",
+                  }}
+                  onMouseEnter={(e) =>
+                    ((e.currentTarget as HTMLElement).style.color = "#333")
+                  }
+                  onMouseLeave={(e) =>
+                    ((e.currentTarget as HTMLElement).style.color = "")
+                  }
+                  onMouseDown={(e) =>
+                    ((e.currentTarget as HTMLElement).style.transform =
+                      "scale(0.97)")
+                  }
+                  onMouseUp={(e) =>
+                    ((e.currentTarget as HTMLElement).style.transform = "scale(1)")
+                  }
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
+      </nav>
+
+      {/* Content */}
+      <main className="mx-auto max-w-135 px-6 pb-24 pt-12">
+        <motion.div variants={stagger} initial="hidden" animate="show" className="space-y-16">
+
+          {/* ── Hero ── */}
+          <motion.section variants={fadeUp}>
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="relative shrink-0 size-14 rounded-lg overflow-hidden">
+                  <Image
+                    src="/profile.jpg"
+                    alt="Krisna Wijaya"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/10" />
+                </div>
+                <div>
+                  <h1
+                    className="text-[2.5rem] leading-none tracking-[-0.02em] text-[#0d0d0c]"
+                    style={{ fontFamily: "var(--font-instrument-serif)" }}
+                  >
+                    Krisna Wijaya
+                  </h1>
+                  <p className="mt-2 font-mono text-xs text-[#767676] tracking-wide">
+                    Software Developer · Bali, Indonesia
+                  </p>
+                </div>
+              </div>
+
+              {/* Available badge */}
+              <div className="flex shrink-0 items-center gap-1.5 pt-1 font-mono text-[10px] tracking-wide text-emerald-600">
+                <span className="size-1.5 animate-pulse rounded-full bg-emerald-600" />
+                available
+              </div>
+            </div>
+
+            <div className="mt-6 space-y-3 text-sm leading-[1.8] text-[#555]">
+              <p>
+                I create software that's intuitive and effective — I don't just write code,
+                I care deeply about the product and how people interact with what we build.
+              </p>
+              <p>
+                Currently open to Front-End or Full-Stack roles.
+                Based in Bali, open to remote or relocation.
+              </p>
+            </div>
+          </motion.section>
+
+          {/* ── Projects ── */}
+          <motion.section variants={stagger}>
+            <motion.h2
+              variants={fadeUp}
+              className="mb-5 font-mono text-[10px] uppercase tracking-[0.2em] text-[#767676]"
+            >
+              Projects
+            </motion.h2>
+
+            <div
+              style={{ borderTop: "1px solid rgba(0,0,0,0.08)" }}
+            >
+              {projects.map((project) => (
+                <ProjectRow key={project.id} project={project} />
+              ))}
+            </div>
+          </motion.section>
+
+          {/* ── Stack ── */}
+          <motion.section variants={fadeUp}>
+            <h2 className="mb-5 font-mono text-[10px] uppercase tracking-[0.2em] text-[#767676]">
+              Stack
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {stack.map((tech, i) => (
+                <motion.span
+                  key={tech}
+                  // scale from 0.95, not 0 — Emil: nothing appears from nothing
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    delay: 0.4 + i * 0.04,
+                    ease: EASE_OUT,
+                  }}
+                  className="rounded-full border px-3 py-1 font-mono text-[11px] text-[#767676]"
+                  style={{ borderColor: "rgba(0,0,0,0.12)" }}
+                >
+                  {tech}
+                </motion.span>
+              ))}
+            </div>
+          </motion.section>
+
+          {/* ── Contact ── */}
+          <motion.section variants={fadeUp}>
+            <h2 className="mb-5 font-mono text-[10px] uppercase tracking-[0.2em] text-[#767676]">
+              Contact
+            </h2>
+            <div className="flex flex-wrap gap-5">
+              {contactLinks.map((link) => (
+                <ContactLink key={link.label} {...link} />
+              ))}
+            </div>
+          </motion.section>
+
+        </motion.div>
+      </main>
+
+      {/* Footer */}
+      <footer className="relative z-10 border-t" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
+        <div className="mx-auto max-w-[540px] px-6 py-6">
+          <p className="font-mono text-[10px] text-[#767676] tracking-wide">
+            © 2026 Krisna Wijaya
+          </p>
+        </div>
+      </footer>
     </div>
-  );
+  )
+}
+
+// --- Components -----------------------------------------------------------
+
+function ProjectRow({ project }: { project: (typeof projects)[number] }) {
+  const [hovered, setHovered] = useState(false)
+
+  return (
+    <motion.div variants={fadeUp}>
+      <Link
+        href={project.available ? project.href : "#"}
+        aria-disabled={!project.available}
+        className="group flex items-start justify-between gap-6 py-4"
+        style={{
+          borderBottom: "1px solid rgba(0,0,0,0.08)",
+          opacity: project.available ? 1 : 0.35,
+          pointerEvents: project.available ? "auto" : "none",
+          // active scale — Emil: scale(0.97) for press feedback
+          transition: "opacity 150ms",
+        }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        onMouseDown={(e) =>
+          project.available &&
+          ((e.currentTarget as HTMLElement).style.transform = "scale(0.99)")
+        }
+        onMouseUp={(e) =>
+          ((e.currentTarget as HTMLElement).style.transform = "scale(1)")
+        }
+      >
+        <div className="min-w-0 space-y-2">
+          <div className="flex items-center gap-2.5">
+            <span
+              className="text-sm font-medium"
+              style={{
+                color: hovered && project.available ? "#0d0d0c" : "#767676",
+                transition: "color 150ms cubic-bezier(0.23,1,0.32,1)",
+              }}
+            >
+              {project.name}
+            </span>
+
+            {!project.available && (
+              <span
+                className="rounded px-1.5 py-0.5 font-mono text-[10px] text-[#767676]"
+                style={{ border: "1px solid rgba(0,0,0,0.1)" }}
+              >
+                soon
+              </span>
+            )}
+          </div>
+
+          <p className="max-w-sm text-xs leading-relaxed text-[#767676]">
+            {project.description}
+          </p>
+        </div>
+
+        <span className="shrink-0 pt-0.5 font-mono text-[11px] text-[#767676]">
+          {project.year}
+        </span>
+      </Link>
+    </motion.div>
+  )
+}
+
+function ContactLink({ label, href }: { label: string; href: string }) {
+  const isExternal = href.startsWith("http")
+  return (
+    <a
+      href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      className="font-mono text-sm text-[#767676] underline underline-offset-4"
+      style={{
+        textDecorationColor: "rgba(0,0,0,0.15)",
+        transition: "color 150ms, text-decoration-color 150ms, transform 160ms cubic-bezier(0.23,1,0.32,1)",
+        display: "inline-block",
+      }}
+      onMouseEnter={(e) => {
+        const el = e.currentTarget as HTMLElement
+        el.style.color = "#0d0d0c"
+        el.style.textDecorationColor = "rgba(0,0,0,0.35)"
+      }}
+      onMouseLeave={(e) => {
+        const el = e.currentTarget as HTMLElement
+        el.style.color = ""
+        el.style.textDecorationColor = ""
+        el.style.transform = "scale(1)"
+      }}
+      onMouseDown={(e) =>
+        ((e.currentTarget as HTMLElement).style.transform = "scale(0.97)")
+      }
+      onMouseUp={(e) =>
+        ((e.currentTarget as HTMLElement).style.transform = "scale(1)")
+      }
+    >
+      {label}
+    </a>
+  )
 }
