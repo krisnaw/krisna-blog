@@ -87,12 +87,12 @@ export default function AltPage() {
           <motion.section variants={fadeUp}>
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-center gap-4">
-                <div className="relative shrink-0 size-14 rounded-lg overflow-hidden">
+                <div className="group relative shrink-0 size-16 rounded-lg overflow-hidden">
                   <Image
                     src="/profile.jpg"
                     alt="Krisna Wijaya"
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale transition-all duration-500 ease-out group-hover:grayscale-0"
                   />
                   <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/10" />
                 </div>
