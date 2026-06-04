@@ -1,5 +1,5 @@
 import type {Metadata} from "next";
-import {Geist, Geist_Mono, Instrument_Serif} from "next/font/google";
+import {Caveat, Geist, Geist_Mono, Instrument_Serif} from "next/font/google";
 import "./globals.css";
 import React from "react";
 
@@ -19,6 +19,11 @@ const instrumentSerif = Instrument_Serif({
   weight: "400",
 });
 
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Krisna Wijaya | Software Developer",
   description: "Personal website of Krisna Wijaya",
@@ -30,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true} className={`overscroll-none ${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable}`}>
+    <html lang="en" suppressHydrationWarning={true} className={`overscroll-none ${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${caveat.variable}`}>
     <body className={`antialiased `}>
       <div className="flex flex-col min-h-screen bg-gray-100/50">
         <main className="grow">

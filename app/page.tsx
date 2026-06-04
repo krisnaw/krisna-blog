@@ -100,7 +100,7 @@ export default function AltPage() {
                 <div>
                   <h1
                     className="text-[2.5rem] leading-none tracking-[-0.02em] text-[#0d0d0c]"
-                    style={{ fontFamily: "var(--font-instrument-serif)" }}
+                    style={{ fontFamily: "var(--font-caveat), cursive" }}
                   >
                     Krisna Wijaya
                   </h1>
