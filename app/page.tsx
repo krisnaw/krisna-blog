@@ -44,7 +44,6 @@ export default function AltPage() {
           <span className="font-mono text-xs tracking-[0.18em] uppercase text-[#767676]">kw</span>
           <ul className="flex items-center gap-5">
             {[
-              { label: "home", href: "/" },
               { label: "notes", href: "/notes" },
               { label: "animation", href: "/animation" },
             ].map((item) => (

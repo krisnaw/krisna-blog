@@ -66,20 +66,29 @@ export default function AnimationPage() {
     <div className="min-h-screen bg-white text-[#0d0d0c] antialiased">
 
       {/* Nav */}
-      <nav className="mx-auto max-w-4xl px-6 py-5">
+      <nav className="mx-auto w-full max-w-135 px-6 py-5">
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className="font-mono text-xs tracking-[0.18em] uppercase text-[#767676] transition-colors hover:text-[#0d0d0c]"
+            className="font-mono text-xs tracking-[0.18em] uppercase text-[#767676]"
           >
             kw
           </Link>
-          <Link
-            href="/"
-            className="font-mono text-[10px] tracking-wide text-[#767676] transition-colors hover:text-[#0d0d0c]"
-          >
-            ← home
-          </Link>
+          <ul className="flex items-center gap-5">
+            {[
+              { label: "notes", href: "/notes" },
+              { label: "animation", href: "/animation" },
+            ].map((item) => (
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  className="font-mono text-[10px] tracking-[0.18em] uppercase text-[#767676] transition-colors hover:text-[#333]"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </nav>
 
@@ -88,7 +97,7 @@ export default function AnimationPage() {
         variants={stagger}
         initial="hidden"
         animate="show"
-        className="mx-auto max-w-4xl px-6 pt-8 pb-12"
+        className="mx-auto max-w-135 px-6 pt-8 pb-12"
       >
         <motion.div variants={fadeUp}>
           <h1
@@ -108,9 +117,9 @@ export default function AnimationPage() {
         variants={stagger}
         initial="hidden"
         animate="show"
-        className="mx-auto max-w-4xl px-6 pb-24"
+        className="mx-auto max-w-135 px-6 pb-24"
       >
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="flex flex-col gap-4">
           {animations.map((item) => (
             <motion.div
               key={item.id}
@@ -142,7 +151,7 @@ export default function AnimationPage() {
 
       {/* Footer */}
       <footer className="border-t" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
-        <div className="mx-auto max-w-4xl px-6 py-6">
+        <div className="mx-auto max-w-135 px-6 py-6">
           <p className="font-mono text-[10px] text-[#767676] tracking-wide">
             © 2026 Krisna Wijaya
           </p>

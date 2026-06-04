@@ -1,32 +1,46 @@
-import {Suspense} from "react";
-import BackButton from "@/app/notes/(post)/back-button";
-import {MainContent} from "@/app/notes/(post)/main-content";
-import {getPosts} from "@/app/notes/getPosts";
-import {Header} from "@/app/notes/(post)/header";
+import {Suspense} from "react"
+import BackButton from "@/app/notes/(post)/back-button"
+import {MainContent} from "@/app/notes/(post)/main-content"
+import {getPosts} from "@/app/notes/getPosts"
+import {Header} from "@/app/notes/(post)/header"
+import Link from "next/link"
 
 export default async function MdxLayout({ children }: { children: React.ReactNode }) {
-  const posts = getPosts();
+  const posts = getPosts()
   return (
-    <div className={`relative`}>
+    <div className="min-h-screen bg-white text-[#0d0d0c] antialiased flex flex-col">
 
-      <nav className="z-30 lg:sticky lg:top-0">
-
-        <div className="h-14 py-4 px-4 sm:px-6 lg:px-8">
+      {/* Nav */}
+      <nav className="mx-auto w-full max-w-135 px-6 py-5">
+        <div className="flex items-center justify-between">
+          <Link
+            href="/"
+            className="font-mono text-xs tracking-[0.18em] uppercase text-[#767676]"
+          >
+            kw
+          </Link>
           <Suspense>
             <BackButton />
           </Suspense>
         </div>
-
       </nav>
 
-      <div className="pt-6 pb-40 mx-auto max-w-5xl">
+      {/* Content */}
+      <div className="mx-auto w-full max-w-135 px-6 pt-8 pb-24 flex-1">
         <Header posts={posts} />
-        <div className="pt-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <Suspense fallback={<div>Loading</div>}>
-            <MainContent>{children}</MainContent>
-          </Suspense>
-        </div>
+        <Suspense fallback={null}>
+          <MainContent>{children}</MainContent>
+        </Suspense>
       </div>
+
+      {/* Footer */}
+      <footer className="border-t" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
+        <div className="mx-auto max-w-135 px-6 py-6">
+          <p className="font-mono text-[10px] text-[#767676] tracking-wide">
+            © 2026 Krisna Wijaya
+          </p>
+        </div>
+      </footer>
 
     </div>
   )

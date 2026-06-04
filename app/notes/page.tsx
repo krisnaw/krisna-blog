@@ -1,4 +1,4 @@
-import { getPosts } from "@/app/notes/getPosts"
+import {getPosts} from "@/app/notes/getPosts"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -9,25 +9,37 @@ export default function NotesPage() {
     <div className="min-h-screen bg-white text-[#0d0d0c] antialiased flex flex-col">
 
       {/* Nav */}
-      <nav className="mx-auto max-w-135 px-6 py-5">
+      <nav className="mx-auto w-full max-w-135 px-6 py-5">
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className="font-mono text-xs tracking-[0.18em] uppercase text-[#767676] transition-colors hover:text-[#0d0d0c]"
+            className="font-mono text-xs tracking-[0.18em] uppercase text-[#767676]"
           >
             kw
           </Link>
-          <Link
-            href="/"
-            className="font-mono text-[10px] tracking-wide text-[#767676] transition-colors hover:text-[#0d0d0c]"
-          >
-            ← home
-          </Link>
+          <ul className="flex items-center gap-5">
+            {[
+              { label: "notes", href: "/notes" },
+              { label: "animation", href: "/animation" },
+            ].map((item) => (
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  className="font-mono text-[10px] tracking-[0.18em] uppercase text-[#767676] transition-colors hover:text-[#333]"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </nav>
 
       {/* Header */}
-      <header className="mx-auto max-w-135 px-6 pt-8 pb-12">
+      <header className="mx-auto w-full max-w-135 px-6 pt-8 pb-12">
+        <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-[#767676]">
+          Writing
+        </p>
         <h1
           className="text-[2.25rem] leading-none tracking-[-0.02em] text-[#0d0d0c]"
           style={{ fontFamily: "var(--font-instrument-serif)" }}
@@ -58,7 +70,7 @@ export default function NotesPage() {
                     {post.date}
                   </p>
                   <h2
-                    className="text-base leading-snug tracking-[-0.01em] text-[#0d0d0c] transition-colors group-hover:text-[#444]"
+                    className="text-2xl leading-snug tracking-[-0.01em] text-[#0d0d0c] transition-colors group-hover:text-[#444]"
                     style={{ fontFamily: "var(--font-instrument-serif)" }}
                   >
                     {post.title}
