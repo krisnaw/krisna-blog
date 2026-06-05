@@ -29,7 +29,7 @@ export default function HomePage() {
   return (
     <SiteLayout>
       <DirectionalTransition>
-      <main className="mx-auto max-w-135 px-6 pb-24 pt-12 flex-1">
+      <main className="mx-auto max-w-2xl px-6 pb-24 pt-12 flex-1">
         <motion.div variants={stagger} initial="hidden" animate="show" className="space-y-16">
 
           <motion.section variants={fadeUp}>

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import type { ReactNode } from "react"
+import type {ReactNode} from "react"
 
 const navLinks = [
   { label: "notes", href: "/notes" },
@@ -9,7 +9,7 @@ const navLinks = [
 export function SiteNav() {
   return (
     <nav style={{ viewTransitionName: "site-nav" }}>
-      <div className="mx-auto flex max-w-135 items-center justify-between px-6 py-5">
+      <div className="mx-auto flex max-w-2xl items-center justify-between px-6 py-5">
         <Link
           href="/"
           className="font-mono text-xs tracking-[0.18em] uppercase text-[#767676]"
@@ -36,7 +36,7 @@ export function SiteNav() {
 export function SiteFooter() {
   return (
     <footer className="border-t" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
-      <div className="mx-auto max-w-135 px-6 py-6">
+      <div className="mx-auto max-w-2xl px-6 py-6">
         <p className="font-mono text-[10px] text-[#767676] tracking-wide">
           © 2026 Krisna Wijaya
         </p>

@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "blossom-carousel-react": {
+      "source": "blossom-carousel.com",
+      "sourceType": "well-known",
+      "computedHash": "0395cbd3e94a255efa27f47149370d157daac43e21d20343264de084a6de2f93"
+    },
     "emil-design-eng": {
       "source": "emilkowalski/skill",
       "sourceType": "github",
