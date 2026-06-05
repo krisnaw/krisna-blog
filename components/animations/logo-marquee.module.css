@@ -1,0 +1,67 @@
+/* Keyframe %s are for ITEMS_PER_COLUMN=4, underlap=2, transition=1:
+   base=75, first=73, mid=76, end=97 */
+
+@keyframes appear {
+  0%, 73% {
+    animation-timing-function: ease-out;
+    filter: blur(calc(var(--blur, 2) * 1px));
+    opacity: 0;
+    translate:
+      calc((var(--movement-x, 14) + var(--u, 0) * var(--movement-step, 2)) * -1px)
+      calc((var(--movement-y, 34) + var(--u, 0) * var(--movement-step, 2)) * 1px);
+  }
+  76%, 97% {
+    animation-timing-function: ease-in;
+    filter: blur(0px);
+    opacity: 1;
+    translate: 0 0;
+  }
+  100% {
+    filter: blur(calc(var(--blur, 2) * 1px));
+    opacity: 0;
+    translate:
+      calc((var(--movement-x, 14) + var(--u, 0) * var(--movement-step, 2)) * 1px)
+      calc((var(--movement-y, 34) + var(--u, 0) * var(--movement-step, 2)) * -1px);
+  }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: center;
+}
+
+.list {
+  width: 100px;
+  display: grid;
+  grid-template: 1fr / 1fr;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.item {
+  grid-area: 1 / 1;
+  display: grid;
+  place-items: center;
+}
+
+.svg {
+  overflow: visible;
+  height: 3rem;
+  width: auto;
+}
+
+.layer {
+  mix-blend-mode: hard-light;
+  transform-box: fill-box;
+  animation-name: appear;
+  animation-duration: calc(var(--duration, 20) * 1s);
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-delay: calc(
+    (var(--duration, 20) / var(--items)) * (var(--items) - var(--i)) * -1s +
+    var(--base-delay, 0) * 1s
+  );
+}

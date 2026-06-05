@@ -1,10 +1,11 @@
 "use client"
 
-import { motion } from "framer-motion"
+import {motion} from "framer-motion"
 import Link from "next/link"
-import type { ReactNode } from "react"
-import { SiteFooter } from "@/components/site-layout"
-import { DirectionalTransition } from "@/components/view-transition"
+import type {ReactNode} from "react"
+import {SiteFooter} from "@/components/site-layout"
+import {DirectionalTransition} from "@/components/view-transition"
+import Image from "next/image";
 
 const EASE_OUT: [number, number, number, number] = [0.23, 1, 0.32, 1]
 
@@ -46,7 +47,7 @@ const sections = [
 export default function BarongMelaliPage() {
   return (
     <div className="min-h-screen bg-white text-[#0d0d0c] antialiased flex flex-col">
-      <nav className="mx-auto w-full max-w-135 px-6 py-5" style={{ viewTransitionName: "site-nav" }}>
+      <nav className="mx-auto w-full max-w-3xl px-6 py-5" style={{ viewTransitionName: "site-nav" }}>
         <Link
           href="/"
           transitionTypes={["nav-back"]}
@@ -61,7 +62,7 @@ export default function BarongMelaliPage() {
         variants={stagger}
         initial="hidden"
         animate="show"
-        className="mx-auto max-w-135 px-6 pb-24 flex-1"
+        className="mx-auto max-w-3xl px-6 pb-24 flex-1"
       >
         <motion.section variants={fadeUp} className="pt-8 pb-12">
           <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-[#767676]">
@@ -107,10 +108,10 @@ export default function BarongMelaliPage() {
         </motion.section>
 
         <motion.div
-          variants={fadeUp}
-          className="w-full aspect-video rounded-lg bg-[#f5f5f3] border"
-          style={{ borderColor: "rgba(0,0,0,0.06)" }}
-        />
+          variants={fadeUp} className="p-4 outline outline-gray-200 rounded-xl flex items-center bg-gray-100">
+          <Image  className="aspect-video rounded-lg"
+                  src="/barong-melali-landing.jpg" width={1000} height={450} alt="barong-melali" />
+        </motion.div>
 
         <motion.div variants={stagger} className="pt-12 space-y-10">
           {sections.map((section) => (

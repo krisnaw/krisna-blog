@@ -42,10 +42,6 @@ export default function RootLayout({
           {children}
         </main>
       </div>
-      {/*<Suspense>*/}
-      {/*  <FloatingMenu/>*/}
-      {/*</Suspense>*/}
-      {/*<Toaster />*/}
     </body>
     </html>
   );
