@@ -2,6 +2,7 @@ import type {Metadata} from "next"
 import Link from "next/link"
 import {SiteLayout} from "@/components/site-layout"
 import {DirectionalTransition} from "@/components/view-transition"
+import {MotionHeader, MotionMain, MotionSection} from "@/components/page-motion"
 
 export const metadata: Metadata = {
   title: "Frontend Interview Docs | Krisna Wijaya",
@@ -70,7 +71,7 @@ export default function AlgoPage() {
   return (
     <SiteLayout>
       <DirectionalTransition>
-        <header className="mx-auto w-full max-w-3xl px-6 pt-8 pb-12">
+        <MotionHeader className="mx-auto w-full max-w-3xl px-6 pt-8 pb-12">
           <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-muted-foreground">
             Documentation
           </p>
@@ -93,15 +94,15 @@ export default function AlgoPage() {
               <Stat label="Complete" value={0} />
             </div>
           </div>
-        </header>
+        </MotionHeader>
 
-        <main className="mx-auto w-full max-w-3xl px-6 pb-24">
+        <MotionMain className="mx-auto w-full max-w-3xl px-6 pb-24">
           <div className="space-y-12">
             {sections.map((section, index) => {
               const count = section.groups.reduce((total, group) => total + group.topics.length, 0)
 
               return (
-                <section key={section.slug} aria-labelledby={`${section.slug}-title`}>
+                <MotionSection key={section.slug} ariaLabelledBy={`${section.slug}-title`}>
                   <div className="mb-5 flex items-end justify-between gap-4">
                     <div>
                       <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-muted-foreground">
@@ -135,7 +136,7 @@ export default function AlgoPage() {
                                 <Link
                                   href={href}
                                   transitionTypes={["nav-forward"]}
-                                  className="group flex min-h-11 items-center justify-between gap-3 rounded-md px-3 py-2 text-sm text-foreground/85 transition-colors duration-150 hover:bg-muted active:scale-[0.99]"
+                                  className="group flex min-h-11 items-center justify-between gap-3 rounded-md px-3 py-2 text-sm text-foreground/85 transition-[background-color,scale] duration-150 hover:bg-muted active:scale-[0.96]"
                                 >
                                   <span>{topic}</span>
                                   <span className="font-mono text-[10px] tracking-wide text-muted-foreground/60 transition-colors group-hover:text-muted-foreground">
@@ -149,11 +150,11 @@ export default function AlgoPage() {
                       </div>
                     ))}
                   </div>
-                </section>
+                </MotionSection>
               )
             })}
           </div>
-        </main>
+        </MotionMain>
       </DirectionalTransition>
     </SiteLayout>
   )

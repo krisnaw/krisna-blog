@@ -1,6 +1,7 @@
 import {getPosts} from "@/app/notes/getPosts"
 import {SiteLayout} from "@/components/site-layout"
 import {DirectionalTransition} from "@/components/view-transition"
+import {MotionHeader, MotionListItem, MotionMain} from "@/components/page-motion"
 import Image from "next/image"
 import Link from "next/link"
 import {ViewTransition} from "react"
@@ -11,7 +12,7 @@ export default function NotesPage() {
   return (
     <SiteLayout>
       <DirectionalTransition>
-        <header className="mx-auto w-full max-w-3xl px-6 pt-8 pb-12">
+        <MotionHeader className="mx-auto w-full max-w-3xl px-6 pt-8 pb-12">
           <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-muted-foreground">
             Writing
           </p>
@@ -24,13 +25,13 @@ export default function NotesPage() {
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             A tight collection of complete ideas, thoughts, and writings.
           </p>
-        </header>
+        </MotionHeader>
 
-        <main className="mx-auto max-w-3xl px-6 pb-24 flex-1 w-full">
+        <MotionMain className="mx-auto max-w-3xl px-6 pb-24 flex-1 w-full">
           <ul className="divide-y divide-border border-t border-border" role="list">
             {posts.map((post) => (
               <ViewTransition key={post.id}>
-                <li>
+                <MotionListItem>
                   <Link
                     href={`/notes/${post.id}`}
                     transitionTypes={["nav-forward"]}
@@ -63,11 +64,11 @@ export default function NotesPage() {
                       </div>
                     </ViewTransition>
                   </Link>
-                </li>
+                </MotionListItem>
               </ViewTransition>
             ))}
           </ul>
-        </main>
+        </MotionMain>
       </DirectionalTransition>
     </SiteLayout>
   )
