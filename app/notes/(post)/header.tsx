@@ -13,11 +13,11 @@ export function Header({posts}: {posts: PostType[]}) {
 
   return (
     <div className="pb-10">
-      <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-[#767676]">
+      <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-muted-foreground">
         {post.date}
       </p>
       <h1
-        className="text-[2rem] leading-[1.1] tracking-[-0.02em] text-[#0d0d0c]"
+        className="text-[2rem] leading-[1.1] tracking-[-0.02em] text-foreground"
         style={{ fontFamily: "var(--font-instrument-serif)" }}
       >
         {post.title}
@@ -33,7 +33,7 @@ export function Header({posts}: {posts: PostType[]}) {
               quality={100}
               className="object-cover"
             />
-            <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/8" />
+            <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/10 dark:ring-white/10" />
           </div>
         </ViewTransition>
       )}

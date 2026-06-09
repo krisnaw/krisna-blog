@@ -70,36 +70,35 @@ export default function BarongMelaliPage() {
           className="mx-auto max-w-3xl px-6 pb-24 flex-1"
         >
           <motion.section variants={fadeUp} className="pt-8 pb-4">
-            <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-[#767676]">
+            <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-muted-foreground">
               2026
             </p>
             <h1
-              className="text-[3rem] leading-[1.05] tracking-[-0.02em] text-[#0d0d0c]"
+              className="text-[3rem] leading-[1.05] tracking-[-0.02em] text-foreground"
               style={{ fontFamily: "var(--font-instrument-serif)" }}
             >
               Barong Melali
             </h1>
-            <p className="mt-4 text-base text-[#767676] leading-relaxed">
+            <p className="mt-4 text-base text-muted-foreground leading-relaxed">
               Event management and registration platform for Bali's largest road cycling community.
             </p>
           </motion.section>
 
           <motion.section
             variants={fadeUp}
-            className="grid grid-cols-2 gap-px border-y"
-            style={{ borderColor: "rgba(0,0,0,0.08)" }}
+            className="grid grid-cols-2 gap-px border-y border-border"
           >
             {meta.map(({ label, value }) => (
               <div key={label} className="py-4 pr-6">
-                <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[#767676]">
+                <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
                   {label}
                 </p>
-                <p className="text-sm text-[#0d0d0c]">{value}</p>
+                <p className="text-sm text-foreground">{value}</p>
               </div>
             ))}
           </motion.section>
 
-          <motion.section variants={fadeUp} className="pt-6 pb-10 space-y-4 text-sm leading-[1.9] text-[#444]">
+          <motion.section variants={fadeUp} className="pt-6 pb-10 space-y-4 text-sm leading-[1.9] text-foreground/75">
             <p>
               Barong Melali is a cycling club based in Bali with hundreds of active members. Before this platform,
               event registration was handled manually through WhatsApp messages and spreadsheets, a process that
@@ -113,7 +112,7 @@ export default function BarongMelaliPage() {
           </motion.section>
 
           <motion.div
-            variants={fadeUp} className="p-4 outline outline-gray-200 rounded-xl flex items-center bg-gray-100">
+            variants={fadeUp} className="p-4 outline outline-border rounded-xl flex items-center bg-muted">
             <Image  className="aspect-video rounded-lg"
                     src="/barong-melali-landing.jpg" width={1000} height={450} alt="barong-melali" />
           </motion.div>
@@ -121,22 +120,21 @@ export default function BarongMelaliPage() {
           <motion.div variants={stagger} className="pt-12 space-y-10">
             {sections.map((section) => (
               <Section key={section.heading} heading={section.heading}>
-                <p className="text-sm leading-[1.9] text-[#444]">{section.body}</p>
+                <p className="text-sm leading-[1.9] text-foreground/75">{section.body}</p>
               </Section>
             ))}
           </motion.div>
 
 
           <motion.section variants={fadeUp} className="pt-12">
-            <h2 className="mb-4 font-mono text-[10px] uppercase tracking-[0.2em] text-[#767676]">
+            <h2 className="mb-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
               Built with
             </h2>
             <div className="flex flex-wrap gap-2">
               {techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border px-3 py-1 font-mono text-[11px] text-[#767676]"
-                  style={{ borderColor: "rgba(0,0,0,0.12)" }}
+                  className="rounded-full border border-border px-3 py-1 font-mono text-[11px] text-muted-foreground"
                 >
                 {tech}
               </span>
@@ -155,7 +153,7 @@ function Section({ heading, children }: { heading: string; children: ReactNode }
   return (
     <motion.div variants={fadeUp}>
       <h2
-        className="mb-3 text-xl tracking-[-0.01em] text-[#0d0d0c]"
+        className="mb-3 text-xl tracking-[-0.01em] text-foreground"
         style={{ fontFamily: "var(--font-instrument-serif)" }}
       >
         {heading}

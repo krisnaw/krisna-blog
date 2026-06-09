@@ -3,6 +3,7 @@ import {Caveat, Geist, Geist_Mono, Instrument_Serif} from "next/font/google";
 import "./globals.css";
 import "@blossom-carousel/core/style.css";
 import React from "react";
+import {ThemeProvider} from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,11 +39,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true} className={`overscroll-none ${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${caveat.variable}`}>
     <body className={`antialiased `}>
-      <div className="flex flex-col min-h-screen bg-gray-100/50">
-        <main className="grow">
-          {children}
-        </main>
-      </div>
+      <ThemeProvider>
+        <div className="flex flex-col min-h-screen bg-background">
+          <main className="grow">
+            {children}
+          </main>
+        </div>
+      </ThemeProvider>
     </body>
     </html>
   );

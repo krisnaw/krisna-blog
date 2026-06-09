@@ -48,22 +48,22 @@ export default function DetectTypePage() {
           <Link
             href="/frontend-prep"
             transitionTypes={["nav-back"]}
-            className="inline-block font-mono text-[10px] tracking-[0.18em] uppercase text-[#767676] transition-colors duration-150 hover:text-[#0d0d0c] active:scale-[0.97]"
+            className="inline-block font-mono text-[10px] tracking-[0.18em] uppercase text-muted-foreground transition-colors duration-150 hover:text-foreground active:scale-[0.97]"
           >
             Back to index
           </Link>
 
           <div className="mt-8">
-            <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-[#767676]">
+            <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-muted-foreground">
               JavaScript / Easy
             </p>
             <h1
-              className="text-[2.5rem] leading-none tracking-[-0.01em] text-[#0d0d0c] sm:text-[3rem]"
+              className="text-[2.5rem] leading-none tracking-[-0.01em] text-foreground sm:text-[3rem]"
               style={{ fontFamily: "var(--font-instrument-serif)" }}
             >
               Detect Type
             </h1>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#767676]">
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
               Build a helper that returns a precise lowercase type name for a
               JavaScript value. The goal is to avoid the common blind spots in
               `typeof` while keeping the function small and predictable.
@@ -96,17 +96,17 @@ export default function DetectTypePage() {
             </DocSection>
 
             <DocSection title="Implementation">
-              <pre className="overflow-x-auto rounded-md border bg-[#111] p-4 text-xs leading-relaxed text-[#f4f4f2]" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
+              <pre className="overflow-x-auto rounded-md border border-border bg-[#111] p-4 text-xs leading-relaxed text-[#f4f4f2]">
                 <code>{implementation}</code>
               </pre>
             </DocSection>
 
             <DocSection title="Examples">
-              <div className="divide-y border-y" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
+              <div className="divide-y divide-border border-y border-border">
                 {examples.map(([input, output]) => (
                   <div key={input} className="grid gap-2 py-3 font-mono text-xs sm:grid-cols-2">
-                    <code className="text-[#333]">{input}</code>
-                    <code className="text-[#767676] sm:text-right">{output}</code>
+                    <code className="text-foreground/85">{input}</code>
+                    <code className="text-muted-foreground sm:text-right">{output}</code>
                   </div>
                 ))}
               </div>
@@ -137,19 +137,19 @@ function DocSection({
   return (
     <section>
       <h2
-        className="mb-4 text-2xl leading-tight text-[#0d0d0c]"
+        className="mb-4 text-2xl leading-tight text-foreground"
         style={{ fontFamily: "var(--font-instrument-serif)" }}
       >
         {title}
       </h2>
-      <div className="text-sm leading-[1.8] text-[#555]">{children}</div>
+      <div className="text-sm leading-[1.8] text-foreground/75">{children}</div>
     </section>
   )
 }
 
 function Code({ children }: { children: React.ReactNode }) {
   return (
-    <code className="rounded bg-[#f4f4f2] px-1.5 py-0.5 font-mono text-[0.85em] text-[#333]">
+    <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-[0.85em] text-foreground/85">
       {children}
     </code>
   )

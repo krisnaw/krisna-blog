@@ -43,16 +43,16 @@ export default function HomePage() {
                     fill
                     className="object-cover grayscale transition-all duration-500 ease-out group-hover:grayscale-0"
                   />
-                  <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/10" />
+                  <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/10 dark:ring-white/10" />
                 </div>
                 <div>
                   <h1
-                    className="text-[2.5rem] leading-none tracking-[-0.02em] text-[#0d0d0c]"
+                    className="text-[2.5rem] leading-none tracking-[-0.02em] text-foreground"
                     style={{ fontFamily: "var(--font-caveat), cursive" }}
                   >
                     Krisna Wijaya
                   </h1>
-                  <p className="mt-2 font-mono text-xs text-[#767676] tracking-wide">
+                  <p className="mt-2 font-mono text-xs text-muted-foreground tracking-wide">
                     Software Developer · Bali, Indonesia
                   </p>
                 </div>
@@ -69,9 +69,9 @@ export default function HomePage() {
                 href="https://cal.com/krisnawijaya/30min?user=krisnawijaya&overlayCalendar=true"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-9 items-center gap-2 rounded-full border border-[#0d0d0c] bg-[#0d0d0c] px-3 font-mono text-xs text-white transition-all duration-150 hover:border-[#242422] hover:bg-[#242422] active:scale-[0.98]"
+                className="inline-flex h-9 items-center gap-2 rounded-full border border-primary bg-primary px-3 font-mono text-xs text-primary-foreground transition-all duration-150 hover:opacity-90 active:scale-[0.98]"
               >
-                <CalendarDays className="size-3.5 text-white/70" aria-hidden="true" strokeWidth={1.8} />
+                <CalendarDays className="size-3.5 text-primary-foreground/70" aria-hidden="true" strokeWidth={1.8} />
                 Book a call
               </a>
               <a
@@ -85,7 +85,7 @@ export default function HomePage() {
               </a>
             </div>
 
-            <div className="mt-6 space-y-3 text-sm leading-[1.8] text-[#555]">
+            <div className="mt-6 space-y-3 text-sm leading-[1.8] text-foreground/75">
               <p>
                 <strong>I'm Krisna, product-minded software developer</strong>, meaning I don't just write code, I have a deep interest in the product itself.
                 I enjoy understanding how people use software and being involved in the discussions that shape what gets built.
@@ -102,7 +102,7 @@ export default function HomePage() {
             <motion.div variants={fadeUp}>
               <SectionLabel>Projects</SectionLabel>
             </motion.div>
-            <div style={{ borderTop: "1px solid rgba(0,0,0,0.08)" }}>
+            <div className="border-t border-border">
               {projects.map((project) => (
                 <ProjectRow key={project.id} project={project} />
               ))}
@@ -118,8 +118,7 @@ export default function HomePage() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: 0.4 + i * 0.04, ease: EASE_OUT }}
-                  className="rounded-full border px-3 py-1 font-mono text-[11px] text-[#767676]"
-                  style={{ borderColor: "rgba(0,0,0,0.12)" }}
+                  className="rounded-full border border-border px-3 py-1 font-mono text-[11px] text-muted-foreground"
                 >
                   {tech}
                 </motion.span>
@@ -147,7 +146,7 @@ export default function HomePage() {
 
 function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <h2 className="mb-5 font-mono text-[10px] uppercase tracking-[0.2em] text-[#767676]">
+    <h2 className="mb-5 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
       {children}
     </h2>
   )
@@ -160,32 +159,30 @@ function ProjectRow({ project }: { project: (typeof projects)[number] }) {
         href={project.available ? project.href : "#"}
         transitionTypes={project.available ? ["nav-forward"] : undefined}
         aria-disabled={!project.available}
-        className="group flex items-start justify-between gap-6 py-4 transition-opacity duration-150 active:scale-[0.99]"
+        className="group flex items-start justify-between gap-6 border-b border-border py-4 transition-opacity duration-150 active:scale-[0.99]"
         style={{
-          borderBottom: "1px solid rgba(0,0,0,0.08)",
           opacity: project.available ? 1 : 0.35,
           pointerEvents: project.available ? "auto" : "none",
         }}
       >
         <div className="min-w-0 space-y-2">
           <div className="flex items-center gap-2.5">
-            <span className="text-sm font-medium text-[#767676] transition-colors duration-150 group-hover:text-[#0d0d0c]">
+            <span className="text-sm font-medium text-muted-foreground transition-colors duration-150 group-hover:text-foreground">
               {project.name}
             </span>
             {!project.available && (
               <span
-                className="rounded px-1.5 py-0.5 font-mono text-[10px] text-[#767676]"
-                style={{ border: "1px solid rgba(0,0,0,0.1)" }}
+                className="rounded border border-border px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground"
               >
                 soon
               </span>
             )}
           </div>
-          <p className="max-w-sm text-xs leading-relaxed text-[#767676]">
+          <p className="max-w-sm text-xs leading-relaxed text-muted-foreground">
             {project.description}
           </p>
         </div>
-        <span className="shrink-0 pt-0.5 font-mono text-[11px] text-[#767676]">
+        <span className="shrink-0 pt-0.5 font-mono text-[11px] text-muted-foreground">
           {project.year}
         </span>
       </Link>
@@ -200,8 +197,7 @@ function ContactLink({ label, href }: { label: string; href: string }) {
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
-      className="inline-block font-mono text-sm text-[#767676] underline underline-offset-4 transition-colors duration-150 hover:text-[#0d0d0c] active:scale-[0.97]"
-      style={{ textDecorationColor: "rgba(0,0,0,0.15)" }}
+      className="inline-block font-mono text-sm text-muted-foreground underline underline-offset-4 decoration-border transition-colors duration-150 hover:text-foreground active:scale-[0.97]"
     >
       {label}
     </a>

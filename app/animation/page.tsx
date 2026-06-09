@@ -27,9 +27,9 @@ const fadeUp = {
 }
 
 const categoryStyles = {
-  CSS: "bg-violet-50 text-violet-600 border-violet-200",
-  Button: "bg-blue-50 text-blue-600 border-blue-200",
-  Layout: "bg-amber-50 text-amber-600 border-amber-200",
+  CSS: "bg-violet-500/10 text-violet-600 border-violet-500/20 dark:text-violet-300",
+  Button: "bg-blue-500/10 text-blue-600 border-blue-500/20 dark:text-blue-300",
+  Layout: "bg-amber-500/10 text-amber-700 border-amber-500/20 dark:text-amber-300",
 } as const
 
 type Category = keyof typeof categoryStyles
@@ -76,16 +76,16 @@ export default function AnimationPage() {
         className="mx-auto w-full max-w-3xl px-6 pt-8 pb-12"
       >
         <motion.div variants={fadeUp}>
-          <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-[#767676]">
+          <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-muted-foreground">
             Exploration
           </p>
           <h1
-            className="text-[2.25rem] leading-none tracking-[-0.02em] text-[#0d0d0c]"
+            className="text-[2.25rem] leading-none tracking-[-0.02em] text-foreground"
             style={{ fontFamily: "var(--font-instrument-serif)" }}
           >
             Animation
           </h1>
-          <p className="mt-3 text-sm leading-relaxed text-[#767676] max-w-sm">
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground max-w-sm">
             A collection of UI animation explorations — interactions, transitions, and motion patterns.
           </p>
         </motion.div>
@@ -121,8 +121,7 @@ function AnimationCard({ children }: { children: ReactNode }) {
   return (
     <motion.div
       variants={fadeUp}
-      className="flex flex-col overflow-hidden rounded-xl border bg-white"
-      style={{ borderColor: "rgba(0,0,0,0.08)" }}
+      className="flex flex-col overflow-hidden rounded-xl border border-border bg-card"
     >
       {children}
     </motion.div>
@@ -131,7 +130,7 @@ function AnimationCard({ children }: { children: ReactNode }) {
 
 AnimationCard.Preview = function Preview({ children }: { children: ReactNode }) {
   return (
-    <div className="flex min-h-56 items-center justify-center bg-[#f7f7f5] p-6">
+    <div className="flex min-h-56 items-center justify-center bg-muted/60 p-6">
       {children}
     </div>
   )
@@ -148,16 +147,15 @@ AnimationCard.Info = function Info({
 }) {
   return (
     <div
-      className="flex flex-col gap-1.5 border-t p-4"
-      style={{ borderColor: "rgba(0,0,0,0.06)" }}
+      className="flex flex-col gap-1.5 border-t border-border p-4"
     >
       <span
         className={`self-start rounded border px-2 py-0.5 font-mono text-[10px] tracking-wide ${categoryStyles[category]}`}
       >
         {category}
       </span>
-      <p className="text-sm font-medium text-[#0d0d0c]">{title}</p>
-      <p className="text-xs leading-relaxed text-[#767676]">{description}</p>
+      <p className="text-sm font-medium text-foreground">{title}</p>
+      <p className="text-xs leading-relaxed text-muted-foreground">{description}</p>
     </div>
   )
 }

@@ -71,24 +71,24 @@ export default function AlgoPage() {
     <SiteLayout>
       <DirectionalTransition>
         <header className="mx-auto w-full max-w-3xl px-6 pt-8 pb-12">
-          <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-[#767676]">
+          <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-muted-foreground">
             Documentation
           </p>
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h1
-                className="text-[2.5rem] leading-none tracking-[-0.01em] text-[#0d0d0c] sm:text-[3rem]"
+                className="text-[2.5rem] leading-none tracking-[-0.01em] text-foreground sm:text-[3rem]"
                 style={{ fontFamily: "var(--font-instrument-serif)" }}
               >
                 Frontend Interview Prep
               </h1>
-              <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#767676]">
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
                 A structured index for JavaScript fundamentals, UI components,
                 TypeScript patterns, and product-level frontend exercises.
               </p>
             </div>
 
-            <div className="flex gap-8 border-t pt-4 sm:border-l sm:border-t-0 sm:pl-6 sm:pt-0" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
+            <div className="flex gap-8 border-t border-border pt-4 sm:border-l sm:border-t-0 sm:pl-6 sm:pt-0">
               <Stat label="Topics" value={totalTopics} />
               <Stat label="Complete" value={0} />
             </div>
@@ -104,26 +104,26 @@ export default function AlgoPage() {
                 <section key={section.slug} aria-labelledby={`${section.slug}-title`}>
                   <div className="mb-5 flex items-end justify-between gap-4">
                     <div>
-                      <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-[#767676]">
+                      <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-muted-foreground">
                         {String(index + 1).padStart(2, "0")}
                       </p>
                       <h2
                         id={`${section.slug}-title`}
-                        className="mt-1 text-2xl leading-tight text-[#0d0d0c]"
+                        className="mt-1 text-2xl leading-tight text-foreground"
                         style={{ fontFamily: "var(--font-instrument-serif)" }}
                       >
                         {section.title}
                       </h2>
                     </div>
-                    <p className="font-mono text-[10px] tracking-wide text-[#767676]">
+                    <p className="font-mono text-[10px] tracking-wide text-muted-foreground">
                       0 / {count}
                     </p>
                   </div>
 
-                  <div className="divide-y border-y" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
+                  <div className="divide-y divide-border border-y border-border">
                     {section.groups.map((group) => (
                       <div key={group.level} className="grid gap-3 py-5 sm:grid-cols-[7rem_1fr]">
-                        <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-[#767676]">
+                        <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-muted-foreground">
                           {group.level}
                         </p>
                         <ul className="grid gap-2 sm:grid-cols-2" role="list">
@@ -135,10 +135,10 @@ export default function AlgoPage() {
                                 <Link
                                   href={href}
                                   transitionTypes={["nav-forward"]}
-                                  className="group flex min-h-11 items-center justify-between gap-3 rounded-md px-3 py-2 text-sm text-[#333] transition-colors duration-150 hover:bg-[#f4f4f2] active:scale-[0.99]"
+                                  className="group flex min-h-11 items-center justify-between gap-3 rounded-md px-3 py-2 text-sm text-foreground/85 transition-colors duration-150 hover:bg-muted active:scale-[0.99]"
                                 >
                                   <span>{topic}</span>
-                                  <span className="font-mono text-[10px] tracking-wide text-[#aaa] transition-colors group-hover:text-[#767676]">
+                                  <span className="font-mono text-[10px] tracking-wide text-muted-foreground/60 transition-colors group-hover:text-muted-foreground">
                                     Draft
                                   </span>
                                 </Link>
@@ -162,11 +162,11 @@ export default function AlgoPage() {
 function Stat({ label, value }: { label: string; value: number }) {
   return (
     <div>
-      <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-[#767676]">
+      <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-muted-foreground">
         {label}
       </p>
       <p
-        className="mt-1 text-3xl leading-none text-[#0d0d0c]"
+        className="mt-1 text-3xl leading-none text-foreground"
         style={{ fontFamily: "var(--font-instrument-serif)" }}
       >
         {value}
