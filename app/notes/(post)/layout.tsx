@@ -12,7 +12,7 @@ export default async function MdxLayout({children}: {children: React.ReactNode})
 
   return (
     <div className="min-h-screen bg-white text-[#0d0d0c] antialiased flex flex-col">
-      <nav className="mx-auto w-full max-w-135 px-6 py-5" style={{ viewTransitionName: "site-nav" }}>
+      <nav className="mx-auto w-full max-w-3xl px-6 py-5" style={{ viewTransitionName: "site-nav" }}>
         <div className="flex items-center justify-between">
           <Link href="/" className="font-mono text-xs tracking-[0.18em] uppercase text-[#767676]">
             kw
@@ -24,7 +24,7 @@ export default async function MdxLayout({children}: {children: React.ReactNode})
       </nav>
 
       <DirectionalTransition>
-        <div className="mx-auto w-full max-w-135 px-6 pt-8 pb-24 flex-1">
+        <div className="mx-auto w-full max-w-3xl px-6 pt-8 pb-24 flex-1">
           <Header posts={posts} />
           <Suspense fallback={null}>
             <MainContent>{children}</MainContent>

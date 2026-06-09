@@ -1,9 +1,10 @@
 "use client"
 
 import {motion} from "framer-motion"
+import {CalendarDays} from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import type {ReactNode} from "react"
+import React, {ReactNode} from "react"
 import {SiteLayout} from "@/components/site-layout"
 import {DirectionalTransition} from "@/components/view-transition"
 import {contactLinks, projects, stack} from "./data"
@@ -29,7 +30,7 @@ export default function HomePage() {
   return (
     <SiteLayout>
       <DirectionalTransition>
-      <main className="mx-auto max-w-2xl px-6 pb-24 pt-12 flex-1">
+      <main className="mx-auto max-w-3xl px-6 pb-24 pt-12 flex-1">
         <motion.div variants={stagger} initial="hidden" animate="show" className="space-y-16">
 
           <motion.section variants={fadeUp}>
@@ -63,14 +64,36 @@ export default function HomePage() {
               </div>
             </div>
 
+            <div className="mt-6 flex flex-wrap gap-2">
+              <a
+                href="https://cal.com/krisnawijaya/30min?user=krisnawijaya&overlayCalendar=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-9 items-center gap-2 rounded-full border border-[#0d0d0c] bg-[#0d0d0c] px-3 font-mono text-xs text-white transition-all duration-150 hover:border-[#242422] hover:bg-[#242422] active:scale-[0.98]"
+              >
+                <CalendarDays className="size-3.5 text-white/70" aria-hidden="true" strokeWidth={1.8} />
+                Book a call
+              </a>
+              <a
+                href="https://t.me/krisnaw2020"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-9 items-center gap-2 rounded-full border border-transparent bg-[#0084b8]/20 px-3 font-mono text-xs text-[#0084b8] transition-all duration-150 hover:bg-[#0084b8]/25 active:scale-[0.98]"
+              >
+                <Image src="/telegram.svg" alt="" width={14} height={14} aria-hidden="true" />
+                Quick message...
+              </a>
+            </div>
+
             <div className="mt-6 space-y-3 text-sm leading-[1.8] text-[#555]">
               <p>
-                I create software that's intuitive and effective, I don't just write code,
-                I care deeply about the product and how people interact with what we build.
+                <strong>I'm Krisna, product-minded software developer</strong>, meaning I don't just write code, I have a deep interest in the product itself.
+                I enjoy understanding how people use software and being involved in the discussions that shape what gets built.
               </p>
+
               <p>
-                Currently open to Front-End or Full-Stack roles.
-                Based in Bali, open to remote or relocation.
+                I'm currently open to new opportunities as a Front-End or Full-Stack Developer.
+                While I am currently based in Bali, Indonesia, I am highly open to remote work or relocating to other countries for the right role.
               </p>
             </div>
           </motion.section>

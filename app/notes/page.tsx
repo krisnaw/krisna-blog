@@ -11,7 +11,7 @@ export default function NotesPage() {
   return (
     <SiteLayout>
       <DirectionalTransition>
-        <header className="mx-auto w-full max-w-135 px-6 pt-8 pb-12">
+        <header className="mx-auto w-full max-w-3xl px-6 pt-8 pb-12">
           <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-[#767676]">
             Writing
           </p>
@@ -26,7 +26,7 @@ export default function NotesPage() {
           </p>
         </header>
 
-        <main className="mx-auto max-w-135 px-6 pb-24 flex-1 w-full">
+        <main className="mx-auto max-w-3xl px-6 pb-24 flex-1 w-full">
           <ul
             className="divide-y"
             style={{ borderTop: "1px solid rgba(0,0,0,0.08)", borderColor: "rgba(0,0,0,0.08)" }}

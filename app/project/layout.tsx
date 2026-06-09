@@ -9,7 +9,7 @@ export default function Layout({
 }>) {
   return (
     <div className="min-h-screen bg-white text-[#0d0d0c] antialiased flex flex-col">
-      <nav className="mx-auto w-full max-w-2xl px-6 py-5" style={{ viewTransitionName: "site-nav" }}>
+      <nav className="mx-auto w-full max-w-3xl px-6 py-5" style={{ viewTransitionName: "site-nav" }}>
         <Link
           href="/"
           transitionTypes={["nav-back"]}

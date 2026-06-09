@@ -67,7 +67,7 @@ export default function BarongMelaliPage() {
           variants={stagger}
           initial="hidden"
           animate="show"
-          className="mx-auto max-w-2xl px-6 pb-24 flex-1"
+          className="mx-auto max-w-3xl px-6 pb-24 flex-1"
         >
           <motion.section variants={fadeUp} className="pt-8 pb-4">
             <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-[#767676]">

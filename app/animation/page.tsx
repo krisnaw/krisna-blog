@@ -73,7 +73,7 @@ export default function AnimationPage() {
         variants={stagger}
         initial="hidden"
         animate="show"
-        className="mx-auto w-full max-w-135 px-6 pt-8 pb-12"
+        className="mx-auto w-full max-w-3xl px-6 pt-8 pb-12"
       >
         <motion.div variants={fadeUp}>
           <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-[#767676]">
@@ -95,7 +95,7 @@ export default function AnimationPage() {
         variants={stagger}
         initial="hidden"
         animate="show"
-        className="mx-auto max-w-135 px-6 pb-24 flex-1"
+        className="mx-auto max-w-3xl px-6 pb-24 flex-1"
       >
         <div className="flex flex-col gap-4">
           {animations.map((item) => (

@@ -19,17 +19,18 @@ export const projects = [
     href: "/project/barong-melali",
     available: true,
   },
-  {
-    id: 2,
-    name: "BetterInvoice",
-    year: "2026",
-    description: "Invoice management app built for Indonesian freelancers.",
-    href: "#",
-    available: false,
-  },
+  // {
+  //   id: 2,
+  //   name: "BetterInvoice",
+  //   year: "2026",
+  //   description: "Invoice management app built for Indonesian freelancers.",
+  //   href: "#",
+  //   available: false,
+  // },
 ]
 
 export const stack = [
+  "TanStack Start",
   "React",
   "Next.js",
   "TypeScript",
