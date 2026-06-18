@@ -8,6 +8,7 @@ import React, {ReactNode} from "react"
 import {SiteLayout} from "@/components/site-layout"
 import {DirectionalTransition} from "@/components/view-transition"
 import {contactLinks, projects, stack} from "./data"
+import RisoWallpaper from "@/app/animation/riso";
 
 const EASE_OUT: [number, number, number, number] = [0.23, 1, 0.32, 1]
 
@@ -30,6 +31,7 @@ export default function HomePage() {
   return (
     <SiteLayout>
       <DirectionalTransition>
+        <RisoWallpaper fixed={false} zIndex={0} className={"opacity-20"} style={undefined} />
       <main className="mx-auto max-w-3xl px-6 pb-24 pt-12 flex-1">
         <motion.div variants={stagger} initial="hidden" animate="show" className="space-y-16">
 
