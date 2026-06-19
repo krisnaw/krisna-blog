@@ -21,7 +21,7 @@ function CardDescription({ ...props } :  React.ComponentProps<"p">) {
 
 function CardContent({ ...props } :  React.ComponentProps<"div">) {
   return (
-    <div data-slot="card-content" className={cn("flex min-h-36 p-6 outline outline-neutral-200 dark:outline-neutral-800 rounded-t-xl rounded-b-xl items-center justify-center bg-white dark:bg-neutral-900")} {...props} />
+    <div data-slot="card-content" className={cn("flex min-h-40 p-6 outline outline-neutral-200 dark:outline-neutral-800 rounded-t-xl rounded-b-xl items-center justify-center bg-white dark:bg-neutral-900")} {...props} />
   )
 }
 
