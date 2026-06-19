@@ -10,8 +10,11 @@ const navLinks = [
 
 export function SiteNav() {
   return (
-    <nav className="bg-background" style={{ viewTransitionName: "site-nav" }}>
-      <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-5">
+    <nav
+      className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md"
+      style={{ viewTransitionName: "site-nav" }}
+    >
+      <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
         <Link
           href="/"
           className="font-mono text-xs tracking-[0.18em] uppercase text-muted-foreground transition-colors duration-150 hover:text-foreground"
@@ -52,9 +55,11 @@ export function SiteFooter() {
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen bg-background text-foreground antialiased flex flex-col font-features-['ss01']">
+    <div className="min-h-screen bg-background text-foreground antialiased flex flex-col">
       <SiteNav />
-      {children}
+      <div className="mx-auto w-full max-w-3xl flex-1 flex flex-col">
+        {children}
+      </div>
       <SiteFooter />
     </div>
   )

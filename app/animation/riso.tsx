@@ -22,6 +22,7 @@
  *   }
  *
  * Props
+ *   mono       number  0–1 black & white amount (default 0 = full color; 1 = newsprint B&W)
  *   idle       number  0–1 idle drift when the mouse is still (default 0.5; 0 = frozen)
  *   fixed      bool    position:fixed full-viewport (default true). false → fills its
  *                      positioned parent instead (give the parent position:relative).
@@ -29,10 +30,11 @@
  *   className  string  extra class on the canvas
  *   style      object  inline style overrides merged last
  */
-import {type CSSProperties, useEffect, useRef} from "react";
+import { type CSSProperties, useEffect, useRef } from "react";
 
 type RisoWallpaperProps = {
   idle?: number;
+  mono?: number;
   fixed?: boolean;
   zIndex?: number;
   className?: string;
@@ -45,6 +47,7 @@ type UniformName =
   | "uMouse"
   | "uDown"
   | "uIdle"
+  | "uMono"
   | "uRipPos"
   | "uRipAge";
 
@@ -58,6 +61,7 @@ const FRAG = `
   uniform vec2  uMouse;   // pixels, y-up
   uniform float uDown;    // 0/1 mouse held
   uniform float uIdle;    // idle auto-motion 0..1
+  uniform float uMono;    // 0 = color, 1 = black & white
   uniform vec2  uRipPos[8];
   uniform float uRipAge[8];
 
@@ -114,12 +118,17 @@ const FRAG = `
     float lum = dot(cellColor, vec3(0.299, 0.587, 0.114));
     float radius = (1.0 - lum) * 0.5 * DOT_SCALE + bulge * 0.35;
     float mask = 1.0 - smoothstep(radius - 0.04, radius + 0.04, length(cellUV));
-    vec3 halftone = mix(vec3(1.0), cellColor, mask);
-
     vec3 smoothCol = sampleGradient(frag / res);
     float reveal = clamp(exp(-md / (0.22 * res.y)) * (0.7 + 0.5 * uDown), 0.0, 1.0);
-    vec3 col = mix(halftone, smoothCol, reveal);
 
+    // full-color result
+    vec3 colColor = mix(mix(vec3(1.0), cellColor, mask), smoothCol, reveal);
+
+    // black & white result: black ink dots on white paper, grey wipe under the cursor
+    float gs = dot(smoothCol, vec3(0.299, 0.587, 0.114));
+    vec3 colMono = mix(mix(vec3(1.0), vec3(0.06), mask), vec3(gs), reveal);
+
+    vec3 col = mix(colColor, colMono, clamp(uMono, 0.0, 1.0));
     col += (rk_hash(dfrag) - 0.5) * NOISE;
     gl_FragColor = vec4(col, 1.0);
   }
@@ -127,15 +136,18 @@ const FRAG = `
 
 export default function RisoWallpaper({
   idle = 0.5,
+  mono = 0,
   fixed = true,
   zIndex = -1,
   className,
   style,
 }: RisoWallpaperProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  // keep the latest idle value without re-running the heavy effect
+  // keep the latest values without re-running the heavy effect
   const idleRef = useRef(idle);
   idleRef.current = idle;
+  const monoRef = useRef(mono);
+  monoRef.current = mono;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -177,7 +189,16 @@ export default function RisoWallpaper({
     gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
 
     const U = {} as Record<UniformName, WebGLUniformLocation | null>;
-    (["uRes", "uTime", "uMouse", "uDown", "uIdle", "uRipPos", "uRipAge"] as const).forEach(
+    ([
+      "uRes",
+      "uTime",
+      "uMouse",
+      "uDown",
+      "uIdle",
+      "uMono",
+      "uRipPos",
+      "uRipAge",
+    ] as const).forEach(
       (n) => (U[n] = gl.getUniformLocation(prog, n))
     );
 
@@ -271,6 +292,7 @@ export default function RisoWallpaper({
       gl.uniform2f(U.uMouse, mouse.x, mouse.y);
       gl.uniform1f(U.uDown, mouse.down);
       gl.uniform1f(U.uIdle, idleRef.current);
+      gl.uniform1f(U.uMono, +monoRef.current);
       gl.uniform2fv(U.uRipPos, ripPos);
       gl.uniform1fv(U.uRipAge, ripAge);
       gl.drawArrays(gl.TRIANGLES, 0, 3);

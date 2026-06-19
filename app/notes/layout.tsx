@@ -7,10 +7,9 @@ export const metadata: Metadata = {
   description: "A collection of complete ideas, thoughts, articles, and writings",
 };
 
-
 export default function NotesLayout({children}: { children: React.ReactNode }) {
   return (
-    <div className={`min-h-screen`}>
+    <div>
       {children}
     </div>
   )

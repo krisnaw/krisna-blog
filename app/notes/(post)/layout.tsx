@@ -13,8 +13,8 @@ export default async function MdxLayout({children}: {children: React.ReactNode})
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased flex flex-col">
-      <nav className="mx-auto w-full max-w-3xl px-6 py-5" style={{ viewTransitionName: "site-nav" }}>
-        <div className="flex items-center justify-between">
+      <nav className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md" style={{ viewTransitionName: "site-nav" }}>
+        <div className="mx-auto flex w-full max-w-3xl items-center justify-between px-6 py-4">
           <Link href="/" className="font-mono text-xs tracking-[0.18em] uppercase text-muted-foreground transition-colors duration-150 hover:text-foreground">
             kw
           </Link>
