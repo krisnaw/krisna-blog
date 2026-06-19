@@ -6,6 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import React, {ReactNode} from "react"
 import {SiteLayout} from "@/components/site-layout"
+import {CertificationsSection} from "@/components/section/certifications.section"
 import {DirectionalTransition} from "@/components/view-transition"
 import {contactLinks, projects, stack} from "./data"
 
@@ -112,6 +113,8 @@ export default function HomePage() {
                 ))}
               </div>
             </motion.section>
+
+            <CertificationsSection />
 
             <motion.section variants={fadeUp}>
               <SectionLabel>Stack</SectionLabel>
