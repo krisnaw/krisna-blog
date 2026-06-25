@@ -31,7 +31,7 @@ export default function HomePage() {
   return (
     <SiteLayout>
       <DirectionalTransition>
-        <main className=" px-6 pb-24 pt-12 flex-1">
+        <div className=" px-6 pb-24 pt-12 flex-1">
           <motion.div variants={stagger} initial="hidden" animate="show" className="space-y-16">
 
             <motion.section variants={fadeUp}>
@@ -60,8 +60,8 @@ export default function HomePage() {
                 </div>
 
                 <div
-                  className="flex shrink-0 items-center gap-1.5 pt-1 font-mono text-[10px] tracking-wide text-emerald-600">
-                  <span className="size-1.5 animate-pulse rounded-full bg-emerald-600"/>
+                  className="flex shrink-0 items-center gap-1.5 pt-1 font-mono text-[10px] tracking-wide text-emerald-700 dark:text-emerald-400 rounded-full border border-emerald-300 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/50 px-2.5 py-1">
+                  <span className="size-1.5 animate-pulse rounded-full bg-emerald-700 dark:bg-emerald-400"/>
                   Open for work
                 </div>
               </div>
@@ -71,19 +71,21 @@ export default function HomePage() {
                   href="https://cal.com/krisnawijaya/30min?user=krisnawijaya&overlayCalendar=true"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-9 items-center gap-2 rounded-full border border-primary bg-primary px-3 font-mono text-xs text-primary-foreground transition-all duration-150 hover:opacity-90 active:scale-[0.98]"
+                  className="inline-flex h-9 items-center gap-2 rounded-full border border-primary bg-primary px-3 font-mono text-xs text-primary-foreground transition-all duration-150 hover:opacity-90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   <CalendarDays className="size-3.5 text-primary-foreground/70" aria-hidden="true" strokeWidth={1.8}/>
                   Book a call
+                  <span className="sr-only"> (opens in new tab)</span>
                 </a>
                 <a
                   href="https://t.me/krisnaw2020"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-9 items-center gap-2 rounded-full border border-transparent bg-[#0084b8]/20 px-3 font-mono text-xs text-[#0084b8] transition-all duration-150 hover:bg-[#0084b8]/25 active:scale-[0.98]"
+                  className="inline-flex h-9 items-center gap-2 rounded-full border border-transparent bg-[#0084b8]/20 px-3 font-mono text-xs text-[#005f8a] dark:text-[#38c4ef] transition-all duration-150 hover:bg-[#0084b8]/25 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   <Image src="/telegram.svg" alt="" width={14} height={14} aria-hidden="true"/>
                   Quick message...
+                  <span className="sr-only"> (opens in new tab)</span>
                 </a>
               </div>
 
@@ -143,7 +145,7 @@ export default function HomePage() {
             </motion.section>
 
           </motion.div>
-        </main>
+        </div>
       </DirectionalTransition>
     </SiteLayout>
   )
@@ -166,7 +168,8 @@ function ProjectRow({project}: { project: (typeof projects)[number] }) {
         href={project.available ? project.href : "#"}
         transitionTypes={project.available ? ["nav-forward"] : undefined}
         aria-disabled={!project.available}
-        className="group flex items-start justify-between gap-6 border-b border-border py-4 transition-opacity duration-150 active:scale-[0.99]"
+        tabIndex={project.available ? undefined : -1}
+        className="group flex items-start justify-between gap-6 border-b border-border py-4 transition-opacity duration-150 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-sm"
         style={{
           opacity: project.available ? 1 : 0.35,
           pointerEvents: project.available ? "auto" : "none",
@@ -205,9 +208,10 @@ function ContactLink({label, href}: { label: string; href: string }) {
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
-      className="inline-block font-mono text-sm text-link underline underline-offset-4 decoration-link/30 transition-colors duration-150 hover:decoration-link active:scale-[0.97]"
+      className="inline-block font-mono text-sm text-link underline underline-offset-4 decoration-link/30 transition-colors duration-150 hover:decoration-link active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-sm"
     >
       {label}
+      {isExternal && <span className="sr-only"> (opens in new tab)</span>}
     </a>
   )
 }

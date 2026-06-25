@@ -1,5 +1,5 @@
 "use client"
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {AnimatePresence, motion, type Variants} from "framer-motion";
 import Link from "next/link";
 import {useClickAway} from "@uidotdev/usehooks";
@@ -82,6 +82,15 @@ export default function FloatingMenu() {
     setIsOpen(false);
   });
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [isOpen]);
+
   return (
 
     <div className="fixed bottom-18 sm:bottom-28 w-full">
@@ -89,6 +98,7 @@ export default function FloatingMenu() {
         {isOpen && (
           <motion.div
             ref={ref}
+            id="floating-menu-panel"
             key="floating-menu-panel"
             initial="closed"
             animate="open"
@@ -111,9 +121,9 @@ export default function FloatingMenu() {
                     >
                       <Link onClick={() => setIsOpen(false)} prefetch={true}
                             href={option.url}
-                            className="text-lg/6 font-semibold capitalize px-2.5 w-full flex justify-between">
+                            className="text-lg/6 font-semibold capitalize px-2.5 w-full flex justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-sm">
                         {option.label}
-                        <option.icon className="size-4"/>
+                        <option.icon className="size-4" aria-hidden="true"/>
                       </Link>
                     </motion.li>
                   ))}
@@ -121,12 +131,13 @@ export default function FloatingMenu() {
 
                 <motion.div className="mt-4" variants={itemVariants}>
                   <button onClick={() => setIsOpen(false)}
+                          aria-label="Close menu"
                           className="
                           bg-white
                            inset-shadow-sm inset-shadow-slate-500/50
                           outline-neutral-300 outline-1
-                         text-gray-800 w-full rounded-3xl py-2.5 flex items-center justify-center">
-                    <ChevronDownIcon/>
+                         text-gray-800 w-full rounded-3xl py-2.5 flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                    <ChevronDownIcon aria-hidden="true"/>
                   </button>
                 </motion.div>
               </div>
@@ -142,6 +153,7 @@ export default function FloatingMenu() {
           type="button"
           onClick={() => setIsOpen((open) => !open)}
           aria-expanded={isOpen}
+          aria-controls="floating-menu-panel"
           whileTap={{scale: 0.95}}
           animate={{
             opacity: isOpen ? 0 : 1,
@@ -154,7 +166,7 @@ export default function FloatingMenu() {
             bg-white/30 backdrop-blur-sm
           inset-shadow-sm inset-shadow-slate-500/50
           outline-1 outline-gray-300
-          rounded-3xl px-4 py-2.5  cursor-pointer">
+          rounded-3xl px-4 py-2.5 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
           <motion.div animate={{y: isOpen ? -2 : 0}} transition={{duration: 0.2}}>
             Menu
           </motion.div>

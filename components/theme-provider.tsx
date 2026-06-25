@@ -1,6 +1,7 @@
 "use client"
 
 import {ThemeProvider as NextThemesProvider} from "next-themes"
+import {MotionConfig} from "framer-motion"
 import type {ComponentProps} from "react"
 
 export function ThemeProvider({children, ...props}: ComponentProps<typeof NextThemesProvider>) {
@@ -11,7 +12,9 @@ export function ThemeProvider({children, ...props}: ComponentProps<typeof NextTh
       enableSystem
       {...props}
     >
-      {children}
+      <MotionConfig reducedMotion="user">
+        {children}
+      </MotionConfig>
     </NextThemesProvider>
   )
 }

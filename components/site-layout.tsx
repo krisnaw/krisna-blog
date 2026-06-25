@@ -17,7 +17,8 @@ export function SiteNav() {
       <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="font-mono text-xs tracking-[0.18em] uppercase text-muted-foreground transition-colors duration-150 hover:text-foreground"
+          aria-label="Krisna Wijaya – Home"
+          className="font-mono text-xs tracking-[0.18em] uppercase text-muted-foreground transition-colors duration-150 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-sm"
         >
           kw
         </Link>
@@ -27,7 +28,7 @@ export function SiteNav() {
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="inline-block font-mono text-[10px] tracking-[0.18em] uppercase text-muted-foreground transition-colors duration-150 hover:text-foreground active:scale-[0.97]"
+                  className="inline-block font-mono text-[10px] tracking-[0.18em] uppercase text-muted-foreground transition-colors duration-150 hover:text-foreground active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-sm"
                 >
                   {item.label}
                 </Link>

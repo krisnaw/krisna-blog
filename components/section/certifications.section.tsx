@@ -40,7 +40,7 @@ export function CertificationsSection() {
             href={cert.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-start justify-between gap-5 border-b border-border py-4 transition-opacity duration-150 hover:opacity-80 active:scale-[0.99]"
+            className="group flex items-start justify-between gap-5 border-b border-border py-4 transition-opacity duration-150 hover:opacity-80 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-sm"
           >
             <div className="flex min-w-0 gap-3">
               <span className="mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-md border border-border bg-muted text-muted-foreground">
@@ -64,6 +64,7 @@ export function CertificationsSection() {
             <div className="flex shrink-0 items-center gap-2 pt-0.5 font-mono text-[11px] text-muted-foreground">
               <span>{cert.date}</span>
               <ExternalLink className="size-3" aria-hidden="true" strokeWidth={1.8}/>
+              <span className="sr-only"> (opens in new tab)</span>
             </div>
           </a>
         ))}

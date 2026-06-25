@@ -39,9 +39,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true} className={`overscroll-none ${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${caveat.variable}`}>
     <body className={`antialiased `}>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:z-[100] focus:top-4 focus:left-4 focus:rounded-lg focus:bg-background focus:px-4 focus:py-2 focus:text-sm focus:font-mono focus:ring-2 focus:ring-ring focus:text-foreground focus:outline-none"
+      >
+        Skip to main content
+      </a>
       <ThemeProvider>
         <div className="flex flex-col min-h-screen bg-background">
-          <main className="grow">
+          <main id="main-content" className="grow">
             {children}
           </main>
         </div>

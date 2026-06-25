@@ -7,9 +7,10 @@ export default function BackButton() {
     <Link
       href="/notes"
       transitionTypes={["nav-back"]}
-      className="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-wide text-muted-foreground transition-colors duration-150 hover:text-foreground"
+      aria-label="Back to notes"
+      className="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-wide text-muted-foreground transition-colors duration-150 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-sm"
     >
-      ← back
+      <span aria-hidden="true">←</span> back
     </Link>
   )
 }
