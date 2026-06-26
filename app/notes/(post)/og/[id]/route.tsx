@@ -1,4 +1,3 @@
-export const revalidate = 300;
 import {ImageResponse} from "next/og";
 
 export async function GET() {
