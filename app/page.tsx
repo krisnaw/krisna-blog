@@ -35,13 +35,14 @@ export default function HomePage() {
           <motion.div variants={stagger} initial="hidden" animate="show" className="space-y-16">
 
             <motion.section variants={fadeUp}>
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div className="flex items-center gap-4">
                   <div className="group relative shrink-0 size-16 rounded-lg overflow-hidden">
                     <Image
                       src="/profile.jpg"
                       alt="Krisna Wijaya"
                       fill
+                      sizes="64px"
                       className="object-cover grayscale transition-[filter] duration-500 ease-out group-hover:grayscale-0"
                     />
                     <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/10 dark:ring-white/10"/>
@@ -60,8 +61,8 @@ export default function HomePage() {
                 </div>
 
                 <div
-                  className="flex shrink-0 items-center gap-1.5 pt-1 font-mono text-[10px] tracking-wide text-emerald-700 dark:text-emerald-400 rounded-full border border-emerald-300 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/50 px-2.5 py-1">
-                  <span className="size-1.5 animate-pulse rounded-full bg-emerald-700 dark:bg-emerald-400"/>
+                  className="flex w-fit shrink-0 items-center gap-1.5 rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-1 font-mono text-[10px] tracking-wide text-emerald-700 sm:mt-1 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-400">
+                  <span className="size-1.5 rounded-full bg-emerald-700 dark:bg-emerald-400"/>
                   Open for work
                 </div>
               </div>
@@ -81,7 +82,7 @@ export default function HomePage() {
                   href="https://t.me/krisnaw2020"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-9 items-center gap-2 rounded-full border border-transparent bg-[#0084b8]/20 px-3 font-mono text-xs text-[#005f8a] dark:text-[#38c4ef] transition-[background-color,border-color,color,opacity,transform] duration-150 hover:bg-[#0084b8]/25 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="inline-flex h-9 items-center gap-2 rounded-full border border-transparent px-3 font-mono text-xs text-[#005f8a] transition-[background-color,border-color,color,opacity,transform] duration-150 hover:bg-[#0084b8]/10 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:text-[#38c4ef]"
                 >
                   <Image src="/telegram.svg" alt="" width={14} height={14} aria-hidden="true"/>
                   Quick message...

@@ -21,13 +21,6 @@ const animations: {
     component: <StateSwapCard />,
   },
 
-  {
-    id: "state-swap-card2",
-    title: "State Swap Card",
-    description: "Segmented controls drive icon, copy, and surface changes with blur and spring motion.",
-    category: "Feedback",
-    component: <StateSwapCard />,
-  },
 ]
 
 export function AnimationShowcase() {

@@ -8,12 +8,12 @@ import {ProjectHeading} from "../project-heading";
 export function CertSection() {
   return (
     <motion.div
-      animate={{opacity: 1, x: 0}}
-      initial={{opacity: 0, x: 20}}
+      animate={{opacity: 1, transform: "translateX(0px)"}}
+      initial={{opacity: 0, transform: "translateX(8px)"}}
       transition={{
-        duration: 1,
-        delay: 0.3,
-        ease: "easeInOut",
+        duration: 0.24,
+        delay: 0.05,
+        ease: [0.23, 1, 0.32, 1],
       }}
       className="mt-16">
       <SectionTitle>

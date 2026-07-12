@@ -26,12 +26,12 @@ const stagger = {
 }
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 10, filter: "blur(4px)" },
+  hidden: { opacity: 0, transform: "translateY(8px)", filter: "blur(2px)" },
   show: {
     opacity: 1,
-    y: 0,
+    transform: "translateY(0px)",
     filter: "blur(0px)",
-    transition: { duration: 0.45, ease: EASE_OUT },
+    transition: { duration: 0.24, ease: EASE_OUT },
   },
 }
 
@@ -113,7 +113,7 @@ export default function BarongMelaliPage() {
 
           <motion.div
             variants={fadeUp} className="p-4 outline outline-border rounded-xl flex items-center bg-muted">
-            <Image  className="aspect-video rounded-lg"
+            <Image  className="aspect-video rounded-lg outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10"
                     src="/barong-melali-landing.jpg" width={1000} height={450} alt="barong-melali" />
           </motion.div>
 

@@ -5,6 +5,7 @@ import {MotionHeader, MotionListItem, MotionMain} from "@/components/page-motion
 import Image from "next/image"
 import Link from "next/link"
 import {ViewTransition} from "react"
+import {Sparkles} from "lucide-react"
 
 export default function NotesPage() {
   const posts = getPosts()
@@ -12,23 +13,30 @@ export default function NotesPage() {
   return (
     <SiteLayout>
       <DirectionalTransition>
-        <div className="px-6 pb-24 pt-12">
-          <MotionHeader>
-            <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-muted-foreground">
-              Writing
-            </p>
-            <h1
-              className="text-[2.25rem] leading-none tracking-[-0.02em] text-foreground"
-              style={{fontFamily: "var(--font-instrument-serif)"}}
-            >
-              Notes
-            </h1>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              A tight collection of complete ideas, thoughts, and writings.
-            </p>
-          </MotionHeader>
-
-          <MotionMain className="mt-10">
+        <MotionHeader>
+          <header className="mx-auto w-full max-w-3xl px-6 pt-8 pb-10">
+            <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+              <div className="max-w-xl">
+                <div
+                  className="mb-4 inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                  <Sparkles className="size-3" aria-hidden="true" strokeWidth={1.8}/>
+                  Writing
+                </div>
+                <h1
+                  className="text-[2.75rem] leading-none tracking-[-0.02em] text-foreground text-balance"
+                  style={{fontFamily: "var(--font-instrument-serif)"}}
+                >
+                  Notes
+                </h1>
+                <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground text-pretty">
+                  A tight collection of complete ideas, thoughts, and writings.
+                </p>
+              </div>
+            </div>
+          </header>
+        </MotionHeader>
+        <MotionMain>
+          <div className="mx-auto w-full max-w-3xl px-6 pb-10">
             <ul className="divide-y divide-border border-t border-border" role="list">
               {posts.map((post) => (
                 <ViewTransition key={post.id}>
@@ -59,6 +67,7 @@ export default function NotesPage() {
                             src={post.featuredImage}
                             alt={post.title}
                             fill
+                            sizes="80px"
                             className="object-cover transition-transform duration-300 group-hover:scale-105"
                           />
                           <div
@@ -70,8 +79,8 @@ export default function NotesPage() {
                 </ViewTransition>
               ))}
             </ul>
-          </MotionMain>
-        </div>
+          </div>
+        </MotionMain>
       </DirectionalTransition>
     </SiteLayout>
   )

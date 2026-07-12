@@ -3,6 +3,7 @@ import Link from "next/link"
 import {SiteLayout} from "@/components/site-layout"
 import {DirectionalTransition} from "@/components/view-transition"
 import {MotionHeader, MotionMain, MotionSection} from "@/components/page-motion"
+import {Sparkles} from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Frontend Interview Docs | Krisna Wijaya",
@@ -72,11 +73,12 @@ export default function AlgoPage() {
     <SiteLayout>
       <DirectionalTransition>
         <MotionHeader className="mx-auto w-full max-w-3xl px-6 pt-8 pb-12">
-          <p className="mb-3 font-mono text-[11px] tracking-[0.18em] uppercase text-muted-foreground">
-            Documentation
-          </p>
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                <Sparkles className="size-3" aria-hidden="true" strokeWidth={1.8} />
+                Documentation
+              </div>
               <h1
                 className="text-[2.5rem] leading-none tracking-[-0.01em] text-foreground sm:text-[3rem]"
                 style={{ fontFamily: "var(--font-instrument-serif)" }}

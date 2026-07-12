@@ -30,6 +30,7 @@ export function Header({posts}: {posts: PostType[]}) {
               src={post.featuredImage}
               alt={post.title}
               fill
+              sizes="(max-width: 768px) calc(100vw - 48px), 768px"
               quality={100}
               className="object-cover"
             />

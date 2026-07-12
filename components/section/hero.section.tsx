@@ -48,8 +48,8 @@ export default function HeroSection() {
               width={500}
               height={500}
               className="aspect-square object-cover rounded-2xl
-                  outline -outline-offset-1 outline-black/5
-                  grayscale transition duration-500 motion-safe:group-hover:scale-150"
+                  outline -outline-offset-1 outline-black/10 dark:outline-white/10
+                  grayscale transition-[filter,transform] duration-300 motion-safe:group-hover:scale-[1.03]"
               src={profile} alt="Profile"/>
           </div>
         </motion.div>
@@ -61,7 +61,7 @@ export default function HeroSection() {
           </p>
           <div>
             <span className="inline-flex items-center gap-x-1.5 rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-700 inset-ring inset-ring-green-600/20">
-              <svg viewBox="0 0 6 6" aria-hidden="true" className="size-1.5 fill-green-500  animate-pulse">
+              <svg viewBox="0 0 6 6" aria-hidden="true" className="size-1.5 fill-green-500">
                 <circle r={3} cx={3} cy={3} />
               </svg>
               Open to work
