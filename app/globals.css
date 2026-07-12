@@ -7,9 +7,11 @@
 /* ── View Transition Recipes ─────────────────────────────────────────────── */
 
 :root {
-  --duration-exit: 150ms;
-  --duration-enter: 210ms;
-  --duration-move: 400ms;
+  --duration-exit: 120ms;
+  --duration-enter: 180ms;
+  --duration-move: 240ms;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 @keyframes fade {
@@ -31,28 +33,28 @@
 ::view-transition-old(.nav-forward) {
   --slide-offset: -60px;
   animation:
-    var(--duration-exit) ease-in both fade reverse,
-    var(--duration-move) ease-in-out both slide reverse;
+    var(--duration-exit) var(--ease-out) both fade reverse,
+    var(--duration-move) var(--ease-in-out) both slide reverse;
 }
 ::view-transition-new(.nav-forward) {
   --slide-offset: 60px;
   animation:
-    var(--duration-enter) ease-out var(--duration-exit) both fade,
-    var(--duration-move) ease-in-out both slide;
+    var(--duration-enter) var(--ease-out) var(--duration-exit) both fade,
+    var(--duration-move) var(--ease-in-out) both slide;
 }
 
 /* Directional navigation — back */
 ::view-transition-old(.nav-back) {
   --slide-offset: 60px;
   animation:
-    var(--duration-exit) ease-in both fade reverse,
-    var(--duration-move) ease-in-out both slide reverse;
+    var(--duration-exit) var(--ease-out) both fade reverse,
+    var(--duration-move) var(--ease-in-out) both slide reverse;
 }
 ::view-transition-new(.nav-back) {
   --slide-offset: -60px;
   animation:
-    var(--duration-enter) ease-out var(--duration-exit) both fade,
-    var(--duration-move) ease-in-out both slide;
+    var(--duration-enter) var(--ease-out) var(--duration-exit) both fade,
+    var(--duration-move) var(--ease-in-out) both slide;
 }
 
 /* Shared element morph */

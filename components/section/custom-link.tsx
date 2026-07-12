@@ -20,14 +20,16 @@ const CustomLink = () => {
 
       {isIntersecting && (
         <motion.div
-          animate={{ opacity: 1, scale: 1 }}
-          initial={{ opacity: 0, scale: 0.5 }}
-          exit={{ opacity: 0, scale: 0.5}}
-          whileTap={{ scale: 1.5 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            transform: `translate3d(${mouse.elementX}px, ${mouse.elementY}px, 0)`,
+          }}
+          initial={{ opacity: 0, scale: 0.94 }}
+          exit={{ opacity: 0, scale: 0.94 }}
+          transition={{ duration: 0.16, ease: [0.23, 1, 0.32, 1] }}
           className="absolute bg-orange-600 text-white rounded-full px-2 py-1 text-xs font-semibold cursor-default"
           style={{
-            top: mouse.elementY,
-            left: mouse.elementX,
             pointerEvents: 'none',
             zIndex: 1000,
           }}

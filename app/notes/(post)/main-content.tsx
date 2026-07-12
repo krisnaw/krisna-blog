@@ -5,9 +5,9 @@ import {motion} from "framer-motion"
 export function MainContent({children}: {children: React.ReactNode}) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      transition={{ duration: 0.45, ease: [0.23, 1, 0.32, 1] }}
+      initial={{ opacity: 0, transform: "translateY(8px)", filter: "blur(2px)" }}
+      animate={{ opacity: 1, transform: "translateY(0px)", filter: "blur(0px)" }}
+      transition={{ duration: 0.24, ease: [0.23, 1, 0.32, 1] }}
       className="prose prose-sm max-w-none
         prose-headings:font-normal prose-headings:tracking-[-0.02em]
         prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-3

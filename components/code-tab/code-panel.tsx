@@ -78,8 +78,8 @@ function CodeCopy({code} : {code: string}) {
 
   return (
     <motion.button
-      whileTap={{ scale: 0.8 }}
-      transition={{ type: "spring", duration: 0.5, bounce: 0 }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ type: "spring", duration: 0.16, bounce: 0 }}
       className="
       cursor-pointer
       shrink-0
@@ -92,12 +92,12 @@ function CodeCopy({code} : {code: string}) {
       <AnimatePresence mode="popLayout" initial={false}>
         <motion.div
           key={copied ? "copied" : "copy"}
-          initial={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
+          initial={{ opacity: 0, scale: 0.94, filter: "blur(2px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          exit={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
+          exit={{ opacity: 0, scale: 0.94, filter: "blur(2px)" }}
           transition={{
             type: "spring",
-            duration: 0.3,
+            duration: 0.2,
             bounce: 0,
           }}
         >

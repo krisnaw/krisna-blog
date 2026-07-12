@@ -10,6 +10,7 @@
 .element {
     background: white;
     border-radius: 16px;
+    contain: layout paint;
     width: 320px;
     display: flex;
     flex-direction: column;

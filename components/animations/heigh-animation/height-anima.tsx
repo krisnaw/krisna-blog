@@ -36,7 +36,11 @@ export default function HeighAnimation() {
 
   return (
     <div className="shadow-lg rounded-xl">
-      <motion.div animate={{ height: bounds.height  }} transition={{ ease: "easeInOut" }} className={styles.element}>
+      <motion.div
+        animate={{height: bounds.height}}
+        transition={{duration: 0.22, ease: [0.23, 1, 0.32, 1]}}
+        className={styles.element}
+      >
         <div ref={elementRef} className={styles.inner}>
 
           {contentType === "private-key" &&  (

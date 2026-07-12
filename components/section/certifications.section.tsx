@@ -6,12 +6,12 @@ import {motion} from "framer-motion"
 const EASE_OUT: [number, number, number, number] = [0.23, 1, 0.32, 1]
 
 const fadeUp = {
-  hidden: {opacity: 0, y: 10, filter: "blur(4px)"},
+  hidden: {opacity: 0, transform: "translateY(8px)", filter: "blur(2px)"},
   show: {
     opacity: 1,
-    y: 0,
+    transform: "translateY(0px)",
     filter: "blur(0px)",
-    transition: {duration: 0.45, ease: EASE_OUT},
+    transition: {duration: 0.24, ease: EASE_OUT},
   },
 }
 

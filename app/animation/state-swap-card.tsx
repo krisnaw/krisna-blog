@@ -78,10 +78,10 @@ export function StateSwapCard() {
             <AnimatePresence mode="popLayout" initial={false}>
               <motion.span
                 key={active.id}
-                initial={{opacity: 0, scale: 0.25, filter: "blur(4px)"}}
+                initial={{opacity: 0, scale: 0.94, filter: "blur(2px)"}}
                 animate={{opacity: 1, scale: 1, filter: "blur(0px)"}}
-                exit={{opacity: 0, scale: 0.25, filter: "blur(4px)"}}
-                transition={{type: "spring", duration: 0.3, bounce: 0}}
+                exit={{opacity: 0, scale: 0.94, filter: "blur(2px)"}}
+                transition={{type: "spring", duration: 0.2, bounce: 0}}
               >
                 <Icon className="size-4" aria-hidden="true" strokeWidth={2} />
               </motion.span>
