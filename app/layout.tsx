@@ -1,5 +1,5 @@
 import type {Metadata} from "next";
-import {Caveat, Geist, Geist_Mono, Inter, Instrument_Serif} from "next/font/google";
+import {Caveat, Geist, Geist_Mono, Instrument_Serif, Inter} from "next/font/google";
 import "./globals.css";
 import "@blossom-carousel/core/style.css";
 import React from "react";
@@ -44,15 +44,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true} className={`overscroll-none ${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${caveat.variable} ${inter.variable}`}>
     <body className={`antialiased `}>
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:z-[100] focus:top-4 focus:left-4 focus:rounded-lg focus:bg-background focus:px-4 focus:py-2 focus:text-sm focus:font-mono focus:ring-2 focus:ring-ring focus:text-foreground focus:outline-none"
-      >
-        Skip to main content
-      </a>
       <ThemeProvider>
-        <div className="flex flex-col min-h-screen bg-background">
-          <main id="main-content" className="grow">
+        <div className="flex flex-col min-h-screen">
+          <main id="main-content" className="grow mx-auto max-w-xl py-10 border-x border-dashed border-gray-200">
             {children}
           </main>
         </div>

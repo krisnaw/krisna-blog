@@ -57,11 +57,9 @@ export function SiteFooter() {
 export function SiteLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased flex flex-col">
-      <SiteNav />
       <div className="mx-auto w-full max-w-3xl flex-1 flex flex-col">
         {children}
       </div>
-      <SiteFooter />
     </div>
   )
 }
